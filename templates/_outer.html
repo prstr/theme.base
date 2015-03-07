@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="#{app}">
+  <head>
+    <meta charset="utf-8"/>
+    <block:meta>
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1"/>
+    </block:meta>
+
+    <title><block:title>#{store.title}</block:title></title>
+
+    <block:stylesheets>
+      <link rel="stylesheet"
+            href="#{store.themeCssUrl}"/>
+    </block:stylesheets>
+
+    <script type="application/json"
+            attach-data="store">
+      !{store.json}
+    </script>
+  </head>
+  <body>
+    <div id="notices" ui-notices></div>
+    <block:body>
+      <div id="outer">
+        <block:outer/>
+      </div>
+    </block:body>
+    <block:scripts/>
+  </body>
+</html>

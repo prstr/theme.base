@@ -1,0 +1,39 @@
+tag(bg, color)
+  background: bg
+  color: color
+  border: 1px solid darken(bg, 8%)
+  if light(color)
+    text-shadow: 0 1px 1px darken(bg, 15%)
+
+.tag
+  ctl()
+  z-index: 1
+  font: font-weight font-size font-main
+  text-align: center
+  margin: (spacing / 2)
+  background: transparent
+  color: text-color
+  user-select: none
+
+  for b in brand-colors
+    &.{b}
+      tag(lookup('brand-' + b), lookup('brand-' + b + '-text'))
+
+  &.block
+    display: block
+    text-align: left
+  &.small
+    padding: 2px 6px
+    font-size: type-small
+  &[draggable]
+    cursor: move
+  &.drag-over
+    border: 1px solid link-color
+    box-shadow: 0 0 5px 1px link-color
+
+  i + span, span + i
+    margin-left: 4px
+
+.tags
+  user-select: none
+  margin: -(spacing / 2)

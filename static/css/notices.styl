@@ -1,0 +1,50 @@
+#notices
+  z-index:2000
+
+  .notice
+    position:relative
+    padding: 8px 8px 8px 40px
+    margin: 8px
+    background:rgba(255,255,255,.95)
+    border-radius: radius
+
+    &::before
+      font-family: FontAwesome
+      position: absolute
+      top:8px
+      left:16px
+    &.info
+      background: brand-primary
+      color: #fff
+      box-shadow: 0 1px 1px darken(brand-primary, 50%)
+      &::before
+        content: '\f05a'
+    &.success
+      background: brand-success
+      color: #fff
+      box-shadow: 0 1px 1px darken(brand-success, 50%)
+      &::before
+        content: '\f00c'
+    &.warn
+      background: brand-warn
+      color: darken(brand-warn, 75%)
+      box-shadow: 0 1px 1px darken(brand-warn, 50%)
+      &::before
+        content: '\f071'
+    &.error
+      background: brand-critical
+      color: #fff
+      box-shadow: 0 1px 1px darken(brand-critical, 50%)
+      &::before
+        content: '\f00d'
+
+@media screen and (min-width: 577px)
+  #notices
+    position:fixed
+    right: gutter
+    bottom: gutter
+    width: 50%
+
+@media screen and (min-width:1024px)
+  #notices
+    width: 25%

@@ -1,0 +1,25 @@
+.toolbar
+  position: relative
+  z-index: 2
+
+  .title
+    display: inline-block
+    font-size: type-large
+    color: text-subtle-color
+
+  .group
+    position: relative
+    display: inline-block
+
+    > * + *
+      margin-left: 6px
+
+@media screen and (max-width: screen-small-max)
+  .toolbar
+    .pull-left, .pull-right
+      float: none
+    .group
+      display: block
+      + .group
+        margin-top: gutter
+

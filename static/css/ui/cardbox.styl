@@ -1,0 +1,19 @@
+.card
+  clearfix()
+  padding: 0 gutter
+  background: card-bg
+  border-radius: radius
+  box-shadow: panel-shadow
+  &.alt
+    background: panel-bg
+
+.cardbox
+  .card
+    border-radius: 0
+    &:first-child
+      border-top-left-radius: radius
+      border-top-right-radius: radius
+    &:last-child
+      border-bottom-left-radius: radius
+      border-bottom-right-radius: radius
+

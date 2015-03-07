@@ -1,0 +1,104 @@
+html, body
+  margin: 0
+  padding: 0
+  font: font-weight font-size/line-height font-main
+  text-rendering: optimizeLegibility
+  background: body-bg
+  color: text-color
+
+.container
+  margin-left: auto
+  margin-right: auto
+  padding-left: 8px
+  padding-right: 8px
+
+@media screen and (min-width: screen-medium-min)
+  .container
+    padding-left: pad
+    padding-right: pad
+
+// Drawer layout
+
+.layout-drawer
+  section
+    position: relative
+  aside
+    position: relative
+    z-index: 10
+    background: drawer-bg
+    color: drawer-color
+    font-size: 0
+    a
+      position: relative
+      display: inline-block
+      line-height: 48px
+      text-shadow: 0 1px 1px rgba(0,0,0,.5)
+      font-size: font-size
+      white-space: nowrap
+      i
+        width: 48px
+        font-size: 20px
+        position: relative
+        vertical-align: middle
+        top: -2px
+        text-align: center
+
+      &.active
+        color: drawer-active-color
+        background: drawer-active-bg
+        text-shadow: none
+        &::before
+          content:''
+          display:block
+          position:absolute
+          width:0
+          height: 0
+          left: 0
+          top: 100%
+          border-style: solid
+          border-color: transparent
+          border-width: 8px 24px
+          border-top-color: drawer-active-bg
+
+@media screen and (min-width: screen-medium-min)
+  .layout-drawer
+    section
+      margin-left: 48px
+    aside
+      position: fixed
+      top: 0
+      left: 0
+      bottom: 0
+      width: 48px
+      a
+        display: block
+        &.active::before
+          top: 0
+          left: 100%
+          border-width: 24px 8px
+          border-color: transparent
+          border-left-color: drawer-active-bg
+
+@media screen and (min-width: screen-large-min)
+  .layout-drawer
+    section
+      margin-left: 208px
+    aside
+      width: 208px
+      a
+        line-height: 48px
+        &::after
+          content: attr(title)
+
+// Column layout
+
+@media screen and (min-width: screen-medium-min)
+  .layout-column
+    .container
+      box-sizing: border-box
+      width: screen-medium-min
+
+@media screen and (min-width: screen-large-min)
+  .layout-column
+    .container
+      width: screen-large-min

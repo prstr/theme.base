@@ -1,0 +1,21 @@
+<nav class="product-breadcrumbs breadcrumbs band">
+  <a href="/"
+     title="#{store.title}">
+    <i class="fa-home"></i>
+  </a>
+  <if>
+    <when expr="product.category">
+      <a href="#{product.category.url}">
+        #{product.category.title}
+      </a>
+    </when>
+    <otherwise>
+      <a href="/products">
+        Все товары
+      </a>
+    </otherwise>
+  </if>
+  <a href="#{product.url}">
+    #{product.title}
+  </a>
+</nav>

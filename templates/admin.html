@@ -1,0 +1,28 @@
+<include file="_outer.html">
+
+  <var:app>'prostore:admin'</var:app>
+
+  <append:meta>
+    <base href="/admin/"/>
+  </append:meta>
+
+  <def:outer>
+    <div class="layout-drawer">
+      <aside>
+        <ng-include src="'/templates/admin/_aside.html'">
+        </ng-include>
+      </aside>
+      <section>
+        <div ui-view>
+          <div class="loading">Пожалуйста, подождите...</div>
+        </div>
+      </section>
+    </div>
+  </def:outer>
+
+  <def:scripts>
+    <script src="/app/admin.js"></script>
+    <!-- TODO bundle the templates -->
+  </def:scripts>
+
+</include>

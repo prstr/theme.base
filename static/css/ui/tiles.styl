@@ -1,0 +1,26 @@
+.tiles
+  clearfix()
+  margin: -(gutter / 2)
+
+  .tile
+    box-sizing: border-box
+    padding: (gutter / 2)
+    float: left
+    width: 50%
+
+  &.small
+    margin: -4px
+    .tile
+      padding: 4px
+
+@media screen and (min-width: screen-medium-min)
+  .tiles
+    .tile
+      width: 33.33333%
+
+@media screen and (min-width: screen-large-min)
+  .tiles
+    .tile
+      width: 25%
+
+

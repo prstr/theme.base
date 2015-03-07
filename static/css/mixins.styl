@@ -1,0 +1,23 @@
+clearfix()
+  &::before, &::after
+    content:''
+    display: table
+  &::after
+    clear: both
+
+ctl()
+  display: inline-block
+  position: relative
+  padding: 6px 12px
+  border: 1px solid #ddd
+  box-sizing: border-box
+  white-space: nowrap
+  border-radius: radius
+  outline: 0
+  appearance: none
+  line-height: normal
+  text-decoration: none
+
+  &.small
+    padding: 2px 6px
+    font-size: type-small

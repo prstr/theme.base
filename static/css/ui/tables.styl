@@ -1,0 +1,34 @@
+table
+  border-collapse: separate
+  td, th
+    &.terse
+      padding-left: 0
+      padding-right: 0
+  tr.top td, tr.top th, td.top, th.top
+    vertical-align: top
+  tr.middle td, tr.middle th, td.middle, th.middle
+    vertical-align: middle
+  tr.bottom td, tr.bottom th, td.bottom, th.bottom
+    vertical-align: bottom
+  th
+    text-align: left
+    color: table-th-color
+    font-weight: table-th-weight
+    font-size: table-th-size
+  &.rows
+    tr:not(:last-child), thead tr
+      td, th
+        border-bottom: 1px solid table-border
+    tfoot tr:first-child
+      td, th
+        border-top: 1px solid table-border
+  tr.border-top
+    td, th
+      border-top: 1px solid table-border
+  tr.border-bottom
+    td, th
+      border-bottom: 1px solid table-border
+  tr[draggable]
+    &.drag-over
+      td, th
+        background: rgba(link-color, .25)

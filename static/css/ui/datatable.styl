@@ -1,0 +1,45 @@
+table.datatable
+  border-collapse: collapse
+  border-spacing: 0
+  &.wide
+    width: 100%
+
+  td, th
+    padding: spacing
+    &:first-child
+      padding-left: 0 !important
+    &:last-child
+      padding-right: 0 !important
+
+  &.terse
+    td, th
+      padding: 4px
+
+  .order-control
+    white-space: nowrap
+    &::after
+      content: '\f0dc'
+      font-family: FontAwesome
+      font-size: type-smaller
+      color: lighten(text-subtle-color, 25%)
+    &.enabled::after
+      content: '\f0de'
+    &.enabled.reverse::after
+      content: '\f0dd'
+
+@media screen and (max-width: screen-small-max)
+  table.datatable
+    &, tbody, thead, tfoot, tr, td, th
+      display: block
+      padding: 0
+      width: 100%
+    tr
+      padding: (gutter / 2) 0
+    td
+      padding-bottom: 4px
+
+    &.rows
+      td, th
+        border-bottom: 0 !important
+      tr
+        border-bottom: 1px solid table-border

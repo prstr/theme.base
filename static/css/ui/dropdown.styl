@@ -1,0 +1,41 @@
+.dropdown
+  position: absolute
+  z-index: 10
+  top: 100%
+  font: font-weight font-size font-main
+  background: dropdown-bg
+  color: dropdown-color
+  padding: 6px 0
+  box-shadow: 0 1px 12px rgba(0,0,0,.2)
+  border-radius: radius
+  margin-top: 12px
+  opacity: 0
+  visibility: hidden
+  transform: translateY(-32px)
+  transition: .3s opacity, .3s transform
+  width: 192px
+  &.wide
+    width: 240px
+
+  &.active
+    visibility: visible
+    opacity: 1
+    transform: translateY(0)
+
+  a
+    color: dropdown-color
+    display: block
+    padding: 8px 16px
+    i
+      width: 20px
+      opacity: .75
+
+    &:hover
+      color: dropdown-hover-color
+
+  &.left
+    left: 0
+  &.right
+    right: 0
+
+

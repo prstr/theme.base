@@ -1,0 +1,47 @@
+.tumbler
+  ctl()
+  transition: .3s all
+  cursor: pointer
+  user-select: none
+  width: 64px
+
+  background-color: brand-default
+  border-color: darken(brand-default, 15%)
+  box-shadow: 0 1px 5px darken(brand-default, 15%) inset
+  color: brand-default-text
+  border-radius: 1000px
+
+  &.small
+    width: 48px
+    .knob
+      width: 24px
+      margin-left: -24px
+
+  input
+    visibility: hidden
+    width: 0
+    height: 0
+
+  .knob
+    position: absolute
+    display: block
+    top: 0
+    bottom: 0
+    left: 100%
+    width: 32px
+    margin-left: -32px
+    background: panel-bg
+    box-shadow: panel-shadow
+    border-radius: radius
+    transition: .3s all
+    border-radius: 1000px
+
+  &.active
+    background-color: brand-primary
+    border-color: darken(brand-primary, 15%)
+    box-shadow: 0 1px 5px darken(brand-primary, 15%) inset
+    color: brand-primary-text
+
+    .knob
+      left: 0
+      margin-left: 0

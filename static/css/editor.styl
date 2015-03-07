@@ -1,0 +1,109 @@
+[ui-editor]
+  outline: 0
+  min-height: 120px
+
+.medium-editor-toolbar, .medium-editor-anchor-preview
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 0
+  visibility: hidden
+  opacity: 0
+  transition: transform .3s, opacity .3s
+  &::after
+    content:''
+    display: block
+    position: absolute
+    left: 50%
+    margin-left: -8px
+    border: 8px solid transparent
+
+  ul
+    padding: 0
+    margin: 0
+    list-style: none
+  li
+    margin: 0
+    display: inline-block
+    margin-left: -1px
+  button
+    position: relative
+    z-index: 1
+    display: inline-block
+    appearance: none
+    margin: 0
+    font: font-weight font-size font-main
+    line-height: 1.5
+    text-align: center
+    touch-action: manipulation
+    cursor: pointer
+    padding: 6px 12px
+    width: 16px
+    box-sizing: content-box
+    outline: 0
+    color: brand-primary-text
+    background: brand-primary
+    border: 1px solid darken(brand-primary, 15%)
+    &:hover, &:focus, &.active
+      background: darken(brand-primary, 7%)
+    &.active
+      z-index: 2
+      box-shadow: 0 3px 5px darken(brand-primary, 15%) inset
+  li:first-child button
+    border-top-left-radius: radius
+    border-bottom-left-radius: radius
+    margin-left: 0
+  li:last-child button
+    border-top-right-radius: radius
+    border-bottom-right-radius: radius
+
+.medium-editor-toolbar
+  transform: translateY(16px)
+  &::after
+    top: 100%
+    border-top-color: darken(brand-primary, 15%)
+
+.medium-editor-anchor-preview
+  background: brand-primary
+  color: brand-primary-text
+  border: 1px solid darken(brand-primary, 15%)
+  border-radius: radius
+  padding: 4px 12px
+  text-align: center
+  transform: translateY(-16px)
+  &::after
+    bottom: 100%
+    left: 50%
+    border-bottom-color: darken(brand-primary, 15%)
+
+.medium-editor-toolbar-active,
+.medium-editor-anchor-preview-active
+  z-index: 2000
+  visibility: visible
+  opacity: 1
+  transform: translateY(0)
+
+.medium-editor-toolbar-form
+  display: none
+  background: brand-primary
+  border: 1px solid darken(brand-primary, 15%)
+  border-radius: radius
+  text-align: center
+
+  a
+    display: inline-block
+    color: brand-primary-text
+    padding: 4px 12px
+
+.medium-editor-placeholder
+  position: relative
+
+  &::after
+    position: absolute
+    top: 0
+    left: 0
+    content: attr(data-placeholder) !important
+    font-style: italic
+    white-space: pre-wrap
+    color: text-subtle-color
+
