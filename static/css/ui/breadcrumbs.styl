@@ -1,3 +1,16 @@
 .breadcrumbs
   a, .item
-    ctl()
+    display: inline-block
+    color: breadcrumbs-color
+    font-size: breadcrumbs-size
+    &:hover, &:focus
+      color: breadcrumbs-hover-color
+    &.active
+      color: breadcrumbs-active-color
+    &::after
+      content: '\f105'
+      color: lighten(breadcrumbs-color, 50%)
+      font-family: FontAwesome
+      padding: 0 8px
+    &:last-child::after
+      display: none
