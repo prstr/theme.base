@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="#{app}">
+<html ng-app="#{app || 'prostore:store'}">
   <head>
     <meta charset="utf-8"/>
     <block:meta>
@@ -26,6 +26,8 @@
         <block:outer/>
       </div>
     </block:body>
-    <block:scripts/>
+    <block:scripts>
+      <script src="/app/store.js"></script>
+    </block:scripts>
   </body>
 </html>
