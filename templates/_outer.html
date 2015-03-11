@@ -14,10 +14,12 @@
             href="#{store.themeCssUrl}"/>
     </block:stylesheets>
 
-    <script type="application/json"
-            attach-data="store">
-      !{store.json}
-    </script>
+    <block:storeData>
+      <script type="application/json"
+              attach-data="store">
+        !{JSON.stringify(store.client)}
+      </script>
+    </block:storeData>
   </head>
   <body>
     <div id="notices" ui-notices></div>
