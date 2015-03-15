@@ -1,5 +1,5 @@
 panel(bg, color)
-  background: lighten(bg, 10%)
+  background: bg
   color: color
   &.level1
     box-shadow: 0 0 1px darken(bg, 25%)
@@ -15,7 +15,7 @@ panel(bg, color)
     &.{b}
       panel(lookup('brand-' + b), lookup('brand-' + b + '-text'))
 
-.panel-grid
+.panel-box
   > .panel:first-child
     border-top-left-radius: radius
     border-top-right-radius: radius
@@ -32,7 +32,7 @@ panel(bg, color)
       border-bottom-right-radius: radius
 
 @media screen and (min-width: screen-medium-min)
-  .panel-grid
+  .panel-box
     > .grid:first-child
       .panel:first-child
         border-top-left-radius: radius
