@@ -4,25 +4,40 @@ row()
   list-style: none outside
   margin-left: -(gutter)
   margin-right: -(gutter)
-  &::before, &::after
-    content: ''
-    display: table
-  &:after
-    clear: both
   > *
     box-sizing: border-box
     float: left
     padding: 0 gutter
   for n in (1..12)
-    > .span-{n}
+    > .col-{n}
       width: (100% * n / 12)
+
+@media screen and (min-width: screen-medium-min)
+  .row.row-small
+    row()
 
 @media screen and (min-width: screen-large-min)
   .row
     row()
 
 @media screen and (min-width: screen-medium-min)
-  .row.row-small
-    row()
+  .grid
+    display: table
+    width: 100%
+    padding: 0
+    margin:0
 
+    > *
+      vertical-align: top
 
+    &.top > *, > .top
+      vertical-align: top
+    &.bottom > *, > .bottom
+      vertical-align: bottom
+    &.middle > *, > .middle
+      vertical-align: middle
+
+    for n in (1..12)
+      > .col-{n}
+        display: table-cell
+        width: (100% * n / 12)

@@ -1,8 +1,47 @@
+panel(bg, color)
+  background: lighten(bg, 10%)
+  color: color
+  &.level1
+    box-shadow: 0 0 1px darken(bg, 25%)
+  &.level2
+    box-shadow: 0 1px 5px darken(bg, 25%)
+  &.level3
+    box-shadow: 0 3px 12px darken(bg, 25%)
+
 .panel
-  display: block
-  padding: gutter 0
   clearfix()
 
-  &.default
-    background: panel-bg
-    box-shadow: panel-shadow
+  for b in brand-colors
+    &.{b}
+      panel(lookup('brand-' + b), lookup('brand-' + b + '-text'))
+
+.panel-grid
+  > .panel:first-child
+    border-top-left-radius: radius
+    border-top-right-radius: radius
+  > .panel:last-child
+    border-bottom-left-radius: radius
+    border-bottom-right-radius: radius
+  > .grid:first-child
+    .panel:first-child
+      border-top-left-radius: radius
+      border-top-right-radius: radius
+  > .grid:last-child
+    .panel:last-child
+      border-bottom-left-radius: radius
+      border-bottom-right-radius: radius
+
+@media screen and (min-width: screen-medium-min)
+  .panel-grid
+    > .grid:first-child
+      .panel:first-child
+        border-top-left-radius: radius
+        border-top-right-radius: 0
+      .panel:last-child
+        border-top-right-radius: radius
+    > .grid:last-child
+      .panel:last-child
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: radius
+      .panel:first-child
+        border-bottom-left-radius: radius
