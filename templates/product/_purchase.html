@@ -1,3 +1,25 @@
-<div class="product-purchase">
-
+<div class="product-purchase" ng-cloak>
+  <table class="datatable band">
+    <tr ng-repeat="prop in product.varyProps">
+      <td>
+        {{ prop.name}}
+      </td>
+      <td>
+        <div class="tag small"
+             ng-repeat="value in prop.values">
+          {{ value }}
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Цена</td>
+      <td class="type-large">
+        {{ product.priceMin | price }}
+      </td>
+    </tr>
+  </table>
+  <button type="button"
+          class="btn primary">
+    <span>Добавить в корзину</span>
+  </button>
 </div>
