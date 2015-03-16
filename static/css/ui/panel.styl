@@ -3,13 +3,17 @@ panel(bg, color)
   color: color
   &.level1
     box-shadow: 0 0 1px darken(bg, 25%)
+    z-index: 100
   &.level2
     box-shadow: 0 1px 5px darken(bg, 25%)
+    z-index: 200
   &.level3
     box-shadow: 0 3px 12px darken(bg, 25%)
+    z-index: 300
 
 .panel
   clearfix()
+  position: relative
 
   for b in brand-colors
     &.{b}
