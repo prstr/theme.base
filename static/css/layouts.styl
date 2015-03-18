@@ -5,6 +5,10 @@ html, body
   text-rendering: optimizeLegibility
   background: body-bg
   color: text-color
+  p(type-antialiasing)
+  if type-antialiasing
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale;
 
 .container
   margin-left: auto

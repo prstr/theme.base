@@ -14,7 +14,8 @@
           "label": "PT Sans",
           "value": {
             "font-main": "PT Sans, sans-serif",
-            "font-weight": 400
+            "font-weight": 400,
+            "type-antialiasing": true
           }
         },
         {
@@ -30,7 +31,8 @@
           "label": "Open Sans",
           "value": {
             "font-main": "Open Sans, sans-serif",
-            "font-weight": 300
+            "font-weight": 300,
+            "type-antialiasing": false
           }
         },
         {
@@ -38,7 +40,8 @@
           "label": "Palatino Linotype",
           "value": {
             "font-main": "Palatino, Palatino Linotype, Book Antiqua, serif",
-            "font-weight": 400
+            "font-weight": 400,
+            "type-antialiasing": false
           }
         },
         {
@@ -46,7 +49,8 @@
           "label": "Georgia",
           "value": {
             "font-main": "Georgia, serif",
-            "font-weight": 400
+            "font-weight": 400,
+            "type-antialiasing": false
           }
         },
         {
@@ -54,7 +58,8 @@
           "label": "Times New Roman",
           "value": {
             "font-main": "Times New Roman, serif",
-            "font-weight": 400
+            "font-weight": 400,
+            "type-antialiasing": false
           }
         }
       ]
