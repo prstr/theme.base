@@ -1,0 +1,16 @@
+{
+  "name": "prostore.theme.default",
+  "version": "0.0.0",
+  "description": "ProStore Default Theme",
+  "main": "theme.json",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:pro-store/theme-default.git"
+  },
+  "keywords": [
+    "prostore",
+    "theme"
+  ],
+  "author": "Boris Okunskiy",
+  "license": "ISC"
+}
