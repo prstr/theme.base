@@ -5,9 +5,13 @@ html, body
   text-rendering: optimizeLegibility
   background: body-bg
   color: text-color
-  if type-antialiasing
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale;
+
+
+if type-antialiasing
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    html, body
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
 
 #outer
   overflow: hidden

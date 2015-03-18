@@ -5,21 +5,36 @@
         {{ prop.name}}
       </td>
       <td>
-        <div class="tag small"
-             ng-repeat="value in prop.values">
+        <a href=""
+           class="btn"
+           ng-class="{
+             'blank dimmed': p.isPropDisabled(prop, value),
+             'blank': !p.isPropSelected(prop, value),
+             'info active': p.isPropSelected(prop, value)
+           }"
+           ng-repeat="value in prop.values"
+           ng-click="p.toggleProp(prop, value)">
           {{ value }}
-        </div>
+        </a>
       </td>
     </tr>
     <tr>
       <td>Цена</td>
-      <td class="type-large">
-        {{ product.priceMin | price }}
+      <td class="pricetag">
+        <div class="price"
+             ng-show="p.variant">
+          {{ p.variant.price | price }}
+        </div>
+        <div class="subtle"
+             ng-hide="p.variant">
+          пожалуйста, уточните параметры
+        </div>
       </td>
     </tr>
   </table>
   <button type="button"
-          class="btn primary">
+          class="btn primary"
+          ng-show="p.variant">
     <span>Добавить в корзину</span>
   </button>
 </div>

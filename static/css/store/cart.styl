@@ -5,7 +5,7 @@
   bottom: 0
   right: 0
   background: body-bg
-  border-left: 4px solid brand-primary
+  border-left: 4px solid cart-ctl-bg
   width: 320px
   box-sizing: border-box
   padding: 0 gutter
@@ -23,12 +23,12 @@
     display: block
     text-decoration: none
     text-align: center
-    background-color: brand-primary
-    color: brand-primary-text
+    background-color: cart-ctl-bg
+    color: cart-ctl-color
     padding: 4px 12px
     border-radius: radius 0 0 radius
-    if light(brand-primary-text)
-      text-shadow: 0 1px 1px darken(brand-primary, 15%)
+    if light(cart-ctl-color)
+      text-shadow: 0 1px 1px darken(cart-ctl-bg, 15%)
     label
       font-size: type-large
       cursor: pointer
@@ -42,7 +42,7 @@
       bottom: -4px
       right: 0
       width: 4px
-      background: brand-primary
+      background: cart-ctl-bg
 
   .close
     position: absolute

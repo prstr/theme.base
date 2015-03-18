@@ -2,7 +2,7 @@
 
   <def:main>
     <div class="product-view"
-         ng-controller="ProductController as productCtrl">
+         ng-controller="ProductController as p">
       <div class="container">
         <include file="_breadcrumbs.html"/>
         <div class="product-showcase row">
@@ -19,9 +19,22 @@
         </div>
         <div class="product-description row band">
           <div class="col-4">
-            <include file="_props.html"/>
+            <h3>Характеристики</h3>
+            <div class="product-props">
+              <table class="datatable wide rows">
+                <each:prop in="product.props">
+                  <if expr="prop.values.length == 1">
+                    <tr>
+                      <td>#{prop.name}</td>
+                      <td>#{prop.values[0]}</td>
+                    </tr>
+                  </if>
+                </each:prop>
+              </table>
+            </div>
           </div>
           <div class="col-8">
+            <h3>Описание</h3>
             !{product.descriptionHtml}
           </div>
         </div>
