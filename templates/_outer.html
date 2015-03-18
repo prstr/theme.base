@@ -20,6 +20,14 @@
         !{JSON.stringify(store.client)}
       </script>
     </block:storeData>
+
+    <if expr="principal">
+      <script type="application/json"
+              attach-data="principal">
+        !{JSON.stringify(principal.client)}
+      </script>
+    </if>
+
   </head>
   <body>
     <div id="notices" ui-notices></div>
