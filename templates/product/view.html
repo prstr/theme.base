@@ -1,12 +1,30 @@
-<include file="_layout.html">
+<include file="/store/_layout.html">
 
   <def:main>
     <div class="product-view"
          ng-controller="ProductController as productCtrl">
       <div class="container">
         <include file="_breadcrumbs.html"/>
-        <include file="_showcase.html"/>
-        <include file="_description.html"/>
+        <div class="product-showcase row">
+          <div class="col-4">
+            <include file="_photos.html"/>
+          </div>
+          <div class="col-8">
+            <h1>
+              #{product.title}
+              <div class="small">#{product.subtitle}</div>
+            </h1>
+            <include file="_purchase.html"/>
+          </div>
+        </div>
+        <div class="product-description row band">
+          <div class="col-4">
+            <include file="_props.html"/>
+          </div>
+          <div class="col-8">
+            !{product.descriptionHtml}
+          </div>
+        </div>
       </div>
     </div>
   </def:main>
