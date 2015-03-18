@@ -54,7 +54,7 @@
 .shopping-cart-shifter
   min-height: 800px
   position: relative
-  transition: transform .5s
+  transition: all .5s
   overflow: hidden
   &.open
     transform: translateX(-160px)
@@ -71,3 +71,10 @@
     display: block
     top: 0
     left: 0
+
+.shopping-cart-blur
+  filter: blur(0px)
+  -webkit-filter: blur(0px)
+  &.open
+    filter: blur(4px)
+    -webkit-filter: blur(4px)
