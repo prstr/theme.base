@@ -1,0 +1,23 @@
+<div class="shopping-cart"
+     ng-cloak
+     ng-class="{ open: cart.isOpen }">
+  <a class="controls"
+     href=""
+     ng-click="cart.toggle()">
+    <i class="fa-shopping-cart"></i>
+    <label>500</label>
+  </a>
+  <div class="body">
+    <a href=""
+       class="close"
+       ng-click="cart.close()">
+      <i class="fa-times"></i>
+      <span>Закрыть</span>
+    </a>
+    <h2>Корзина</h2>
+  </div>
+</div>
+<div class="shopping-cart-overlay"
+     ng-click="cart.close()"
+     ng-class="{ open: cart.isOpen }">
+</div>

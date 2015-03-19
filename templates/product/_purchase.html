@@ -1,25 +1,37 @@
-<div class="product-purchase" ng-cloak>
-  <table class="datatable band">
-    <tr ng-repeat="prop in product.varyProps">
-      <td>
-        {{ prop.name}}
-      </td>
-      <td>
-        <div class="tag small"
-             ng-repeat="value in prop.values">
-          {{ value }}
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>Цена</td>
-      <td class="type-large">
-        {{ product.priceMin | price }}
-      </td>
-    </tr>
-  </table>
-  <button type="button"
-          class="btn primary">
-    <span>Добавить в корзину</span>
-  </button>
-</div>
+<table class="datatable band">
+  <tr ng-repeat="prop in product.varyProps">
+    <td>
+      {{ prop.name}}
+    </td>
+    <td>
+      <a href=""
+         class="btn"
+         ng-class="{
+             'dimmed': p.isPropDisabled(prop, value),
+             'info active': p.isPropSelected(prop, value)
+           }"
+         ng-repeat="value in prop.values"
+         ng-click="p.toggleProp(prop, value)">
+        {{ value }}
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>Цена</td>
+    <td class="pricetag">
+      <div class="price"
+           ng-show="p.variant">
+        {{ p.variant.price | price }}
+      </div>
+      <div class="subtle"
+           ng-hide="p.variant">
+        пожалуйста, уточните параметры
+      </div>
+    </td>
+  </tr>
+</table>
+<button type="button"
+        class="btn primary"
+        ng-show="p.variant">
+  <span>Добавить в корзину</span>
+</button>

@@ -1,29 +1,40 @@
-<include file="/store/_layout.html">
+<include file="_layout.html">
 
   <def:main>
-    <div class="product-view"
-         ng-controller="ProductController as productCtrl">
-      <div class="container">
-        <include file="_breadcrumbs.html"/>
-        <div class="product-showcase row">
-          <div class="col-4">
-            <include file="_photos.html"/>
-          </div>
-          <div class="col-8">
-            <h1>
-              #{product.title}
-              <div class="small">#{product.subtitle}</div>
-            </h1>
+    <div class="product-view container"
+         ng-controller="ProductController as p">
+      <include file="_breadcrumbs.html"/>
+      <div class="row band">
+        <div class="col-4 product-photos">
+          <include file="_photos.html"/>
+        </div>
+        <div class="col-8 product-showcase">
+          <h1>
+            #{product.title}
+            <div class="small">#{product.subtitle}</div>
+          </h1>
+          <div class="product-purchase" ng-cloak>
             <include file="_purchase.html"/>
           </div>
         </div>
-        <div class="product-description row band">
-          <div class="col-4">
-            <include file="_props.html"/>
-          </div>
-          <div class="col-8">
-            !{product.descriptionHtml}
-          </div>
+      </div>
+      <div class="row band">
+        <div class="col-4 product-props">
+          <h3>Характеристики</h3>
+          <table class="datatable wide rows">
+            <each:prop in="product.props">
+              <if expr="prop.values.length == 1">
+                <tr>
+                  <td>#{prop.name}</td>
+                  <td>#{prop.values[0]}</td>
+                </tr>
+              </if>
+            </each:prop>
+          </table>
+        </div>
+        <div class="col-8 product-description">
+          <h3>Описание</h3>
+          !{product.descriptionHtml}
         </div>
       </div>
     </div>

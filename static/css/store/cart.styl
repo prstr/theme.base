@@ -1,0 +1,80 @@
+.shopping-cart
+  position: fixed
+  z-index: 1000
+  top: 0
+  bottom: 0
+  right: 0
+  background: body-bg
+  border-left: 4px solid cart-ctl-bg
+  width: 320px
+  box-sizing: border-box
+  padding: 0 gutter
+  transform: translateX(320px)
+  transition: transform .5s
+  &.open
+    transform: translateX(0)
+    box-shadow: 0 0 64px rgba(0,0,0,.5)
+
+  .controls
+    position: absolute
+    bottom: 64px
+    right: 100%
+    cursor: pointer
+    display: block
+    text-decoration: none
+    text-align: center
+    background-color: cart-ctl-bg
+    color: cart-ctl-color
+    padding: 4px 12px
+    border-radius: radius 0 0 radius
+    if light(cart-ctl-color)
+      text-shadow: 0 1px 1px darken(cart-ctl-bg, 15%)
+    label
+      font-size: type-large
+      cursor: pointer
+    i
+      font-size: 24px
+    &::after
+      content:''
+      position: absolute
+      z-index: 10
+      top: -4px
+      bottom: -4px
+      right: 0
+      width: 4px
+      background: cart-ctl-bg
+
+  .close
+    position: absolute
+    top: 4px
+    right: 8px
+    color: text-subtle-color
+    font-size: type-small
+
+.shopping-cart-shifter
+  min-height: 800px
+  position: relative
+  transition: all .5s
+  overflow: hidden
+  &.open
+    transform: translateX(-160px)
+
+.shopping-cart-overlay
+  position: fixed
+  z-index: 999
+  bottom: 0
+  right: 0
+  background: rgba(0,0,0,.25)
+  display: none
+  cursor: e-resize
+  &.open
+    display: block
+    top: 0
+    left: 0
+
+.shopping-cart-blur
+  filter: blur(0px)
+  -webkit-filter: blur(0px)
+  &.open
+    filter: blur(4px)
+    -webkit-filter: blur(4px)

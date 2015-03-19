@@ -6,10 +6,12 @@ btn(bg, color)
   if light(color)
     text-shadow: 0 1px 1px darken(bg, 15%)
 
-  &:hover, &:active, &:focus, &.active
-    background: darken(bg, 8%)
+  &:hover
+    background: darken(bg, 3%)
   &:focus
-    border-color: darken(bg, 15%)
+    background: lighten(bg, 8%)
+  &:active, &.active
+    background: darken(bg, 8%)
 
   &.active
     z-index: 2

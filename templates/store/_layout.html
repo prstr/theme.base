@@ -1,12 +1,17 @@
 <include file="../_outer.html">
 
   <def:body>
-    <div class="layout-column">
-      <include file="_header.html"/>
-      <div id="main">
-        <block:main/>
+    <div id="outer"
+         ng-controller="CartController as cart">
+      <include file="_cart.html"/>
+      <div class="layout-column shopping-cart-shifter"
+           ng-class="{ open: cart.isOpen }">
+        <include file="_header.html"/>
+        <div id="main">
+          <block:main/>
+        </div>
+        <include file="_footer.html"/>
       </div>
-      <include file="_footer.html"/>
     </div>
   </def:body>
 
