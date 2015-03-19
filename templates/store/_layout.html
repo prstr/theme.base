@@ -5,6 +5,7 @@
          ng-controller="CartController as cart">
       <include file="_cart.html"/>
       <div class="layout-column shopping-cart-shifter"
+           ng-click="cart.close()"
            ng-class="{ open: cart.isOpen }">
         <include file="_header.html"/>
         <div id="main">

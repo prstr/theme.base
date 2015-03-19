@@ -7,8 +7,17 @@
       "id": "font-main",
       "label": "Основной шрифт",
       "type": "select",
-      "default": "ptsans",
+      "default": "arsenal",
       "options": [
+        {
+          "id": "arsenal",
+          "label": "Arsenal",
+          "value": {
+            "font-main": "Arsenal, sans-serif",
+            "font-weight": 400,
+            "type-antialiasing": false
+          }
+        },
         {
           "id": "ptsans",
           "label": "PT Sans",
