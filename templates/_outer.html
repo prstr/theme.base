@@ -15,15 +15,15 @@
     </block:stylesheets>
 
     <block:storeData>
-      <script type="application/json"
-              attach-data="store">
+      <script name="store"
+              type="application/prostore-data">
         !{JSON.stringify(store.client)}
       </script>
     </block:storeData>
 
     <if expr="principal">
-      <script type="application/json"
-              attach-data="principal">
+      <script name="principal"
+              type="application/prostore-data">
         !{JSON.stringify(principal.client)}
       </script>
     </if>

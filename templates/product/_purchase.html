@@ -7,8 +7,7 @@
       <a href=""
          class="btn"
          ng-class="{
-             'blank dimmed': p.isPropDisabled(prop, value),
-             'blank': !p.isPropSelected(prop, value),
+             'dimmed': p.isPropDisabled(prop, value),
              'info active': p.isPropSelected(prop, value)
            }"
          ng-repeat="value in prop.values"
