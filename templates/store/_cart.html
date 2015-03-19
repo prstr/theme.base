@@ -5,7 +5,7 @@
      href=""
      ng-click="cart.toggle()">
     <i class="fa-shopping-cart"></i>
-    <label>500</label>
+    <label>{{ cart.order.totalQuantity }}</label>
   </a>
   <div class="body">
     <a href=""
@@ -15,5 +15,25 @@
       <span>Закрыть</span>
     </a>
     <h2>Корзина</h2>
+    <table class="datatable wide rows">
+      <tr ng-repeat="item in cart.order.items">
+        <td width="48">
+          <div class="photo">
+            <img ng-src="{{ item.photo }}"
+                 width="48"/>
+          </div>
+        </td>
+        <td>
+          <a href="{{ item.url }}">{{ item.title }}</a>
+          <div class="subtle"
+               ng-repeat="(name, value) in item.props">
+            {{ name }}: {{ value }}
+          </div>
+        </td>
+        <td class="right-align">
+          <div class="type-large">{{ item.quantity }}</div>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
