@@ -5,7 +5,10 @@
   "main": "theme.json",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:pro-store/theme-default.git"
+    "url": "git@github.com:prstr/theme.default.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prstr/theme.default/issues"
   },
   "keywords": [
     "prostore",
