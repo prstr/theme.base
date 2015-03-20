@@ -8,22 +8,18 @@ select,
 textarea
   ctl()
   display: block
-  appearance: none
   width: 100%
   margin: 0
-  font: inherit
   background: input-bg
   color: input-color
   border-color:input-border
   transition: .3s box-shadow, .3s border-color
+  white-space: inherit
 
-  &::-webkit-input-placeholder
-    line-height: normal
   &.inline
     width: auto
     display: inline-block
   &.small
-    padding: 2px 6px
     font-size: type-small
   &.large
     font-size: type-large

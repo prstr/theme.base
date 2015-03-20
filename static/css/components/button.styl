@@ -36,9 +36,6 @@ btn(bg, color)
   background: transparent
   color: text-color
 
-  & + .btn
-    margin-left: spacing
-
   for b in brand-colors
     &.{b}
       btn(lookup('brand-' + b), lookup('brand-' + b + '-text'))
@@ -52,6 +49,9 @@ btn(bg, color)
   font-size: 0
   white-space: nowrap
 
+  & + *
+    margin-left: spacing
+
   .btn
     border-radius: 0
     margin-left: -1px
@@ -62,9 +62,6 @@ btn(bg, color)
     &:last-of-type
       border-top-right-radius: radius
       border-bottom-right-radius: radius
-
-  & + .btn-group
-    margin-left: spacing
 
 btn-group-collapse()
   .btn

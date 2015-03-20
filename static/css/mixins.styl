@@ -15,9 +15,18 @@ ctl()
   border-radius: radius
   outline: 0
   appearance: none
-  line-height: normal
   text-decoration: none
+  text-transform: none
+  overflow: visible
+  font-family: font-main
+  font-size: font-size
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
 
   &.small
-    padding: 2px 6px
+    padding: 4px 6px
     font-size: type-small
+
+  & + *
+    margin-left: spacing

@@ -4,20 +4,23 @@
   cursor: pointer
   user-select: none
   width: 64px
-
   background-color: brand-default
   border-color: darken(brand-default, 15%)
   box-shadow: 0 1px 5px darken(brand-default, 15%) inset
-  color: brand-default-text
   border-radius: 1000px
+  padding: 4px 0
+  &::after
+    content:' '
 
   &.small
     width: 48px
+    padding: 2px 0
     .knob
       width: 24px
       margin-left: -24px
 
   input
+    position: absolute
     visibility: hidden
     width: 0
     height: 0
