@@ -1,6 +1,7 @@
 <div class="shopping-cart"
      ng-cloak
-     ng-class="{ open: cart.isOpen }">
+     ng-class="{ open: cart.isOpen }"
+     ng-if="cart.order.items.length">
   <a class="cart-toggle-button"
      href=""
      ng-click="cart.toggle()">
@@ -15,12 +16,13 @@
       <span>Закрыть</span>
     </a>
     <h2>Корзина</h2>
-    <table class="datatable wide rows cart-items">
+    <table class="cart-items datatable wide rows terse">
       <tr ng-repeat="item in cart.order.items"
           class="cart-item">
         <td>
-          <img ng-src="{{ item.photo }}"
-               class="cart-item-photo cart-hover"/>
+          <div class="cart-item-photo cart-hover"
+               ng-style="{ 'background-image': 'url(' + item.photo + ')' }">
+          </div>
           <a href="{{ item.url }}">{{ item.title }}</a>
           <div class="cart-item-props">
             <span ng-repeat="(name, value) in item.props"
