@@ -5,10 +5,10 @@
          ng-controller="ProductController as p">
       <include file="_breadcrumbs.html"/>
       <div class="row band">
-        <div class="col-4 product-photos">
+        <div class="product-photos col-4">
           <include file="_photos.html"/>
         </div>
-        <div class="col-8 product-showcase">
+        <div class="product-showcase col-8">
           <h1>
             #{product.title}
             <div class="small">#{product.subtitle}</div>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="row band">
-        <div class="col-4 product-props">
+        <div class="product-props col-4">
           <h3>Характеристики</h3>
           <table class="datatable wide rows">
             <each:prop in="product.props">
@@ -32,7 +32,7 @@
             </each:prop>
           </table>
         </div>
-        <div class="col-8 product-description">
+        <div class="product-description col-8">
           <h3>Описание</h3>
           !{product.descriptionHtml}
         </div>
