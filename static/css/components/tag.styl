@@ -5,12 +5,20 @@ tag(bg, color)
   if light(color)
     text-shadow: 0 1px 1px darken(bg, 15%)
 
+  &.outline
+    background: body-bg
+    text-shadow: none
+    if light(color)
+      color: bg
+    else
+      color: color
+
 .tag
   ctl()
+  spaced()
   z-index: 1
   font: font-weight font-size font-main
   text-align: center
-  margin: (spacing / 2)
   background: transparent
   color: text-color
   user-select: none
@@ -34,3 +42,5 @@ tag(bg, color)
 .tags
   user-select: none
   margin: -(spacing / 2)
+  .tag
+    margin: (spacing / 2)

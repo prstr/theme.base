@@ -1,11 +1,16 @@
 table
   border-collapse: separate
-  tr.top td, tr.top th, td.top, th.top
-    vertical-align: top
-  tr.middle td, tr.middle th, td.middle, th.middle
-    vertical-align: middle
-  tr.bottom td, tr.bottom th, td.bottom, th.bottom
-    vertical-align: bottom
+  vertical-align: baseline
+  for a in baseline top bottom middle
+    &.{a}
+      td, th
+        vertical-align: a
+    tr.{a}
+      td, th
+        vertical-align: a
+    td, th
+      &.{a}
+        vertical-align: a
   th
     text-align: left
     color: table-th-color

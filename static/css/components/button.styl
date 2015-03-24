@@ -13,6 +13,14 @@ btn(bg, color)
   &:active, &.active
     background: darken(bg, 8%)
 
+  &.outline
+    background: body-bg
+    text-shadow: none
+    if light(color)
+      color: bg
+    else
+      color: color
+
   &.active
     z-index: 2
     border-color: darken(bg, 18%)
@@ -28,6 +36,7 @@ btn(bg, color)
 
 .btn
   ctl()
+  spaced()
   margin: 0
   font: font-weight font-size font-main
   text-align: center
@@ -85,10 +94,10 @@ btn-group-collapse()
 .btn-group.collapsed
   btn-group-collapse()
 
-@media screen and (max-width: screen-small-max)
+@media (max-width: screen-small-max)
   .btn-group.collapse-small
     btn-group-collapse()
 
-@media screen and (max-width: screen-medium-max)
+@media (max-width: screen-medium-max)
   .btn-group.collapse-medium
     btn-group-collapse()

@@ -30,9 +30,38 @@
     </td>
   </tr>
 </table>
-<button type="button"
-        class="btn primary"
-        ng-click="p.addToCart()"
-        ng-show="p.variant">
-  <span>Добавить в корзину</span>
-</button>
+<div ng-show="p.variant">
+  <div ng-if="p.variant.stock != 0">
+    <button type="button"
+            class="btn primary"
+            ng-if="p.getQuantityInCart() == 0"
+            ng-click="p.addToCart()">
+      <span>Добавить в корзину</span>
+    </button>
+    <div class="btn-group"
+         ng-if="p.getQuantityInCart() > 0">
+      <button type="button"
+              class="btn info"
+              ng-click="p.addToCart()">
+        <span>В корзине {{ p.getQuantityInCart() }}</span>
+      </button>
+      <button type="button"
+              class="btn primary"
+              ng-click="p.addToCart()">
+        <i class="fa-plus"></i>
+      </button>
+    </div>
+    <span class="subtle"
+          ng-if="p.variant.stock > 10 || p.variant.stock == null">
+      В наличии более 10
+    </span>
+    <span class="subtle"
+          ng-if="p.variant.stock > 0 && p.variant.stock <= 10">
+      В наличии {{ p.variant.stock }}
+    </span>
+  </div>
+  <div class="tag critical outline"
+       ng-if="p.variant.stock == 0">
+    Нет в наличии
+  </div>
+</div>

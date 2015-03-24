@@ -21,6 +21,7 @@
           class="cart-item">
         <td>
           <div class="cart-item-photo cart-hover"
+               ng-if="item.photo"
                ng-style="{ 'background-image': 'url(' + item.photo + ')' }">
           </div>
           <a href="{{ item.url }}">{{ item.title }}</a>
