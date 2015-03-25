@@ -17,18 +17,9 @@ textarea
   white-space: inherit
 
   &.inline
+    spaced()
     width: auto
     display: inline-block
-    & + *
-      margin-left: (gutter / 2)
-  &.small
-    font-size: type-small
-  &.large
-    font-size: type-large
-  &.larger
-    font-size: type-larger
-  &.largest
-    font-size: type-largest
 
   &.ng-dirty.ng-invalid
     border-color: brand-critical
@@ -45,6 +36,9 @@ textarea
   &[disabled]
     background: brand-default
     color: text-subtle-color
+
+textarea
+  height: auto
 
 input[type='checkbox'],
 input[type='radio']
