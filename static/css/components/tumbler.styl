@@ -1,15 +1,15 @@
 .tumbler
   ctl()
   spaced()
+  width: 48px
+  border-radius: 1000px
   vertical-align: middle
   transition: .3s all
   cursor: pointer
   user-select: none
-  width: 48px
   background-color: brand-default
   border-color: darken(brand-default, 15%)
   box-shadow: 0 1px 5px darken(brand-default, 15%) inset
-  border-radius: 1000px
   &::after
     content:' '
 
@@ -20,8 +20,8 @@
     height: 0
 
   .knob
-    position: absolute
     display: block
+    position: absolute
     top: 0
     bottom: 0
     left: 100%
@@ -29,7 +29,6 @@
     margin-left: -30px
     background: brand-blank
     box-shadow: ui-shadow
-    border-radius: radius
     transition: .3s all
     border-radius: 1000px
 

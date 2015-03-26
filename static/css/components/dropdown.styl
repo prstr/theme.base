@@ -2,20 +2,20 @@
   position: absolute
   z-index: 10
   top: 100%
+  margin-top: 12px
+  width: dropdown-width
+  padding: 6px 0
+  border-radius: radius
+  box-shadow: 0 1px 12px rgba(0,0,0,.2)
   font: font-weight font-size font-main
   background: dropdown-bg
   color: dropdown-color
-  padding: 6px 0
-  box-shadow: 0 1px 12px rgba(0,0,0,.2)
-  border-radius: radius
-  margin-top: 12px
   opacity: 0
   visibility: hidden
   transform: translateY(-32px)
   transition: .3s opacity, .3s transform
-  width: 192px
   &.wide
-    width: 240px
+    width: (dropdown-width * 1.5)
 
   &.active
     visibility: visible
@@ -23,9 +23,9 @@
     transform: translateY(0)
 
   a
-    color: dropdown-color
     display: block
     padding: spacing gutter
+    color: dropdown-color
     text-align: left
     i
       width: 16px

@@ -1,8 +1,8 @@
 btn(bg, color)
-  background: bg
-  color: color
   border: 1px solid darken(bg, 10%)
   border-bottom-color: darken(bg, 15%)
+  background: bg
+  color: color
   if light(color)
     text-shadow: 0 1px 1px darken(bg, 15%)
 
@@ -27,8 +27,8 @@ btn(bg, color)
     box-shadow: 0 3px 5px darken(bg, 18%) inset
   &[disabled]
     border-color: desaturate(darken(bg, 15%), 60%)
-    background: desaturate(bg, 80%)
     box-shadow: none
+    background: desaturate(bg, 80%)
     cursor: default
   &.hollow:not(:hover)
     background: transparent
@@ -37,13 +37,12 @@ btn(bg, color)
 .btn
   ctl()
   spaced()
-  margin: 0
+  background: transparent
+  color: text-color
   font: font-weight font-size font-main
   text-align: center
   touch-action: manipulation
   cursor: pointer
-  background: transparent
-  color: text-color
 
   for b in brand-colors
     &.{b}
@@ -53,8 +52,8 @@ btn(bg, color)
     margin-left: 4px
 
 .btn-group
-  position: relative
   display: inline-block
+  position: relative
   font-size: 0
   white-space: nowrap
 
@@ -80,9 +79,9 @@ btn-group-collapse()
     border-radius: 0
     text-align: left
     i
-      text-align: center
+      margin: 0
       width: 20px
-      margin: 0 !important
+      text-align: center
     &:first-of-type
       border-top-left-radius: radius
       border-top-right-radius: radius

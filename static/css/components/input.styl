@@ -8,11 +8,11 @@ select,
 textarea
   ctl()
   display: block
-  width: 100%
   margin: 0
+  width: 100%
+  border-color: input-border
   background: input-bg
   color: input-color
-  border-color:input-border
   transition: .3s box-shadow, .3s border-color
   white-space: inherit
 
@@ -28,9 +28,9 @@ textarea
     border-color: brand-primary
     box-shadow: 0 0 6px rgba(brand-primary, .5)
   &.hollow
+    padding: 6px 0
     border-radius: 0
     border-width: 0 0 1px
-    padding: 6px 0
     &:focus, &.track.ng-dirty
       box-shadow: 0 6px 6px -6px rgba(brand-primary, .5)
   &[disabled]

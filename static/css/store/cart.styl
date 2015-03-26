@@ -4,11 +4,11 @@
   top: 0
   bottom: 0
   right: 0
-  background: body-bg
-  border-left: 4px solid cart-ctl-bg
-  width: 320px
   box-sizing: border-box
+  width: 320px
   padding: 0 gutter
+  border-left: 4px solid cart-ctl-bg
+  background: body-bg
   transform: translateX(320px)
   transition: transform .5s
   &.open
@@ -17,19 +17,20 @@
                 0 0 0 9999px rgba(0,0,0,.25)
 
   .cart-toggle-button
+    display: block
     position: absolute
     bottom: 64px
     right: 100%
-    cursor: pointer
-    display: block
     text-decoration: none
     text-align: center
     background-color: cart-ctl-bg
     color: cart-ctl-color
     padding: 4px 12px
     border-radius: radius 0 0 radius
+    cursor: pointer
     if light(cart-ctl-color)
       text-shadow: 0 1px 1px darken(cart-ctl-bg, 15%)
+
     label
       font-size: type-large
       cursor: pointer
@@ -75,11 +76,11 @@
     border-radius: 1000px
     width: 240px
     height: 240px
-    pointer-events: none
     box-shadow: 0 3px 8px rgba(0,0,0,.25)
     background-color: #fff
     background-size: cover
     background-position: 50% 50%
+    pointer-events: none
 
   .cart-item-prop
     color: text-subtle-color
@@ -90,8 +91,8 @@
 
 .shopping-cart-shifter
   position: relative
-  transition: all .5s
   overflow: hidden
+  transition: all .5s
   &.open
     transform: translateX(-160px)
     cursor: e-resize
