@@ -8,14 +8,17 @@ btn(bg, color)
 
   &:hover
     background: darken(bg, 3%)
+
   &:focus
     background: lighten(bg, 8%)
+
   &:active, &.active
     background: darken(bg, 8%)
 
   &.outline
     background: body-bg
     text-shadow: none
+
     if light(color)
       color: bg
     else
@@ -25,11 +28,13 @@ btn(bg, color)
     z-index: 2
     border-color: darken(bg, 18%)
     box-shadow: 0 3px 5px darken(bg, 18%) inset
+
   &[disabled]
     border-color: desaturate(darken(bg, 15%), 60%)
     box-shadow: none
     background: desaturate(bg, 80%)
     cursor: default
+
   &.hollow:not(:hover)
     background: transparent
     border-color: transparent
@@ -39,10 +44,11 @@ btn(bg, color)
   spaced()
   background: transparent
   color: text-color
-  font: font-weight font-size font-main
-  text-align: center
   touch-action: manipulation
   cursor: pointer
+
+  font: font-weight font-size font-main
+  text-align: center
 
   for b in brand-colors
     &.{b}
@@ -52,8 +58,8 @@ btn(bg, color)
     margin-left: 4px
 
 .btn-group
-  display: inline-block
   position: relative
+  display: inline-block
   font-size: 0
   white-space: nowrap
 
@@ -63,10 +69,12 @@ btn(bg, color)
   .btn
     border-radius: 0
     margin-left: -1px
+
     &:first-of-type
       border-top-left-radius: radius
       border-bottom-left-radius: radius
       margin-left: 0
+
     &:last-of-type
       border-top-right-radius: radius
       border-bottom-right-radius: radius
@@ -76,16 +84,20 @@ btn-group-collapse()
     display: block
     margin-left: 0
     margin-top: -1px
+
     border-radius: 0
     text-align: left
+
     i
       margin: 0
       width: 20px
       text-align: center
+
     &:first-of-type
       border-top-left-radius: radius
       border-top-right-radius: radius
       margin-top: 0
+
     &:last-of-type
       border-bottom-left-radius: radius
       border-bottom-right-radius: radius

@@ -4,10 +4,12 @@ row()
   margin-left: -(gutter)
   margin-right: -(gutter)
   list-style: none outside
+
   > *
     box-sizing: border-box
     float: left
     padding: 0 gutter
+
   for n in (1..12)
     > .col-{n}
       width: (100% * n / 12)
@@ -32,8 +34,10 @@ row()
 
     &.top > *, > .top
       vertical-align: top
+
     &.bottom > *, > .bottom
       vertical-align: bottom
+
     &.middle > *, > .middle
       vertical-align: middle
 

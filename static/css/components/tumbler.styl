@@ -1,52 +1,61 @@
 .tumbler
   ctl()
   spaced()
+
   width: 48px
+
   border-radius: 1000px
-  vertical-align: middle
   transition: .3s all
   cursor: pointer
   user-select: none
+
   background-color: brand-default
   border-color: darken(brand-default, 15%)
   box-shadow: 0 1px 5px darken(brand-default, 15%) inset
+  vertical-align: middle
+
   &::after
     content:' '
 
   input
     position: absolute
-    visibility: hidden
     width: 0
     height: 0
+    visibility: hidden
 
   .knob
-    display: block
     position: absolute
     top: 0
     bottom: 0
     left: 100%
-    width: 30px
+
+    display: block
     margin-left: -30px
-    background: brand-blank
-    box-shadow: ui-shadow
+    width: 30px
+
     transition: .3s all
+    box-shadow: ui-shadow
     border-radius: 1000px
+    background: brand-blank
 
   &.small
     width: 40px
+
     .knob
       width: 26px
       margin-left: -26px
+
   &.large
     width: 56px
+
     .knob
       width: 38px
       margin-left: -38px
 
   &.active
+    box-shadow: 0 1px 5px darken(brand-primary, 15%) inset
     background-color: brand-primary
     border-color: darken(brand-primary, 15%)
-    box-shadow: 0 1px 5px darken(brand-primary, 15%) inset
     color: brand-primary-text
 
     .knob

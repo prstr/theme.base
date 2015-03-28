@@ -3,17 +3,22 @@
   z-index: 10
   top: 100%
   margin-top: 12px
+
   width: dropdown-width
   padding: 6px 0
   border-radius: radius
-  box-shadow: 0 1px 12px rgba(0,0,0,.2)
-  font: font-weight font-size font-main
-  background: dropdown-bg
-  color: dropdown-color
+
   opacity: 0
   visibility: hidden
   transform: translateY(-32px)
   transition: .3s opacity, .3s transform
+
+  background: dropdown-bg
+  color: dropdown-color
+  box-shadow: 0 1px 12px rgba(0,0,0,.2)
+
+  font: font-weight font-size font-main
+
   &.wide
     width: (dropdown-width * 1.5)
 
@@ -36,6 +41,7 @@
 
   &.left
     left: 0
+
   &.right
     right: 0
 

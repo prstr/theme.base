@@ -1,5 +1,6 @@
 table
   border-collapse: separate
+
   for a in baseline top bottom middle
     &.{a}
       td, th
@@ -10,24 +11,30 @@ table
     td, th
       &.{a}
         vertical-align: a
+
   th
     text-align: left
     color: table-th-color
     font-weight: table-th-weight
     font-size: table-th-size
+
   &.rows
     tr:not(:last-child), thead tr
       td, th
         border-bottom: 1px solid table-border
+
     tfoot tr:first-child
       td, th
         border-top: 1px solid table-border
+
   tr.border-top
     td, th
       border-top: 1px solid table-border
+
   tr.border-bottom
     td, th
       border-bottom: 1px solid table-border
+
   tr[draggable]
     &.drag-over
       td, th

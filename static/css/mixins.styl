@@ -10,22 +10,27 @@ clearfix()
 // which result in incorrect rendering of text inside selects
 
 ctl()
-  display: inline-block
   position: relative
+
+  display: inline-block
+  box-sizing: border-box
+  overflow: visible
   margin: 0
+
   padding: 6px 12px
   height: 34px
   border: 1px solid #ddd
-  box-sizing: border-box
+
+  appearance: none
   border-radius: radius
   outline: 0
+
   font-family: font-main
   font-size: font-size
   white-space: nowrap
   text-decoration: none
   text-transform: none
-  overflow: visible
-  appearance: none
+
   &::-moz-focus-inner
     border: 0
     padding: 0
@@ -34,6 +39,7 @@ ctl()
     height: 28px
     padding: 4px 8px
     font-size: type-small
+
   &.large
     height: 40px
     padding: 6px 16px

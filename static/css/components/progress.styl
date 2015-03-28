@@ -1,29 +1,39 @@
 .progress-bar
   height: 16px
+
   border-radius: radius
-  background: brand-default
   box-shadow: well-shadow
+  background: brand-default
+
   line-height: 16px
+
   .bar
+    overflow: hidden
+
     min-width: 0
     max-width: 100%
     height: 16px
-    overflow: hidden
-    text-align: center
+
     border-radius: 4px
     box-shadow: 0 -1px 0 rgba(0,0,0,.2) inset
     text-shadow: 0 1px 0 rgba(0,0,0,.2)
+
     white-space: nowrap
     text-overflow: ellipsis
+    text-align: center
+
     &.primary
       background: brand-primary
       color: brand-primary-text
+
     &.success
       background: brand-success
       color: brand-success-text
+
     &.warn
       background: brand-warn
       color: brand-warn-text
+
     &.critical
       background: brand-critical
       color: brand-critical-text

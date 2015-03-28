@@ -1,11 +1,13 @@
 table.datatable
   border-collapse: collapse
   border-spacing: 0
+
   &.wide
     width: 100%
 
   td, th
     padding: spacing
+
     &:first-child
       padding-left: 0 !important
     &:last-child
@@ -17,13 +19,16 @@ table.datatable
 
   .order-control
     white-space: nowrap
+
     &::after
       content: '\f0dc'
       font-family: FontAwesome
       font-size: type-smaller
       color: lighten(text-subtle-color, 25%)
+
     &.enabled::after
       content: '\f0de'
+
     &.enabled.reverse::after
       content: '\f0dd'
 
@@ -33,6 +38,7 @@ table.datatable
       display: block
       padding: 0
       width: 100%
+
     tr
       padding: (gutter / 2) 0
     td

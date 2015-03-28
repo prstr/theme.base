@@ -17,6 +17,7 @@ tag(bg, color)
   ctl()
   spaced()
   z-index: 1
+
   background: transparent
   color: text-color
   font: font-weight font-size font-main
@@ -30,8 +31,10 @@ tag(bg, color)
   &.block
     display: block
     text-align: left
+
   &[draggable]
     cursor: move
+
   &.drag-over
     border: 1px solid link-color
     box-shadow: 0 0 5px 1px link-color
@@ -42,5 +45,6 @@ tag(bg, color)
 .tags
   user-select: none
   margin: -(spacing / 2)
+
   .tag
     margin: (spacing / 2)

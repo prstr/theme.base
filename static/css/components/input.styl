@@ -7,32 +7,42 @@ input[type='search'],
 select,
 textarea
   ctl()
+
   display: block
   margin: 0
+
   width: 100%
+
   border-color: input-border
+  transition: .3s box-shadow, .3s border-color
   background: input-bg
   color: input-color
-  transition: .3s box-shadow, .3s border-color
+
+
   white-space: inherit
 
   &.inline
     spaced()
+
     width: auto
     display: inline-block
 
   &.ng-dirty.ng-invalid
     border-color: brand-critical
     box-shadow: 0 0 6px rgba(brand-critical, .5)
+
   &:focus, &.track.ng-dirty
     border-color: brand-primary
     box-shadow: 0 0 6px rgba(brand-primary, .5)
+
   &.hollow
     padding: 6px 0
     border-radius: 0
     border-width: 0 0 1px
+
     &:focus, &.track.ng-dirty
       box-shadow: 0 6px 6px -6px rgba(brand-primary, .5)
+
   &[disabled]
     background: brand-default
     color: text-subtle-color
@@ -54,25 +64,31 @@ input[type='radio']
   border-collapse: separate
   white-space: nowrap
   box-sizing: border-box
+
   > input, > .control
     display: table-cell
     vertical-align: middle
     box-sizing: border-box
     border-radius: 0
+
     &:first-child
       border-top-left-radius: radius
       border-bottom-left-radius: radius
+
     &:last-child
       border-top-right-radius: radius
       border-bottom-right-radius: radius
+
   > .control
-    background: brand-default
     padding-left: 12px
     padding-right: 12px
-    border: 1px solid input-border
-    text-align: center
     width: 1%
+    border: 1px solid input-border
+    background: brand-default
+    text-align: center
+
     &:first-child
       border-right: 0
+
     &:last-child
       border-left: 0

@@ -1,15 +1,18 @@
 panel(bg, color)
   background: bg
   color: color
+
   &.level1
-    box-shadow: 0 0 1px darken(bg, 25%)
     z-index: 100
+    box-shadow: 0 0 1px darken(bg, 25%)
+
   &.level2
-    box-shadow: 0 1px 5px darken(bg, 25%)
     z-index: 200
+    box-shadow: 0 1px 5px darken(bg, 25%)
+
   &.level3
-    box-shadow: 0 3px 12px darken(bg, 25%)
     z-index: 300
+    box-shadow: 0 3px 12px darken(bg, 25%)
 
 .panel
   clearfix()
@@ -23,13 +26,16 @@ panel(bg, color)
   > .panel:first-child
     border-top-left-radius: radius
     border-top-right-radius: radius
+
   > .panel:last-child
     border-bottom-left-radius: radius
     border-bottom-right-radius: radius
+
   > .grid:first-child
     .panel:first-child
       border-top-left-radius: radius
       border-top-right-radius: radius
+
   > .grid:last-child
     .panel:last-child
       border-bottom-left-radius: radius
@@ -41,11 +47,14 @@ panel(bg, color)
       .panel:first-child
         border-top-left-radius: radius
         border-top-right-radius: 0
+
       .panel:last-child
         border-top-right-radius: radius
+
     > .grid:last-child
       .panel:last-child
         border-bottom-left-radius: 0
         border-bottom-right-radius: radius
+
       .panel:first-child
         border-bottom-left-radius: radius
