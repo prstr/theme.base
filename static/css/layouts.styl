@@ -39,11 +39,13 @@ if type-antialiasing
   aside
     position: relative
     z-index: 500
+    overflow: auto
 
     background: drawer-bg
     color: drawer-color
 
     font-size: 0
+    white-space: nowrap
 
     a
       position: relative
@@ -73,16 +75,13 @@ if type-antialiasing
           content:''
           position:absolute
           left: 0
-          top: 100%
+          right: 0
+          bottom: 0
 
           display:block
-          width:0
-          height: 0
+          height: 4px
 
-          border-style: solid
-          border-color: transparent
-          border-width: 8px 24px
-          border-top-color: drawer-active-bg
+          background: drawer-color
 
 @media (min-width: screen-medium-min)
   .layout-drawer
@@ -94,7 +93,6 @@ if type-antialiasing
       top: 0
       left: 0
       bottom: 0
-
       width: 48px
 
       a
@@ -102,10 +100,13 @@ if type-antialiasing
 
         &.active::before
           top: 0
-          left: 100%
-          border-width: 24px 8px
-          border-color: transparent
-          border-left-color: drawer-active-bg
+          bottom: 0
+          right: 0
+          left: auto
+
+          width: 4px
+          height: auto
+
 
 @media (min-width: screen-large-min)
   .layout-drawer
