@@ -36,6 +36,7 @@ table
       border-bottom: 1px solid table-border
 
   tr[draggable]
+    transition: transform .3s
     &.drag-over
-      td, th
-        background: rgba(link-color, .25)
+      transform: translateY(12px)
+

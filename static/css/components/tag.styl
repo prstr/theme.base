@@ -34,10 +34,10 @@ tag(bg, color)
 
   &[draggable]
     cursor: move
+    transition: transform .3s
 
-  &.drag-over
-    border: 1px solid link-color
-    box-shadow: 0 0 5px 1px link-color
+    &.drag-over
+      transform: translate(12px, 4px)
 
   i + span, span + i
     margin-left: 4px
