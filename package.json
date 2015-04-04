@@ -1,14 +1,14 @@
 {
-  "name": "prostore.theme.default",
+  "name": "prostore.theme.base",
   "version": "0.0.1",
-  "description": "ProStore Default Theme",
+  "description": "ProStore Base Theme",
   "main": "theme.json",
   "repository": {
     "type": "git",
-    "url": "git@github.com:prstr/theme.default.git"
+    "url": "git@github.com:prstr/theme.base.git"
   },
   "bugs": {
-    "url": "https://github.com/prstr/theme.default/issues"
+    "url": "https://github.com/prstr/theme.base/issues"
   },
   "keywords": [
     "prostore",

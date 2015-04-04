@@ -1,41 +1,67 @@
 <!doctype html>
+<!-- Атрибут ng-app указывает на главный модуль Angular. -->
 <html ng-app="#{app || 'prostore:store'}">
   <head>
     <meta charset="utf-8"/>
+
+    <!-- Переменная xsrfToken содержит сеансовый ключ для защиты от межсайтовой подделки
+    запросов. Не удаляйте этот элемент. -->
+    <meta name="xsrfToken"
+          content="#{xsrfToken}"/>
+
     <block:meta>
+      <!-- Следующий тэг обеспечивает поддержку адаптивного дизайна. -->
       <meta name="viewport"
             content="width=device-width, initial-scale=1"/>
-      <meta name="xsrfToken"
-            content="#{xsrfToken}"/>
     </block:meta>
 
-    <title><block:title>#{store.title}</block:title></title>
+    <!-- Заголовок страницы должен быть определен в других лэйаутах/страницах
+    с помощью <def:title>...</def:title>.
+    По-умолчанию используется название магазина. -->
+    <title>
+      <block:title>#{store.title}</block:title>
+    </title>
 
+    <!-- Блок стилей содержит тему магазина.
+    Переопределять этот блок не рекомендуется. -->
     <block:stylesheets>
       <link rel="stylesheet"
             href="#{store.themeCssUrl}"/>
     </block:stylesheets>
 
+    <!-- Блок storeData предназначен для передачи данных с сервера в Angular.
+    Скрипт в формате JSON с типом `application/json-data` и атрибутом `name="preved"`
+    доступен в Angular с помощью константы `$prostore` как `$prostore.preved`.
+    -->
     <block:storeData>
       <script name="store"
               type="application/prostore-data">
-        !{JSON.stringify(store.client)}
+        !{JSON.stringify(store)}
       </script>
-    </block:storeData>
-
-    <if expr="principal">
+      <if expr="principal">
       <script name="principal"
               type="application/prostore-data">
-        !{JSON.stringify(principal.client)}
+        !{JSON.stringify(principal)}
       </script>
     </if>
+    </block:storeData>
 
   </head>
+
   <body>
+    <!-- Блок для отображения одноразовых системных сообщений. -->
     <div id="notices" ui-notices></div>
+
+    <!-- Блок для опредения в следующих лэйаутах -->
     <block:body/>
+
+    <!-- Блок скриптов можно расширять с помощью <append:scripts> или <prepend:scripts>.
+
+    Загрузка скриптов внизу страницы позволяет ускорить их выполнение (событие
+    `onReady` не нужно). -->
     <block:scripts>
       <script src="/app/store.js"></script>
     </block:scripts>
   </body>
+
 </html>
