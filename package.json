@@ -1,6 +1,6 @@
 {
   "name": "prostore.theme.base",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "ProStore Base Theme",
   "main": "theme.json",
   "repository": {
