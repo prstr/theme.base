@@ -1,4 +1,111 @@
 {
   "title": "Базовая тема ПроСтор",
-  "description": "Используйте эту тему для создания собственного уникального дизайна."
+  "description": "Используйте эту тему для создания уникального дизайна интернет-магазина.",
+  "options": [
+    {
+      "id": "font-main",
+      "label": "Основной шрифт",
+      "type": "select",
+      "values": [
+        {
+          "id": "arsenal",
+          "label": "Arsenal",
+          "value": {
+            "font-family": "Arsenal, sans-serif",
+            "font-weight": 400
+          }
+        },
+        {
+          "id": "ptsans",
+          "label": "PT Sans",
+          "value": {
+            "font-family": "PT Sans, sans-serif",
+            "font-weight": 400
+          }
+        },
+        {
+          "id": "helvetica",
+          "label": "Helvetica Neue / Segoe UI",
+          "value": {
+            "font-family": "Segoe UI, Helvetica Neue, sans-serif",
+            "font-weight": 300
+          }
+        },
+        {
+          "id": "opensans",
+          "label": "Open Sans",
+          "value": {
+            "font-family": "Open Sans, sans-serif",
+            "font-weight": 300
+          }
+        },
+        {
+          "id": "palatino",
+          "label": "Palatino Linotype",
+          "value": {
+            "font-family": "Palatino, Palatino Linotype, Book Antiqua, serif",
+            "font-weight": 400
+          }
+        },
+        {
+          "id": "georgia",
+          "label": "Georgia",
+          "value": {
+            "font-family": "Georgia, serif",
+            "font-weight": 400
+          }
+        },
+        {
+          "id": "times",
+          "label": "Times New Roman",
+          "value": {
+            "font-family": "Times New Roman, serif",
+            "font-weight": 400
+          }
+        }
+      ]
+    },
+    {
+      "id": "font-size",
+      "label": "Размер шрифта",
+      "type": "number",
+      "default": 16
+    },
+    {
+      "id": "color-brand-default",
+      "label": "Цвет UI по умолчанию",
+      "type": "color",
+      "default": "#eee"
+    },
+    {
+      "id": "color-brand-primary",
+      "label": "Цвет UI — основное действие",
+      "type": "color",
+      "default": "hsl(208deg, 60%, 45%)"
+    },
+    {
+      "id": "color-brand-info",
+      "label": "Цвет UI — информация",
+      "type": "color",
+      "default": "hsl(192deg, 60%, 50%)"
+    },
+    {
+      "id": "color-brand-success",
+      "label": "Цвет UI — успешное действие",
+      "type": "color",
+      "default": "hsl(132deg, 40%, 50%)"
+    },
+    {
+      "id": "color-brand-warn",
+      "label": "Цвет UI — предупреждение",
+      "type": "color",
+      "default": "hsl(44deg, 85%, 75%)"
+    },
+    {
+      "id": "color-brand-critical",
+      "label": "Цвет UI — ошибка",
+      "type": "color",
+      "default": "hsl(0deg, 75%, 60%)"
+    }
+  ]
 }
