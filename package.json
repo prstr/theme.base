@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "description": "ProStore Base Theme",
   "main": "theme.json",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-postcss": "*",
+    "autoprefixer": "*",
+    "postcss-simple-vars": "*",
+    "postcss-import": "*",
+    "gulp-minify-css": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:prstr/theme.base.git"
