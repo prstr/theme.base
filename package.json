@@ -4,16 +4,8 @@
   "description": "ProStore Base Theme",
   "main": "theme.json",
   "devDependencies": {
-    "prostore.theme-tools": "*",
-    "gulp": "*",
-    "gulp-postcss": "*",
-    "autoprefixer": "*",
-    "postcss-simple-vars": "*",
-    "postcss-import": "*",
-    "postcss-discard-comments": "*",
-    "postcss-color-function": "*",
-    "gulp-minify-css": "*",
-    "fs-extra": "*"
+    "prostore.theme-api": "*",
+    "gulp": "*"
   },
   "repository": {
     "type": "git",

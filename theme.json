@@ -1,6 +1,12 @@
 {
   "title": "Базовая тема ПроСтор",
   "description": "Используйте эту тему для создания уникального дизайна интернет-магазина.",
+  "stylesheets": [
+    "stylesheets/bootstrap/test.less",
+    "stylesheets/foundation/test.scss",
+    "stylesheets/theme.styl",
+    "stylesheets/theme.css"
+  ],
   "options": [
     {
       "id": "font-main",
@@ -70,6 +76,18 @@
       "label": "Размер шрифта",
       "type": "number",
       "default": 16
+    },
+    {
+      "id": "color-background",
+      "label": "Цвет фона",
+      "type": "color",
+      "default": "#fff"
+    },
+    {
+      "id": "color-text",
+      "label": "Цвет текста",
+      "type": "color",
+      "default": "#333"
     },
     {
       "id": "color-brand-default",

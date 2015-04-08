@@ -1,0 +1,28 @@
+// -----
+// Сброс
+// -----
+//
+// Общие правила, обеспечивающие сброс стилей по умолчанию.
+// Используйте только селекторы с минимальным весом.
+//
+// Избегайте слишком общих правил, влекущих к ошибочным допущениям, например:
+//
+//  ```
+//  * {
+//    position: relative;
+//    box-sizing: border-box;
+//  }
+//  ```
+html, body, form, fieldset, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
