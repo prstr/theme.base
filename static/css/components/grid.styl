@@ -1,47 +1,51 @@
 .grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 
-.grid-align-baseline {
-  align-items: baseline;
+.grid-inline {
+  display: inline-flex;
 }
 
-.grid-align-center {
-  align-items: center;
+.grid-rounded {
+  border-radius: border-radius;
+  overflow: hidden;
 }
+.grid-align-baseline { align-items: baseline }
+.grid-align-center { align-items: center }
 
-.grid-justify-center {
-  justify-content: center;
-}
+.grid-gutters {
+  margin: -.5em;
 
-.grid-justify-space-between {
-  justify-content: space-between;
+  .cell {
+    margin: .5em;
+  }
 }
 
 .cell {
-  flex: 100%
+  flex: 100%;
+  box-sizing: border-box;
+}
+
+for i in (1..8) {
+  .cell-{i} { flex: i }
+  .cell-1of{i} { flex: (100 / i)% }
+  .order-{i} { order: i }
 }
 
 @media (min-width: screen-medium-min) {
-  for i in (1..4) {
-    .m-cell-{i} {
-      flex: i;
-    }
-    .m-order-{i} {
-      order: i;
-    }
+  for i in (1..8) {
+    .m-cell-{i} { flex: i }
+    .m-cell-1of{i} { flex: (100 / i)% }
+    .m-order-{i} { order: i }
   }
 }
 
 @media (min-width: screen-large-min) {
-  for i in (1..4) {
-    .l-cell-{i} {
-      flex: i;
-    }
-    .l-order-{i} {
-      order: i;
-    }
+  for i in (1..8) {
+    .l-cell-{i} { flex: i }
+    .l-cell-1of{i} { flex: (100 / i)% }
+    .l-order-{i} { order: i }
   }
 }
 

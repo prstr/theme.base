@@ -49,7 +49,7 @@ border-radius ?= 4px
 // Расчет цветовой схемы
 // ---------------------
 
-ui-colors = 'base' 'default' 'primary' 'info' 'success' 'warn' 'critical'
+ui-colors = 'base' 'default' 'primary' 'action' 'success' 'warn' 'critical'
 
 for c in ui-colors
   _c = lookup('ui-' + c)
@@ -60,11 +60,11 @@ for c in ui-colors
 // Базовые элементы
 // ----------------
 
-link-color ?= ui-info
+link-color ?= ui-primary
 link-hover-color ?= lighten(link-color, 25%)
 
 strong-color ?= body-color
-em-color ?= darken(ui-primary, 25%)
+em-color ?= darken(ui-action, 25%)
 subtle-color ?= lighten(body-color, 40%)
 
 hr-color ?= ui-default
@@ -84,7 +84,7 @@ h6-font-size ?= font-smallest
 // Структуры
 // ----------
 
-workspace-aside-background ?= darken(ui-info, 75%)
-workspace-aside-color ?= ui-info
+workspace-aside-background ?= darken(ui-primary, 75%)
+workspace-aside-color ?= ui-primary
 workspace-nav-link-active-background ?= darken(workspace-aside-background, 25%)
 workspace-nav-link-active-color ?= #fff

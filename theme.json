@@ -101,21 +101,21 @@
     },
     {
       "id": "ui-primary",
-      "label": "Основное действие",
+      "label": "Основной цвет",
       "type": "color",
-      "default": "hsl(208deg, 60%, 45%)"
+      "default": "hsl(192deg, 60%, 60%)"
     },
     {
-      "id": "ui-info",
-      "label": "Информация",
+      "id": "ui-action",
+      "label": "Кнопка действия",
       "type": "color",
-      "default": "hsl(192deg, 60%, 50%)"
+      "default": "hsl(208deg, 60%, 45%)"
     },
     {
       "id": "ui-success",
       "label": "Успешное действие",
       "type": "color",
-      "default": "hsl(132deg, 40%, 50%)"
+      "default": "hsl(144deg, 50%, 45%)"
     },
     {
       "id": "ui-warn",
