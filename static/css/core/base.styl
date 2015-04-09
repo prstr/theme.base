@@ -5,11 +5,20 @@
 // Базовые стили включают правила, применяемые к тэгам
 // (html, p, ul, ol, li, h1, h2, h3 и т.д.).
 
-html {
+html, body {
   font: font-weight font-size/line-height font-family;
-  color: color;
-  background-color: background-color;
+  background: body-background;
+  color: body-color;
+  text-rendering: optimizeLegibility;
 }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
 
 a {
   text-decoration: none;

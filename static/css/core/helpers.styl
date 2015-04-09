@@ -2,23 +2,13 @@
 // Вспомогательные классы
 // ----------------------
 //
-// Позволяют применить минимальный набор правил (пр. `float: left`) в уникальном
+// Позволяют применить минимальный набор правил в уникальном
 // контексте, где создание отдельного компонента не обоснованно.
-
-// Висячее положение компонентов слева или справа
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
-}
 
 // Вертикальный отступ между компонентами
 
 .block {
-  margin: 1.5em 0;
+  margin: 1em 0;
 }
 
 // Angular ng-cloak
@@ -26,3 +16,39 @@
 [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+// Цвета UI
+
+for c in ui-colors
+  &.ui-{c}
+    _b = lookup('ui-' + c)
+    _t = lookup('ui-' + c + '-text')
+    background: _b
+    color: _t
+    text-shadow: light(_t) ? 0 1px 1px darken(_b, 25%) : none
+    border-color: lookup('ui-' + c + '-border')
+
+// Запрет разрыва строки
+
+.nobr {
+  white-space: nowrap;
+}
+
+// Адаптивное выравнивание
+
+.align-left { text-align: left }
+.align-right { text-align: right }
+.align-center, .centered { text-align: center }
+
+@media (min-width: screen-medium-min) {
+  .m-align-left { text-align: left }
+  .m-align-right { text-align: right }
+  .m-align-center, .m-centered { text-align: center }
+}
+
+@media (min-width: screen-large-min) {
+  .l-align-left { text-align: left }
+  .l-align-right { text-align: right }
+  .l-align-center, .l-centered { text-align: center }
+}
+

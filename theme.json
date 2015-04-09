@@ -76,58 +76,58 @@
       "default": 16
     },
     {
-      "id": "background-color",
-      "label": "Цвет фона",
+      "id": "body-background",
+      "label": "Фон страницы",
       "type": "color",
       "default": "#fff"
     },
     {
-      "id": "color",
+      "id": "body-color",
       "label": "Цвет текста",
       "type": "color",
       "default": "#333"
     },
     {
-      "id": "brand-default",
-      "label": "Цвет UI по умолчанию",
+      "id": "ui-base",
+      "label": "Базовый фон",
+      "type": "color",
+      "default": "#fff"
+    },
+    {
+      "id": "ui-default",
+      "label": "Компоненты",
       "type": "color",
       "default": "#eee"
     },
     {
-      "id": "brand-primary",
-      "label": "Цвет UI — основное действие",
+      "id": "ui-primary",
+      "label": "Основное действие",
       "type": "color",
       "default": "hsl(208deg, 60%, 45%)"
     },
     {
-      "id": "brand-info",
-      "label": "Цвет UI — информация",
+      "id": "ui-info",
+      "label": "Информация",
       "type": "color",
       "default": "hsl(192deg, 60%, 50%)"
     },
     {
-      "id": "brand-success",
-      "label": "Цвет UI — успешное действие",
+      "id": "ui-success",
+      "label": "Успешное действие",
       "type": "color",
       "default": "hsl(132deg, 40%, 50%)"
     },
     {
-      "id": "brand-warn",
-      "label": "Цвет UI — предупреждение",
+      "id": "ui-warn",
+      "label": "Предупреждение",
       "type": "color",
       "default": "hsl(44deg, 85%, 75%)"
     },
     {
-      "id": "brand-critical",
-      "label": "Цвет UI — ошибка",
+      "id": "ui-critical",
+      "label": "Ошибка",
       "type": "color",
       "default": "hsl(0deg, 75%, 60%)"
-    },
-    {
-      "id": "brand-inverse",
-      "label": "Цвет UI — инверсия",
-      "type": "color",
-      "default": "hsl(192deg, 60%, 12%)"
     }
   ]
 }

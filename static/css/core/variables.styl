@@ -16,7 +16,9 @@
 // В этом файле следует указать константы и переменные, значения которых
 // вычисляются на основе опций, констант или других переменных.
 
-// Размеры шрифта и строки
+// -------
+// Размеры
+// -------
 
 font-size-px ?= 16
 font-size ?= unit(font-size-px, px)
@@ -43,17 +45,29 @@ screen-large-min ?= 1024px
 
 border-radius ?= 4px
 
+// ---------------------
+// Расчет цветовой схемы
+// ---------------------
+
+ui-colors = 'base' 'default' 'primary' 'info' 'success' 'warn' 'critical'
+
+for c in ui-colors
+  _c = lookup('ui-' + c)
+  define('ui-' + c + '-text', light(_c) ? darken(_c, 75%) : #fff)
+  define('ui-' + c + '-border', light(_c) ? darken(_c, 10%) : darken(_c, 15%))
+
 // ----------------
 // Базовые элементы
 // ----------------
 
-link-color ?= brand-info
+link-color ?= ui-info
 link-hover-color ?= lighten(link-color, 25%)
 
-strong-color ?= color
-em-color ?= darken(brand-primary, 25%)
+strong-color ?= body-color
+em-color ?= darken(ui-primary, 25%)
+subtle-color ?= lighten(body-color, 40%)
 
-hr-color ?= brand-default
+hr-color ?= ui-default
 
 h1-font-size ?= font-largest
 h2-font-size ?= font-larger
@@ -70,7 +84,7 @@ h6-font-size ?= font-smallest
 // Структуры
 // ----------
 
-workspace-aside-background ?= brand-inverse
-workspace-aside-color ?= brand-info
+workspace-aside-background ?= darken(ui-info, 75%)
+workspace-aside-color ?= ui-info
 workspace-nav-link-active-background ?= darken(workspace-aside-background, 25%)
 workspace-nav-link-active-color ?= #fff

@@ -7,6 +7,7 @@
 // на планшетах и компьютерах).
 
 .workspace-main {
+  clearfix();
   position: relative;
 }
 
@@ -26,10 +27,10 @@
   position: relative;
   display: inline-block;
 
-  text-shadow: 0 1px 1px rgba(0,0,0,.5);
   font-size: font-size;
-  white-space: nowrap;
   line-height: 48px;
+  white-space: nowrap;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
 
   &.active {
     background: workspace-nav-link-active-background;
@@ -66,6 +67,7 @@
 
   .workspace-main {
     margin-left: 48px;
+    min-height: 100vh;
   }
 
   .workspace-aside {
