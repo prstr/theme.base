@@ -4,9 +4,9 @@
   font-weight: normal;
   font-style: normal;
 }
-i.fa, i[class ^= 'fa-'], i[class ~= ' fa-'] {
+i.fa, i[class ^= 'fa-'], i[class *= ' fa-'] {
   display: inline-block;
-  font-family: FontAwesome;
+  font-family: 'FontAwesome';
   font-style: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;

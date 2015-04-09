@@ -1,0 +1,80 @@
+// -------------
+// Базовые стили
+// -------------
+//
+// Базовые стили включают правила, применяемые к тэгам
+// (html, p, ul, ol, li, h1, h2, h3 и т.д.).
+
+html {
+  font: font-weight font-size/line-height font-family;
+  color: color;
+  background-color: background-color;
+}
+
+a {
+  text-decoration: none;
+  color: link-color;
+  &:hover {
+    color: link-hover-color;
+  }
+}
+
+strong, .strong {
+  font-weight: bold;
+  color: strong-color;
+}
+
+em, .em {
+  font-style: italic;
+  color: em-color;
+}
+
+strike, .strike {
+  text-decoration: line-through
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+p, ol, ul, dl, li, dt, dd {
+  margin: 1em 0;
+}
+
+ul, ol {
+  &.terse li {
+    margin: .25em 0
+  }
+}
+
+h1, h2, h3 {
+  margin: .5em 0;
+  line-height: 1.25;
+
+  small, .small {
+    font-weight: font-weight;
+    font-size: 60%;
+    color: subtle-color;
+  }
+}
+
+h4, h5, h6 {
+  margin: .5em 0;
+
+  small, .small {
+    font-weight: font-weight;
+    font-size: 60%;
+    color: subtle-color;
+  }
+}
+
+hr {
+  margin: 1em 0;
+  border: 0;
+  border-bottom: 1px solid hr-color;
+
+  &.bold {
+    border-width: 4px;
+  }
+}

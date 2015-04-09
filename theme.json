@@ -2,10 +2,8 @@
   "title": "Базовая тема ПроСтор",
   "description": "Используйте эту тему для создания уникального дизайна интернет-магазина.",
   "stylesheets": [
-    "stylesheets/bootstrap/test.less",
-    "stylesheets/foundation/test.scss",
-    "stylesheets/theme.styl",
-    "stylesheets/theme.css"
+    "static/css/theme.styl",
+    "static/css/theme.css"
   ],
   "options": [
     {
@@ -72,58 +70,64 @@
       ]
     },
     {
-      "id": "font-size",
+      "id": "font-size-px",
       "label": "Размер шрифта",
       "type": "number",
       "default": 16
     },
     {
-      "id": "color-background",
+      "id": "background-color",
       "label": "Цвет фона",
       "type": "color",
       "default": "#fff"
     },
     {
-      "id": "color-text",
+      "id": "color",
       "label": "Цвет текста",
       "type": "color",
       "default": "#333"
     },
     {
-      "id": "color-brand-default",
+      "id": "brand-default",
       "label": "Цвет UI по умолчанию",
       "type": "color",
       "default": "#eee"
     },
     {
-      "id": "color-brand-primary",
+      "id": "brand-primary",
       "label": "Цвет UI — основное действие",
       "type": "color",
       "default": "hsl(208deg, 60%, 45%)"
     },
     {
-      "id": "color-brand-info",
+      "id": "brand-info",
       "label": "Цвет UI — информация",
       "type": "color",
       "default": "hsl(192deg, 60%, 50%)"
     },
     {
-      "id": "color-brand-success",
+      "id": "brand-success",
       "label": "Цвет UI — успешное действие",
       "type": "color",
       "default": "hsl(132deg, 40%, 50%)"
     },
     {
-      "id": "color-brand-warn",
+      "id": "brand-warn",
       "label": "Цвет UI — предупреждение",
       "type": "color",
       "default": "hsl(44deg, 85%, 75%)"
     },
     {
-      "id": "color-brand-critical",
+      "id": "brand-critical",
       "label": "Цвет UI — ошибка",
       "type": "color",
       "default": "hsl(0deg, 75%, 60%)"
+    },
+    {
+      "id": "brand-inverse",
+      "label": "Цвет UI — инверсия",
+      "type": "color",
+      "default": "hsl(192deg, 60%, 12%)"
     }
   ]
 }

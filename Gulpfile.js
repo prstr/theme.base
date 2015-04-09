@@ -12,5 +12,5 @@ gulp.task('stylesheets', function(cb) {
 gulp.task('build', ['stylesheets']);
 
 gulp.task('default', ['stylesheets'], function() {
-  gulp.watch(['stylesheets/**', 'variables.json'], ['stylesheets']);
+  gulp.watch(['static/css/**', 'variables.json'], ['stylesheets']);
 });

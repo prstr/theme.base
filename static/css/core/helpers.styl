@@ -4,6 +4,9 @@
 //
 // Позволяют применить минимальный набор правил (пр. `float: left`) в уникальном
 // контексте, где создание отдельного компонента не обоснованно.
+
+// Висячее положение компонентов слева или справа
+
 .pull-left {
   float: left;
 }
@@ -12,3 +15,14 @@
   float: right;
 }
 
+// Вертикальный отступ между компонентами
+
+.block {
+  margin: 1.5em 0;
+}
+
+// Angular ng-cloak
+
+[ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

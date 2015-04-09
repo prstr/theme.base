@@ -16,14 +16,6 @@
 @import './vendor/fontawesome.css'
 
 // ----------
-// Компоновки
-// ----------
-//
-// Определяют положение элементов на странице (пр. `layout-fixed`).
-
-@import './layouts/fixed'
-
-// ----------
 // Компоненты
 // ----------
 //
@@ -38,6 +30,14 @@
 // `line-height`, `overflow`, `box-sizing`, `vertical-align` и т.д.)
 
 @import './components/row'
+@import './components/container'
+@import './components/loading'
+
+// ---------
+// Структуры
+// ---------
+
+@import './structures/workspace'
 
 // ---------
 // Черновики
@@ -47,3 +47,7 @@
 //
 // В дальнейшем веб-дизайнеры или верстальщики, ответственные за проект,
 // могут определить для них подходящее место.
+
+html {
+  font-family: font-family
+}

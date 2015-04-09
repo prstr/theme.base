@@ -1,0 +1,76 @@
+// ----------
+// Переменные
+// ----------
+//
+// Переменные можно условно разбить на три группы:
+//
+//  * опции — переменные, которые можно переопределить через веб-интерфейс
+//    (в разделе «Оформление» — «Кастомизация»),
+//
+//  * константы,
+//
+//  * вычисляемые переменные.
+//
+// Опции должны быть указаны в соответствующем разделе файла `theme.json`.
+//
+// В этом файле следует указать константы и переменные, значения которых
+// вычисляются на основе опций, констант или других переменных.
+
+// Размеры шрифта и строки
+
+font-size-px ?= 16
+font-size ?= unit(font-size-px, px)
+line-height ?= 1.5
+line-height-computed ?= font-size * line-height
+
+type-enormous ?= 3em
+type-largest ?= 1.75em
+type-larger ?= 1.5em
+type-large ?= 1.25em
+type-small ?= 0.875em
+type-smaller ?= 0.75em
+type-smallest ?= 0.625em
+type-tiny ?= .5em
+
+// Точки адаптивного перехода
+
+screen-small-max ?= 639px
+screen-medium-min ?= 640px
+screen-medium-max ?= 1023px
+screen-large-min ?= 1024px
+
+// Радиус углов
+
+border-radius ?= 4px
+
+// ----------------
+// Базовые элементы
+// ----------------
+
+link-color ?= brand-info
+link-hover-color ?= lighten(link-color, 25%)
+
+strong-color ?= color
+em-color ?= darken(brand-primary, 25%)
+
+hr-color ?= brand-default
+
+h1-font-size ?= font-largest
+h2-font-size ?= font-larger
+h3-font-size ?= font-large
+h4-font-size ?= font-small
+h5-font-size ?= font-smaller
+h6-font-size ?= font-smallest
+
+// ----------
+// Компоненты
+// ----------
+
+// ----------
+// Структуры
+// ----------
+
+workspace-aside-background ?= brand-inverse
+workspace-aside-color ?= brand-info
+workspace-nav-link-active-background ?= darken(workspace-aside-background, 25%)
+workspace-nav-link-active-color ?= #fff

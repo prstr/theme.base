@@ -1,0 +1,111 @@
+// --------------------------
+// Компоновка рабочей области
+// --------------------------
+//
+// Используется в административном интерфейсе и содержит адаптивное
+// навигационное меню (сверху на мобильных телефонах, фиксированное слева
+// на планшетах и компьютерах).
+
+.workspace-main {
+  position: relative;
+}
+
+.workspace-aside {
+  position: relative;
+  z-index: 500;
+  overflow: auto;
+
+  background: workspace-aside-background;
+  color:      workspace-aside-color;
+
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.workspace-nav-link {
+  position: relative;
+  display: inline-block;
+
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  font-size: font-size;
+  white-space: nowrap;
+  line-height: 48px;
+
+  &.active {
+    background: workspace-nav-link-active-background;
+    color:      workspace-nav-link-active-color;
+    text-shadow: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      display: block;
+      height: 4px;
+
+      background: workspace-aside-color;
+    }
+  }
+
+}
+
+.workspace-nav-icon {
+  position: relative;
+  top: -2px;
+  width: 48px;
+
+  font-size: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+@media (min-width: screen-medium-min) {
+
+  .workspace-main {
+    margin-left: 48px;
+  }
+
+  .workspace-aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 48px;
+  }
+
+  .workspace-nav-link {
+    display: block
+
+    &.active::before {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: auto;
+
+      width: 4px;
+      height: auto;
+    }
+  }
+
+}
+
+@media (min-width: screen-large-min) {
+
+  .workspace-main {
+    margin-left: 208px;
+  }
+
+  .workspace-aside {
+    width: 208px;
+  }
+
+  .workspace-nav-link {
+    &::after {
+      content: attr(title)
+    }
+  }
+
+}
