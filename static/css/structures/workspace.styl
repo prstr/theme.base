@@ -17,7 +17,6 @@
   overflow: auto;
 
   background: workspace-aside-background;
-  color:      workspace-aside-color;
 
   font-size: 0;
   white-space: nowrap;
@@ -31,6 +30,12 @@
   line-height: 48px;
   white-space: nowrap;
   text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  background: workspace-nav-link-background;
+  color:      workspace-nav-link-color;
+
+  &:hover {
+    color: lighten(workspace-nav-link-color, 15%);
+  }
 
   &.active {
     background: workspace-nav-link-active-background;
@@ -47,7 +52,7 @@
       display: block;
       height: 4px;
 
-      background: workspace-aside-color;
+      background: workspace-nav-link-color;
     }
   }
 

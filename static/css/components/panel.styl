@@ -1,8 +1,50 @@
+// ------
+// Панели
+// ------
+//
+// Горизонтальные блоки с различными вариантами стилизации.
+
 .panel {
   clearfix();
+  position: relative;
+  z-index: 1;
 }
 
 .panel-indent {
   padding-left: 1em;
   padding-right: 1em;
 }
+
+for c in ui-colors {
+  _bg = lookup('ui-' + c);
+  _bd = lookup('ui-' + c + '-border');
+  _tx = lookup('ui-' + c + '-text');
+
+  .panel-{c} {
+    background: _bg;
+    color: _tx;
+    text-shadow: light(_tx) ? 0 1px 1px darken(_bg, 25%) : none;
+    border-color: _bd;
+  }
+
+  .panel-{c}-subtle {
+    background: lighten(desaturate(_bg, 60%), 60%);
+  }
+
+}
+
+.panel-level-1 {
+  box-shadow: 0 0 1px rgba(0,0,0,.5);
+  z-index: 10;
+}
+
+.panel-level-2 {
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  z-index: 20;
+}
+
+.panel-level-3 {
+  box-shadow: 0 3px 16px rgba(0,0,0,.25);
+  z-index: 30;
+}
+

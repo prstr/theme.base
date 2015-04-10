@@ -60,11 +60,11 @@ for c in ui-colors
 // Базовые элементы
 // ----------------
 
-link-color ?= ui-primary
+link-color ?= ui-action
 link-hover-color ?= lighten(link-color, 25%)
 
 strong-color ?= body-color
-em-color ?= darken(ui-action, 25%)
+em-color ?= body-color
 subtle-color ?= lighten(body-color, 40%)
 
 hr-color ?= ui-default
@@ -85,6 +85,7 @@ h6-font-size ?= font-smallest
 // ----------
 
 workspace-aside-background ?= darken(ui-primary, 75%)
-workspace-aside-color ?= ui-primary
+workspace-nav-link-background ?= transparent
+workspace-nav-link-color ?= ui-primary
 workspace-nav-link-active-background ?= darken(workspace-aside-background, 25%)
 workspace-nav-link-active-color ?= #fff

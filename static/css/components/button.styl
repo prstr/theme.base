@@ -1,3 +1,10 @@
+// ------
+// Кнопки
+// ------
+//
+// Применяются к тегам `<button>` и `<a>` для создания кнопки.
+// Тэги `<input type="button"/>` и `<input type="submit"/>` не рекомендуются,
+// т.к. не поддерживают псевдоэлементы.
 .btn {
   position: relative;
   z-index: 1;
@@ -7,6 +14,10 @@
 
   appearance: none;
   vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
 
   border-width: 1px;
   border-style: solid;
@@ -23,6 +34,36 @@
     z-index: 2;
   }
 
+  i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+for c in ui-colors {
+  &.btn-{c} {
+    _bg = lookup('ui-' + c);
+    _bd = lookup('ui-' + c + '-border');
+    _tx = lookup('ui-' + c + '-text');
+
+    background: _bg;
+    border-color: _bd;
+    border-bottom-color: darken(_bd, 15%);
+    color: _tx;
+    text-shadow: light(_tx) ? 0 1px 1px darken(_bg, 25%) : none;
+
+    &:focus, &:hover {
+      color: _tx;
+      background: darken(_bg, 10%);
+    }
+
+    &:active, &.active {
+      background: darken(_bg, 15%);
+      border-color: darken(_bd, 15%);
+      box-shadow: 0 3px 5px darken(_bd, 15%) inset
+    }
+  }
 }
 
 .btn-group {

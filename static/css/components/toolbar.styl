@@ -1,0 +1,36 @@
+// -------------------
+// Панель инструментов
+// -------------------
+
+.toolbar {
+  clearfix();
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.toolbar-group {
+  text-align: center;
+  flex: 100%;
+  margin: .5em 0;
+
+  h1, h2, h3 {
+    margin: 0;
+  }
+
+}
+
+@media (min-width: screen-medium-min) {
+  .toolbar-group {
+    margin: 1em 0;
+  }
+  .toolbar-group-left {
+    text-align: left;
+    flex: 1;
+  }
+  .toolbar-group-right {
+    text-align: right;
+    flex: 1;
+  }
+}
+
