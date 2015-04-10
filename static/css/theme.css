@@ -2932,3 +2932,18 @@ keygen{
     content:attr(title);
   }
 }
+.empty-list{
+  margin-top:2em;
+  text-align:center;
+}
+.empty-list-icon{
+  padding:0.15em;
+  font-size:8em;
+  border:4px solid #31a6c4;
+  border-radius:128px;
+  color:#31a6c4;
+  text-align:center;
+}
+.empty-list-message{
+  font-size:1.2em;
+}
