@@ -204,11 +204,11 @@ hr.bold{
 }
 @font-face{
 	font-family:'Linearicons';
-	src:url('/themes/base/static/fonts/Linearicons.eot?-ff6uwt');
-	src:url('/themes/base/static/fonts/Linearicons.eot?#iefix-ff6uwt') format('embedded-opentype'),
-		url('/themes/base/static/fonts/Linearicons.woff?-ff6uwt') format('woff'),
-		url('/themes/base/static/fonts/Linearicons.ttf?-ff6uwt') format('truetype'),
-		url('/themes/base/static/fonts/Linearicons.svg?-ff6uwt#Linearicons') format('svg');
+	src:url('/fonts/Linearicons.eot?-ff6uwt');
+	src:url('/fonts/Linearicons.eot?#iefix-ff6uwt') format('embedded-opentype'),
+		url('/fonts/Linearicons.woff?-ff6uwt') format('woff'),
+		url('/fonts/Linearicons.ttf?-ff6uwt') format('truetype'),
+		url('/fonts/Linearicons.svg?-ff6uwt#Linearicons') format('svg');
 	font-weight:normal;
 	font-style:normal;
 }
@@ -2871,7 +2871,4 @@ hr.bold{
   .workspace-nav-link::after{
     content:attr(title);
   }
-}
-html{
-  font-family:Arsenal, sans-serif;
 }
