@@ -11,9 +11,10 @@
   z-index: 1;
 
   display: inline-block;
+  box-sizing: border-box;
   padding: .25em .75em;
+  height: 2.1em;
 
-  appearance: none;
   vertical-align: middle;
   outline: 0;
   cursor: pointer;
@@ -78,21 +79,9 @@ for c in ui-colors {
   text-align: center;
 }
 
-.btn-group {
-  display: inline-flex;
-  vertical-align: middle;
-
-  .btn {
-    margin-left: -1px;
-    border-radius: 0;
-
-    &:first-child {
-      border-top-left-radius: border-radius;
-      border-bottom-left-radius: border-radius;
-    }
-    &:last-child {
-      border-top-right-radius: border-radius;
-      border-bottom-right-radius: border-radius;
-    }
-  }
-}
+.btn-largest { font-size: type-largest }
+.btn-larger { font-size: type-larger }
+.btn-large { font-size: type-large }
+.btn-small { font-size: type-small }
+.btn-smaller { font-size: type-smaller }
+.btn-smallest { font-size: type-smallest }

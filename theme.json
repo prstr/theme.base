@@ -103,7 +103,7 @@
       "id": "ui-primary",
       "label": "Основной цвет",
       "type": "color",
-      "default": "hsl(192deg, 60%, 60%)"
+      "default": "hsl(192deg, 60%, 48%)"
     },
     {
       "id": "ui-action",

@@ -1,0 +1,47 @@
+// --------------
+// Текстовые поля
+// --------------
+
+input, select, keygen, textarea {
+  position: relative;
+  z-index: 1;
+
+  display: inline-block;
+  box-sizing: border-box
+  padding: .25em .75em;
+
+  vertical-align: middle;
+  outline: 0;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: ui-default-border;
+  border-radius: border-radius;
+
+  &.ng-dirty.ng-invalid {
+    border-color: ui-critical;
+    box-shadow: 0 0 6px rgba(ui-critical, .5);
+  }
+
+  &:focus {
+    border-color: ui-action;
+    box-shadow: 0 0 6px rgba(ui-action, .5);
+  }
+
+  &[disabled] {
+    background: ui-default;
+    color: subtle-color;
+  }
+
+}
+
+input, select, keygen {
+  height: 2.1em;
+}
+
+.input-largest { font-size: type-largest }
+.input-larger { font-size: type-larger }
+.input-large { font-size: type-large }
+.input-small { font-size: type-small }
+.input-smaller { font-size: type-smaller }
+.input-smallest { font-size: type-smallest }
