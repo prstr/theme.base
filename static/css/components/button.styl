@@ -5,6 +5,7 @@
 // Применяются к тегам `<button>` и `<a>` для создания кнопки.
 // Тэги `<input type="button"/>` и `<input type="submit"/>` не рекомендуются,
 // т.к. не поддерживают псевдоэлементы.
+
 .btn {
   position: relative;
   z-index: 1;
@@ -35,8 +36,14 @@
   }
 
   i {
+    position: relative;
+    top: -1px;
     display: inline-block;
     vertical-align: middle;
+  }
+
+  i + *, * + i {
+    margin-left: .37em;
   }
 
 }
@@ -64,6 +71,11 @@ for c in ui-colors {
       box-shadow: 0 3px 5px darken(_bd, 15%) inset
     }
   }
+}
+
+.btn-block {
+  display: block;
+  text-align: center;
 }
 
 .btn-group {

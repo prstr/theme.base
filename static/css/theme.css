@@ -178,6 +178,30 @@ hr.bold{
 .centered{
   text-align:center;
 }
+.type-enormous{
+  font-size:3em;
+}
+.type-largest{
+  font-size:1.75em;
+}
+.type-larger{
+  font-size:1.5em;
+}
+.type-large{
+  font-size:1.25em;
+}
+.type-small{
+  font-size:0.875em;
+}
+.type-smaller{
+  font-size:0.75em;
+}
+.type-smallest{
+  font-size:0.625em;
+}
+.type-tiny{
+  font-size:0.5em;
+}
 @font-face{
 	font-family:'Linearicons';
 	src:url('/themes/base/static/fonts/Linearicons.eot?-ff6uwt');
@@ -1936,8 +1960,14 @@ hr.bold{
   z-index:2;
 }
 .btn i{
+  position:relative;
+  top:-1px;
   display:inline-block;
   vertical-align:middle;
+}
+.btn i + *,
+.btn * + i{
+  margin-left:0.37em;
 }
 .btn-base{
   background:#fff;
@@ -2065,6 +2095,10 @@ hr.bold{
   border-color:#cd1d1d;
   box-shadow:0 3px 5px #cd1d1d inset;
 }
+.btn-block{
+  display:block;
+  text-align:center;
+}
 .btn-group{
   display:-webkit-inline-box;
   display:-webkit-inline-flex;
@@ -2111,15 +2145,6 @@ hr.bold{
   -webkit-flex-flow:row wrap;
       -ms-flex-flow:row wrap;
           flex-flow:row wrap;
-}
-.grid-inline{
-  display:-webkit-inline-box;
-  display:-webkit-inline-flex;
-  display:-ms-inline-flexbox;
-  display:inline-flex;
-}
-.grid-rounded{
-  border-radius:4px;
   overflow:hidden;
 }
 .grid-align-baseline{
@@ -2137,8 +2162,27 @@ hr.bold{
 .grid-gutters{
   margin:-0.5em;
 }
-.grid-gutters .cell{
+.grid-gutters.block{
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+}
+.grid-gutters > .cell{
   margin:0.5em;
+}
+.grid-rounded{
+  border-radius:4px;
+}
+.grid-level-1{
+  box-shadow:0 0 1px rgba(0,0,0,0.5);
+  z-index:10;
+}
+.grid-level-2{
+  box-shadow:0 0 3px rgba(0,0,0,0.25);
+  z-index:20;
+}
+.grid-level-3{
+  box-shadow:0 0 16px rgba(0,0,0,0.25);
+  z-index:30;
 }
 .cell{
   -webkit-box-flex:100%;
@@ -2678,11 +2722,11 @@ hr.bold{
   z-index:10;
 }
 .panel-level-2{
-  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+  box-shadow:0 0 3px rgba(0,0,0,0.25);
   z-index:20;
 }
 .panel-level-3{
-  box-shadow:0 3px 16px rgba(0,0,0,0.25);
+  box-shadow:0 0 16px rgba(0,0,0,0.25);
   z-index:30;
 }
 .toolbar{

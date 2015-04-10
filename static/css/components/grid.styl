@@ -1,25 +1,46 @@
+// ----------------
+// Адаптивные сетки
+// ----------------
+
 .grid {
   display: flex;
   flex-flow: row wrap;
-}
-
-.grid-inline {
-  display: inline-flex;
-}
-
-.grid-rounded {
-  border-radius: border-radius;
   overflow: hidden;
 }
+
 .grid-align-baseline { align-items: baseline }
 .grid-align-center { align-items: center }
 
 .grid-gutters {
   margin: -.5em;
 
-  .cell {
+  &.block {
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+
+  > .cell {
     margin: .5em;
   }
+}
+
+.grid-rounded {
+  border-radius: border-radius;
+}
+
+.grid-level-1 {
+  box-shadow: 0 0 1px rgba(0,0,0,.5);
+  z-index: 10;
+}
+
+.grid-level-2 {
+  box-shadow: 0 0 3px rgba(0,0,0,.25);
+  z-index: 20;
+}
+
+.grid-level-3 {
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  z-index: 30;
 }
 
 .cell {
@@ -48,4 +69,3 @@ for i in (1..8) {
     .l-order-{i} { order: i }
   }
 }
-
