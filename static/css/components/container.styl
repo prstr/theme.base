@@ -3,18 +3,25 @@
 // ---------
 //
 // Задает боковые отступы.
+//
+// Контейнер фиксированной ширины можно задать с помощью модификатора
+// `.container-fixed`, либо поместив его в `.layout-fixed`.
+//
+// ```
+// [.layout-fixed]
+//   .container
+//     {...}
+//
+// .container[.container-fixed]
+//   {...}
+// ```
+
+
 
 .container {
   padding-left: gap;
   padding-right: gap;
 }
-
-// ------------------------------
-// Контейнер фиксированной ширины
-// ------------------------------
-//
-// Контейнер фиксированной ширины можно задать с помощью модификатора
-// `.container-fixed`, либо поместив его в `.layout-fixed`.
 
 @media (min-width: screen-medium-min) {
   .container-fixed, .layout-fixed .container {
