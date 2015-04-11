@@ -3058,94 +3058,102 @@ keygen{
   text-align:center;
   margin:1em 0;
 }
-.panel{
+.pnl-group .pnl:first-child{
+  border-top-left-radius:4px;
+  border-top-right-radius:4px;
+}
+.pnl-group .pnl:last-child{
+  border-bottom-left-radius:4px;
+  border-bottom-right-radius:4px;
+}
+.pnl{
   position:relative;
   z-index:1;
 }
-.panel::before,
-.panel::after{
+.pnl::before,
+.pnl::after{
   content:'';
   display:table;
 }
-.panel::after{
+.pnl::after{
   clear:both;
 }
-.panel-indent{
+.pnl-indent{
   padding-left:1em;
   padding-right:1em;
 }
-.panel-base{
+.pnl-base{
   background:#fff;
   color:#404040;
   text-shadow:none;
   border-color:#e6e6e6;
 }
-.panel-base-subtle{
+.pnl-base-subtle{
   background:#fff;
 }
-.panel-default{
+.pnl-default{
   background:#eee;
   color:#3b3b3b;
   text-shadow:none;
   border-color:#d6d6d6;
 }
-.panel-default-subtle{
+.pnl-default-subtle{
   background:#f8f8f8;
 }
-.panel-primary{
+.pnl-primary{
   background:#31a6c4;
   color:#fff;
   text-shadow:0 1px 1px #257c93;
   border-color:#2a8da7;
 }
-.panel-primary-subtle{
+.pnl-primary-subtle{
   background:#bdd2d7;
 }
-.panel-action{
+.pnl-action{
   background:#2e77b8;
   color:#fff;
   text-shadow:0 1px 1px #22598a;
   border-color:#27659c;
 }
-.panel-action-subtle{
+.pnl-action-subtle{
   background:#b9c8d5;
 }
-.panel-success{
+.pnl-success{
   background:#39ac67;
   color:#fff;
   text-shadow:0 1px 1px #2b814d;
   border-color:#309258;
 }
-.panel-success-subtle{
+.pnl-success-subtle{
   background:#bbd2c5;
 }
-.panel-warn{
+.pnl-warn{
   background:#f5d989;
   color:#584307;
   text-shadow:none;
   border-color:#f2ce66;
 }
-.panel-warn-subtle{
+.pnl-warn-subtle{
   background:#eee9dd;
 }
-.panel-critical{
+.pnl-critical{
   background:#e64c4c;
   color:#430909;
   text-shadow:none;
   border-color:#e23131;
 }
-.panel-critical-subtle{
+.pnl-critical-subtle{
   background:#e3caca;
 }
-.panel-level-1{
+.pnl-level-1{
   box-shadow:0 0 1px rgba(0,0,0,0.5);
   z-index:10;
 }
-.panel-level-2{
+.pnl-level-2{
   box-shadow:0 0 3px rgba(0,0,0,0.25);
   z-index:20;
 }
-.panel-level-3{
+.pnl-level-3{
   box-shadow:0 0 16px rgba(0,0,0,0.25);
   z-index:30;
 }
@@ -3355,4 +3363,14 @@ keygen{
   .workspace-nav-link::after{
     content:attr(title);
   }
+}
+.workspace-section{
+  padding:1em;
+}
+.workspace-section-title{
+  margin:0 0 0.5em;
+  font-size:1.5em;
+}
+.workspace-section-description{
+  font-size:0.875em;
 }

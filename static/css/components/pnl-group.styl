@@ -1,0 +1,23 @@
+// --------------
+// Группа панелей
+// --------------
+//
+// Склеивает несколько панелей в один блок, добавляя круглые углы первой
+// и последней.
+//
+// ```
+// .pnl-group
+//   .pnl + .pnl + ... + .pnl
+// ```
+
+.pnl-group .pnl:first-child {
+  border-top-left-radius: border-radius;
+  border-top-right-radius: border-radius;
+}
+
+.pnl-group .pnl:last-child {
+  border-bottom-left-radius: border-radius;
+  border-bottom-right-radius: border-radius;
+}
+
+
