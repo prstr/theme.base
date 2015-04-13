@@ -2889,7 +2889,7 @@ keygen{
 .empty-list-message{
   font-size:1.25em;
 }
-[ui-editor]{
+.medium-editor{
   outline:0;
   min-height:120px;
 }
