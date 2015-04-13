@@ -2197,6 +2197,12 @@ hr.bold{
           flex:100%;
   box-sizing:border-box;
 }
+.cell-controll{
+  -webkit-box-flex:0;
+  -webkit-flex:0 0 auto;
+      -ms-flex:0 0 auto;
+          flex:0 0 auto;
+}
 .cell-1{
   -webkit-box-flex:1;
   -webkit-flex:1;
@@ -3215,6 +3221,10 @@ keygen{
 }
 .empty-list{
   margin:4em;
+  text-align:center;
+}
+.empty-list-small-gutter{
+  margin:0.5em;
   text-align:center;
 }
 .empty-list-icon{
