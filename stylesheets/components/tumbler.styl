@@ -1,0 +1,73 @@
+// -------------
+// Переключатель
+// -------------
+//
+// Классический тумблер в стиле «Вкл/выкл».
+//
+// ```
+// label.tumbler[.active]
+// [.tumbler-small | .tumbler-large ...]  // размеры
+//   input[type='checkbox']
+// ```
+
+.tumbler {
+  position: relative;
+
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  padding: .25em .75em;
+  height: 2.1em;
+  width: 3em;
+
+  cursor: pointer;
+
+  border-radius: tumbler-radius;
+  box-shadow: 0 1px 8px rgba(0,0,0,.1) inset,
+              0 0 1px rgba(0,0,0,.5) inset
+
+  background: ui-default;
+  transition: all .3s;
+
+  input[type="radio"], input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: .2em;
+    bottom: .2em;
+
+    display: block;
+    box-sizing: border-box;
+    width: 1.7em;
+
+    border-radius: tumbler-radius - 1;
+    background: ui-base;
+    box-shadow: 0 0 1px rgba(0,0,0,.5);
+
+    left: 0%;
+    margin-left: .2em;
+    transition: all .3s;
+
+  }
+
+  &.active {
+    background-color: ui-action;
+    border-color: ui-action-border;
+
+    &::after {
+      left: 100%;
+      margin-left: -1.9em;
+    }
+
+  }
+
+}
+
+.tumbler-larger { font-size: type-larger }
+.tumbler-large { font-size: type-large }
+.tumbler-small { font-size: type-small }
+.tumbler-smaller { font-size: type-smaller }
