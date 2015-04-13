@@ -1,0 +1,51 @@
+// ------------
+// Группа полей
+// ------------
+//
+// Позволяет сгруппировать несколько текстовых полей или добавить произвольную
+// метку (надпись или значок) как часть текстового поля.
+//
+// ```
+// .input-group
+//   [.input-group-addon]
+//   input
+//   [.input-group-addon]
+// ```
+
+.input-group {
+  display: inline-flex;
+  vertical-align: middle;
+
+  input, .input-group-addon {
+    margin-left: -1px;
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: border-radius;
+      border-bottom-left-radius: border-radius;
+    }
+    &:last-child {
+      border-top-right-radius: border-radius;
+      border-bottom-right-radius: border-radius;
+    }
+  }
+}
+
+.input-group-block {
+  display: flex;
+}
+
+.input-group-addon {
+  box-sizing: border-box;
+  padding: .25em .75em;
+  height: 2.1em;
+
+  background: ui-default;
+  border: 1px solid ui-default-border;
+}
+
+.input-group-addon-larger { font-size: type-larger }
+.input-group-addon-large { font-size: type-large }
+.input-group-addon-small { font-size: type-small }
+.input-group-addon-smaller { font-size: type-smaller }
+

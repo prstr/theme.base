@@ -1,0 +1,63 @@
+// -----------------
+// Таблица с данными
+// -----------------
+
+.datatable {
+  width: 100%;
+
+  td, th {
+    padding: .25em;
+    border-bottom: 1px solid datatable-border-color;
+
+    font: inherit;
+    text-align: left;
+  }
+
+  th {
+    color: datatable-th-color;
+  }
+
+  tbody tr:last-child {
+    td, th {
+      border-bottom: 0;
+    }
+  }
+
+}
+
+@media (max-width: screen-small-max) {
+
+  .datatable {
+
+    &, tfoot, tbody, tr {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      td, th {
+        display: flex;
+        align-items: center;
+        border-bottom: 0;
+
+        &::before {
+          content: attr(title);
+          flex: 1;
+        }
+      }
+
+      tr:not(:last-child) {
+        border-bottom: 1px solid datatable-border-color;
+      }
+    }
+
+  }
+
+  .datatable-cell {
+    flex: 1;
+  }
+
+}
