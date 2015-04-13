@@ -1,38 +1,50 @@
-.medium-editor
-  outline: 0
-  min-height: 120px
+.medium-editor {
+  outline: 0;
+  min-height: 120px;
+}
 
 .medium-editor-toolbar, .medium-editor-anchor-preview {
-  position: absolute
-  z-index: 0
-  top: 0
-  left: 0
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
 
-  visibility: hidden
-  opacity: 0
-  transition: transform .3s, opacity .3s
+  visibility: hidden;
+  opacity: 0;
+  transition: transform .3s, opacity .3s;
 
   &::after {
-    content: ''
+    content: '';
 
-    position: absolute
-    left: 50%
-    margin-left: -8px
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
 
-    display: block
-    border: 8px solid transparent
+    display: block;
+    border: 8px solid transparent;
   }
 }
 
 .medium-editor-toolbar-actions {
-  margin: 0
-  padding: 0
-  list-style: none
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
   li {
-    margin: 0
-    display: inline-block
-    margin-left: -1px
+    margin: 0;
+    display: inline-block;
+    margin-left: -1px;
+  }
+
+  li:first-child button {
+    border-top-left-radius: border-radius;
+    border-bottom-left-radius: border-radius;
+    margin-left: 0;
+  }
+
+  li:last-child button {
+    border-top-right-radius: border-radius;
+    border-bottom-right-radius: border-radius;
   }
 }
 
@@ -54,116 +66,147 @@
 
   border-width: 1px;
   border-style: solid;
-  border-color: ui-primary-border;
-  border-bottom-color: darken(ui-primary-border, 15%);
+  border-color: ui-action-border;
+  border-bottom-color: darken(ui-action-border, 15%);
   border-radius: 0
 
-  background: ui-primary;
+  background: ui-action;
 
-  color: ui-primary-text;
-  text-shadow: light(ui-primary-text) ? 0 1px 1px darken(ui-primary-border, 25%) : none;
-  font: inherit;
-  white-space: nowrap
+  color: ui-action-text;
+  text-shadow: light(ui-action-text) ? 0 1px 1px darken(ui-action-border, 25%) : none;
+  white-space: nowrap;
 
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
   }
 
-  i {
-    position: relative;
-    top: -1px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  i + *, * + i {
-    margin-left: .37em;
-  }
-
-  li:first-child button {
-    border-top-left-radius: border-radius
-    border-bottom-left-radius: border-radius
-    margin-left: 0
-  }
-
-  li:last-child button {
-    border-top-right-radius: border-radius
-    border-bottom-right-radius: border-radius
-  }
-
   &:focus, &:hover {
-    color: ui-primary-text;
-    background: darken(ui-primary, 10%);
+    background: darken(ui-action, 10%);
   }
 
   &:active, &.active {
-    background: darken(ui-primary, 15%);
-    border-color: darken(ui-primary-border, 15%);
-    box-shadow: 0 3px 5px darken(ui-primary-border, 15%) inset
+    background: darken(ui-action, 15%);
+    border-color: darken(ui-action-border, 15%);
+    box-shadow: 0 3px 5px darken(ui-action-border, 15%) inset;
     z-index: 2;
   }
+
+  * {
+    display: none;
+  }
+
+  &::after {
+    position: relative;
+    top: -1px;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    font-family: Linearicons;
+  }
+
 }
 
+.medium-editor-action-bold::after { content: '\e9a3' }
+.medium-editor-action-italic::after { content: '\e9a4' }
+.medium-editor-action-underline::after { content: '\e9a5' }
+.medium-editor-action-strikethrough::after {
+  content: '\e9a2';
+  text-decoration: line-through;
+}
+.medium-editor-action-header1::after {
+  font-family: font-family;
+  content: 'H1'
+}
+.medium-editor-action-header2::after {
+  font-family: font-family;
+  content: 'H2';
+}
+.medium-editor-action-quote::after { content: '\e7e5' }
+.medium-editor-action-anchor::after { content: '\e915' }
+.medium-editor-action-orderedlist::after { content: '\e92d' }
+.medium-editor-action-unorderedlist::after { content: '\e92c' }
+
 .medium-editor-toolbar {
-  transform: translateY(16px)
+
+  transform: translateY(16px);
+
   &::after {
-    top: 100%
-    border-top-color: darken(ui-primary, 15%)
+    top: 100%;
+    border-top-color: darken(ui-action, 15%);
   }
 }
 
 .medium-editor-anchor-preview {
-  padding: 4px 12px
-  border: 1px solid darken(ui-primary, 15%)
-  border-radius: border-radius
+  padding: 4px 12px;
+  border: 1px solid darken(ui-action, 15%);
+  border-radius: border-radius;
 
-  transform: translateY(-16px)
-  background: ui-primary
-  color: ui-primary-text
-  text-align: center
+  transform: translateY(-16px);
+  background: ui-action;
+  color: ui-action-text;
+  text-align: center;
 
   &::after {
-    bottom: 100%
-    left: 50%
-    border-bottom-color: darken(ui-primary, 15%)
+    bottom: 100%;
+    left: 50%;
+    border-bottom-color: darken(ui-action, 15%);
   }
 }
 
 .medium-editor-toolbar-active,
 .medium-editor-anchor-preview-active {
-  z-index: 2000
-  visibility: visible
-  opacity: 1
-  transform: translateY(0)
+  z-index: 2000;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .medium-editor-toolbar-form {
-  display: none
+  display: none;
 
-  border: 1px solid darken(ui-primary, 15%)
-  border-radius: border-radius
-  background: ui-primary
-  text-align: center
+  border: 1px solid darken(ui-action, 15%);
+  border-radius: border-radius;
+  background: ui-action;
+  text-align: center;
 
   a {
-    display: inline-block
-    padding: 4px 12px
-    color: ui-primary-text
+    display: inline-block;
+    padding: 4px 12px;
+    color: ui-action-text;
   }
+
+  i.fa {
+    position: relative;
+    top: -1px;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    font-family: Linearicons;
+    font-style: normal;
+  }
+
+  i.fa-check::after { content: '\e934' }
+  i.fa-times::after { content: '\e935' }
 }
 
 .medium-editor-placeholder {
-  position: relative
+  position: relative;
 
   &::after {
-    content: attr(data-placeholder)
-    position: absolute
-    top: 0
-    left: 0
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    color: subtle-color
-    font-style: italic
-    white-space: pre-wrap
+    color: subtle-color;
+    font-style: italic;
+    white-space: pre-wrap;
   }
+}
+
+.medium-editor-toolbar-input {
+  border: 1px solid ui-action-border;
 }

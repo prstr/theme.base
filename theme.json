@@ -127,7 +127,7 @@
       "id": "ui-critical",
       "label": "Ошибка",
       "type": "color",
-      "default": "hsl(0deg, 75%, 60%)"
+      "default": "hsl(0deg, 75%, 49%)"
     }
   ]
 }
