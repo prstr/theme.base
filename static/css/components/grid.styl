@@ -11,7 +11,7 @@
 // для больших экранов.
 //
 // ```
-// .grid[.grid-gutters | .grid-rounded][.grid-level-1]
+// .grid[.grid-gutters][.grid-level-1]
 //   .cell[.pnl[...]][.cell-s-1of1][.cell-m-1][.cell-l-2]
 //   [.cell]
 // ```
@@ -19,7 +19,6 @@
 .grid {
   display: flex;
   flex-flow: row wrap;
-  overflow: hidden;
 }
 
 .grid-align-baseline { align-items: baseline }
@@ -36,25 +35,6 @@
   > .cell {
     margin: (gap / 2);
   }
-}
-
-.grid-rounded {
-  border-radius: border-radius;
-}
-
-.grid-level-1 {
-  box-shadow: 0 0 1px rgba(0,0,0,.5);
-  z-index: 10;
-}
-
-.grid-level-2 {
-  box-shadow: 0 0 3px rgba(0,0,0,.25);
-  z-index: 20;
-}
-
-.grid-level-3 {
-  box-shadow: 0 0 16px rgba(0,0,0,.25);
-  z-index: 30;
 }
 
 // --------------
@@ -74,21 +54,14 @@
 //
 // Если добавить еще одну ячейку `.cell.cell-1`, то первая и последняя станут
 // занимать четверть экрана каждая, а вторая -- половину.
-//
-// Классы вида `.cell-...-{i}of{j}` (пр. `.cell-...-1of2`) определяют размер
-// колонки в процентах: `1of1` — это `1/1 = 100%`, `1of2` — это `1/2 = 50%` и т.д.
-// Если колонки, задананные таким образом, не помещаются в одну строку, они
-// переносятся на следующую строку. Это позволяет создавать сетки, в которых
-// отображается по два элемента на мобильных телефонах, по три на планшетах
-// и по четыре на больших экранах.
 
 .cell {
   flex: 100%;
   box-sizing: border-box;
 }
 
-.cell-controll {
-  flex: 0 0 auto
+.cell-min {
+  flex: 0 0 auto;
 }
 
 for i in (1..8) {
@@ -97,11 +70,6 @@ for i in (1..8) {
     flex: i;
   }
 
-  for j in (1..i) {
-    .cell-{j}of{i} {
-      flex: (j * 100 / i)%;
-    }
-  }
 }
 
 // ------------
@@ -109,39 +77,36 @@ for i in (1..8) {
 // ------------
 //
 // При дизайне сеток сначала определите расположение колонок с помощью
-// классов `.cell-{n}` или `.cell-{i}of{j}`. При отсутствии класса подразумевается
-// `.cell-1of1` (т.е. 100%).
+// классов `.cell-{n}`. При отсутствии класса подразумевается ширина 100%.
 //
-// Затем добавьте классы `.cell-m-{n}` или `.cell-m-{i}of{j}` для средних экранов.
+// Затем добавьте классы `.cell-m-{n}` для средних экранов.
 //
-// Затем добавьте классы `.cell-l-{n}` или `.cell-l-{i}of{j}` для больших экранов.
+// Затем добавьте классы `.cell-l-{n}` для больших экранов.
 
 @media (min-width: screen-medium-min) {
   for i in (1..8) {
+
+    .cell-m-min {
+      flex: 0 0 auto;
+    }
 
     .cell-m-{i} {
       flex: i;
     }
 
-    for j in (1..i) {
-      .cell-m-{j}of{i} {
-        flex: (j * 100 / i)%;
-      }
-    }
   }
 }
 
 @media (min-width: screen-large-min) {
   for i in (1..8) {
 
+    .cell-l-min {
+      flex: 0 0 auto;
+    }
+
     .cell-l-{i} {
       flex: i;
     }
 
-    for j in (1..i) {
-      .cell-l-{j}of{i} {
-        flex: (j * 100 / i)%;
-      }
-    }
   }
 }

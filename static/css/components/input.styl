@@ -1,6 +1,13 @@
 // --------------
 // Текстовое поле
 // --------------
+//
+// ```
+// <input | select | textarea>
+// [.input-large | .input-small ...]  // размеры
+// [.input-block]       // отображение во всю ширину блока
+// [.input-underline]   // только с нижней границей
+// ```
 
 input, select, keygen, textarea {
   position: relative;
@@ -43,3 +50,23 @@ input, select, keygen {
 .input-large { font-size: type-large }
 .input-small { font-size: type-small }
 .input-smaller { font-size: type-smaller }
+
+.input-block {
+  display: block;
+  width: 100%;
+}
+
+.input-underline {
+  padding-left: 0
+  padding-right: 0
+  border-radius: 0
+  border-width: 0 0 1px
+
+  &.ng-dirty.ng-invalid {
+    box-shadow: 0 6px 6px -6px rgba(ui-critical, .5);
+  }
+
+  &:focus {
+    box-shadow: 0 6px 6px -6px rgba(ui-action, .5);
+  }
+}

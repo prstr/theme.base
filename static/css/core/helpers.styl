@@ -37,3 +37,29 @@
   font-size: type-small
 .type-smaller
   font-size: type-smaller
+
+// Отображение/скрытие компонентов на устройствах
+
+@media (max-width: screen-small-max) {
+  .hide-s {
+    display: none !important
+  }
+}
+
+@media (min-width: screen-medium-min) {
+  .show-s {
+    display: none !important
+  }
+}
+
+@media (min-width: screen-large-min) {
+  .hide-l {
+    display: none !important
+  }
+}
+
+@media (max-width: screen-medium-max) {
+  .show-l {
+    display: none !important
+  }
+}
