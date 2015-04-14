@@ -9,7 +9,7 @@
   <def:body>
     <div class="workspace">
       <div class="workspace-aside">
-        <ng-include src="'/templates/admin/_aside.html'">
+        <ng-include src="'_aside.html'">
         </ng-include>
       </div>
       <div ui-view>
@@ -22,7 +22,12 @@
 
   <def:scripts>
     <script src="/app/admin.js"></script>
-    <!-- TODO bundle the templates -->
+    <each:template in="templates">
+      <script id="#{template.file}"
+              type="text/ng-template">
+        !{template.content}
+      </script>
+    </each:template>
   </def:scripts>
 
 </include>
