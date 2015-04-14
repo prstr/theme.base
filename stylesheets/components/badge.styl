@@ -1,0 +1,40 @@
+//-------
+// Значок
+//-------
+//
+// Используется для создания значков.
+//
+// ```
+//  <div>.badge
+// [.badge-default | .badge-primary | .badge-action | .badge-success | .badge-critical | ...]
+// [.badge-small | .badge-smaller | .badge-large | .badge-larger]
+//   [i | checkbox]
+//   span
+// ```
+
+.badge {
+  display: inline-block
+  box-sizing: border-box
+
+  border-radius: border-radius;
+  padding-left: gap-smaller
+  padding-right: gap-smaller
+  margin: gap-smaller
+}
+
+for c in ui-colors {
+  &.badge-{c} {
+    _bg = lookup('ui-' + c);
+    _bd = lookup('ui-' + c + '-border');
+    _tx = lookup('ui-' + c + '-text');
+
+    background: _bg;
+    border-color: _bd;
+    color: _tx;
+  }
+}
+
+.badge-larger { font-size: type-larger }
+.badge-large { font-size: type-large }
+.badge-small { font-size: type-small }
+.badge-smaller { font-size: type-smaller }
