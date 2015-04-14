@@ -13,13 +13,25 @@
 // ```
 
 .badge {
+  position: relative
   display: inline-block
   box-sizing: border-box
 
+  border-width: 1px
+  border-style: solid
   border-radius: border-radius;
-  padding-left: gap-smaller
-  padding-right: gap-smaller
-  margin: gap-smaller
+  padding-left: gap-small
+  padding-right: gap-small
+
+  text-align: center
+}
+
+.badge-icon {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: type-smaller
 }
 
 for c in ui-colors {
@@ -31,6 +43,10 @@ for c in ui-colors {
     background: _bg;
     border-color: _bd;
     color: _tx;
+
+    .badge-icon {
+      color: light(_bg) ? darken(_c, 75%) : #fff
+    }
   }
 }
 

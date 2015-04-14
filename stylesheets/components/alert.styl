@@ -1,0 +1,18 @@
+alert(bg, color) {
+  border: 4px solid bg
+  background: lighten(bg, 50%)
+  color: color
+}
+
+.alert {
+  padding: 0 gap
+  border-width: 1px
+  border-style: solid
+  border-radius: border-radius
+
+  for c in ui-colors {
+    &.alert-{c} {
+      alert(lookup('ui-' + c), lookup('ui-' + c + '-text'))
+    }
+  }
+}
