@@ -2,8 +2,7 @@
   "title": "Базовая тема ПроСтор",
   "description": "Используйте эту тему для создания уникального дизайна интернет-магазина.",
   "stylesheets": [
-    "stylesheets/theme.styl",
-    "stylesheets/theme.css"
+    "stylesheets/theme.styl"
   ],
   "options": [
     {
