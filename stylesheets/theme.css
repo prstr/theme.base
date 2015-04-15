@@ -216,6 +216,27 @@ hr.bold{
     display:none !important;
   }
 }
+.text-base{
+  color:#fff;
+}
+.text-default{
+  color:#eee;
+}
+.text-primary{
+  color:#31a6c4;
+}
+.text-action{
+  color:#2e77b8;
+}
+.text-success{
+  color:#39ac67;
+}
+.text-warn{
+  color:#f5d989;
+}
+.text-critical{
+  color:#db1f1f;
+}
 @font-face{
 	font-family:'Linearicons';
 	src:url('/static/fonts/Linearicons.eot?-ff6uwt');

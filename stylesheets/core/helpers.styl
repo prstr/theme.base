@@ -59,3 +59,13 @@
     display: none !important
   }
 }
+
+// Цвет текста
+
+for c in ui-colors {
+
+  .text-{c} {
+    color: lookup('ui-' + c);
+  }
+
+}
