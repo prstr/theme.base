@@ -1976,44 +1976,37 @@ hr.bold{
 
 .alert{
   padding:0 1em;
-  border-width:1px;
+  border-width:4px;
   border-style:solid;
   border-radius:4px;
 }
-.alert.alert-base{
-  border:4px solid #fff;
+.alert-base{
+  border-color:#fff;
   background:#fff;
-  color:#404040;
 }
-.alert.alert-default{
-  border:4px solid #eee;
-  background:#f7f7f7;
-  color:#3b3b3b;
+.alert-default{
+  border-color:#eee;
+  background:#fbfbfb;
 }
-.alert.alert-primary{
-  border:4px solid #31a6c4;
-  background:#95d4e5;
-  color:#fff;
+.alert-primary{
+  border-color:#31a6c4;
+  background:#caeaf2;
 }
-.alert.alert-action{
-  border:4px solid #2e77b8;
-  background:#8fbbe3;
-  color:#fff;
+.alert-action{
+  border-color:#2e77b8;
+  background:#c7ddf1;
 }
-.alert.alert-success{
-  border:4px solid #39ac67;
-  background:#95dcb2;
-  color:#fff;
+.alert-success{
+  border-color:#39ac67;
+  background:#caeed8;
 }
-.alert.alert-warn{
-  border:4px solid #f5d989;
-  background:#faecc4;
-  color:#584307;
+.alert-warn{
+  border-color:#f5d989;
+  background:#fdf5e1;
 }
-.alert.alert-critical{
-  border:4px solid #db1f1f;
-  background:#ef8d8d;
-  color:#fff;
+.alert-critical{
+  border-color:#db1f1f;
+  background:#f7c6c6;
 }
 .badge{
   position:relative;
@@ -2126,7 +2119,7 @@ hr.bold{
   box-sizing:border-box;
   padding:0.25em 0.75em;
   margin:0;
-  height:2.1em;
+  height:34px;
   vertical-align:middle;
   outline:0;
   cursor:pointer;
@@ -2290,17 +2283,25 @@ hr.bold{
   display:block;
   text-align:center;
 }
-.btn-larger{
-  font-size:1.5em;
-}
-.btn-large{
-  font-size:1.25em;
+.btn-smaller{
+  font-size:0.75em;
+  height:26px;
 }
 .btn-small{
   font-size:0.875em;
+  height:30px;
 }
-.btn-smaller{
-  font-size:0.75em;
+.btn-normal{
+  font-size:1em;
+  height:34px;
+}
+.btn-large{
+  font-size:1.25em;
+  height:42px;
+}
+.btn-larger{
+  font-size:1.5em;
+  height:50px;
 }
 .container{
   padding-left:1em;
@@ -2819,19 +2820,7 @@ textarea[disabled]{
 input,
 select,
 keygen{
-  height:2.1em;
-}
-.input-larger{
-  font-size:1.5em;
-}
-.input-large{
-  font-size:1.25em;
-}
-.input-small{
-  font-size:0.875em;
-}
-.input-smaller{
-  font-size:0.75em;
+  height:34px;
 }
 .input-block{
   display:block;
@@ -2848,6 +2837,26 @@ keygen{
 }
 .input-underline:focus{
   box-shadow:0 6px 6px -6px rgba(46,119,184,0.5);
+}
+.input-smaller{
+  font-size:0.75em;
+  height:26px;
+}
+.input-small{
+  font-size:0.875em;
+  height:30px;
+}
+.input-normal{
+  font-size:1em;
+  height:34px;
+}
+.input-large{
+  font-size:1.25em;
+  height:42px;
+}
+.input-larger{
+  font-size:1.5em;
+  height:50px;
 }
 .loading{
   text-align:center;
@@ -3016,8 +3025,7 @@ keygen{
   display:inline-block;
   box-sizing:border-box;
   vertical-align:middle;
-  padding:0.25em 0.75em;
-  height:2.1em;
+  height:34px;
   width:3em;
   cursor:pointer;
   border-radius:1000px;
@@ -3034,11 +3042,11 @@ keygen{
 .tumbler::after{
   content:'';
   position:absolute;
-  top:0.2em;
-  bottom:0.2em;
+  top:2px;
+  bottom:2px;
   display:block;
   box-sizing:border-box;
-  width:1.7em;
+  width:30px;
   -webkit-user-select:none;
      -moz-user-select:none;
       -ms-user-select:none;
@@ -3049,7 +3057,7 @@ keygen{
   background:#fff;
   box-shadow:0 0 1px rgba(0,0,0,0.5);
   left:0%;
-  margin-left:0.2em;
+  margin-left:2px;
   -webkit-transition:all 0.3s;
           transition:all 0.3s;
 }
@@ -3059,19 +3067,57 @@ keygen{
 }
 .tumbler.active::after{
   left:100%;
-  margin-left:-1.9em;
-}
-.tumbler-larger{
-  font-size:1.5em;
-}
-.tumbler-large{
-  font-size:1.25em;
-}
-.tumbler-small{
-  font-size:0.875em;
+  margin-left:-32px;
 }
 .tumbler-smaller{
   font-size:0.75em;
+  height:26px;
+}
+.tumbler-smaller::after{
+  width:22px;
+}
+.tumbler-smaller.active::after{
+  margin-left:-24px;
+}
+.tumbler-small{
+  font-size:0.875em;
+  height:30px;
+}
+.tumbler-small::after{
+  width:26px;
+}
+.tumbler-small.active::after{
+  margin-left:-28px;
+}
+.tumbler-normal{
+  font-size:1em;
+  height:34px;
+}
+.tumbler-normal::after{
+  width:30px;
+}
+.tumbler-normal.active::after{
+  margin-left:-32px;
+}
+.tumbler-large{
+  font-size:1.25em;
+  height:42px;
+}
+.tumbler-large::after{
+  width:38px;
+}
+.tumbler-large.active::after{
+  margin-left:-40px;
+}
+.tumbler-larger{
+  font-size:1.5em;
+  height:50px;
+}
+.tumbler-larger::after{
+  width:46px;
+}
+.tumbler-larger.active::after{
+  margin-left:-48px;
 }
 .empty-list{
   margin:4em;
@@ -3431,7 +3477,7 @@ keygen{
   }
 }
 .workspace-section{
-  padding:1em;
+  padding:0 1em;
 }
 .workspace-section + .workspace-section{
   border-top:1px solid #9cbbc3;

@@ -1,18 +1,21 @@
-alert(bg, color) {
-  border: 4px solid bg
-  background: lighten(bg, 50%)
-  color: color
-}
+// ------
+// Алерты
+// ------
+//
+// Используются для привлечения внимания к небольшому отрезку текста.
 
 .alert {
   padding: 0 gap
-  border-width: 1px
+  border-width: 4px
   border-style: solid
   border-radius: border-radius
+}
 
-  for c in ui-colors {
-    &.alert-{c} {
-      alert(lookup('ui-' + c), lookup('ui-' + c + '-text'))
-    }
+for c in ui-colors {
+  _c = lookup('ui-' + c)
+
+  .alert-{c} {
+    border-color: _c
+    background: lighten(_c, 75%)
   }
 }

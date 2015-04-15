@@ -16,8 +16,7 @@
   display: inline-block;
   box-sizing: border-box;
   vertical-align: middle;
-  padding: .25em .75em;
-  height: 2.1em;
+  height: ctl-normal-height;
   width: 3em;
 
   cursor: pointer;
@@ -37,12 +36,12 @@
   &::after {
     content: '';
     position: absolute;
-    top: .2em;
-    bottom: .2em;
+    top: 2px;
+    bottom: 2px;
 
     display: block;
     box-sizing: border-box;
-    width: 1.7em;
+    width: ctl-normal-height - 4;
     user-select: none;
     touch-action: manipulation;
 
@@ -51,7 +50,7 @@
     box-shadow: 0 0 1px rgba(0,0,0,.5);
 
     left: 0%;
-    margin-left: .2em;
+    margin-left: 2px;
     transition: all .3s;
 
   }
@@ -62,14 +61,28 @@
 
     &::after {
       left: 100%;
-      margin-left: -1.9em;
+      margin-left: -(ctl-normal-height - 2);
     }
 
   }
 
 }
 
-.tumbler-larger { font-size: type-larger }
-.tumbler-large { font-size: type-large }
-.tumbler-small { font-size: type-small }
-.tumbler-smaller { font-size: type-smaller }
+// Расчет размеров
+
+for s in sizes {
+  _fs = lookup('type-' + s);
+  _h = lookup('ctl-' + s + '-height');
+
+  .tumbler-{s} {
+    font-size: _fs;
+    height: _h;
+
+    &::after {
+      width: _h - 4;
+    }
+    &.active::after {
+      margin-left: -(_h - 2)
+    }
+  }
+}

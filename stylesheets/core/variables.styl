@@ -23,17 +23,21 @@
 font-size-px ?= 16
 font-size ?= unit(font-size-px, px)
 line-height ?= 1.5
+gap ?= 1em
 
 type-larger ?= 1.5em
 type-large ?= 1.25em
+type-normal ?= 1em
 type-small ?= 0.875em
 type-smaller ?= 0.75em
 
-gap-smaller ?= .25em
-gap-small ?= .5em
-gap ?= 1em
-gap-large ?= 2em
-gap-larger ?= 4em
+gap-smaller ?= gap / 4
+gap-small ?= gap / 2
+gap-normal ?= gap
+gap-large ?= gap * 2
+gap-larger ?= gap * 4
+
+sizes = 'smaller' 'small' 'normal' 'large' 'larger'
 
 // --------------------------
 // Точки адаптивного перехода
@@ -81,9 +85,18 @@ hr-color ?= ui-default
 datatable-th-color ?= subtle-color
 datatable-border-color ?= ui-default
 
+ctl-vertical-padding ?= .25em
+
+for s in sizes {
+  _fs = font-size * lookup('type-' + s)
+  _cs = round(_fs * (line-height + 2 * ctl-vertical-padding) + 2);
+  define('ctl-' + s + '-height', _cs);
+}
+
 tumbler-radius ?= 1000px
 
 badge-radius ?= 1000px
+
 
 // ----------
 // Структуры

@@ -1,9 +1,22 @@
 <include file="layout.html">
 
   <var:colors>['base', 'default', 'primary', 'action', 'success', 'warn', 'critical']</var:colors>
-  <var:sizes>['smaller', 'small', '', 'large', 'larger']</var:sizes>
+  <var:sizes>['smaller', 'small', 'normal', 'large', 'larger']</var:sizes>
+
+  <def:title>CSS-шпаргалка</def:title>
 
   <def:body>
+    <div class="pnl pnl-primary">
+      <div class="container container-fixed">
+        <div class="hero centered">
+          <h1>CSS-шпаргалка</h1>
+          <p>
+            Включите инструменты разработчика в браузере,<br/>
+            чтобы смотреть разметку.
+          </p>
+        </div>
+      </div>
+    </div>
     <div class="container container-fixed">
       <div class="hero centered">
         <h1>Раздел 1. Компоновка блоков</h1>
@@ -137,13 +150,10 @@
             <code>.pnl-standalone</code>.
           </p>
         </div>
+        <p>
+          Несколько панелей можно объединить в группу.
+        </p>
         <div class="pnl-group block">
-          <div class="pnl pnl-base pnl-indent">
-            <p>
-              Несколько панелей можно объединить в группу.
-            </p>
-          </div>
-
           <each:c in="colors">
             <div class="pnl pnl-indent pnl-#{c}">
               <p>
@@ -167,6 +177,135 @@
         </div>
       </each:s>
       <p>Чтобы между кнопками были отступы, поместите их в <code>.inline-grid</code>.</p>
+    </div>
+
+    <div class="container container-fixed">
+      <h2>2.3 Переключатели</h2>
+      <div class="block">
+        <div class="inline-grid">
+          <each:s in="sizes">
+            <label class="tumbler tumbler-#{s}">
+              <input type="checkbox"/>
+            </label>
+            <label class="tumbler tumbler-#{s} active">
+              <input type="checkbox"/>
+            </label>
+          </each:s>
+        </div>
+      </div>
+      <p>Для переключателей нужен JavaScript (например, Angular).</p>
+    </div>
+
+    <div class="pnl pnl-primary-subtle">
+      <div class="container container-fixed">
+        <h2>2.4 Формы</h2>
+        <p>Формы компонуются с помощью адаптивных сеток. При необходимости можно использовать панели или группы панелей.</p>
+        <div class="grid grid-gutters block">
+          <div class="cell cell-m-1">
+            <h3>Пример</h3>
+            <p>В данном примере используются вложенные друг в друга сетки.</p>
+          </div>
+          <div class="cell cell-m-3">
+            <div class="pnl-group">
+              <div class="pnl pnl-base pnl-indent">
+                <div class="grid grid-gutters block">
+                  <div class="cell cell-m-1">
+                    <label for="i1">Текстовое поле</label>
+                  </div>
+                  <div class="cell cell-m-1">
+                    <input id="i1"
+                           type="text"/>
+                  </div>
+                </div>
+                <div class="grid grid-gutters block">
+                  <div class="cell cell-m-1">
+                    <label for="i2">Текстовое поле (ширина 100%)</label>
+                  </div>
+                  <div class="cell cell-m-1">
+                    <input id="i2"
+                           type="text"
+                           class="input-block"/>
+                  </div>
+                </div>
+                <div class="grid grid-gutters block">
+                  <div class="cell cell-m-1">
+                    <label for="i3">Группа ввода</label>
+                  </div>
+                  <div class="cell cell-m-1">
+                    <label class="input-group">
+                      <input id="i3"
+                             type="number"
+                             class="input-block"
+                             value="1000"/>
+                      <span class="input-group-addon">руб.</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="grid grid-gutters block">
+                  <div class="cell cell-m-1">
+                    <label for="i4">Группа ввода (ширина 100%)</label>
+                  </div>
+                  <div class="cell cell-m-1">
+                    <label class="input-group input-group-block">
+                      <input id="i4"
+                             type="number"
+                             class="input-block"
+                             value="1000"/>
+                      <span class="input-group-addon">руб.</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="grid grid-gutters block">
+                  <div class="cell cell-m-1">
+                    <label for="i5">Выпадающее меню</label>
+                  </div>
+                  <div class="cell cell-m-1">
+                    <select id="i5">
+                      <option>Опция 1</option>
+                      <option>Опция 2</option>
+                      <option>Опция 3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid grid-gutters block">
+                  <div class="cell cell-m-1">
+                    <label for="i6">Элемент и кнопка</label>
+                  </div>
+                  <div class="cell cell-m-1">
+                    <div class="inline-grid">
+                      <input id="i6" type="text"/>
+                      <button class="btn btn-primary">
+                        Кнопка
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pnl pnl-default">
+                <div class="block centered">
+                  <div class="inline-grid">
+                    <button class="btn btn-success">
+                      Сохранить
+                    </button>
+                    <button class="btn btn-default">
+                      Отменить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container container-fixed">
+      <h2>2.5 Алерты</h2>
+      <each:c in="colors">
+        <div class="alert alert-#{c} block">
+          <p>Можно разместить важную информацию.</p>
+        </div>
+      </each:c>
     </div>
 
   </def:body>

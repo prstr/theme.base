@@ -15,7 +15,7 @@ input, select, keygen, textarea {
 
   display: inline-block;
   box-sizing: border-box
-  padding: .25em .5em;
+  padding: ctl-vertical-padding .5em;
 
   vertical-align: middle;
   outline: 0;
@@ -43,18 +43,17 @@ input, select, keygen, textarea {
 }
 
 input, select, keygen {
-  height: 2.1em;
+  height: ctl-normal-height;
 }
 
-.input-larger { font-size: type-larger }
-.input-large { font-size: type-large }
-.input-small { font-size: type-small }
-.input-smaller { font-size: type-smaller }
+// Поля, вытянутые по ширине контейнера
 
 .input-block {
   display: block;
   width: 100%;
 }
+
+// Поля, подчеркнутые снизу
 
 .input-underline {
   padding-left: 0
@@ -68,5 +67,14 @@ input, select, keygen {
 
   &:focus {
     box-shadow: 0 6px 6px -6px rgba(ui-action, .5);
+  }
+}
+
+// Размеры
+
+for s in sizes {
+  .input-{s} {
+    font-size: lookup('type-' + s);
+    height: lookup('ctl-' + s + '-height');
   }
 }
