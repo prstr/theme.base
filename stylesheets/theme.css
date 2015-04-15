@@ -2078,11 +2078,18 @@ hr.bold{
   content:'';
   position:absolute;
   top:0;
-  right:100%;
-  display:inline-block;
+  display:none;
   margin:0 0.25em;
   border:7px solid transparent;
   border-top-color:#31a6c4;
+}
+.badge.drag-over-before::before{
+  right:100%;
+  display:inline-block;
+}
+.badge.drag-over-after::before{
+  left:100%;
+  display:inline-block;
 }
 .btn-group{
   display:-webkit-inline-box;
@@ -2333,9 +2340,11 @@ hr.bold{
 .datatable tr.dragging{
   opacity:0.5;
 }
-.datatable tr.drag-over td,
-.datatable tr.drag-over th{
+.datatable tr.drag-over-before{
   border-top:4px solid #31a6c4;
+}
+.datatable tr.drag-over-after{
+  border-bottom:4px solid #31a6c4;
 }
 .datatable-small td,
 .datatable-small th{

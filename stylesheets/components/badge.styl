@@ -58,14 +58,19 @@ for c in ui-colors {
   content: ''
   position: absolute;
   top: 0;
-  right: 100%;
 
-  display: inline-block;
+  display: none;
   margin: 0 .25em;
+
   border: 7px solid transparent;
-
   border-top-color: ui-primary;
-
-
 }
 
+.badge.drag-over-before::before {
+  right: 100%;
+  display: inline-block;
+}
+.badge.drag-over-after::before {
+  left: 100%;
+  display: inline-block;
+}
