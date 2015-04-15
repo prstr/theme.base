@@ -33,49 +33,49 @@ h6{
   font-family:'Arsenal';
   font-style:normal;
   font-weight:normal;
-  src:local('Arsenal'), local('Arsenal Regular'), url("/fonts/Arsenal-Regular.ttf");
+  src:local('Arsenal'), local('Arsenal Regular'), url("/static/fonts/Arsenal-Regular.ttf");
 }
 @font-face{
   font-family:'Arsenal';
   font-style:normal;
   font-weight:bold;
-  src:local('Arsenal'), local('Arsenal Bold'), url("/fonts/Arsenal-Bold.ttf");
+  src:local('Arsenal'), local('Arsenal Bold'), url("/static/fonts/Arsenal-Bold.ttf");
 }
 @font-face{
   font-family:'Arsenal';
   font-style:italic;
   font-weight:normal;
-  src:local('Arsenal'), local('Arsenal Italic'), url("/fonts/Arsenal-Italic.ttf");
+  src:local('Arsenal'), local('Arsenal Italic'), url("/static/fonts/Arsenal-Italic.ttf");
 }
 @font-face{
   font-family:'Arsenal';
   font-style:italic;
   font-weight:bold;
-  src:local('Arsenal'), local('Arsenal Bold Italic'), url("/fonts/Arsenal-BoldItalic.ttf");
+  src:local('Arsenal'), local('Arsenal Bold Italic'), url("/static/fonts/Arsenal-BoldItalic.ttf");
 }
 @font-face{
   font-family:'PT Sans';
   font-style:normal;
   font-weight:normal;
-  src:local('PT Sans'), url("/fonts/PTSans.ttf");
+  src:local('PT Sans'), url("/static/fonts/PTSans.ttf");
 }
 @font-face{
   font-family:'PT Sans';
   font-style:normal;
   font-weight:bold;
-  src:local('PT Sans Bold'), url("/fonts/PTSans-Bold.ttf");
+  src:local('PT Sans Bold'), url("/static/fonts/PTSans-Bold.ttf");
 }
 @font-face{
   font-family:'PT Sans';
   font-style:italic;
   font-weight:bold;
-  src:local('PT Sans Bold Italic'), url("/fonts/PTSans-BoldItalic.ttf");
+  src:local('PT Sans Bold Italic'), url("/static/fonts/PTSans-BoldItalic.ttf");
 }
 @font-face{
   font-family:'PT Sans';
   font-style:italic;
   font-weight:normal;
-  src:local('PT Sans Italic'), url("/fonts/PTSans-Italic.ttf");
+  src:local('PT Sans Italic'), url("/static/fonts/PTSans-Italic.ttf");
 }
 html,
 body{
@@ -218,11 +218,11 @@ hr.bold{
 }
 @font-face{
 	font-family:'Linearicons';
-	src:url('/fonts/Linearicons.eot?-ff6uwt');
-	src:url('/fonts/Linearicons.eot?#iefix-ff6uwt') format('embedded-opentype'),
-		url('/fonts/Linearicons.woff?-ff6uwt') format('woff'),
-		url('/fonts/Linearicons.ttf?-ff6uwt') format('truetype'),
-		url('/fonts/Linearicons.svg?-ff6uwt#Linearicons') format('svg');
+	src:url('/static/fonts/Linearicons.eot?-ff6uwt');
+	src:url('/static/fonts/Linearicons.eot?#iefix-ff6uwt') format('embedded-opentype'),
+		url('/static/fonts/Linearicons.woff?-ff6uwt') format('woff'),
+		url('/static/fonts/Linearicons.ttf?-ff6uwt') format('truetype'),
+		url('/static/fonts/Linearicons.svg?-ff6uwt#Linearicons') format('svg');
 	font-weight:normal;
 	font-style:normal;
 }
