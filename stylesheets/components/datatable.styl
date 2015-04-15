@@ -6,7 +6,7 @@
   width: 100%;
 
   td, th {
-    padding: .25em;
+    padding: gap-small;
     border-bottom: 1px solid datatable-border-color;
 
     font: inherit;
@@ -21,6 +21,24 @@
     td, th {
       border-bottom: 0;
     }
+  }
+
+  tr.dragging {
+    opacity: .5;
+  }
+
+  tr.drag-over {
+    td, th {
+      border-top: 4px solid ui-primary
+    }
+  }
+
+}
+
+.datatable-small {
+
+  td, th {
+    padding: (gap-small / 2)
   }
 
 }
@@ -61,4 +79,8 @@
     flex: 1;
   }
 
+}
+
+.datatable-move-handle {
+  cursor: move;
 }

@@ -26,9 +26,7 @@
 .badge-icon {
   position: relative;
   top: -1px;
-  display: inline-block;
   vertical-align: middle;
-  font-size: type-smaller;
 }
 
 for c in ui-colors {
@@ -40,10 +38,6 @@ for c in ui-colors {
     background: _bg;
     border-color: _bd;
     color: _tx;
-
-    .badge-icon {
-      color: light(_bg) ? darken(_c, 75%) : #fff
-    }
   }
 }
 
@@ -51,3 +45,27 @@ for c in ui-colors {
 .badge-large { font-size: type-large }
 .badge-small { font-size: type-small }
 .badge-smaller { font-size: type-smaller }
+
+.badge-movable {
+  cursor: move;
+}
+
+.badge.dragging {
+  opacity: .5;
+}
+
+.badge.drag-over::before {
+  content: ''
+  position: absolute;
+  top: 0;
+  right: 100%;
+
+  display: inline-block;
+  margin: 0 .25em;
+  border: 7px solid transparent;
+
+  border-top-color: ui-primary;
+
+
+}
+

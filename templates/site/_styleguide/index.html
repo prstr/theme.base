@@ -1,11 +1,18 @@
 <include file="layout.html">
 
+  <var:colors>['base', 'default', 'primary', 'action', 'success', 'warn', 'critical']</var:colors>
+  <var:sizes>['smaller', 'small', '', 'large', 'larger']</var:sizes>
+
   <def:body>
-    <div class="container">
-      <h1>Раздел 1. Компоновка блоков</h1>
-      <p>
-        Элементы компоновки управляют расположением блоков на различных устройствах.
-      </p>
+    <div class="container container-fixed">
+      <div class="hero centered">
+        <h1>Раздел 1. Компоновка блоков</h1>
+        <p>
+          Элементы компоновки управляют расположением блоков на различных устройствах.
+        </p>
+      </div>
+    </div>
+    <div class="container pnl pnl-primary-subtle">
       <h2>1.1 Контейнер</h2>
       <p>
         Весь контент должен находиться в контейнерах <code>.container</code>.
@@ -35,7 +42,7 @@
     <div class="pnl pnl-primary-subtle">
       <div class="container container-fixed">
         <h2>1.3 Панели</h2>
-        <div class="pnl pnl-base pnl-indent pnl-standalone block">
+        <div class="pnl pnl-base pnl-indent pnl-standalone">
           <p>Панели <code>.pnl</code> формируют «подложку» для контента.</p>
           <p>В данном примере используются две панели:</p>
           <ul>
@@ -58,7 +65,7 @@
         </p>
       </div>
     </div>
-    <div class="container container-fixed block">
+    <div class="container container-fixed">
       <h2>1.4 Вертикальный отступ</h2>
       <p>По умолчанию блоки находятся вплотную друг к другу (отсутствуют вертикальные поля).</p>
       <p>Базовый класс <code>.block</code> добавляет стандартные вертикальные поля.</p>
@@ -112,8 +119,60 @@
     </div>
 
     <div class="container container-fixed">
-      <h1>Раздел 2. Компоненты</h1>
+      <div class="hero centered">
+        <h1>Раздел 2. Компоненты</h1>
+        <p>
+          Компоненты — функциональная часть дизайна. Этот раздел содержит
+          трафарет основных компонентов, а также интегральные примеры.
+        </p>
+      </div>
     </div>
+
+    <div class="pnl-primary-subtle">
+      <div class="container container-fixed">
+        <h2>2.1 Панели</h2>
+        <div class="pnl pnl-base pnl-standalone pnl-indent block">
+          <p>
+            Одиночная панель должна сопровождаться модификатором
+            <code>.pnl-standalone</code>.
+          </p>
+        </div>
+        <div class="pnl-group block">
+          <div class="pnl pnl-base pnl-indent">
+            <p>
+              Несколько панелей можно объединить в группу.
+            </p>
+          </div>
+
+          <each:c in="colors">
+            <div class="pnl pnl-indent pnl-#{c}">
+              <p>
+                Панели бывают разных цветов.
+              </p>
+            </div>
+          </each:c>
+        </div>
+      </div>
+    </div>
+
+    <div class="container container-fixed">
+      <h2>2.2 Кнопки</h2>
+      <each:s in="sizes">
+        <div class="block">
+          <div class="inline-grid">
+            <each:c in="colors">
+              <button class="btn btn-#{c} btn-#{s}">Кнопка</button>
+            </each:c>
+          </div>
+        </div>
+      </each:s>
+      <p>Чтобы между кнопками были отступы, поместите их в <code>.inline-grid</code>.</p>
+    </div>
+
+    <div class="container container-fixed">
+      <h2>2.3 </h2>
+    </div>
+
   </def:body>
 
 </include>

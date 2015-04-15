@@ -2019,32 +2019,21 @@ hr.bold{
 .badge-icon{
   position:relative;
   top:-1px;
-  display:inline-block;
   vertical-align:middle;
-  font-size:0.75em;
 }
 .badge-base{
   background:#fff;
   border-color:#e6e6e6;
   color:#404040;
 }
-.badge-base .badge-icon{
-  color:#370808;
-}
 .badge-default{
   background:#eee;
   border-color:#d6d6d6;
   color:#3b3b3b;
 }
-.badge-default .badge-icon{
-  color:#370808;
-}
 .badge-primary{
   background:#31a6c4;
   border-color:#2a8da7;
-  color:#fff;
-}
-.badge-primary .badge-icon{
   color:#fff;
 }
 .badge-action{
@@ -2052,15 +2041,9 @@ hr.bold{
   border-color:#27659c;
   color:#fff;
 }
-.badge-action .badge-icon{
-  color:#fff;
-}
 .badge-success{
   background:#39ac67;
   border-color:#309258;
-  color:#fff;
-}
-.badge-success .badge-icon{
   color:#fff;
 }
 .badge-warn{
@@ -2068,15 +2051,9 @@ hr.bold{
   border-color:#f2ce66;
   color:#584307;
 }
-.badge-warn .badge-icon{
-  color:#370808;
-}
 .badge-critical{
   background:#db1f1f;
   border-color:#ba1a1a;
-  color:#fff;
-}
-.badge-critical .badge-icon{
   color:#fff;
 }
 .badge-larger{
@@ -2090,6 +2067,22 @@ hr.bold{
 }
 .badge-smaller{
   font-size:0.75em;
+}
+.badge-movable{
+  cursor:move;
+}
+.badge.dragging{
+  opacity:0.5;
+}
+.badge.drag-over::before{
+  content:'';
+  position:absolute;
+  top:0;
+  right:100%;
+  display:inline-block;
+  margin:0 0.25em;
+  border:7px solid transparent;
+  border-top-color:#31a6c4;
 }
 .btn-group{
   display:-webkit-inline-box;
@@ -2116,6 +2109,7 @@ hr.bold{
   display:inline-block;
   box-sizing:border-box;
   padding:0.25em 0.75em;
+  margin:0;
   height:2.1em;
   vertical-align:middle;
   outline:0;
@@ -2324,7 +2318,7 @@ hr.bold{
 }
 .datatable td,
 .datatable th{
-  padding:0.25em;
+  padding:0.5em;
   border-bottom:1px solid #eee;
   font:inherit;
   text-align:left;
@@ -2335,6 +2329,17 @@ hr.bold{
 .datatable tbody tr:last-child td,
 .datatable tbody tr:last-child th{
   border-bottom:0;
+}
+.datatable tr.dragging{
+  opacity:0.5;
+}
+.datatable tr.drag-over td,
+.datatable tr.drag-over th{
+  border-top:4px solid #31a6c4;
+}
+.datatable-small td,
+.datatable-small th{
+  padding:0.25em;
 }
 @media (max-width: 639px){
   .datatable,
@@ -2377,6 +2382,9 @@ hr.bold{
             flex:1;
   }
 }
+.datatable-move-handle{
+  cursor:move;
+}
 .grid{
   display:-webkit-box;
   display:-webkit-flex;
@@ -2407,6 +2415,9 @@ hr.bold{
 }
 .grid-gutters > .cell{
   margin:0.5em;
+}
+.block + .grid-gutters.block{
+  margin-top:-0.5em;
 }
 .cell{
   -webkit-box-flex:100%;
@@ -3057,6 +3068,10 @@ keygen{
 .empty-list-message{
   font-size:1.25em;
 }
+.hero{
+  padding-top:4em;
+  padding-bottom:4em;
+}
 .medium-editor{
   outline:0;
   min-height:120px;
@@ -3258,9 +3273,6 @@ keygen{
 }
 .medium-editor-toolbar-input{
   border:1px solid #27659c;
-}
-#outer{
-  overflow:hidden;
 }
 .product-list-item{
   display:-webkit-box;
