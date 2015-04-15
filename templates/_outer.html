@@ -16,7 +16,7 @@
 
     <block:stylesheets>
       <link rel="stylesheet"
-            href="#{store.themeCssUrl}"/>
+            href="#{assets['stylesheets/theme.css']}"/>
     </block:stylesheets>
 
     <block:storeData>
@@ -36,11 +36,9 @@
 
   <body>
     <div id="notices" ui-notices></div>
-
     <block:body/>
-
     <block:scripts>
-      <script src="/templates/store.js"></script>
+      <script src="/app/store.js"></script>
     </block:scripts>
   </body>
 
