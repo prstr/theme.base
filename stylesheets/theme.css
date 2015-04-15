@@ -237,6 +237,15 @@ hr.bold{
 .text-critical{
   color:#db1f1f;
 }
+.opacity-25{
+  opacity:0.25;
+}
+.opacity-50{
+  opacity:0.5;
+}
+.opacity-75{
+  opacity:0.75;
+}
 @font-face{
 	font-family:'Linearicons';
 	src:url('/static/fonts/Linearicons.eot?-ff6uwt');
@@ -2778,7 +2787,7 @@ textarea{
   z-index:1;
   display:inline-block;
   box-sizing:border-box;
-  padding:0.25em 0.75em;
+  padding:0.25em 0.5em;
   vertical-align:middle;
   outline:0;
   border-width:1px;
