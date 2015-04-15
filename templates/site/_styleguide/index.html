@@ -1,0 +1,119 @@
+<include file="layout.html">
+
+  <def:body>
+    <div class="container">
+      <h1>Раздел 1. Компоновка блоков</h1>
+      <p>
+        Элементы компоновки управляют расположением блоков на различных устройствах.
+      </p>
+      <h2>1.1 Контейнер</h2>
+      <p>
+        Весь контент должен находиться в контейнерах <code>.container</code>.
+        По умолчанию контейнер растягивается на всю страницу и задает стандартные
+        боковые отступы.
+      </p>
+    </div>
+    <div>
+      <div class="layout-fixed">
+        <div class="container">
+          <h2>1.2 Фиксированная ширина</h2>
+          <p>
+            Контейнеры, помещенные в <code>.layout-fixed</code>,
+            становятся фиксированными по ширине, как здесь.
+            Адаптивная ширина изменяется для устройств среднего размера (планшетов)
+            и больших экранов.
+          </p>
+        </div>
+      </div>
+      <div class="container container-fixed">
+        <p>
+          Такой же эффект имеет модификатор <code>.container-fixed</code>
+          для контейнера. В этом случае <code>.layout-fixed</code> не нужен.
+        </p>
+      </div>
+    </div>
+    <div class="pnl pnl-primary-subtle">
+      <div class="container container-fixed">
+        <h2>1.3 Панели</h2>
+        <div class="pnl pnl-base pnl-indent pnl-standalone block">
+          <p>Панели <code>.pnl</code> формируют «подложку» для контента.</p>
+          <p>В данном примере используются две панели:</p>
+          <ul>
+            <li>
+              первая панель темного цвета используется как родительский
+              элемент контейнера (вместо нее можно использовать фоновую фотографию);
+            </li>
+            <li>
+              вторая панель белого цвета находится внутри контейнера с фиксированной шириной,
+              на ней написан этот текст.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container container-fixed pnl pnl-base pnl-standalone block">
+        <p>
+          Если совместить панель и контейнер в одном элементе, то отступ панели
+          выйдет за рамки контейнера фиксированной ширины. Используя этот метод,
+          можно выравнять текст по ширине основной колонки.
+        </p>
+      </div>
+    </div>
+    <div class="container container-fixed block">
+      <h2>1.4 Вертикальный отступ</h2>
+      <p>По умолчанию блоки находятся вплотную друг к другу (отсутствуют вертикальные поля).</p>
+      <p>Базовый класс <code>.block</code> добавляет стандартные вертикальные поля.</p>
+    </div>
+    <div class="pnl pnl-primary-subtle">
+      <div class="container container-fixed">
+        <h2>1.5 Адаптивные сетки</h2>
+        <p>Сетки используются для создания колоночной компоновки
+          и проектируются по принципу Mobile First: сначала
+          страница макетируется под мобильный телефон (маленький экран),
+          затем под планшет, в последнюю очередь под большой экран.</p>
+        <p>Ячейки, совмещенные с панелями, растягиваются по высоте сетки.</p>
+        <div class="grid grid-gutters block">
+          <div class="cell cell-m-2 pnl pnl-base pnl-indent pnl-standalone">
+            <p>
+              Размер ячеек указывается в относительных единицах и зависит от общего
+              количества ячеек. Эта ячейка занимает 2 логических ширины единицы.
+            </p>
+          </div>
+          <div class="cell cell-m-1 pnl pnl-base pnl-indent pnl-standalone">
+            <p>Эта ячейка занимает одну логическую единицу ширины.</p>
+          </div>
+        </div>
+        <div class="grid grid-gutters block">
+          <div class="cell cell-m-2 pnl pnl-base pnl-indent pnl-standalone">
+            <p>
+              Эта ячейка занимает 2 логических ширины единицы.
+            </p>
+          </div>
+          <div class="cell cell-m-1 pnl pnl-base pnl-indent pnl-standalone">
+            <p>Эта ячейка занимает одну логическую единицу ширины.</p>
+          </div>
+          <div class="cell cell-m-1 pnl pnl-base pnl-indent pnl-standalone">
+            <p>Эта ячейка занимает одну логическую единицу ширины.</p>
+          </div>
+        </div>
+        <div class="grid grid-gutters block">
+          <div class="cell cell-m-1 pnl pnl-base pnl-indent pnl-standalone">
+            <p>Эта ячейка занимает одну логическую единицу ширины.</p>
+          </div>
+          <div class="cell cell-m-2 pnl pnl-base pnl-indent pnl-standalone">
+            <p>
+              Эта ячейка занимает 2 логических ширины единицы.
+            </p>
+          </div>
+          <div class="cell cell-m-1 pnl pnl-base pnl-indent pnl-standalone">
+            <p>Эта ячейка занимает одну логическую единицу ширины.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container container-fixed">
+      <h1>Раздел 2. Компоненты</h1>
+    </div>
+  </def:body>
+
+</include>

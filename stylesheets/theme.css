@@ -2296,6 +2296,14 @@ hr.bold{
   padding-left:1em;
   padding-right:1em;
 }
+.container::before,
+.container::after{
+  content:'';
+  display:table;
+}
+.container::after{
+  clear:both;
+}
 @media (min-width: 640px){
   .container-fixed,
   .layout-fixed .container{
@@ -2915,6 +2923,9 @@ keygen{
   box-shadow:0 0 16px rgba(0,0,0,0.25);
   z-index:30;
 }
+.pnl-standalone{
+  border-radius:4px;
+}
 .toolbar{
   display:-webkit-box;
   display:-webkit-flex;
@@ -3247,6 +3258,9 @@ keygen{
 }
 .medium-editor-toolbar-input{
   border:1px solid #27659c;
+}
+#outer{
+  overflow:hidden;
 }
 .product-list-item{
   display:-webkit-box;
