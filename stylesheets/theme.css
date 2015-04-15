@@ -1989,11 +1989,10 @@ hr.bold{
   position:relative;
   display:inline-block;
   box-sizing:border-box;
+  padding:0 0.5em;
   border-width:1px;
   border-style:solid;
   border-radius:1000px;
-  padding-left:0.5em;
-  padding-right:0.5em;
   text-align:center;
 }
 .badge-icon{
@@ -2296,7 +2295,7 @@ hr.bold{
 }
 .datatable td,
 .datatable th{
-  padding:0.25em 0.75em;
+  padding:0.25em;
   border-bottom:1px solid #eee;
   font:inherit;
   text-align:left;
@@ -2667,6 +2666,13 @@ hr.bold{
 }
 .inline-grid > *{
   margin:0.5em;
+}
+.inline-grid-small{
+  display:inline-block;
+  margin:-0.25em;
+}
+.inline-grid-small > *{
+  margin:0.25em;
 }
 .input-group{
   display:-webkit-inline-box;
