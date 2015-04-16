@@ -1,56 +1,55 @@
 <div class="shopping-cart"
      ng-cloak
-     ng-class="{ open: cart.isOpen }"
+     ng-class="{ 'open': cart.isOpen }"
      ng-if="cart.order.items.length">
-  <a class="cart-toggle-button"
+  <a class="shopping-cart-toggle"
      href=""
      ng-click="cart.toggle()">
-    <i class="fa-shopping-cart"></i>
-    <label>{{ cart.order.totalQuantity }}</label>
+    <i class="shopping-cart-toggle-icon icon-cart"></i>
+    <span>{{ cart.order.totalQuantity }}</span>
   </a>
-  <div class="cart-body">
+  <div class="shopping-cart-body">
     <a href=""
-       class="cart-close"
+       class="shopping-cart-close"
        ng-click="cart.close()">
-      <i class="fa-times"></i>
+      <i class="icon-cross"></i>
       <span>Закрыть</span>
     </a>
     <h2>Корзина</h2>
-    <table class="cart-items datatable wide rows terse">
-      <tr ng-repeat="item in cart.order.items"
-          class="cart-item">
-        <td>
-          <div class="cart-item-photo cart-hover"
-               ng-if="item.photo"
-               ng-style="{ 'background-image': 'url(' + item.photo + ')' }">
-          </div>
-          <a href="{{ item.url }}">{{ item.title }}</a>
-          <div class="cart-item-props">
+    <ul class="shopping-cart-items">
+      <li class="shopping-cart-item"
+           ng-repeat="item in cart.order.items">
+        <div class="shopping-cart-item-photo"
+             ng-if="item.photo"
+             ng-style="{ 'background-image': 'url(' + item.photo + ')' }">
+        </div>
+        <div class="shopping-cart-item-summary">
+          <a class="shopping-cart-item-link"
+             href="{{ item.url }}">{{ item.title }}</a>
+          <div class="shopping-cart-item-props">
             <span ng-repeat="(name, value) in item.props"
-                  class="cart-item-prop">
+                  class="shopping-cart-item-prop">
               {{ name }}: {{ value }}
             </span>
           </div>
-          <div class="cart-item-price">
-            <div class="price">{{ item.price | price }}</div>
+          <div class="shopping-cart-item-price">
+            {{ item.price | price }}
           </div>
-        </td>
-        <td class="cart-item-qty">
-          <div class="cart-item-qty-ctl cart-hover">
-            <a href=""
-               ng-click="cart.incr(item)">
-              <i class="fa-angle-up"></i>
-            </a>
-          </div>
-          <div class="type-large">{{ item.quantity }}</div>
-          <div class="cart-item-qty-ctl cart-hover">
-            <a href=""
-               ng-click="cart.decr(item)">
-              <i class="fa-angle-down"></i>
-            </a>
-          </div>
-        </td>
-      </tr>
-    </table>
+        </div>
+        <div class="shopping-cart-item-qty">
+          <a href=""
+             class="shopping-cart-item-qty-ctl"
+             ng-click="cart.incr(item)">
+            <i class="icon-chevron-up"></i>
+          </a>
+          <div class="shopping-cart-item-qty-label">{{ item.quantity }}</div>
+          <a href=""
+             class="shopping-cart-item-qty-ctl"
+             ng-click="cart.decr(item)">
+            <i class="icon-chevron-down"></i>
+          </a>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>

@@ -1,13 +1,13 @@
 <include file="../_outer.html">
 
   <def:body>
-    <div id="outer">
+    <div class="layout-store">
       <include file="_cart.html"/>
-      <div class="layout-column shopping-cart-shifter"
+      <div class="layout-fixed shopping-cart-shifter"
            ng-click="cart.close()"
-           ng-class="{ open: cart.isOpen }">
+           ng-class="{ 'open': cart.isOpen }">
         <include file="_header.html"/>
-        <div id="main">
+        <div class="main">
           <block:main/>
         </div>
         <include file="_footer.html"/>
