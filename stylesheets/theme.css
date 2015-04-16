@@ -2404,6 +2404,18 @@ hr.bold{
 .datatable-move-handle{
   cursor:move;
 }
+.datatable-order-control::after{
+  content:'\e93d';
+  font-family:Linearicons;
+  font-size:10px;
+  color:#858585;
+}
+.datatable-order-control.enabled::after{
+  content:'\e942';
+}
+.datatable-order-control.enabled.reverse::after{
+  content:'\e941';
+}
 .grid{
   display:-webkit-box;
   display:-webkit-flex;
