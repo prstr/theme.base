@@ -37,15 +37,20 @@
 
 .input-group-addon {
   box-sizing: border-box;
-  padding: .25em .75em;
-  height: 2.1em;
+  padding: ctl-vertical-padding .75em;
+  height: ctl-normal-height;
 
   background: ui-default;
   border: 1px solid ui-default-border;
 }
 
-.input-group-addon-larger { font-size: type-larger }
-.input-group-addon-large { font-size: type-large }
-.input-group-addon-small { font-size: type-small }
-.input-group-addon-smaller { font-size: type-smaller }
+for s in sizes {
+
+  .input-group-addon-{s} {
+    font-size: lookup('type-' + s);
+    height: lookup('ctl-' + s + '-height');
+  }
+
+}
+
 

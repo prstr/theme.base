@@ -171,7 +171,9 @@
         <div class="block">
           <div class="inline-grid">
             <each:c in="colors">
-              <button class="btn btn-#{c} btn-#{s}">Кнопка</button>
+              <button class="btn btn-#{c} btn-#{s}">
+                Кнопка
+              </button>
             </each:c>
           </div>
         </div>
@@ -179,26 +181,9 @@
       <p>Чтобы между кнопками были отступы, поместите их в <code>.inline-grid</code>.</p>
     </div>
 
-    <div class="container container-fixed">
-      <h2>2.3 Переключатели</h2>
-      <div class="block">
-        <div class="inline-grid">
-          <each:s in="sizes">
-            <label class="tumbler tumbler-#{s}">
-              <input type="checkbox"/>
-            </label>
-            <label class="tumbler tumbler-#{s} active">
-              <input type="checkbox"/>
-            </label>
-          </each:s>
-        </div>
-      </div>
-      <p>Для переключателей нужен JavaScript (например, Angular).</p>
-    </div>
-
     <div class="pnl pnl-primary-subtle">
       <div class="container container-fixed">
-        <h2>2.4 Формы</h2>
+        <h2>2.3 Формы</h2>
         <p>Формы компонуются с помощью адаптивных сеток. При необходимости можно использовать панели или группы панелей.</p>
         <div class="grid grid-gutters block">
           <div class="cell cell-m-1">
@@ -300,12 +285,31 @@
     </div>
 
     <div class="container container-fixed">
-      <h2>2.5 Алерты</h2>
-      <each:c in="colors">
-        <div class="alert alert-#{c} block">
-          <p>Можно разместить важную информацию.</p>
+      <h2>2.4 Переключатели</h2>
+      <div class="block">
+        <div class="inline-grid">
+          <each:s in="sizes">
+            <label class="tumbler tumbler-#{s}">
+              <input type="checkbox"/>
+            </label>
+            <label class="tumbler tumbler-#{s} active">
+              <input type="checkbox"/>
+            </label>
+          </each:s>
         </div>
-      </each:c>
+      </div>
+      <p>Для переключателей нужен JavaScript (например, Angular).</p>
+    </div>
+
+    <div class="pnl pnl-primary-subtle">
+      <div class="container container-fixed">
+        <h2>2.5 Алерты</h2>
+        <each:c in="colors">
+          <div class="alert alert-#{c} block">
+            <p>В алертах можно разместить важную информацию.</p>
+          </div>
+        </each:c>
+      </div>
     </div>
 
   </def:body>

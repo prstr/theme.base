@@ -2764,21 +2764,29 @@ hr.bold{
 .input-group-addon{
   box-sizing:border-box;
   padding:0.25em 0.75em;
-  height:2.1em;
+  height:34px;
   background:#eee;
   border:1px solid #d6d6d6;
 }
-.input-group-addon-larger{
-  font-size:1.5em;
-}
-.input-group-addon-large{
-  font-size:1.25em;
+.input-group-addon-smaller{
+  font-size:0.75em;
+  height:26px;
 }
 .input-group-addon-small{
   font-size:0.875em;
+  height:30px;
 }
-.input-group-addon-smaller{
-  font-size:0.75em;
+.input-group-addon-normal{
+  font-size:1em;
+  height:34px;
+}
+.input-group-addon-large{
+  font-size:1.25em;
+  height:42px;
+}
+.input-group-addon-larger{
+  font-size:1.5em;
+  height:50px;
 }
 input,
 select,
@@ -3026,7 +3034,7 @@ keygen{
   box-sizing:border-box;
   vertical-align:middle;
   height:34px;
-  width:3em;
+  width:51px;
   cursor:pointer;
   border-radius:1000px;
   box-shadow:0 1px 8px rgba(0,0,0,0.1) inset, 0 0 1px rgba(0,0,0,0.5) inset;
@@ -3071,6 +3079,7 @@ keygen{
 }
 .tumbler-smaller{
   font-size:0.75em;
+  width:39px;
   height:26px;
 }
 .tumbler-smaller::after{
@@ -3081,6 +3090,7 @@ keygen{
 }
 .tumbler-small{
   font-size:0.875em;
+  width:45px;
   height:30px;
 }
 .tumbler-small::after{
@@ -3091,6 +3101,7 @@ keygen{
 }
 .tumbler-normal{
   font-size:1em;
+  width:51px;
   height:34px;
 }
 .tumbler-normal::after{
@@ -3101,6 +3112,7 @@ keygen{
 }
 .tumbler-large{
   font-size:1.25em;
+  width:63px;
   height:42px;
 }
 .tumbler-large::after{
@@ -3111,6 +3123,7 @@ keygen{
 }
 .tumbler-larger{
   font-size:1.5em;
+  width:75px;
   height:50px;
 }
 .tumbler-larger::after{

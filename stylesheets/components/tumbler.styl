@@ -17,7 +17,7 @@
   box-sizing: border-box;
   vertical-align: middle;
   height: ctl-normal-height;
-  width: 3em;
+  width: ctl-normal-height * 1.5;
 
   cursor: pointer;
 
@@ -76,6 +76,7 @@ for s in sizes {
 
   .tumbler-{s} {
     font-size: _fs;
+    width: _h * 1.5;
     height: _h;
 
     &::after {
