@@ -1,0 +1,22 @@
+// --------------------------
+// Навигация «Хлебные крошки»
+// --------------------------
+//
+// Навигационная строка вида «Главная» -> «Категория» -> «Подкатегория» -> ...
+
+.breadcrumbs {
+  font-size: type-small
+}
+
+.breadcrumbs-item {
+  display: inline-block;
+
+  &::after {
+    content: '\e93c';
+    margin: 0 .5em;
+
+    color: subtle-color;
+    font-family: Linearicons;
+    font-size: 10px;
+  }
+}

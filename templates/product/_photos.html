@@ -1,20 +1,22 @@
-<div class="product-photos"
-     ng-init="carouselIndex = 0">
-  <ul rn-carousel
-      rn-carousel-index="carouselIndex"
-      rn-carousel-transition="fadeAndSlide">
-    <li ng-repeat="photo in p.filteredPhotos"
-        ng-class="{ active: carouselIndex == $index }">
-      <img ng-src="{{ photo.thumb }}"
-           ui-magnify="photo.large"/>
-    </li>
-  </ul>
-  <nav>
-    <a href=""
-       ng-repeat="photo in p.filteredPhotos"
-       ng-click="$parent.carouselIndex = $index">
-      <img ng-src="{{ photo.thumb }}"/>
-    </a>
-  </nav>
+<ul class="carousel"
+    rn-carousel
+    ng-init="carouselIndex = 0"
+    rn-carousel-index="carouselIndex"
+    rn-carousel-transition="fadeAndSlide">
+  <li class="carousel-item"
+      ng-repeat="photo in p.filteredPhotos"
+      ng-class="{ active: carouselIndex == $index }">
+    <img ng-src="{{ photo.large }}"
+         ui-magnifier="photo.large"/>
+  </li>
+</ul>
+<div class="carousel-nav">
+  <a href=""
+     class="carousel-nav-link"
+     ng-repeat="photo in p.filteredPhotos"
+     ng-click="$parent.carouselIndex = $index">
+    <img ng-src="{{ photo.thumb }}"
+         width="96"/>
+  </a>
 </div>
 

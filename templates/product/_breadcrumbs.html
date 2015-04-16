@@ -1,21 +1,25 @@
-<nav class="breadcrumbs band">
+<nav class="breadcrumbs block">
   <a href="/"
+     class="breadcrumbs-item"
      title="#{store.title}">
-    <i class="fa-home"></i>
+    <i class="icon-home4"></i>
   </a>
   <if>
-    <when expr="product.category">
-      <a href="#{product.category.url}">
-        #{product.category.title}
+    <when expr="category">
+      <a href="#{category.url}"
+         class="breadcrumbs-item">
+        #{category.title}
       </a>
     </when>
     <otherwise>
-      <a href="/products">
+      <a href="/products"
+         class="breadcrumbs-item">
         Все товары
       </a>
     </otherwise>
   </if>
-  <a href="#{product.url}">
+  <a href="#{product.url}"
+     class="breadcrumbs-item">
     #{product.title}
   </a>
 </nav>

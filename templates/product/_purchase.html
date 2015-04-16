@@ -1,67 +1,80 @@
-<table class="datatable band">
-  <tr ng-repeat="prop in product.varyProps">
-    <td>
-      {{ prop.name}}
-    </td>
-    <td>
+<div class="grid grid-gutters grid-align-baseline block"
+     ng-repeat="prop in product.varyProps">
+  <div class="cell cell-m-1 align-right">
+    {{ prop.name}}:
+  </div>
+  <div class="cell cell-m-4">
+    <div class="inline-grid">
       <a href=""
-         class="btn"
+         class="btn btn-default"
          ng-class="{
-             'dimmed': p.isPropDisabled(prop, value),
-             'info active': p.isPropSelected(prop, value)
-           }"
+         'opacity-25': p.isPropDisabled(prop, value),
+         'btn-primary active': p.isPropSelected(prop, value)
+       }"
          ng-repeat="value in prop.values"
          ng-click="p.toggleProp(prop, value)">
         {{ value }}
       </a>
-    </td>
-  </tr>
-  <tr>
-    <td>Цена</td>
-    <td class="product-price">
-      <div class="price"
-           ng-show="p.variant">
-        {{ p.variant.price | price }}
-      </div>
-      <div class="subtle"
-           ng-hide="p.variant">
-        пожалуйста, уточните параметры
-      </div>
-    </td>
-  </tr>
-</table>
-<div ng-show="p.variant">
-  <div ng-if="p.variant.stock != 0">
-    <button type="button"
-            class="btn primary"
-            ng-if="p.getQuantityInCart() == 0"
-            ng-click="p.addToCart()">
-      <span>Добавить в корзину</span>
-    </button>
-    <div class="btn-group"
-         ng-if="p.getQuantityInCart() > 0">
-      <button type="button"
-              class="btn info"
-              ng-click="p.addToCart()">
-        <span>В корзине {{ p.getQuantityInCart() }}</span>
-      </button>
-      <button type="button"
-              class="btn primary"
-              ng-click="p.addToCart()">
-        <i class="fa-plus"></i>
-      </button>
     </div>
-    <span class="subtle"
-          ng-if="p.variant.stock > 10">
-      В наличии более 10
-    </span>
-    <span class="subtle"
-          ng-if="p.variant.stock > 0 && p.variant.stock <= 10">
-      В наличии {{ p.variant.stock }}
-    </span>
   </div>
-  <div class="tag critical outline"
-       ng-if="p.variant.stock == 0">
-    Нет в наличии
+</div>
+
+<div class="grid grid-gutters grid-align-baseline block">
+  <div class="cell cell-m-1 align-right">
+    Цена:
+  </div>
+  <div class="cell cell-m-4">
+
+    <div ng-show="p.variant"
+         class="type-large">
+      {{ p.variant.price | price }}
+    </div>
+
+    <div class="text-subtle"
+         ng-hide="p.variant">
+      пожалуйста, уточните параметры
+    </div>
+
+    <div class="block"
+         ng-show="p.variant">
+      <div ng-if="p.variant.stock != 0">
+        <div class="inline-grid">
+
+          <button type="button"
+                  class="btn btn-action"
+                  ng-if="p.getQuantityInCart() == 0"
+                  ng-click="p.addToCart()">
+            <span>Добавить в корзину</span>
+          </button>
+
+          <div class="btn-group"
+               ng-if="p.getQuantityInCart() > 0">
+            <button type="button"
+                    class="btn btn-success"
+                    ng-click="p.addToCart()">
+              <span>В корзине {{ p.getQuantityInCart() }}</span>
+            </button>
+            <button type="button"
+                    class="btn btn-action"
+                    ng-click="p.addToCart()">
+              <i class="icon-plus"></i>
+            </button>
+          </div>
+          <span class="subtle"
+                ng-if="p.variant.stock > 10">
+            В наличии более 10
+          </span>
+          <span class="subtle"
+                ng-if="p.variant.stock > 0 && p.variant.stock <= 10">
+            В наличии {{ p.variant.stock }}
+          </span>
+        </div>
+      </div>
+      <div class="btn btn-critical-outline"
+           ng-if="p.variant.stock == 0">
+        Нет в наличии
+      </div>
+
+    </div>
   </div>
 </div>

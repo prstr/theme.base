@@ -3,6 +3,11 @@
   "host": "prostore.dev",
   "ssl": true,
   "origin": "http://prostore.dev",
+  "settings": {
+    "currencySymbol": "руб.",
+    "currencyDecimalPlaces": "2",
+    "currencyGroupingSeparator": " "
+  },
   "rules": {
     "forOrder": [],
     "forItem": []

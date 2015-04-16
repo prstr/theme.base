@@ -4,39 +4,45 @@
     <div class="product-view container"
          ng-controller="ProductController as p">
       <include file="_breadcrumbs.html"/>
-      <div class="row band">
-        <div class="product-photos col-4">
+
+      <div class="grid grid-gutters block">
+        <div class="product-view-photos cell cell-m-1">
           <include file="_photos.html"/>
         </div>
-        <div class="product-showcase col-8">
-          <h1>
+        <div class="product-view-showcase cell cell-m-2">
+          <h1 class="product-view-title">
             #{product.title}
             <div class="small">#{product.subtitle}</div>
           </h1>
-          <div class="product-purchase" ng-cloak>
+
+          <div class="product-view-purchase block" ng-cloak>
             <include file="_purchase.html"/>
           </div>
+
+          <div class="product-view-description block">
+            !{product.descriptionHtml}
+          </div>
+
+          <div class="product-view-props block">
+            <div class="inline-grid">
+              <each:prop in="product.props">
+                <if expr="prop.values.length == 1">
+                  <div class="badge-group">
+                    <div class="badge badge-default">
+                      #{prop.name}
+                    </div>
+                    <div class="badge badge-base">
+                      #{prop.values[0]}
+                    </div>
+                  </div>
+                </if>
+              </each:prop>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="row band">
-        <div class="product-props col-4">
-          <h3>Характеристики</h3>
-          <table class="datatable wide rows">
-            <each:prop in="product.props">
-              <if expr="prop.values.length == 1">
-                <tr>
-                  <td>#{prop.name}</td>
-                  <td>#{prop.values[0]}</td>
-                </tr>
-              </if>
-            </each:prop>
-          </table>
-        </div>
-        <div class="product-description col-8">
-          <h3>Описание</h3>
-          !{product.descriptionHtml}
-        </div>
-      </div>
+
     </div>
   </def:main>
 
