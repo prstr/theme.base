@@ -1,0 +1,10 @@
+{
+  "title": "Просторный магазин",
+  "host": "prostore.dev",
+  "ssl": true,
+  "origin": "http://prostore.dev",
+  "rules": {
+    "forOrder": [],
+    "forItem": []
+  }
+}
