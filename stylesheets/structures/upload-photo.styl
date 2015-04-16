@@ -1,0 +1,81 @@
+.upload-photo-dropzone {
+  display: block;
+  padding: (gap-large / 2) gap-large;
+  border: 4px dashed darken(ui-default, 5%);
+
+  text-align: center;
+  border-radius: border-radius;
+  cursor: pointer;
+
+  input[type=file] {
+    display: block;
+    width: 0;
+    height: 0;
+    appearance: none;
+    visibility: hidden;
+    font-size: 0;
+
+    &.nv-file-over {
+      border-color: link-color;
+    }
+  }
+}
+
+.upload-photo-queue {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .upload-photo-image {
+    margin: (gap / 2) 0
+    padding: 0 (gap / 2)
+  }
+}
+
+.upload-photo-image {
+  position: relative;
+
+  flex: 100%
+
+  box-sizing: border-box
+
+  img {
+    width: 100%
+  }
+
+}
+
+@media (min-width: screen-medium-min) {
+  .upload-photo-image {
+    flex: 50%
+  }
+}
+
+.upload-photo-image-remove {
+  position: absolute
+  width: 1.5em;
+  height: 1.5em;
+  right: 0;
+  top: -0.5em;
+
+  border-radius: 128px
+
+  background: ui-critical
+  color: light(ui-critical) ? darken(ui-critical, 75%) : #fff
+
+  line-height: 1.5em
+  text-align: center
+
+  i {
+    vertical-align: middle
+  }
+
+  &:focus, &:hover {
+    color: light(ui-critical) ? darken(ui-critical, 75%) : #fff;
+    background: darken(ui-critical, 10%);
+  }
+
+}
+
+.upload-photo-list-title {
+  font-size: type-large;
+}
