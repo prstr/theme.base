@@ -1,0 +1,57 @@
+//----------------------------
+// Область загрузки фотографий
+//----------------------------
+//
+// Зона для загрузки изображений и предпросмотр.
+
+.upload-image-dropzone {
+  display: block;
+  padding: (gap-large / 2) gap-large;
+  border: 4px dashed darken(ui-default, 5%);
+
+  text-align: center;
+  border-radius: border-radius;
+  cursor: pointer;
+
+  input[type=file] {
+    display: block;
+    width: 0;
+    height: 0;
+    appearance: none;
+    visibility: hidden;
+    font-size: 0;
+  }
+
+  &.nv-file-over {
+    border-color: link-color;
+  }
+}
+
+.upload-image-items {
+  margin: (gap / 2);
+  margin-left:  -(gap / 2);
+  margin-right:  -(gap / 2);
+}
+
+.upload-image-item {
+  position: relative;
+  display: inline-block;
+  padding: (gap / 2);
+  max-width: 25%;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.upload-image-remove {
+  position: absolute;
+  padding: .25em;
+  line-height: 1;
+
+  background: ui-critical;
+  color: ui-critical-text;
+
+  &:focus, &:hover {
+    color: ui-critical-text;
+    background: darken(ui-critical, 10%);
+  }
+}

@@ -262,8 +262,12 @@ hr.bold{
 }
 
 [class^="icon-"], [class*=" icon-"]{
+  position:relative;
+  top:-1px;
+
 	font-family:'Linearicons';
   display:inline-block;
+  vertical-align:middle;
 	speak:none;
 	font-style:normal;
 	font-weight:normal;
@@ -2179,12 +2183,6 @@ hr.bold{
 .btn.active{
   z-index:2;
 }
-.btn i{
-  position:relative;
-  top:-1px;
-  display:inline-block;
-  vertical-align:middle;
-}
 .btn i + *,
 .btn * + i{
   margin-left:0.37em;
@@ -3670,6 +3668,50 @@ img[ui-magnify]{
       -ms-transform:translateX(-160px);
           transform:translateX(-160px);
   cursor:e-resize;
+}
+.upload-image-dropzone{
+  display:block;
+  padding:1em 2em;
+  border:4px dashed #e2e2e2;
+  text-align:center;
+  border-radius:4px;
+  cursor:pointer;
+}
+.upload-image-dropzone input[type=file]{
+  display:block;
+  width:0;
+  height:0;
+  appearance:none;
+  visibility:hidden;
+  font-size:0;
+}
+.upload-image-dropzone.nv-file-over{
+  border-color:#2e77b8;
+}
+.upload-image-items{
+  margin:0.5em;
+  margin-left:-0.5em;
+  margin-right:-0.5em;
+}
+.upload-image-item{
+  position:relative;
+  display:inline-block;
+  padding:0.5em;
+  max-width:25%;
+  box-sizing:border-box;
+  vertical-align:top;
+}
+.upload-image-remove{
+  position:absolute;
+  padding:0.25em;
+  line-height:1;
+  background:#db1f1f;
+  color:#fff;
+}
+.upload-image-remove:focus,
+.upload-image-remove:hover{
+  color:#fff;
+  background:#c51c1c;
 }
 .workspace-main{
   position:relative;
