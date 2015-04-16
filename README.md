@@ -1,7 +1,5 @@
 # Базовая тема ПроCтор
 
-## Установка
-
 1. Скачайте и установите [Node.js](http://nodejs.org)
 
 2. Скачайте и установите [Git](http://git-scm.com/)
@@ -9,7 +7,7 @@
 3. Установите инструменты для работы с проектом магазина
 
     ```
-    npm install -g gulp prostore-cli 
+    npm install -g prostore-cli 
     ```
     
 4. Клонируйте репозиторий проекта
@@ -19,9 +17,11 @@
     cd my_store
     ```
 
-5. Установите зависимости
+5. Запустите мокап
 
     ```
-    npm install
+    prostore mock
     ```
+    
+6. Откройте [CSS-шпаргалку](http://localhost:3000/_stylesheets) и экспериментируйте.
     

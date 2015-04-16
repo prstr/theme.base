@@ -1,0 +1,165 @@
+// ---------------
+// Корзина покупок
+// ---------------
+//
+// В базовой теме корзина отображается как фиксированная правая часть экрана,
+// скрытая по умолчанию.
+
+.shopping-cart {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  box-sizing: border-box;
+  width: shopping-cart-width;
+  padding: 0 gap;
+  border-left: 4px solid shopping-cart-color;
+
+  background: ui-base;
+  transform: translateX(shopping-cart-width);
+  transition: transform .5s;
+
+  &.open {
+    transform: translateX(0);
+    box-shadow: 0 0 64px rgba(0, 0, 0, .5),
+    0 0 0 9999px rgba(0, 0, 0, .25)
+  }
+
+}
+
+// Кнопка открытия/закрытия корзины,
+// на ней отображается количество товаров
+
+.shopping-cart-toggle {
+  position: absolute;
+  bottom: 64px;
+  right: 100%;
+  display: block;
+  padding: .5em .75em;
+
+  border-radius: border-radius 0 0 border-radius;
+  cursor: pointer
+  text-decoration: none;
+  text-align: center;
+  background-color: shopping-cart-color;
+  color: #fff;
+  text-shadow: 0 1px 1px darken(shopping-cart-color, 25%);
+
+  &:hover, &:visited {
+    color: #fff;
+  }
+
+}
+
+.shopping-cart-toggle-icon {
+  font-size: 20px
+}
+
+// Ссылка «Закрыть»
+
+.shopping-cart-close {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  color: subtle-color;
+  font-size: type-small;
+}
+
+// Одна позиция в корзине
+
+.shopping-cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shopping-cart-item {
+  position: relative;
+  display: flex;
+}
+
+.shopping-cart-item-summary {
+  flex: 1;
+}
+
+// Фото отображается при открытии корзины
+
+.shopping-cart-item-photo {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 0;
+  margin: -48px -88px;
+
+  width: 96px;
+  height: 96px;
+
+  border-radius: border-radius;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  background-color: #fff;
+  background-size: cover;
+  background-position: 50% 50%;
+  pointer-events: none;
+  transform: translate(-16px, 0);
+
+  transition: all .5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.shopping-cart:hover .shopping-cart-item-photo {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+// Управление количеством в позиции
+
+.shopping-cart-item-qty {
+  text-align: center;
+  min-width: 24px;
+}
+
+// Стрелки отображаются при наведении на позицию
+
+.shopping-cart-item-qty-ctl {
+  transition: all .5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.shopping-cart-item:hover .shopping-cart-item-qty-ctl {
+  visibility: visible;
+  opacity: 1;
+}
+
+.shopping-cart-item-qty-label {
+  font-size: type-large;
+}
+
+// Выбранные свойства
+
+.shopping-cart-item-prop {
+  color: subtle-color;
+  font-size: type-small;
+  white-space: nowrap;
+}
+
+.shopping-cart-item-prop + .shopping-cart-item-prop {
+  margin-left: 6px;
+}
+
+// Контейнер, отодвигающийся при открывании корзины
+
+.shopping-cart-shifter {
+  position: relative;
+  overflow: hidden;
+  transition: all .5s;
+
+  &.open {
+    transform: translateX(-160px);
+    cursor: e-resize;
+  }
+}
