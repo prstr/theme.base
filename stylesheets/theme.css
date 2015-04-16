@@ -3671,10 +3671,9 @@ img[ui-magnify]{
 }
 .upload-image-dropzone{
   display:block;
-  padding:1em 2em;
+  padding:1em;
   border:4px dashed #e2e2e2;
   text-align:center;
-  border-radius:4px;
   cursor:pointer;
 }
 .upload-image-dropzone input[type=file]{
@@ -3808,11 +3807,4 @@ img[ui-magnify]{
 }
 .workspace-section + .workspace-section{
   border-top:1px solid #9cbbc3;
-}
-.workspace-section-title{
-  margin:0 0 0.5em;
-  font-size:1.5em;
-}
-.workspace-section-description{
-  font-size:0.875em;
 }
