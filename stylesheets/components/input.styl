@@ -3,19 +3,20 @@
 // --------------
 //
 // ```
-// <input | select | textarea>
+// <input | select | textarea>.input
 // [.input-large | .input-small ...]  // размеры
 // [.input-block]       // отображение во всю ширину блока
 // [.input-underline]   // только с нижней границей
 // ```
 
-input, select, keygen, textarea {
+.input {
   position: relative;
   z-index: 1;
 
   display: inline-block;
   box-sizing: border-box
   padding: ctl-vertical-padding .5em;
+  height: ctl-normal-height;
 
   vertical-align: middle;
   outline: 0;
@@ -42,8 +43,8 @@ input, select, keygen, textarea {
 
 }
 
-input, select, keygen {
-  height: ctl-normal-height;
+textarea.input {
+  height: auto;
 }
 
 // Поля, вытянутые по ширине контейнера

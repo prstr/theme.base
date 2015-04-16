@@ -2788,15 +2788,13 @@ hr.bold{
   font-size:1.5em;
   height:50px;
 }
-input,
-select,
-keygen,
-textarea{
+.input{
   position:relative;
   z-index:1;
   display:inline-block;
   box-sizing:border-box;
   padding:0.25em 0.5em;
+  height:34px;
   vertical-align:middle;
   outline:0;
   border-width:1px;
@@ -2804,31 +2802,20 @@ textarea{
   border-color:#d6d6d6;
   border-radius:4px;
 }
-input.ng-dirty.ng-invalid,
-select.ng-dirty.ng-invalid,
-keygen.ng-dirty.ng-invalid,
-textarea.ng-dirty.ng-invalid{
+.input.ng-dirty.ng-invalid{
   border-color:#db1f1f;
   box-shadow:0 0 6px rgba(219,31,31,0.5);
 }
-input:focus,
-select:focus,
-keygen:focus,
-textarea:focus{
+.input:focus{
   border-color:#2e77b8;
   box-shadow:0 0 6px rgba(46,119,184,0.5);
 }
-input[disabled],
-select[disabled],
-keygen[disabled],
-textarea[disabled]{
+.input[disabled]{
   background:#eee;
   color:#858585;
 }
-input,
-select,
-keygen{
-  height:34px;
+textarea.input{
+  height:auto;
 }
 .input-block{
   display:block;
