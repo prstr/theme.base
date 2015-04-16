@@ -1,3 +1,10 @@
+//----------------------------
+// Область загрузки фотографий
+//----------------------------
+//
+// Структура включает в себя зону для загрузки файлов, зону предпросмотра
+// изображений перед загрузкой на сервер, список загруженных изображений.
+
 .upload-photo-dropzone {
   display: block;
   padding: (gap-large / 2) gap-large;
@@ -33,15 +40,9 @@
 
 .upload-photo-image {
   position: relative;
-
   flex: 100%
-
+  text-align: center
   box-sizing: border-box
-
-  img {
-    width: 100%
-  }
-
 }
 
 @media (min-width: screen-medium-min) {

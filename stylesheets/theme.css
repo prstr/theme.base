@@ -3575,10 +3575,8 @@ input[type='radio']{
   -webkit-flex:100%;
       -ms-flex:100%;
           flex:100%;
+  text-align:center;
   box-sizing:border-box;
-}
-.upload-photo-image img{
-  width:100%;
 }
 @media (min-width: 640px){
   .upload-photo-image{
