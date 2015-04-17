@@ -12,21 +12,19 @@
           <include file="_photos.html"/>
         </div>
 
-        <div class="product-view-showcase cell cell-m-2">
-          <h1>
+        <div class="cell cell-m-2">
+          <h1 class="product-view-title">
             #{product.title}
             <div class="small">#{product.subtitle}</div>
           </h1>
 
-          <div class="block" ng-cloak>
-            <include file="_purchase.html"/>
-          </div>
+          <include file="_purchase.html"/>
 
-          <div class="block">
+          <div class="product-view-description">
             !{product.descriptionHtml}
           </div>
 
-          <div class="block">
+          <div class="product-view-props">
             <div class="inline-grid">
               <each:prop in="product.props">
                 <if expr="prop.values.length == 1">
@@ -42,6 +40,7 @@
               </each:prop>
             </div>
           </div>
+
         </div>
 
       </div>

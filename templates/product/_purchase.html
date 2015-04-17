@@ -1,65 +1,66 @@
-<div class="grid grid-gutters grid-align-baseline block"
-     ng-repeat="prop in product.varyProps">
-  <div class="cell cell-m-1">
-    {{ prop.name}}:
-  </div>
-  <div class="cell cell-m-4">
-    <div class="inline-grid">
-      <a href=""
-         class="btn btn-default"
-         ng-class="{
+<div class="product-view-purchase"
+     ng-cloak>
+  <div class="grid grid-gutters grid-align-baseline block"
+       ng-repeat="prop in product.varyProps">
+    <div class="cell cell-m-1">
+      {{ prop.name}}:
+    </div>
+    <div class="cell cell-m-4">
+      <div class="inline-grid">
+        <a href=""
+           class="btn btn-default"
+           ng-class="{
          'opacity-25': p.isPropDisabled(prop, value),
          'btn-primary active': p.isPropSelected(prop, value)
        }"
-         ng-repeat="value in prop.values"
-         ng-click="p.toggleProp(prop, value)">
-        {{ value }}
-      </a>
+           ng-repeat="value in prop.values"
+           ng-click="p.toggleProp(prop, value)">
+          {{ value }}
+        </a>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="grid grid-gutters grid-align-baseline block">
-  <div class="cell cell-m-1">
-    Цена:
-  </div>
-  <div class="cell cell-m-4">
-
-    <div ng-show="p.variant"
-         class="type-large">
-      {{ p.variant.price | price }}
+  <div class="grid grid-gutters grid-align-baseline block">
+    <div class="cell cell-m-1">
+      Цена:
     </div>
+    <div class="cell cell-m-4">
 
-    <div class="text-subtle"
-         ng-hide="p.variant">
-      пожалуйста, уточните параметры
-    </div>
+      <div ng-show="p.variant"
+           class="type-large">
+        {{ p.variant.price | price }}
+      </div>
 
-    <div class="block"
-         ng-show="p.variant">
-      <div ng-if="p.variant.stock != 0">
-        <div class="inline-grid">
+      <div class="text-subtle"
+           ng-hide="p.variant">
+        пожалуйста, уточните параметры
+      </div>
 
-          <button type="button"
-                  class="btn btn-primary"
-                  ng-if="p.getQuantityInCart() == 0"
-                  ng-click="p.addToCart()">
-            <span>Добавить в корзину</span>
-          </button>
+      <div class="block"
+           ng-show="p.variant">
+        <div ng-if="p.variant.stock != 0">
+          <div class="inline-grid">
 
-          <div class="btn-group"
-               ng-if="p.getQuantityInCart() > 0">
-            <button type="button"
-                    class="btn btn-success"
-                    ng-click="p.addToCart()">
-              <span>В корзине {{ p.getQuantityInCart() }}</span>
-            </button>
             <button type="button"
                     class="btn btn-primary"
+                    ng-if="p.getQuantityInCart() == 0"
                     ng-click="p.addToCart()">
-              <i class="icon-plus"></i>
+              <span>Добавить в корзину</span>
             </button>
-          </div>
+
+            <div class="btn-group"
+                 ng-if="p.getQuantityInCart() > 0">
+              <button type="button"
+                      class="btn btn-success"
+                      ng-click="p.addToCart()">
+                <span>В корзине {{ p.getQuantityInCart() }}</span>
+              </button>
+              <button type="button"
+                      class="btn btn-primary"
+                      ng-click="p.addToCart()">
+                <i class="icon-plus"></i>
+              </button>
+            </div>
           <span class="text-subtle"
                 ng-if="p.variant.stock > 10">
             В наличии более 10
@@ -68,13 +69,13 @@
                 ng-if="p.variant.stock > 0 && p.variant.stock <= 10">
             В наличии {{ p.variant.stock }}
           </span>
+          </div>
+        </div>
+        <div class="text-critical"
+             ng-if="p.variant.stock == 0">
+          Нет в наличии
         </div>
       </div>
-      <div class="text-critical"
-           ng-if="p.variant.stock == 0">
-        Нет в наличии
-      </div>
-
     </div>
   </div>
 </div>
