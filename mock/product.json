@@ -4,7 +4,7 @@
   "url": "/product",
   "title": "Туфли Kris Antoine & Stanley",
   "subtitle": "Кожаные туфли для повседневной носки",
-  "descriptionHtml": "<p>Стильные высокие туфли с мягкой подкладкой для создания особого комфорта в стопе и голеностопе. Идеально сочетаются с джинсами и подходят для ежедневного использования.</p><p><span>Оригинальное качество Antoine &amp; Stanley (Австралия).</span></p>",
+  "descriptionHtml": "<p>Стильные высокие туфли с мягкой подкладкой для создания особого комфорта в стопе и голеностопе. Идеально сочетаются с джинсами и подходят для ежедневного использования.</p><p>Оригинальное качество Antoine &amp; Stanley (Австралия).</p><p>Сайт производителя: <a href=\"http://antoineandstanley.com/\">antoineandstanley.com</a></p>",
   "priceMin": 5500,
   "priceMax": 5500,
   "totalStock": 55,
@@ -104,7 +104,6 @@
     {
       "weight": 500,
       "stock": 10,
-      "_id": "552f8c431c17981688ded284",
       "enabled": true,
       "price": 5500,
       "props": {
@@ -125,7 +124,6 @@
     {
       "weight": 500,
       "stock": 0,
-      "_id": "552f8c6d1c17981688ded28f",
       "enabled": true,
       "price": 5500,
       "props": {
@@ -145,11 +143,6 @@
       "large": "/static/mock/kris_brown_2.jpg",
       "thumb": "/static/mock/kris_brown_2.jpg",
       "forProp": "Цвет=Коричневый",
-      "title": ""
-    },
-    {
-      "large": "/static/mock/kris_bottom.jpg",
-      "thumb": "/static/mock/kris_bottom.jpg",
       "title": ""
     },
     {

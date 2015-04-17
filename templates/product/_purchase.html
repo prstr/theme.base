@@ -1,6 +1,6 @@
 <div class="grid grid-gutters grid-align-baseline block"
      ng-repeat="prop in product.varyProps">
-  <div class="cell cell-m-1 align-right">
+  <div class="cell cell-m-1">
     {{ prop.name}}:
   </div>
   <div class="cell cell-m-4">
@@ -20,7 +20,7 @@
 </div>
 
 <div class="grid grid-gutters grid-align-baseline block">
-  <div class="cell cell-m-1 align-right">
+  <div class="cell cell-m-1">
     Цена:
   </div>
   <div class="cell cell-m-4">
@@ -41,7 +41,7 @@
         <div class="inline-grid">
 
           <button type="button"
-                  class="btn btn-action"
+                  class="btn btn-primary"
                   ng-if="p.getQuantityInCart() == 0"
                   ng-click="p.addToCart()">
             <span>Добавить в корзину</span>
@@ -55,22 +55,22 @@
               <span>В корзине {{ p.getQuantityInCart() }}</span>
             </button>
             <button type="button"
-                    class="btn btn-action"
+                    class="btn btn-primary"
                     ng-click="p.addToCart()">
               <i class="icon-plus"></i>
             </button>
           </div>
-          <span class="subtle"
+          <span class="text-subtle"
                 ng-if="p.variant.stock > 10">
             В наличии более 10
           </span>
-          <span class="subtle"
+          <span class="text-subtle"
                 ng-if="p.variant.stock > 0 && p.variant.stock <= 10">
             В наличии {{ p.variant.stock }}
           </span>
         </div>
       </div>
-      <div class="btn btn-critical-outline"
+      <div class="text-critical"
            ng-if="p.variant.stock == 0">
         Нет в наличии
       </div>

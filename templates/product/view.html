@@ -3,27 +3,30 @@
   <def:main>
     <div class="product-view container"
          ng-controller="ProductController as p">
+
       <include file="_breadcrumbs.html"/>
 
       <div class="grid grid-gutters block">
-        <div class="product-view-photos cell cell-m-1">
+
+        <div class="cell cell-m-1">
           <include file="_photos.html"/>
         </div>
+
         <div class="product-view-showcase cell cell-m-2">
-          <h1 class="product-view-title">
+          <h1>
             #{product.title}
             <div class="small">#{product.subtitle}</div>
           </h1>
 
-          <div class="product-view-purchase block" ng-cloak>
+          <div class="block" ng-cloak>
             <include file="_purchase.html"/>
           </div>
 
-          <div class="product-view-description block">
+          <div class="block">
             !{product.descriptionHtml}
           </div>
 
-          <div class="product-view-props block">
+          <div class="block">
             <div class="inline-grid">
               <each:prop in="product.props">
                 <if expr="prop.values.length == 1">
@@ -39,8 +42,8 @@
               </each:prop>
             </div>
           </div>
-
         </div>
+
       </div>
 
     </div>

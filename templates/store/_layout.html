@@ -1,16 +1,30 @@
 <include file="../_outer.html">
 
   <def:body>
-    <div class="layout-store">
+    <!-- Основная компоновка всех страниц магазина -->
+    <div class="store-layout">
+      <!-- Корзина покупок — внешний элемент по отношению к остальному контенту -->
       <include file="_cart.html"/>
+
+      <!--
+        По-умолчанию используется компоновка с фиксированной шириной.
+        Контент внутри этого контейнера сдвигается налево при открытии корзины.
+      -->
       <div class="layout-fixed shopping-cart-shifter"
            ng-click="cart.close()"
            ng-class="{ 'open': cart.isOpen }">
+
+        <!-- Верхний колонтитул (шапка) -->
         <include file="_header.html"/>
-        <div class="main">
+
+        <!-- Основной контент (определяется на конкретной странице -->
+        <div class="store-main">
           <block:main/>
         </div>
+
+        <!-- Нижний колонтитул (подвал) -->
         <include file="_footer.html"/>
+
       </div>
     </div>
   </def:body>

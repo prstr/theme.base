@@ -79,6 +79,7 @@ h6{
 }
 html,
 body{
+  overflow-x:hidden;
   font:400 16px/1.5 Arsenal, sans-serif;
   background:#fff;
   color:#333;
@@ -2205,11 +2206,6 @@ hr.bold{
   border-color:#c4c4c4;
   box-shadow:0 3px 5px #c4c4c4 inset;
 }
-.btn-base-outline{
-  border-color:#fff;
-  color:#fff;
-  background:transparent;
-}
 .btn-default{
   background:#eee;
   border-color:#d6d6d6;
@@ -2227,11 +2223,6 @@ hr.bold{
   background:#cacaca;
   border-color:#b6b6b6;
   box-shadow:0 3px 5px #b6b6b6 inset;
-}
-.btn-default-outline{
-  border-color:#eee;
-  color:#eee;
-  background:transparent;
 }
 .btn-primary{
   background:#31a6c4;
@@ -2251,11 +2242,6 @@ hr.bold{
   border-color:#24788e;
   box-shadow:0 3px 5px #24788e inset;
 }
-.btn-primary-outline{
-  border-color:#31a6c4;
-  color:#31a6c4;
-  background:transparent;
-}
 .btn-action{
   background:#2e77b8;
   border-color:#27659c;
@@ -2273,11 +2259,6 @@ hr.bold{
   background:#27659c;
   border-color:#215685;
   box-shadow:0 3px 5px #215685 inset;
-}
-.btn-action-outline{
-  border-color:#2e77b8;
-  color:#2e77b8;
-  background:transparent;
 }
 .btn-success{
   background:#39ac67;
@@ -2297,11 +2278,6 @@ hr.bold{
   border-color:#297c4b;
   box-shadow:0 3px 5px #297c4b inset;
 }
-.btn-success-outline{
-  border-color:#39ac67;
-  color:#39ac67;
-  background:transparent;
-}
 .btn-warn{
   background:#f5d989;
   border-color:#f2ce66;
@@ -2320,11 +2296,6 @@ hr.bold{
   border-color:#eebf36;
   box-shadow:0 3px 5px #eebf36 inset;
 }
-.btn-warn-outline{
-  border-color:#f5d989;
-  color:#f5d989;
-  background:transparent;
-}
 .btn-critical{
   background:#db1f1f;
   border-color:#ba1a1a;
@@ -2342,11 +2313,6 @@ hr.bold{
   background:#ba1a1a;
   border-color:#9e1616;
   box-shadow:0 3px 5px #9e1616 inset;
-}
-.btn-critical-outline{
-  border-color:#db1f1f;
-  color:#db1f1f;
-  background:transparent;
 }
 .btn-block{
   display:block;
@@ -3529,11 +3495,11 @@ img[ui-magnify]{
 .product-list-photo::after{
   clear:both;
 }
-.product-list-photo-empty{
+.product-list-nophoto{
   text-align:center;
   padding:1em 0;
 }
-.product-list-photo-empty i{
+.product-list-nophoto i{
   font-size:3em;
   vertical-align:middle;
   color:#858585;

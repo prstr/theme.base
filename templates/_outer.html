@@ -1,4 +1,9 @@
 <!doctype html>
+<!--
+Основная обертка, которую используют все страницы.
+Включает блоки для определения стилей, скриптов, заголовка страницы,
+метаинформации, а также данных для клиентских приложений.
+-->
 <html ng-app="#{app || 'prostore:store'}">
   <head>
     <meta charset="utf-8"/>
@@ -19,6 +24,10 @@
             href="#{assets['stylesheets/theme.css']}"/>
     </block:stylesheets>
 
+    <!--
+    Данные, размещенные в этих тэгах (в формате JSON),
+    будут доступны в Angular-сервисе `$prostore`.
+    -->
     <block:storeData>
       <script name="store"
               type="application/prostore-data">
@@ -35,8 +44,16 @@
   </head>
 
   <body>
+    <!--
+    Контейнер для информационных сообщений (пр. «Изменения сохранены.» или
+    «Произошла ошибка, попробуйте еще раз»).
+    -->
     <div id="notices" ui-notices></div>
+
+    <!-- Тело страницы -->
     <block:body/>
+
+    <!-- Скрипты -->
     <block:scripts>
       <script src="#{store.origin}/app/store.js"></script>
     </block:scripts>

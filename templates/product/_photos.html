@@ -2,7 +2,8 @@
     rn-carousel
     ng-init="carouselIndex = 0"
     rn-carousel-index="carouselIndex"
-    rn-carousel-transition="fadeAndSlide">
+    rn-carousel-transition="fadeAndSlide"
+    rn-carousel-duration="500">
   <li class="carousel-item"
       ng-repeat="photo in p.filteredPhotos"
       ng-class="{ active: carouselIndex == $index }">
