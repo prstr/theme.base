@@ -3783,7 +3783,7 @@ img[ui-magnify]{
   height:4px;
   background:#31a6c4;
 }
-.workspace-nav-icon{
+.workspace-nav-link i{
   position:relative;
   top:-2px;
   width:48px;

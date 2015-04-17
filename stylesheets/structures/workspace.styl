@@ -40,9 +40,9 @@
   font-size: font-size;
   line-height: 48px;
   white-space: nowrap;
-  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
   background: workspace-nav-link-background;
-  color:      workspace-nav-link-color;
+  color: workspace-nav-link-color;
 
   &:hover {
     color: lighten(workspace-nav-link-color, 15%);
@@ -50,7 +50,7 @@
 
   &.active {
     background: workspace-nav-link-active-background;
-    color:      workspace-nav-link-active-color;
+    color: workspace-nav-link-active-color;
     text-shadow: none;
 
     &::before {
@@ -66,17 +66,16 @@
       background: workspace-nav-link-color;
     }
   }
+    
+  i {
+    position: relative;
+    top: -2px;
+    width: 48px;
 
-}
-
-.workspace-nav-icon {
-  position: relative;
-  top: -2px;
-  width: 48px;
-
-  font-size: 20px;
-  vertical-align: middle;
-  text-align: center;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+  }
 }
 
 @media (min-width: screen-medium-min) {
