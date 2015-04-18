@@ -7,9 +7,5 @@
     "currencySymbol": "руб.",
     "currencyDecimalPlaces": "2",
     "currencyGroupingSeparator": " "
-  },
-  "rules": {
-    "forOrder": [],
-    "forItem": []
   }
 }
