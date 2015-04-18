@@ -9,6 +9,7 @@
         ng-repeat="photo in p.filteredPhotos"
         ng-class="{ active: carouselIndex == $index }">
       <img ng-src="{{ photo.large }}"
+           class="image-block"
            ui-magnifier="photo.large"/>
     </li>
   </ul>

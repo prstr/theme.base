@@ -14,7 +14,6 @@
 
   box-sizing: border-box;
   width: shopping-cart-width;
-  padding: 0 gap;
   border-left: 4px solid shopping-cart-color;
 
   background: ui-base;
@@ -61,18 +60,52 @@
 
 .shopping-cart-close {
   position: absolute;
+  z-index: 3;
   top: 4px;
   right: 8px;
   color: subtle-color;
   font-size: type-small;
 }
 
-// Одна позиция в корзине
+// Контейнер и нижний блок оформления заказа
+
+.shopping-cart-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 gap;
+  box-sizing: border-box;
+}
+
+.shopping-cart-checkout {
+  position: relative;
+  z-index: 2;
+  flex: 1 0 auto;
+  align-self: flex-end;
+  padding: gap 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(255,255,255,.75);
+}
+
+.shopping-cart-subtotal {
+  font-size: type-large;
+  margin: .25em 0;
+}
+
+// Позиции заказа в корзине
 
 .shopping-cart-items {
+  flex: 1 1 auto;
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-y: auto;
 }
 
 .shopping-cart-item {
@@ -83,37 +116,6 @@
 .shopping-cart-item-summary {
   flex: 1;
 }
-
-// Фото отображается при наведении на позицию
-
-.shopping-cart-item-photo {
-  position: absolute;
-  z-index: 10;
-  top: 50%;
-  left: 0;
-  margin: -48px -96px;
-
-  width: 96px;
-  height: 96px;
-
-  border-radius: border-radius;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
-  background-color: #fff;
-  background-size: cover;
-  background-position: 50% 50%;
-  pointer-events: none;
-  transform: translate(-16px, 0);
-
-  transition: all .5s;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.shopping-cart-item:hover .shopping-cart-item-photo {
-  visibility: visible;
-  opacity: 1;
-}
-
 
 // Управление количеством в позиции
 
@@ -160,6 +162,5 @@
 
   &.open {
     transform: translateX(-160px);
-    cursor: e-resize;
   }
 }

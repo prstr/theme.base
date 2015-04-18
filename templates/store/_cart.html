@@ -8,20 +8,16 @@
     <i class="shopping-cart-toggle-icon icon-cart"></i>
     <span>{{ cart.order.totalQuantity }}</span>
   </a>
-  <div class="shopping-cart-body">
-    <a href=""
-       class="shopping-cart-close"
-       ng-click="cart.close()">
-      <span>Закрыть</span>
-    </a>
+  <a href=""
+     class="shopping-cart-close"
+     ng-click="cart.close()">
+    <span>Закрыть</span>
+  </a>
+  <div class="shopping-cart-container">
     <h2>Корзина</h2>
     <ul class="shopping-cart-items">
       <li class="shopping-cart-item"
-           ng-repeat="item in cart.order.items">
-        <div class="shopping-cart-item-photo"
-             ng-if="item.photo"
-             ng-style="{ 'background-image': 'url(' + item.photo + ')' }">
-        </div>
+          ng-repeat="item in cart.order.items">
         <div class="shopping-cart-item-summary">
           <a class="shopping-cart-item-link"
              href="{{ item.url }}">{{ item.title }}</a>
@@ -50,5 +46,15 @@
         </div>
       </li>
     </ul>
+    <div class="shopping-cart-checkout">
+      <div class="shopping-cart-label">Итого:</div>
+      <div class="shopping-cart-subtotal">{{ cart.order.subTotal | price }}</div>
+      <div class="centered">
+        <a href="/checkout"
+           class="btn btn-primary btn-large">
+          <span>Оформить заказ</span>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
