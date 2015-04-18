@@ -30,14 +30,16 @@
 }
 
 for c in ui-colors {
-  &.badge-{c} {
-    _bg = lookup('ui-' + c);
-    _bd = lookup('ui-' + c + '-border');
-    _tx = lookup('ui-' + c + '-text');
+  _bg = lookup('ui-' + c);
+  _bd = lookup('ui-' + c + '-border');
+  _tx = lookup('ui-' + c + '-text');
 
-    background: _bg;
-    border-color: _bd;
-    color: _tx;
+  &.badge-{c} {
+    &, &:hover, &:visited {
+      background: _bg;
+      border-color: _bd;
+      color: _tx;
+    }
   }
 }
 

@@ -8,10 +8,10 @@
     <div class="cell cell-m-4">
       <div class="inline-grid">
         <a href=""
-           class="btn btn-default"
+           class="badge badge-default"
            ng-class="{
-         'opacity-25': p.isPropDisabled(prop, value),
-         'btn-primary active': p.isPropSelected(prop, value)
+         'opacity-50': p.isPropDisabled(prop, value),
+         'badge-primary': p.isPropSelected(prop, value)
        }"
            ng-repeat="value in prop.values"
            ng-click="p.toggleProp(prop, value)">
@@ -27,7 +27,7 @@
     <div class="cell cell-m-4">
 
       <div ng-show="p.variant"
-           class="type-large">
+           class="product-price">
         {{ p.variant.price | price }}
       </div>
 
@@ -51,7 +51,7 @@
             <div class="btn-group"
                  ng-if="p.getQuantityInCart() > 0">
               <button type="button"
-                      class="btn btn-success"
+                      class="btn btn-primary active"
                       ng-click="p.addToCart()">
                 <span>В корзине {{ p.getQuantityInCart() }}</span>
               </button>

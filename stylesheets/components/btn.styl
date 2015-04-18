@@ -45,7 +45,7 @@
     z-index: 2;
   }
 
-  i + *, * + i {
+  i + *, * + i, input + *, * + input {
     margin-left: .37em;
   }
 
@@ -61,7 +61,10 @@ for c in ui-colors {
     border-color: _bd;
     border-bottom-color: darken(_bd, 15%);
     color: _tx;
-    text-shadow: light(_tx) ? 0 1px 1px darken(_bg, 25%) : none;
+
+    if light(_tx) {
+      text-shadow: 0 1px 1px darken(_bg, 25%);
+    }
 
     &:focus, &:hover {
       color: _tx;
