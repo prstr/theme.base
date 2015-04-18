@@ -1,20 +1,25 @@
+<!-- Корзина покупок  -->
 <div class="shopping-cart"
      ng-cloak
      ng-class="{ 'open': cart.isOpen }"
      ng-if="cart.order.items.length">
+  <!-- Кнопка открытия/закрытия корзины -->
   <a class="shopping-cart-toggle"
      href=""
      ng-click="cart.toggle()">
     <i class="shopping-cart-toggle-icon icon-cart"></i>
     <span>{{ cart.order.totalQuantity }}</span>
   </a>
+  <!-- Ссылка на закрытие корзины -->
   <a href=""
      class="shopping-cart-close"
      ng-click="cart.close()">
     <span>Закрыть</span>
   </a>
+  <!-- Flexbox-контейнер, распределяющий элементы по вертикали -->
   <div class="shopping-cart-container">
     <h2>Корзина</h2>
+    <!-- Позиции заказа -->
     <ul class="shopping-cart-items">
       <li class="shopping-cart-item"
           ng-repeat="item in cart.order.items">
@@ -31,6 +36,7 @@
             {{ item.price | price }}
           </div>
         </div>
+        <!-- Управление количеством (добавить/убрать) -->
         <div class="shopping-cart-item-qty">
           <a href=""
              class="shopping-cart-item-qty-ctl"
@@ -46,10 +52,14 @@
         </div>
       </li>
     </ul>
+    <!-- Нижний блок: подитог, оформление -->
     <div class="shopping-cart-checkout">
-      <div class="shopping-cart-label">Итого:</div>
-      <div class="shopping-cart-subtotal">{{ cart.order.subTotal | price }}</div>
-      <div class="centered">
+      <div class="text-subtle">Итого:</div>
+      <div class="type-large">{{ cart.order.subTotal | price }}</div>
+      <div ng-show="cart.order.deliveryFee > 0">+ доставка</div>
+      <div ng-show="cart.order.deliveryFee == 0"
+           class="text-critical">бесплатная доставка</div>
+      <div class="centered block">
         <a href="/checkout"
            class="btn btn-primary btn-large">
           <span>Оформить заказ</span>

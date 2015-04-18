@@ -22,7 +22,7 @@
 
   &.open {
     transform: translateX(0);
-    box-shadow: 0 0 64px rgba(0, 0, 0, .5),
+    box-shadow: 0 0 64px rgba(0, 0, 0, .25),
     0 0 0 9999px rgba(0, 0, 0, .25)
   }
 
@@ -83,19 +83,13 @@
 }
 
 .shopping-cart-checkout {
+  clearfix();
   position: relative;
   z-index: 2;
   flex: 1 0 auto;
   align-self: flex-end;
-  padding: gap 0;
   width: 100%;
   text-align: center;
-  background: rgba(255,255,255,.75);
-}
-
-.shopping-cart-subtotal {
-  font-size: type-large;
-  margin: .25em 0;
 }
 
 // Позиции заказа в корзине
