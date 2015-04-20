@@ -3666,6 +3666,13 @@ img[ui-magnify]{
       -ms-transform:translateX(-160px);
           transform:translateX(-160px);
 }
+.store-layout{
+  background:#fff;
+}
+.store-header{
+  font-size:1.25em;
+  padding:1em 0;
+}
 .workspace-main{
   position:relative;
 }

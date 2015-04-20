@@ -75,6 +75,12 @@
       "default": 16
     },
     {
+      "id": "logo",
+      "label": "Логотип",
+      "type": "image",
+      "default": null
+    },
+    {
       "id": "body-background",
       "label": "Фон страницы",
       "type": "color",
