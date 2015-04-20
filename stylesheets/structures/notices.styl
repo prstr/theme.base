@@ -1,0 +1,55 @@
+// -----------------------
+// Всплывающие уведомления
+// -----------------------
+
+#notices {
+  z-index: 2000
+}
+
+.notice {
+  position: relative;
+  margin: gap;
+  padding: gap;
+
+  border-radius: border-radius;
+  background: rgba(255, 255, 255, .95);
+
+  &.info {
+    background: ui-primary;
+    color: ui-primary-text;
+    box-shadow: 0 1px 1px darken(ui-primary, 50%);
+  }
+
+  &.success {
+    background: ui-success;
+    color: ui-success-text;
+    box-shadow: 0 1px 1px darken(ui-success, 50%)
+  }
+
+  &.warn {
+    background: ui-warn;
+    color: ui-warn-text;
+    box-shadow: 0 1px 1px darken(ui-warn, 50%)
+  }
+
+  &.error {
+    background: ui-critical;
+    color: ui-critical-text;
+    box-shadow: 0 1px 1px darken(ui-critical, 50%);
+  }
+}
+
+@media (min-width: screen-medium-min) {
+  #notices {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+  }
+}
+
+@media (min-width: screen-large-min) {
+  #notices {
+    width: 25%;
+  }
+}

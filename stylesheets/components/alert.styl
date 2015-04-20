@@ -16,6 +16,6 @@ for c in ui-colors {
 
   .alert-{c} {
     border-color: _c
-    background: lighten(_c, 75%)
+    background: lookup('ui-' + c + '-subtle')
   }
 }

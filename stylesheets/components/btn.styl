@@ -76,6 +76,10 @@ for c in ui-colors {
       border-color: darken(_bd, 15%);
       box-shadow: 0 3px 5px darken(_bd, 15%) inset
     }
+
+    &[disabled] {
+      background: desaturate(_bg, 50%);
+    }
   }
 
 }

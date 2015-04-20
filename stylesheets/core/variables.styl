@@ -64,6 +64,7 @@ for c in ui-colors
   _c = lookup('ui-' + c)
   define('ui-' + c + '-text', light(_c) ? darken(_c, 75%) : #fff)
   define('ui-' + c + '-border', light(_c) ? darken(_c, 10%) : darken(_c, 15%))
+  define('ui-' + c + '-subtle', lighten(desaturate(_c, 60%), 60%));
 
 // ----------------
 // Базовые элементы

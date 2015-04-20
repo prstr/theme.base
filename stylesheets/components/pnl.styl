@@ -33,7 +33,7 @@ for c in ui-colors {
   }
 
   .pnl-{c}-subtle {
-    background: lighten(desaturate(_bg, 60%), 60%);
+    background: lookup('ui-' + c + '-subtle')
   }
 
 }
