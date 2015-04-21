@@ -5,18 +5,16 @@
 // Задает боковые отступы.
 //
 // Контейнер фиксированной ширины можно задать с помощью модификатора
-// `.container-fixed`, либо поместив его в `.layout-fixed`.
+// `.container-fixed`, либо поместив его в `.fixed-layout`.
 //
 // ```
-// [.layout-fixed]
+// [.fixed-layout]
 //   .container
 //     {...}
 //
 // .container[.container-fixed]
 //   {...}
 // ```
-
-
 
 .container {
   clearfix();
@@ -25,7 +23,7 @@
 }
 
 @media (min-width: screen-medium-min) {
-  .container-fixed, .layout-fixed .container {
+  .container-fixed, .fixed-layout .container {
     box-sizing: border-box;
     width: screen-medium-min;
     margin-left: auto;
@@ -34,7 +32,7 @@
 }
 
 @media (min-width: screen-large-min) {
-  .container-fixed, .layout-fixed .container {
+  .container-fixed, .fixed-layout .container {
     width: screen-large-min;
   }
 }

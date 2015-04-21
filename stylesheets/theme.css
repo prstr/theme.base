@@ -2394,7 +2394,7 @@ input[type='radio']{
 }
 @media (min-width: 640px){
   .container-fixed,
-  .layout-fixed .container{
+  .fixed-layout .container{
     box-sizing:border-box;
     width:640px;
     margin-left:auto;
@@ -2403,7 +2403,7 @@ input[type='radio']{
 }
 @media (min-width: 1024px){
   .container-fixed,
-  .layout-fixed .container{
+  .fixed-layout .container{
     width:1024px;
   }
 }
@@ -3750,9 +3750,6 @@ img[ui-magnify]{
   -webkit-transform:translateX(-160px);
       -ms-transform:translateX(-160px);
           transform:translateX(-160px);
-}
-.store-layout{
-  background:#fff;
 }
 .store-header{
   font-size:1.25em;

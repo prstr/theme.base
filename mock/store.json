@@ -1,8 +1,8 @@
 {
   "title": "Просторный магазин",
-  "host": "prostore.dev",
+  "host": "prostore.business",
   "ssl": true,
-  "origin": "http://prostore.dev",
+  "origin": "http://prostore.business",
   "settings": {
     "currencySymbol": "руб.",
     "currencyDecimalPlaces": "2",
