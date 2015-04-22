@@ -3,33 +3,23 @@
   <def:main>
     <div class="product-view container"
          ng-controller="ProductController as p">
-
       <include file="_breadcrumbs.html"/>
-
       <div class="grid grid-gutters block">
-
         <div class="cell cell-m-1">
           <include file="_photos.html"/>
         </div>
-
         <div class="cell cell-m-2">
-          <h1 class="product-view-title">
+          <h1>
             #{product.title}
             <div class="small">#{product.subtitle}</div>
           </h1>
-
           <include file="_purchase.html"/>
-
           <div class="product-view-description">
             !{product.descriptionHtml}
           </div>
-
           <include file="_props.html"/>
-
         </div>
-
       </div>
-
     </div>
   </def:main>
 

@@ -5,7 +5,7 @@
 // В базовой теме корзина отображается как фиксированная правая часть экрана,
 // скрытая по умолчанию.
 
-.shopping-cart {
+.cart {
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -13,11 +13,11 @@
   right: 0;
 
   box-sizing: border-box;
-  width: shopping-cart-width;
-  border-left: 4px solid shopping-cart-color;
+  width: cart-width;
+  border-left: 4px solid cart-color;
 
   background: ui-base;
-  transform: translateX(shopping-cart-width);
+  transform: translateX(cart-width);
   transition: transform .5s;
 
   &.open {
@@ -31,7 +31,7 @@
 // Кнопка открытия/закрытия корзины,
 // на ней отображается количество товаров
 
-.shopping-cart-toggle {
+.cart-toggle {
   position: absolute;
   bottom: 64px;
   right: 100%;
@@ -42,9 +42,9 @@
   cursor: pointer
   text-decoration: none;
   text-align: center;
-  background-color: shopping-cart-color;
+  background-color: cart-color;
   color: #fff;
-  text-shadow: 0 1px 1px darken(shopping-cart-color, 25%);
+  text-shadow: 0 1px 1px darken(cart-color, 25%);
 
   &:hover, &:visited {
     color: #fff;
@@ -52,13 +52,13 @@
 
 }
 
-.shopping-cart-toggle-icon {
+.cart-toggle-icon {
   font-size: 20px
 }
 
 // Ссылка «Закрыть»
 
-.shopping-cart-close {
+.cart-close {
   position: absolute;
   z-index: 3;
   top: 4px;
@@ -69,7 +69,7 @@
 
 // Контейнер и нижний блок оформления заказа
 
-.shopping-cart-container {
+.cart-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -82,7 +82,7 @@
   box-sizing: border-box;
 }
 
-.shopping-cart-checkout {
+.cart-checkout {
   clearfix();
   position: relative;
   z-index: 2;
@@ -94,7 +94,7 @@
 
 // Позиции заказа в корзине
 
-.shopping-cart-items {
+.cart-items {
   flex: 1 1 auto;
   list-style: none;
   padding: 0;
@@ -102,54 +102,54 @@
   overflow-y: auto;
 }
 
-.shopping-cart-item {
+.cart-item {
   position: relative;
   display: flex;
 }
 
-.shopping-cart-item-summary {
+.cart-item-summary {
   flex: 1;
 }
 
 // Управление количеством в позиции
 
-.shopping-cart-item-qty {
+.cart-item-qty {
   text-align: center;
   min-width: 24px;
 }
 
 // Стрелки отображаются при наведении на позицию
 
-.shopping-cart-item-qty-ctl {
+.cart-item-qty-ctl {
   transition: all .5s;
   visibility: hidden;
   opacity: 0;
 }
 
-.shopping-cart-item:hover .shopping-cart-item-qty-ctl {
+.cart-item:hover .cart-item-qty-ctl {
   visibility: visible;
   opacity: 1;
 }
 
-.shopping-cart-item-qty-label {
+.cart-item-qty-label {
   font-size: type-large;
 }
 
 // Выбранные свойства
 
-.shopping-cart-item-prop {
+.cart-item-prop {
   color: subtle-color;
   font-size: type-small;
   white-space: nowrap;
 }
 
-.shopping-cart-item-prop + .shopping-cart-item-prop {
+.cart-item-prop + .cart-item-prop {
   margin-left: 6px;
 }
 
 // Контейнер, отодвигающийся при открывании корзины
 
-.shopping-cart-shifter {
+.cart-shifter {
   position: relative;
   overflow: hidden;
   transition: all .5s;

@@ -1,0 +1,9 @@
+<nav class="store-topnav">
+  <div class="container">
+    <each:link in="store.nav['topnav']">
+      <a href="#{link.href}">
+        #{link.title}
+      </a>
+    </each:link>
+  </div>
+</nav>
