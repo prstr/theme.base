@@ -136,42 +136,42 @@
     {
       "large": "/static/mock/kris_brown_1.jpg",
       "thumb": "/static/mock/kris_brown_1.jpg",
-      "forProp": "Цвет=Коричневый",
+      "option": "Цвет=Коричневый",
       "title": ""
     },
     {
       "large": "/static/mock/kris_brown_2.jpg",
       "thumb": "/static/mock/kris_brown_2.jpg",
-      "forProp": "Цвет=Коричневый",
+      "option": "Цвет=Коричневый",
       "title": ""
     },
     {
       "large": "/static/mock/kris_tan_1.jpg",
       "thumb": "/static/mock/kris_tan_1.jpg",
-      "forProp": "Цвет=Светло-коричневый",
+      "option": "Цвет=Светло-коричневый",
       "title": ""
     },
     {
       "large": "/static/mock/kris_tan_2.jpg",
       "thumb": "/static/mock/kris_tan_2.jpg",
-      "forProp": "Цвет=Светло-коричневый",
+      "option": "Цвет=Светло-коричневый",
       "title": ""
     },
     {
       "large": "/static/mock/kris_black_1.jpg",
       "thumb": "/static/mock/kris_black_1.jpg",
-      "forProp": "Цвет=Черный",
+      "option": "Цвет=Черный",
       "title": ""
     },
     {
       "large": "/static/mock/kris_black_2.jpg",
       "thumb": "/static/mock/kris_black_2.jpg",
-      "forProp": "Цвет=Черный",
+      "option": "Цвет=Черный",
       "title": ""
     }
   ],
   "tags": ["Новинка", "Лучшее"],
-  "varyProps": [
+  "options": [
     {
       "name": "Цвет",
       "values": ["Коричневый", "Черный"]

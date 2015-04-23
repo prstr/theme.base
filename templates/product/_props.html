@@ -1,16 +1,14 @@
 <div class="product-view-props">
   <div class="inline-grid">
-    <each:prop in="product.props">
-      <if expr="prop.values.length == 1">
-        <div class="badge-group">
-          <div class="badge badge-default">
-            #{prop.name}
-          </div>
-          <div class="badge badge-base">
-            #{prop.values[0]}
-          </div>
+    <each:prop in="product.characteristics">
+      <div class="badge-group">
+        <div class="badge badge-default">
+          #{prop.name}
         </div>
-      </if>
+        <div class="badge badge-base">
+          #{prop.value}
+        </div>
+      </div>
     </each:prop>
   </div>
 </div>
