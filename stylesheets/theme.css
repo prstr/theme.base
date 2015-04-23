@@ -170,6 +170,10 @@ input[type='radio']{
 .block{
   margin:1em 0;
 }
+.hero{
+  padding-top:4em;
+  padding-bottom:4em;
+}
 [ng-cloak],
 [data-ng-cloak],
 [x-ng-cloak],
@@ -191,7 +195,7 @@ input[type='radio']{
   text-align:center;
 }
 .type-larger{
-  font-size:1.5em;
+  font-size:2em;
 }
 .type-large{
   font-size:1.25em;
@@ -291,6 +295,9 @@ input[type='radio']{
 	-ms-font-feature-settings:"liga" 1;
 	-o-font-feature-settings:"liga";
 	font-feature-settings:"liga";
+
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 .icon-home:before{
@@ -4304,7 +4311,7 @@ input[type='radio']{
   color:#fff;
 }
 .badge-larger{
-  font-size:1.5em;
+  font-size:2em;
 }
 .badge-large{
   font-size:1.25em;
@@ -4572,8 +4579,8 @@ input[type='radio']{
   height:42px;
 }
 .btn-larger{
-  font-size:1.5em;
-  height:50px;
+  font-size:2em;
+  height:66px;
 }
 .carousel{
   position:relative;
@@ -5101,10 +5108,6 @@ input[type='radio']{
             flex:8;
   }
 }
-.hero{
-  padding-top:4em;
-  padding-bottom:4em;
-}
 .inline-grid{
   display:inline-block;
   margin:-0.5em;
@@ -5176,8 +5179,8 @@ input[type='radio']{
   height:42px;
 }
 .input-group-addon-larger{
-  font-size:1.5em;
-  height:50px;
+  font-size:2em;
+  height:66px;
 }
 .input{
   position:relative;
@@ -5241,8 +5244,8 @@ textarea.input{
   height:42px;
 }
 .input-larger{
-  font-size:1.5em;
-  height:50px;
+  font-size:2em;
+  height:66px;
 }
 .loading{
   text-align:center;
@@ -5480,6 +5483,7 @@ img[ui-magnify]{
   left:0;
   right:0;
   bottom:0;
+  z-index:100;
   display:-webkit-box;
   display:-webkit-flex;
   display:-ms-flexbox;
@@ -5548,6 +5552,7 @@ img[ui-magnify]{
 .pnl{
   position:relative;
   z-index:1;
+  display:block;
 }
 .pnl::before,
 .pnl::after{
@@ -5789,15 +5794,15 @@ img[ui-magnify]{
   margin-left:-40px;
 }
 .tumbler-larger{
-  font-size:1.5em;
-  width:75px;
-  height:50px;
+  font-size:2em;
+  width:99px;
+  height:66px;
 }
 .tumbler-larger::after{
-  width:46px;
+  width:62px;
 }
 .tumbler-larger.active::after{
-  margin-left:-48px;
+  margin-left:-64px;
 }
 .workspace-main{
   position:relative;
