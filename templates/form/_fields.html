@@ -1,0 +1,35 @@
+<each:field in="form.fields">
+  <div class="block">
+    <label>
+      <h3>
+        #{field.label}
+        <if expr="!field.optional">
+          <span class="text-critical">*</span>
+        </if>
+      </h3>
+      <case:t expr="field.kind">
+        <when expr="'text'">
+          <input type="text"
+                 ng-model="f.fields[#{field_index}]"
+                 class="input input-block input-large"
+                 ng-required="#{!field.optional}"/>
+        </when>
+        <when expr="'select'">
+          <select class="input input-block input-large"
+                  ng-model="f.fields[#{field_index}]"
+                  ng-required="#{!field.optional}">
+            <each:val in="field.values">
+              <option value="#{val}">#{val}</option>
+            </each:val>
+          </select>
+        </when>
+        <when expr="'textarea'">
+          <textarea class="input input-block"
+                    ng-model="f.fields[#{field_index}]"
+                    rows=8
+                    ng-required="#{!field.optional}"></textarea>
+        </when>
+      </case:t>
+    </label>
+  </div>
+</each:field>

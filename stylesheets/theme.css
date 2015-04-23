@@ -5195,6 +5195,7 @@ input[type='radio']{
   border-style:solid;
   border-color:#d6d6d6;
   border-radius:4px;
+  background:#fff;
 }
 .input.ng-dirty.ng-invalid{
   border-color:#db1f1f;
@@ -6046,4 +6047,8 @@ img[ui-magnify]{
   -webkit-transform:translateX(-160px);
       -ms-transform:translateX(-160px);
           transform:translateX(-160px);
+}
+.form-submitted{
+  padding:2em 0;
+  text-align:center;
 }

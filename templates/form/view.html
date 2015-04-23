@@ -1,0 +1,51 @@
+<include file="_layout.html">
+
+  <def:main>
+    <div ng-controller="FormController as f">
+      <div class="form-view"
+           ng-hide="f.submitted">
+        <div class="container">
+          <div class="grid grid-gutters block">
+            <div class="cell cell-m-1">
+              <h1>#{form.title}</h1>
+              !{form.descriptionHtml}
+              <p class="text-subtle">
+                Звездочкой
+                <span class="text-critical">*</span>
+                отмечены поля, обязательные для заполнения.
+              </p>
+            </div>
+            <div class="cell cell-m-2">
+              <form name="submissionForm"
+                    ng-cloak
+                    novalidate
+                    ng-submit="submissionForm.$valid && f.submit()">
+                <div class="pnl pnl-base pnl-level-3 pnl-standalone pnl-indent">
+                  <include file="_fields.html"/>
+                  <div class="block centered">
+                    <button type="submit"
+                            class="btn btn-primary btn-large"
+                            ng-disabled="!submissionForm.$valid"
+                            ng-hide="f.submitting">
+                      <span>Отправить</span>
+                    </button>
+                    <div class="loading"
+                         ng-show="f.submitting">Пожалуйста, подождите...</div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-submitted"
+           ng-cloak
+           ng-show="f.submitted">
+        <div class="container">
+          !{form.submittedHtml}
+        </div>
+      </div>
+    </div>
+  </def:main>
+
+</include>
