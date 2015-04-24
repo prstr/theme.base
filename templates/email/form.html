@@ -1,0 +1,18 @@
+<!-- Уведомление о заполненной форме -->
+<include file="_layout.html">
+
+  <def:main>
+    <h2>#{form.title}</h2>
+    <dl>
+      <each:field in="response.fields">
+        <dt>#{field.name}</dt>
+        <dd class="prewrap">#{field.value}</dd>
+      </each:field>
+    </dl>
+    <p class="type-small">
+      Отправлено <strong>#{response.createdAt}</strong>
+      с IP #{response.clientIp}
+    </p>
+  </def:main>
+
+</include>
