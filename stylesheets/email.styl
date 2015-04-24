@@ -2,10 +2,6 @@
 // Стили для email-писем
 // =====================
 
-// ----
-// Ядро
-// ----
-
 @import './core/reset'
 @import './core/fonts'
 @import './core/variables'
@@ -13,12 +9,10 @@
 @import './core/base'
 @import './core/helpers'
 
-.email-layout {
-  background: ui-primary-subtle;
-}
+@import './components/*'
 
-.email-main .container {
-  background: ui-base;
+html, body {
+  background: ui-primary-subtle;
 }
 
 // ---------

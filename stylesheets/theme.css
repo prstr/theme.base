@@ -119,8 +119,8 @@ dt,
 dd{
   margin:1em 0;
 }
-ul.terse li,
-ol.terse li{
+ul,
+ol{
   margin:0.5em 0;
 }
 h1,
@@ -154,6 +154,19 @@ h6 .small{
   font-size:60%;
   color:#858585;
 }
+dl,
+dt,
+dd{
+  display:block;
+}
+dt{
+  font-weight:bold;
+}
+dd{
+  margin-left:1em;
+  padding-left:1em;
+  border-left:4px solid #eee;
+}
 hr{
   margin:1em 0;
   border:0;
@@ -183,6 +196,9 @@ input[type='radio']{
 }
 .nobr{
   white-space:nowrap;
+}
+.prewrap{
+  white-space:pre-wrap;
 }
 .align-left{
   text-align:left;
@@ -248,6 +264,7 @@ input[type='radio']{
   color:#db1f1f;
 }
 .text-subtle{
+  font-size:0.875em;
   font-style:italic;
   color:#858585;
 }

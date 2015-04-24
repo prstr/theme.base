@@ -45,9 +45,7 @@ p, ol, ul, dl, li, dt, dd {
 }
 
 ul, ol {
-  &.terse li {
-    margin: gap-small 0;
-  }
+  margin: gap-small 0;
 }
 
 h1, h2, h3 {
@@ -69,6 +67,20 @@ h4, h5, h6 {
     font-size: 60%;
     color: subtle-color;
   }
+}
+
+dl, dt, dd {
+  display: block;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 4px solid ui-default;
 }
 
 hr {
