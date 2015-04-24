@@ -10,13 +10,13 @@
       <case:t expr="field.kind">
         <when expr="'text'">
           <input type="text"
-                 ng-model="f.fields[#{field_index}]"
+                 ng-model="f.fields['#{field.name}']"
                  class="input input-block input-large"
                  ng-required="#{!field.optional}"/>
         </when>
         <when expr="'select'">
           <select class="input input-block input-large"
-                  ng-model="f.fields[#{field_index}]"
+                  ng-model="f.fields['#{field.name}']"
                   ng-required="#{!field.optional}">
             <each:val in="field.values">
               <option value="#{val}">#{val}</option>
@@ -25,7 +25,7 @@
         </when>
         <when expr="'textarea'">
           <textarea class="input input-block"
-                    ng-model="f.fields[#{field_index}]"
+                    ng-model="f.fields['#{field.name}']"
                     rows=8
                     ng-required="#{!field.optional}"></textarea>
         </when>
