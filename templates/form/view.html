@@ -1,9 +1,13 @@
 <include file="_layout.html">
 
   <def:main>
-    <div ng-controller="FormController as f">
+    <form name="submissionForm"
+          ng-cloak
+          novalidate
+          ng-controller="FormController as f"
+          ng-submit="submissionForm.$valid && f.submit()">
       <div class="form-view"
-           ng-hide="f.submitted">
+           ng-hide="submissionForm.$submitted">
         <div class="container">
           <div class="grid grid-gutters block">
             <div class="cell cell-m-1">
@@ -16,36 +20,28 @@
               </p>
             </div>
             <div class="cell cell-m-2">
-              <form name="submissionForm"
-                    ng-cloak
-                    novalidate
-                    ng-submit="submissionForm.$valid && f.submit()">
-                <div class="pnl pnl-base pnl-level-3 pnl-standalone pnl-indent">
-                  <include file="_fields.html"/>
-                  <div class="block centered">
-                    <button type="submit"
-                            class="btn btn-primary btn-large"
-                            ng-disabled="!submissionForm.$valid"
-                            ng-hide="f.submitting">
-                      <span>Отправить</span>
-                    </button>
-                    <div class="loading"
-                         ng-show="f.submitting">Пожалуйста, подождите...</div>
-                  </div>
+              <div class="pnl pnl-base pnl-level-3 pnl-standalone pnl-indent">
+                <include file="_fields.html"/>
+                <div class="block centered">
+                  <button type="submit"
+                          class="btn btn-primary btn-large"
+                          ng-disabled="!submissionForm.$valid">
+                    <span>Отправить</span>
+                  </button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="form-submitted"
            ng-cloak
-           ng-show="f.submitted">
+           ng-show="submissionForm.$submitted">
         <div class="container">
           !{form.submittedHtml}
         </div>
       </div>
-    </div>
+    </form>
   </def:main>
 
 </include>
