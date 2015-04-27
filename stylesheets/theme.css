@@ -6046,12 +6046,12 @@ img[ui-magnify]{
 .cart-item-qty-label{
   font-size:1.25em;
 }
-.cart-item-prop{
+.cart-item-option{
   color:#858585;
   font-size:0.875em;
   white-space:nowrap;
 }
-.cart-item-prop + .cart-item-prop{
+.cart-item-option + .cart-item-option{
   margin-left:6px;
 }
 .cart-shifter{
