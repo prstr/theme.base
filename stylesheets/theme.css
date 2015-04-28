@@ -4451,7 +4451,7 @@ input[type='radio']{
 .btn-base:focus,
 .btn-base:hover{
   color:#404040;
-  background:#e6e6e6;
+  background:#f2f2f2;
 }
 .btn-base:active,
 .btn-base.active{
@@ -4460,7 +4460,9 @@ input[type='radio']{
   box-shadow:0 3px 5px #c4c4c4 inset;
 }
 .btn-base[disabled]{
+  opacity:0.5;
   background:#fff;
+  cursor:not-allowed;
 }
 .btn-default{
   background:#eee;
@@ -4471,7 +4473,7 @@ input[type='radio']{
 .btn-default:focus,
 .btn-default:hover{
   color:#3b3b3b;
-  background:#d6d6d6;
+  background:#e2e2e2;
 }
 .btn-default:active,
 .btn-default.active{
@@ -4480,7 +4482,9 @@ input[type='radio']{
   box-shadow:0 3px 5px #b6b6b6 inset;
 }
 .btn-default[disabled]{
+  opacity:0.5;
   background:#eee;
+  cursor:not-allowed;
 }
 .btn-primary{
   background:#31a6c4;
@@ -4492,7 +4496,7 @@ input[type='radio']{
 .btn-primary:focus,
 .btn-primary:hover{
   color:#fff;
-  background:#2c95b0;
+  background:#2f9eba;
 }
 .btn-primary:active,
 .btn-primary.active{
@@ -4501,7 +4505,9 @@ input[type='radio']{
   box-shadow:0 3px 5px #24788e inset;
 }
 .btn-primary[disabled]{
+  opacity:0.5;
   background:#56909f;
+  cursor:not-allowed;
 }
 .btn-action{
   background:#2e77b8;
@@ -4513,7 +4519,7 @@ input[type='radio']{
 .btn-action:focus,
 .btn-action:hover{
   color:#fff;
-  background:#296ba6;
+  background:#2c71af;
 }
 .btn-action:active,
 .btn-action.active{
@@ -4522,7 +4528,9 @@ input[type='radio']{
   box-shadow:0 3px 5px #215685 inset;
 }
 .btn-action[disabled]{
+  opacity:0.5;
   background:#517596;
+  cursor:not-allowed;
 }
 .btn-success{
   background:#39ac67;
@@ -4534,7 +4542,7 @@ input[type='radio']{
 .btn-success:focus,
 .btn-success:hover{
   color:#fff;
-  background:#339b5d;
+  background:#36a362;
 }
 .btn-success:active,
 .btn-success.active{
@@ -4543,7 +4551,9 @@ input[type='radio']{
   box-shadow:0 3px 5px #297c4b inset;
 }
 .btn-success[disabled]{
+  opacity:0.5;
   background:#568f6d;
+  cursor:not-allowed;
 }
 .btn-warn{
   background:#f5d989;
@@ -4554,7 +4564,7 @@ input[type='radio']{
 .btn-warn:focus,
 .btn-warn:hover{
   color:#584307;
-  background:#f2ce66;
+  background:#f4d377;
 }
 .btn-warn:active,
 .btn-warn.active{
@@ -4563,7 +4573,9 @@ input[type='radio']{
   box-shadow:0 3px 5px #eebf36 inset;
 }
 .btn-warn[disabled]{
+  opacity:0.5;
   background:#dacca4;
+  cursor:not-allowed;
 }
 .btn-critical{
   background:#db1f1f;
@@ -4575,7 +4587,7 @@ input[type='radio']{
 .btn-critical:focus,
 .btn-critical:hover{
   color:#fff;
-  background:#c51c1c;
+  background:#d01d1d;
 }
 .btn-critical:active,
 .btn-critical.active{
@@ -4584,7 +4596,9 @@ input[type='radio']{
   box-shadow:0 3px 5px #9e1616 inset;
 }
 .btn-critical[disabled]{
+  opacity:0.5;
   background:#ac4e4e;
+  cursor:not-allowed;
 }
 .btn-block{
   display:block;

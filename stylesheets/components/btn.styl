@@ -68,7 +68,7 @@ for c in ui-colors {
 
     &:focus, &:hover {
       color: _tx;
-      background: darken(_bg, 10%);
+      background: darken(_bg, 5%);
     }
 
     &:active, &.active {
@@ -78,7 +78,9 @@ for c in ui-colors {
     }
 
     &[disabled] {
+      opacity: .5;
       background: desaturate(_bg, 50%);
+      cursor: not-allowed;
     }
   }
 
