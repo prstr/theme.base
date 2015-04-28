@@ -280,6 +280,17 @@ input[type='radio']{
 .image-block{
   width:100%;
 }
+.image-placeholder{
+  display:block;
+  background:#eee;
+  text-align:center;
+}
+.image-placeholder::before{
+  font-family:Linearicons;
+  content:'\e70e';
+  font-size:2em;
+  color:#858585;
+}
 @font-face{
 	font-family:'Linearicons';
 	src:url('/static/fonts/Linearicons.eot?i068ss');

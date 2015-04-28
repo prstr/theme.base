@@ -280,6 +280,17 @@ input[type='radio']{
 .image-block{
   width:100%;
 }
+.image-placeholder{
+  display:block;
+  background:#eee;
+  text-align:center;
+}
+.image-placeholder::before{
+  font-family:Linearicons;
+  content:'\e70e';
+  font-size:2em;
+  color:#858585;
+}
 .alert{
   padding:0 1em;
   border-width:4px;
