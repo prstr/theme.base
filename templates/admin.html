@@ -1,3 +1,8 @@
+<!-- Панель администрирования — это одностраничное приложение, написанное
+на Angular. Данный шаблон является точкой входа в приложение.
+
+Изменять этот шаблон не рекомендуется.
+-->
 <include file="_outer.html">
 
   <var:app>'prostore:admin'</var:app>
@@ -7,17 +12,7 @@
   </append:meta>
 
   <def:body>
-    <div class="workspace">
-      <div class="workspace-aside">
-        <ng-include src="'_aside.html'">
-        </ng-include>
-      </div>
-      <div ui-view>
-        <div class="workspace-main">
-          <div class="loading">Пожалуйста, подождите...</div>
-        </div>
-      </div>
-    </div>
+    <div ui-view></div>
   </def:body>
 
   <def:scripts>
