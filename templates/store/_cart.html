@@ -26,9 +26,9 @@
         <div class="cart-item-summary">
           <a class="cart-item-link"
              href="{{ item.url }}">{{ item.title }}</a>
-          <div class="cart-item-options">
-            <span ng-repeat="(name, value) in item.options"
-                  class="cart-item-option">
+          <div class="cart-item-props">
+            <span ng-repeat="(name, value) in item.props"
+                  class="cart-item-prop">
               {{ name }}: {{ value }}
             </span>
           </div>
