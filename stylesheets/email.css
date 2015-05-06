@@ -773,9 +773,18 @@ input[type='radio']{
 .datatable th{
   color:#858585;
 }
+.datatable thead tr:first-child td,
+.datatable tbody:first-child tr:first-child td,
+.datatable thead tr:first-child th,
+.datatable tbody:first-child tr:first-child th{
+  border-top-left-radius:4px;
+  border-top-right-radius:4px;
+}
 .datatable tbody tr:last-child td,
 .datatable tbody tr:last-child th{
   border-bottom:0;
+  border-bottom-left-radius:4px;
+  border-bottom-right-radius:4px;
 }
 .datatable tr.dragging{
   opacity:0.5;
@@ -785,6 +794,10 @@ input[type='radio']{
 }
 .datatable tr.drag-over-after{
   border-bottom:4px solid #31a6c4;
+}
+.datatable tr:hover td,
+.datatable tr:hover th{
+  background:#fbfbfb;
 }
 .datatable-small td,
 .datatable-small th{

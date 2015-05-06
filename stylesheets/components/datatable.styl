@@ -17,9 +17,18 @@
     color: datatable-th-color;
   }
 
+  thead tr:first-child, tbody:first-child tr:first-child {
+    td, th {
+      border-top-left-radius: border-radius;
+      border-top-right-radius: border-radius;
+    }
+  }
+
   tbody tr:last-child {
     td, th {
       border-bottom: 0;
+      border-bottom-left-radius: border-radius;
+      border-bottom-right-radius: border-radius;
     }
   }
 
@@ -33,6 +42,12 @@
 
   tr.drag-over-after {
     border-bottom: 4px solid ui-primary
+  }
+
+  tr:hover {
+    td, th {
+      background: lighten(ui-default, 75%)
+    }
   }
 
 }
