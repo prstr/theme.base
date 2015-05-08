@@ -7,14 +7,18 @@
 
   td, th {
     padding: gap-small;
-    border-bottom: 1px solid datatable-border-color;
-
     font: inherit;
     text-align: left;
   }
 
   th {
     color: datatable-th-color;
+  }
+
+  tbody, tfoot {
+    td, th {
+      border-top: 1px solid datatable-border-color;
+    }
   }
 
   thead tr:first-child, tbody:first-child tr:first-child {
@@ -24,7 +28,7 @@
     }
   }
 
-  tbody tr:last-child {
+  tbody:last-child tr:last-child, tfoot:last-child tr:last-child {
     td, th {
       border-bottom: 0;
       border-bottom-left-radius: border-radius;
