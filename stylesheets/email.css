@@ -1808,9 +1808,6 @@ img[ui-magnify]{
   font-size:1.25em;
 }
 @media (min-width: 640px){
-  .toolbar-group{
-    margin:1em 0;
-  }
   .toolbar-group-left{
     text-align:left;
     -webkit-box-flex:1;
