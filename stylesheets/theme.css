@@ -4708,6 +4708,10 @@ input[type='radio']{
 .datatable tfoot th{
   border-top:1px solid #eee;
 }
+.datatable tbody:first-child tr:first-child td,
+.datatable tbody:first-child tr:first-child th{
+  border-top:0;
+}
 .datatable thead tr:first-child td,
 .datatable tbody:first-child tr:first-child td,
 .datatable thead tr:first-child th,
