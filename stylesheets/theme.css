@@ -5315,9 +5315,6 @@ textarea.input{
   font-size:2em;
   height:66px;
 }
-.input-monospace{
-  font-family:monospace;
-}
 .loading{
   text-align:center;
   margin:1em 0;
