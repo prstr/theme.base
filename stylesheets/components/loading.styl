@@ -2,7 +2,26 @@
 // Сообщение о загрузке
 // --------------------
 
-.loading {
+.global-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  // bottom: 0;
+  z-index: 1000;
+
+  user-select: none;
+
   text-align: center;
-  margin: 1em 0;
+}
+
+.global-loading-message {
+  display: inline-block;
+  padding: .25em .5em;
+
+  border-bottom-left-radius: border-radius;
+  border-bottom-right-radius: border-radius;
+
+  background: ui-warn;
+  color: ui-warn-text;
 }
