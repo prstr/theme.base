@@ -51,12 +51,10 @@
     <div id="notices" ui-notices></div>
 
     <!--
-    Контейнер для отображения статуса загрузки страницы при асинхронных запросах.
+    Контейнер для отображения статуса страницы (например, сообщение о загрузке
+    при асинхронных запросах).
     -->
-    <div class="global-loading"
-         ng-if="hasPendingXHR()">
-      <div class="global-loading-message">Пожалуйста, подождите...</div>
-    </div>
+    <include file="_status.html"/>
 
     <!-- Тело страницы -->
     <block:body/>

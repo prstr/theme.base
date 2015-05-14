@@ -1,8 +1,8 @@
 // --------------------
-// Сообщение о загрузке
+// Статусные сообщения
 // --------------------
 
-.global-loading {
+#app-status {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,13 +15,17 @@
   text-align: center;
 }
 
-.global-loading-message {
+.app-status-message {
   display: inline-block;
   padding: .25em .5em;
 
   border-bottom-left-radius: border-radius;
   border-bottom-right-radius: border-radius;
+}
 
-  background: ui-warn;
-  color: ui-warn-text;
+for c in ui-colors {
+  .app-status-message-{c} {
+    background: lookup('ui-' + c);
+    color: lookup('ui-' + c + '-text');
+  }
 }
