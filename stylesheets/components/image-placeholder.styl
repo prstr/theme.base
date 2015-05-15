@@ -1,0 +1,21 @@
+// ----------------
+// «Нет фотографии»
+// ----------------
+
+.image-placeholder {
+  display: block;
+
+  background: ui-default;
+  color: subtle-color;
+  text-align: center;
+
+  &::before {
+    font-family: Linearicons;
+    content: '\e70e';
+    font-size: type-larger;
+  }
+}
+
+.image-placeholder-large {
+  padding: 2em;
+}

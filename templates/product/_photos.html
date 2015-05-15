@@ -1,25 +1,27 @@
-<div class="product-view-photos">
-  <ul class="carousel"
-      rn-carousel
-      ng-init="carouselIndex = 0"
-      rn-carousel-index="carouselIndex"
-      rn-carousel-transition="fadeAndSlide"
-      rn-carousel-duration="500">
-    <li class="carousel-item"
-        ng-repeat="photo in p.filteredPhotos"
-        ng-class="{ active: carouselIndex == $index }">
+<div class="product-view-photos"
+     ng-if="p.filteredPhotos.length">
+  <div class="carousel"
+       ui-carousel>
+    <div class="carousel-item"
+         ng-repeat="photo in p.filteredPhotos">
       <img ng-src="{{ photo.large }}"
            class="image-block"
-           ui-magnifier="photo.large"/>
-    </li>
-  </ul>
+           ui-zoom="photo.large"/>
+    </div>
+  </div>
   <div class="carousel-nav block">
     <a href=""
        class="carousel-nav-link"
-       ng-repeat="photo in p.filteredPhotos"
-       ng-click="$parent.carouselIndex = $index">
+       ng-repeat="photo in p.filteredPhotos">
       <img ng-src="{{ photo.thumb }}"
            width="96"/>
     </a>
+  </div>
+</div>
+<div class="product-view-photos-empty"
+     ng-if="!p.filteredPhotos.length"
+     ng-cloak>
+  <div class="image-placeholder image-placeholder-large">
+    <p>Нет фотографии</p>
   </div>
 </div>
