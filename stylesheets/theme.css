@@ -4659,6 +4659,42 @@ input[type='radio']{
   font-size:2em;
   height:66px;
 }
+.carousel-items{
+  position:relative;
+}
+.carousel-item{
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  visibility:hidden;
+  -webkit-transform:translate(0, 0) scale(1);
+      -ms-transform:translate(0, 0) scale(1);
+          transform:translate(0, 0) scale(1);
+  -webkit-transition:0.5s opacity, 0.5s -webkit-transform, 0.5s visibility;
+          transition:0.5s opacity, 0.5s transform, 0.5s visibility;
+}
+.carousel-item.next{
+  z-index:11;
+  -webkit-transform:translate(64px, 64px) scale(1.2);
+      -ms-transform:translate(64px, 64px) scale(1.2);
+          transform:translate(64px, 64px) scale(1.2);
+}
+.carousel-item.previous{
+  z-index:9;
+  -webkit-transform:translate(-64px, -64px) scale(0.8);
+      -ms-transform:translate(-64px, -64px) scale(0.8);
+          transform:translate(-64px, -64px) scale(0.8);
+}
+.carousel-item.active{
+  position:relative;
+  z-index:10;
+  opacity:1;
+  visibility:visible;
+  -webkit-transform:translate(0, 0) scale(1);
+      -ms-transform:translate(0, 0) scale(1);
+          transform:translate(0, 0) scale(1);
+}
 .carousel-nav{
   text-align:center;
 }
@@ -5838,8 +5874,8 @@ img[ui-magnify]{
   background-repeat:no-repeat;
   background-position:50% 50%;
   background-size:cover;
-  -webkit-transition:0.5s -webkit-transform ease-in-out;
-          transition:0.5s transform ease-in-out;
+  -webkit-transition:0.3s -webkit-transform ease-in-out;
+          transition:0.3s transform ease-in-out;
 }
 [ui-zoom]{
   cursor:-webkit-zoom-in;

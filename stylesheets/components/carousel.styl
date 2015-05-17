@@ -2,6 +2,40 @@
 // Карусель
 // --------
 
+.carousel-items {
+  position: relative;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0,0) scale(1);
+  transition: .5s opacity, .5s transform, .5s visibility;
+
+  &.next {
+    z-index: 11;
+    transform: translate(64px,64px) scale(1.2);
+  }
+
+  &.previous {
+    z-index: 9;
+    transform: translate(-64px,-64px) scale(0.8);
+  }
+
+  &.active {
+    position: relative;
+    z-index: 10;
+
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0,0) scale(1);
+  }
+}
+
 .carousel-nav {
   text-align: center;
 }

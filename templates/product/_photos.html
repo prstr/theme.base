@@ -1,21 +1,25 @@
 <div class="product-view-photos"
      ng-if="p.filteredPhotos.length">
   <div class="carousel"
-       ui-carousel>
-    <div class="carousel-item"
-         ng-repeat="photo in p.filteredPhotos">
-      <img ng-src="{{ photo.large }}"
-           class="image-block"
-           ui-zoom="photo.large"/>
+       ui-carousel="p.filteredPhotos">
+    <div class="carousel-items">
+      <div class="carousel-item"
+           ng-class="carousel.getClass($index)"
+           ng-repeat="photo in p.filteredPhotos">
+        <img ng-src="{{ photo.large }}"
+             class="image-block"
+             ui-zoom="photo.large"/>
+      </div>
     </div>
-  </div>
-  <div class="carousel-nav block">
-    <a href=""
-       class="carousel-nav-link"
-       ng-repeat="photo in p.filteredPhotos">
-      <img ng-src="{{ photo.thumb }}"
-           width="96"/>
-    </a>
+    <div class="carousel-nav block">
+      <a href=""
+         class="carousel-nav-link"
+         ng-click="carousel.go($index)"
+         ng-repeat="photo in p.filteredPhotos">
+        <img ng-src="{{ photo.thumb }}"
+             width="96"/>
+      </a>
+    </div>
   </div>
 </div>
 <div class="product-view-photos-empty"
