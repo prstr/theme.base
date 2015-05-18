@@ -55,9 +55,10 @@
     <!-- Нижний блок: подитог, оформление -->
     <div class="cart-checkout"
          ng-if="cart.order.subTotal > 0">
-      <div class="text-subtle">Итого:</div>
+      <h3>Итого</h3>
       <div class="type-large">{{ cart.order.subTotal | price }}</div>
-      <div ng-show="cart.order.deliveryFee > 0">+ доставка</div>
+      <div ng-show="cart.order.deliveryFee != 0"
+           class="text-subtle">+ доставка</div>
       <div ng-show="cart.order.deliveryFee == 0"
            class="text-critical">бесплатная доставка</div>
       <div class="centered block">
