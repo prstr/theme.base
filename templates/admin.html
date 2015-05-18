@@ -11,6 +11,11 @@
     <base href="/admin/"/>
   </append:meta>
 
+  <def:stylesheets>
+    <link rel="stylesheet"
+          href="#{store.origin}#{assets['app/admin.css']}"/>
+  </def:stylesheets>
+
   <def:body>
     <div ui-view></div>
   </def:body>
