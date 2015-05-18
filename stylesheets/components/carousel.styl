@@ -14,7 +14,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translate(0,0) scale(1);
-  transition: .5s opacity, .5s transform, .5s visibility;
+  transition: .5s opacity, .5s transform, .5s visibility .5s;
 
   &.next {
     z-index: 11;
@@ -29,6 +29,8 @@
   &.active {
     position: relative;
     z-index: 10;
+
+    transition: .5s opacity, .5s transform;
 
     opacity: 1;
     visibility: visible;

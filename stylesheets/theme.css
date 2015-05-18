@@ -4671,8 +4671,8 @@ input[type='radio']{
   -webkit-transform:translate(0, 0) scale(1);
       -ms-transform:translate(0, 0) scale(1);
           transform:translate(0, 0) scale(1);
-  -webkit-transition:0.5s opacity, 0.5s -webkit-transform, 0.5s visibility;
-          transition:0.5s opacity, 0.5s transform, 0.5s visibility;
+  -webkit-transition:0.5s opacity, 0.5s -webkit-transform, 0.5s visibility 0.5s;
+          transition:0.5s opacity, 0.5s transform, 0.5s visibility 0.5s;
 }
 .carousel-item.next{
   z-index:11;
@@ -4689,6 +4689,8 @@ input[type='radio']{
 .carousel-item.active{
   position:relative;
   z-index:10;
+  -webkit-transition:0.5s opacity, 0.5s -webkit-transform;
+          transition:0.5s opacity, 0.5s transform;
   opacity:1;
   visibility:visible;
   -webkit-transform:translate(0, 0) scale(1);
