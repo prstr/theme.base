@@ -6,7 +6,37 @@
   position: relative;
 }
 
-.carousel-item {
+.carousel-items-slider {
+  overflow: hidden;
+}
+
+.carousel-item-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  visibility: hidden;
+  transition: .5s left, .5s visibility .5s;
+
+  &.next {
+    left: 100%;
+  }
+
+  &.previous {
+    left: -100%;
+  }
+
+  &.active {
+    position: relative;
+    left:0;
+
+    transition: .5s left;
+    visibility: visible;
+  }
+}
+
+.carousel-item-3d {
   position: absolute;
   top: 0;
   left: 0;

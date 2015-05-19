@@ -732,7 +732,32 @@ input[type='radio']{
 .carousel-items{
   position:relative;
 }
-.carousel-item{
+.carousel-items-slider{
+  overflow:hidden;
+}
+.carousel-item-slider{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  visibility:hidden;
+  -webkit-transition:0.5s left, 0.5s visibility 0.5s;
+          transition:0.5s left, 0.5s visibility 0.5s;
+}
+.carousel-item-slider.next{
+  left:100%;
+}
+.carousel-item-slider.previous{
+  left:-100%;
+}
+.carousel-item-slider.active{
+  position:relative;
+  left:0;
+  -webkit-transition:0.5s left;
+          transition:0.5s left;
+  visibility:visible;
+}
+.carousel-item-3d{
   position:absolute;
   top:0;
   left:0;
@@ -744,19 +769,19 @@ input[type='radio']{
   -webkit-transition:0.5s opacity, 0.5s -webkit-transform, 0.5s visibility 0.5s;
           transition:0.5s opacity, 0.5s transform, 0.5s visibility 0.5s;
 }
-.carousel-item.next{
+.carousel-item-3d.next{
   z-index:11;
   -webkit-transform:translate(64px, 64px) scale(1.2);
       -ms-transform:translate(64px, 64px) scale(1.2);
           transform:translate(64px, 64px) scale(1.2);
 }
-.carousel-item.previous{
+.carousel-item-3d.previous{
   z-index:9;
   -webkit-transform:translate(-64px, -64px) scale(0.8);
       -ms-transform:translate(-64px, -64px) scale(0.8);
           transform:translate(-64px, -64px) scale(0.8);
 }
-.carousel-item.active{
+.carousel-item-3d.active{
   position:relative;
   z-index:10;
   -webkit-transition:0.5s opacity, 0.5s -webkit-transform;
