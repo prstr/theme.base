@@ -1,0 +1,14 @@
+<div class="product-view-attributes">
+  <div class="inline-grid">
+    <each:attr in="product.attributes">
+      <div class="product-attribute">
+        <div class="product-attribute-name">
+          #{attr.name}
+        </div>
+        <div class="product-attribute-value">
+          #{attr.value}
+        </div>
+      </div>
+    </each:attr>
+  </div>
+</div>

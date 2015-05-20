@@ -26,6 +26,39 @@
 
 }
 
-.product-view-props {
+// Атрибуты (характеристики) товара
+
+.product-view-attributes {
 
 }
+
+.product-attribute {
+  display: inline-flex;
+}
+
+.product-attribute-name, .product-attribute-value {
+  padding: 0 .5em;
+  border: 1px solid ui-default-border;
+}
+
+.product-attribute-name {
+  background: ui-default;
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+}
+
+.product-attribute-value {
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  margin-left: -1px;
+}
+
+// Выбор опций (параметров) товара
+
+.product-option {
+  border: 1px solid ui-default-border;
+  background: ui-default;
+
+  border-radius: border-radius;
+}
+
