@@ -278,7 +278,7 @@ input[type='radio']{
   opacity:0.75;
 }
 .image-thumb{
-  max-height:120px;
+  max-height:96px;
 }
 .alert{
   padding:0 1em;
