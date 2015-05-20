@@ -277,8 +277,8 @@ input[type='radio']{
 .opacity-75{
   opacity:0.75;
 }
-.image-block{
-  width:100%;
+.image-thumb{
+  max-height:120px;
 }
 @font-face{
 	font-family:'Linearicons';
@@ -4665,11 +4665,17 @@ input[type='radio']{
 .carousel-items-slider{
   overflow:hidden;
 }
-.carousel-item-slider{
+.carousel-item{
   position:absolute;
   top:0;
   left:0;
   width:100%;
+  text-align:center;
+}
+.carousel-item img{
+  max-height:320px;
+}
+.carousel-item-slider{
   visibility:hidden;
   -webkit-transition:0.5s left, 0.5s visibility 0.5s;
           transition:0.5s left, 0.5s visibility 0.5s;
@@ -4688,9 +4694,6 @@ input[type='radio']{
   visibility:visible;
 }
 .carousel-item-3d{
-  position:absolute;
-  top:0;
-  left:0;
   opacity:0;
   visibility:hidden;
   -webkit-transform:translate(0, 0) scale(1);
@@ -4727,6 +4730,7 @@ input[type='radio']{
 }
 .carousel-nav-link{
   display:inline-block;
+  margin:0.5em;
 }
 .container{
   padding-left:1em;

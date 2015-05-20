@@ -7,17 +7,17 @@
            ng-class="carousel.getClass($index)"
            ng-repeat="photo in p.filteredPhotos">
         <img ng-src="{{ photo.large }}"
-             class="image-block"
              ui-zoom="photo.large"/>
       </div>
     </div>
-    <div class="carousel-nav block">
+    <div class="carousel-nav block"
+         ng-if="p.filteredPhotos.length > 1">
       <a href=""
          class="carousel-nav-link"
          ng-click="carousel.go($index)"
          ng-repeat="photo in p.filteredPhotos">
         <img ng-src="{{ photo.thumb }}"
-             width="96"/>
+             class="image-thumb"/>
       </a>
     </div>
   </div>

@@ -10,12 +10,20 @@
   overflow: hidden;
 }
 
-.carousel-item-slider {
+.carousel-item {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 
+  text-align: center;
+}
+
+.carousel-item img {
+  max-height: 320px;
+}
+
+.carousel-item-slider {
   visibility: hidden;
   transition: .5s left, .5s visibility .5s;
 
@@ -37,10 +45,6 @@
 }
 
 .carousel-item-3d {
-  position: absolute;
-  top: 0;
-  left: 0;
-
   opacity: 0;
   visibility: hidden;
   transform: translate(0,0) scale(1);
@@ -74,4 +78,5 @@
 
 .carousel-nav-link {
   display: inline-block;
+  margin: gap-small;
 }
