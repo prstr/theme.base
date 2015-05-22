@@ -5447,6 +5447,9 @@ img[ui-magnify]{
 }
 .zoom-overlay{
   position:absolute;
+  z-index:0;
+  top:0;
+  left:0;
   width:0;
   height:0;
   cursor:-webkit-zoom-out;
