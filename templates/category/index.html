@@ -4,7 +4,18 @@
 
   <def:main>
     <div class="category-view container">
+      <div class="pull-right">
+        <form>
+          <div class="inline-grid">
+            <select class="input input-smaller">
+              <option>Сортировать по цене</option>
+              <option>Сортировать по названию</option>
+            </select>
+          </div>
+        </form>
+      </div>
       <h1>#{category.title}</h1>
+      <include file="/products/_list.html"/>
     </div>
   </def:main>
 

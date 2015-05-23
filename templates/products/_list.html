@@ -1,3 +1,15 @@
-<div class="products-list">
-
+<div class="products-list grid">
+  <each:product in="products.items">
+    <a class="products-list-item cell cell-m-1of3 cell-l-1of4"
+       href="#{product.url}">
+      <div class="products-list-photo"
+           style="background-image:url(#{product.photos[0].thumb})">
+      </div>
+      <h2 class="products-list-title">#{product.title}</h2>
+      <div class="products-list-price">
+        <if expr="product.priceMin != product.priceMax">от</if>
+        #{price(product.priceMin).val}
+      </div>
+    </a>
+  </each:product>
 </div>

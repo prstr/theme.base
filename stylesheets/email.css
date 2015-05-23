@@ -210,6 +210,12 @@ input[type='radio']{
 .centered{
   text-align:center;
 }
+.pull-left{
+  float:left;
+}
+.pull-right{
+  float:right;
+}
 .type-larger{
   font-size:2em;
 }
@@ -1088,10 +1094,10 @@ input[type='radio']{
 }
 .inline-grid{
   display:inline-block;
-  margin:-0.5em;
+  margin:-0.25em;
 }
 .inline-grid > *{
-  margin:0.5em;
+  margin:0.25em;
 }
 .input-group{
   display:-webkit-inline-box;
