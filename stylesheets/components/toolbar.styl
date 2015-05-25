@@ -1,0 +1,49 @@
+// -------------------
+// Панель инструментов
+// -------------------
+//
+// Позволяет группировать кнопки по левую и по правую сторону на средних
+// и больших экранах. На мобильных телефонах группы становятся блоками и
+// располагаются по центру.
+//
+// ```
+// .toolbar
+//   .toolbar-group<.toolbar-group-left | .toolbar-group-right>
+//     [.toolbar-title] Заголовок
+//     [.btn-group | .inline-grid]
+//       [.btn] {...}
+// ```
+
+.toolbar {
+  clearfix();
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.toolbar-group {
+  text-align: center;
+  flex: 100%;
+  margin: .5em 0;
+
+  h1, h2, h3 {
+    margin: 0;
+  }
+
+}
+
+.toolbar-title {
+  font-size: type-large;
+}
+
+@media (min-width: screen-medium-min) {
+  .toolbar-group-left {
+    text-align: left;
+    flex: 1;
+  }
+  .toolbar-group-right {
+    text-align: right;
+    flex: 1;
+  }
+}
+

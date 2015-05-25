@@ -3,19 +3,15 @@
   <def:title>#{category.title} — #{store.title}</def:title>
 
   <def:main>
-    <div class="category-view container">
-      <div class="pull-right">
-        <form>
-          <div class="inline-grid">
-            <select class="input input-smaller">
-              <option>Сортировать по цене</option>
-              <option>Сортировать по названию</option>
-            </select>
-          </div>
-        </form>
+    <div class="category-view">
+      <div class="container">
+        <include file="_breadcrumbs.html"/>
       </div>
-      <h1>#{category.title}</h1>
-      <include file="/products/_list.html"/>
+      <div class="container">
+        <h1>#{category.title}</h1>
+        !{category.descriptionHtml}
+        <include file="/products/_list.html"/>
+      </div>
     </div>
   </def:main>
 

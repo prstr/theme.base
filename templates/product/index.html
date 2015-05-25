@@ -3,23 +3,27 @@
   <def:title>#{product.title} — #{store.title}</def:title>
 
   <def:main>
-    <div class="product-view container"
+    <div class="product-view"
          ng-controller="ProductController as p">
-      <include file="_breadcrumbs.html"/>
-      <div class="grid grid-gutters block">
-        <div class="cell cell-m-1">
-          <include file="_photos.html"/>
-        </div>
-        <div class="cell cell-m-2">
-          <h1>
-            #{product.title}
-            <div class="small">#{product.subtitle}</div>
-          </h1>
-          <include file="_purchase.html"/>
-          <div class="product-view-description">
-            !{product.descriptionHtml}
+      <div class="container">
+        <include file="_breadcrumbs.html"/>
+      </div>
+      <div class="container">
+        <div class="grid grid-gutters block">
+          <div class="cell cell-m-1">
+            <include file="_photos.html"/>
           </div>
-          <include file="_attributes.html"/>
+          <div class="cell cell-m-2">
+            <h1>
+              #{product.title}
+              <div class="small">#{product.subtitle}</div>
+            </h1>
+            <include file="_purchase.html"/>
+            <div class="product-view-description">
+              !{product.descriptionHtml}
+            </div>
+            <include file="_attributes.html"/>
+          </div>
         </div>
       </div>
     </div>
