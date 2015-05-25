@@ -5763,3 +5763,42 @@ img[ui-magnify]{
 .products-list-price{
   color:#333;
 }
+.products-sort{
+  position:relative;
+  z-index:50;
+  margin:1em 0;
+}
+.products-sort-label{
+  display:inline;
+  margin-right:0.5em;
+}
+.products-sort-link{
+  display:inline-block;
+  padding:0.1em 0.5em;
+  border-radius:4px;
+}
+.products-sort-link:hover{
+  background:#eee;
+}
+.products-sort-link.active{
+  color:#fff;
+  background:#2e77b8;
+}
+.products-pager{
+  position:relative;
+  z-index:50;
+  margin:1em 0;
+  text-align:center;
+}
+.products-pager-link{
+  display:inline-block;
+  padding:0.1em 0.5em;
+  border-radius:4px;
+}
+.products-pager-link:hover{
+  background:#eee;
+}
+.products-pager-link.active{
+  color:#fff;
+  background:#2e77b8;
+}

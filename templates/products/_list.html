@@ -1,3 +1,14 @@
+<div class="products-sort">
+  <div class="products-sort-label">Сортировать по</div>
+  <a href="#{products.url}?#{qs.create({ sort: '+price' })}"
+     class="products-sort-link #{qs.is('sort', '+price', null) ? 'active' : ''}">
+    <span>цене</span>
+  </a>
+  <a href="#{products.url}?#{qs.create({ sort: '+title' })}"
+     class="products-sort-link #{qs.is('sort', '+title') ? 'active' : ''}">
+    <span>названию</span>
+  </a>
+</div>
 <div class="products-list grid">
   <each:product in="products.items">
     <a class="products-list-item cell cell-m-1of3 cell-l-1of4"
@@ -13,3 +24,23 @@
     </a>
   </each:product>
 </div>
+<if expr="products.pages > 1">
+  <div class="products-pager">
+    <if expr="products.page > 0">
+      <a href="#{products.url}?#{qs.create({ page: products.page - 1 })}"
+         class="products-pager-link">
+        <i class="icon-arrow-left"></i>
+      </a>
+    </if>
+    <each:p in="_.range(0, products.pages)">
+      <a href="#{products.url}?#{qs.create({ page: p })}"
+         class="products-pager-link #{products.page == p ? 'active' : ''}">#{p + 1}</a>
+    </each:p>
+    <if expr="products.page < products.pages - 1">
+      <a href="#{products.url}?#{qs.create({ page: products.page + 1 })}"
+         class="products-pager-link">
+        <i class="icon-arrow-right"></i>
+      </a>
+    </if>
+  </div>
+</if>
