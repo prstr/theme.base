@@ -109,12 +109,6 @@
       "id": "ui-primary",
       "label": "Основной цвет",
       "type": "color",
-      "default": "hsl(192deg, 60%, 48%)"
-    },
-    {
-      "id": "ui-action",
-      "label": "Кнопка действия",
-      "type": "color",
       "default": "hsl(208deg, 60%, 45%)"
     },
     {

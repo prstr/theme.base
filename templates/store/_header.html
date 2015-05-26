@@ -1,5 +1,21 @@
 <header class="store-header">
   <div class="container">
-    #{store.title}
+    <div class="toolbar">
+      <div class="toolbar-group toolbar-group-left">
+        <div class="store-header-title">
+          #{store.title}
+        </div>
+      </div>
+      <div class="toolbar-group toolbar-group-right">
+        <form method="get"
+              action="/products">
+          <input type="search"
+                 class="input store-header-search"
+                 placeholder="Поиск товаров"
+                 name="q"
+                 value="#{q || ''}"/>
+        </form>
+      </div>
+    </div>
   </div>
 </header>

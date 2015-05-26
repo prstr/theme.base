@@ -1,7 +1,8 @@
 <nav class="store-topnav">
   <div class="container">
     <each:link in="store.nav['topnav']">
-      <a href="#{link.href}">
+      <a href="#{link.href}"
+         class="store-topnav-link">
         #{link.title}
       </a>
     </each:link>

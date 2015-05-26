@@ -58,7 +58,7 @@ border-radius ?= 4px
 // Расчет цветовой схемы
 // ---------------------
 
-ui-colors = 'base' 'default' 'primary' 'action' 'success' 'warn' 'critical'
+ui-colors = 'base' 'default' 'primary' 'success' 'warn' 'critical'
 
 for c in ui-colors
   _c = lookup('ui-' + c)
@@ -70,7 +70,7 @@ for c in ui-colors
 // Базовые элементы
 // ----------------
 
-link-color ?= ui-action
+link-color ?= ui-primary
 link-hover-color ?= lighten(link-color, 25%)
 
 strong-color ?= body-color

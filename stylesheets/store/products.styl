@@ -2,6 +2,12 @@
 // Коллекции товаров
 // -----------------
 
+.products-list-header, .products-list-footer {
+  position: relative;
+  z-index: 50;
+  margin: gap 0;
+}
+
 .products-list-item {
   position: relative;
   z-index: 1;
@@ -24,6 +30,7 @@
 }
 
 .products-list-photo {
+  position: relative;
   height: 240px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -34,13 +41,30 @@
   color: body-color;
 }
 
-// Сортировка
+// Пометка о том, что товар в корзине
 
-.products-sort {
-  position: relative;
-  z-index: 50;
-  margin: gap 0;
+.products-list-incart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  line-height: 32px;
+  border-radius: 32px;
+
+  background: ui-warn;
+  color: ui-warn-text;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+
+  i {
+    font-size: 20px;
+    vertical-align: middle;
+  }
 }
+
+// Сортировка
 
 .products-sort-label {
   display: inline;
@@ -67,11 +91,6 @@
 // Страницы
 
 .products-pager {
-  position: relative;
-  z-index: 50;
-
-  margin: gap 0;
-
   text-align: center;
 }
 
