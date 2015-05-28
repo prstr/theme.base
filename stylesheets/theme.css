@@ -5671,6 +5671,7 @@ img[ui-magnify]{
   display:-webkit-inline-flex;
   display:-ms-inline-flexbox;
   display:inline-flex;
+  margin:0.25em;
 }
 .product-attribute-name,
 .product-attribute-value{
@@ -5706,17 +5707,6 @@ img[ui-magnify]{
   padding:1em;
   border-radius:4px;
   text-align:center;
-  -webkit-transform:scale(1);
-      -ms-transform:scale(1);
-          transform:scale(1);
-  -webkit-transition:-webkit-transform 0.3s;
-          transition:transform 0.3s;
-}
-.products-list-item:hover{
-  -webkit-transform:scale(1.2);
-      -ms-transform:scale(1.2);
-          transform:scale(1.2);
-  z-index:5;
 }
 .products-list-photo{
   position:relative;
