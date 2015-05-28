@@ -1,0 +1,15 @@
+<include file="/store/_layout.html">
+
+  <def:main>
+    <div class="store-products">
+      <div class="container">
+        <h1>Поиск: <em>#{q}</em></h1>
+        <if expr="!products.count">
+          <p class="text-subtle">По Вашему запросу не найдено ни одного товара.</p>
+        </if>
+        <include file="_list.html"/>
+      </div>
+    </div>
+  </def:main>
+
+</include>

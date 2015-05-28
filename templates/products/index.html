@@ -3,17 +3,7 @@
   <def:main>
     <div class="store-products">
       <div class="container">
-        <if>
-          <when expr="q">
-            <h1>Поиск: <em>#{q}</em></h1>
-            <if expr="!products.count">
-              <p class="text-subtle">По Вашему запросу не найдено ни одного товара.</p>
-            </if>
-          </when>
-          <otherwise>
-            <h1>Каталог товаров</h1>
-          </otherwise>
-        </if>
+        <h1>Каталог товаров</h1>
         <include file="_list.html"/>
       </div>
     </div>
