@@ -24,23 +24,6 @@
             href="#{assets['stylesheets/theme.css']}"/>
     </block:stylesheets>
 
-    <!--
-    Данные, размещенные в этих тэгах (в формате JSON),
-    будут доступны в Angular-сервисе `$prostore`.
-    -->
-    <block:storeData>
-      <script name="store"
-              type="application/prostore-data">
-        !{JSON.stringify(store)}
-      </script>
-      <if expr="principal">
-        <script name="principal"
-                type="application/prostore-data">
-        !{JSON.stringify(principal)}
-      </script>
-      </if>
-    </block:storeData>
-
   </head>
 
   <body>
@@ -58,6 +41,23 @@
 
     <!-- Тело страницы -->
     <block:body/>
+
+    <!--
+    Данные, размещенные в этих тэгах (в формате JSON),
+    будут доступны в rootScope Angular.
+    -->
+    <block:storeData>
+      <script name="store"
+              type="application/store-data">
+        !{JSON.stringify(store)}
+      </script>
+      <if expr="principal">
+        <script name="principal"
+                type="application/store-data">
+        !{JSON.stringify(principal)}
+      </script>
+      </if>
+    </block:storeData>
 
     <!-- Скрипты -->
     <block:scripts>
