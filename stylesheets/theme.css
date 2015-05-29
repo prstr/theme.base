@@ -283,6 +283,10 @@ input[type='radio']{
 .image-thumb{
   max-height:96px;
 }
+.sticky{
+  position:-webkit-sticky;
+  position:sticky;
+}
 @font-face{
 	font-family:'Linearicons';
 	src:url('/static/fonts/Linearicons.eot?i068ss');
@@ -5692,12 +5696,6 @@ img[ui-magnify]{
   border:1px solid #d6d6d6;
   background:#eee;
   border-radius:4px;
-}
-.products-list-header,
-.products-list-footer{
-  position:relative;
-  z-index:50;
-  margin:1em 0;
 }
 .products-list-item{
   position:relative;

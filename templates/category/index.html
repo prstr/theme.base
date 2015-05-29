@@ -8,9 +8,22 @@
         <include file="_breadcrumbs.html"/>
       </div>
       <div class="container">
-        <h1>#{category.title}</h1>
-        !{category.descriptionHtml}
-        <include file="/products/_list.html"/>
+        <div class="grid grid-gutters">
+          <div class="cell cell-m-1">
+            <include file="/products/_filters.html"/>
+          </div>
+          <div class="cell cell-m-5">
+            <div class="toolbar">
+              <div class="toolbar-group toolbar-group-left">
+                <h1>#{category.title}</h1>
+              </div>
+              <div class="toolbar-group toolbar-group-right">
+                <include file="/products/_sort.html"/>
+              </div>
+            </div>
+            <include file="/products/_list.html"/>
+          </div>
+        </div>
       </div>
     </div>
   </def:main>

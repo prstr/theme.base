@@ -283,6 +283,10 @@ input[type='radio']{
 .image-thumb{
   max-height:96px;
 }
+.sticky{
+  position:-webkit-sticky;
+  position:sticky;
+}
 .alert{
   padding:0 1em;
   border-width:4px;
