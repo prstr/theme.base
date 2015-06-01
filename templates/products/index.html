@@ -8,7 +8,14 @@
             <include file="/products/_filters.html"/>
           </div>
           <div class="cell cell-m-4">
-            <h1>Каталог товаров</h1>
+            <div class="toolbar">
+              <div class="toolbar-group toolbar-group-left">
+                <h1>Каталог товаров</h1>
+              </div>
+              <div class="toolbar-group toolbar-group-right">
+                <include file="/products/_sort.html"/>
+              </div>
+            </div>
             <include file="_list.html"/>
           </div>
         </div>
