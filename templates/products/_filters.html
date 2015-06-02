@@ -7,21 +7,25 @@
       <input id="priceMin"
              type="text"
              size="7"
+             min="#{stats.priceMin}"
+             max="#{stats.priceMax}"
              class="input input-small"
              ng-model="catalog.filters.priceMin"/>
       <label for="priceMax" class="type-small">до</label>
       <input id="priceMax"
              type="text"
              size="7"
+             min="#{stats.priceMin}"
+             max="#{stats.priceMax}"
              class="input input-small"
              ng-model="catalog.filters.priceMax"/>
-      <ui-range
-          min="#{stats.priceMin}"
-          max="#{stats.priceMax}"
-          start="catalog.filters.priceMin"
-          end="catalog.filters.priceMax">
-      </ui-range>
     </div>
+    <ui-range
+        min="#{stats.priceMin}"
+        max="#{stats.priceMax}"
+        start="catalog.filters.priceMin"
+        end="catalog.filters.priceMax">
+    </ui-range>
   </div>
   <each:values in="stats.props">
     <div class="product-filter product-filter-prop">
@@ -40,5 +44,4 @@
       </each:val>
     </div>
   </each:values>
-  <pre class="type-smaller">{{ catalog.filters }}</pre>
 </div>

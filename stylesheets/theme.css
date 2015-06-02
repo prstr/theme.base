@@ -5309,6 +5309,99 @@ img[ui-magnify]{
 .pnl-standalone{
   border-radius:4px;
 }
+.range{
+  position:relative;
+  margin:1em -16px;
+  padding:0 16px;
+  border-radius:4px;
+  -webkit-transform:scale(1);
+      -ms-transform:scale(1);
+          transform:scale(1);
+  -webkit-transition:0.3s -webkit-transform;
+          transition:0.3s transform;
+}
+.range:hover{
+  z-index:100;
+  -webkit-transform:scale(2);
+      -ms-transform:scale(2);
+          transform:scale(2);
+  background:#fff;
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+}
+.range-bar{
+  height:4px;
+  background:#eee;
+}
+.range-ticks{
+  position:relative;
+  height:20px;
+}
+.range-tick{
+  position:absolute;
+  top:0;
+  width:64px;
+  margin-left:-32px;
+  color:#858585;
+  text-align:center;
+  font-size:0.75em;
+}
+.range-tick::after{
+  content:'';
+  position:absolute;
+  top:100%;
+  left:50%;
+  width:2px;
+  height:8px;
+  margin-left:-1px;
+  background:#d6d6d6;
+}
+.range-tick-0{
+  left:0%;
+}
+.range-tick-25{
+  left:25%;
+}
+.range-tick-50{
+  left:50%;
+}
+.range-tick-75{
+  left:75%;
+}
+.range-tick-100{
+  left:100%;
+}
+.range-handles{
+  position:relative;
+  height:16px;
+}
+.range-handle{
+  position:absolute;
+  top:0;
+  display:block;
+  width:0;
+  height:0;
+  cursor:pointer;
+  border:6px solid transparent;
+  border-bottom-color:#2e77b8;
+}
+.range-handle:hover{
+  border-bottom-color:#f5d989;
+}
+.range-handle-left{
+  left:0;
+  margin-left:-12px;
+  border-right-color:#2e77b8;
+}
+.range-handle-left:hover{
+  border-right-color:#f5d989;
+}
+.range-handle-right{
+  left:100%;
+  border-left-color:#2e77b8;
+}
+.range-handle-right:hover{
+  border-left-color:#f5d989;
+}
 .toolbar{
   display:-webkit-box;
   display:-webkit-flex;
