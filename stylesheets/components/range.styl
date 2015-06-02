@@ -4,21 +4,12 @@
 
 .range {
   position: relative;
-  margin: gap -16px;
-  padding: 0 16px;
+  margin: 0 -16px;
+  padding: gap 16px;
+
+  user-select: none;
 
   border-radius: border-radius;
-
-  transform: scale(1);
-  transition: .3s transform;
-
-  &:hover {
-    z-index:100;
-    transform: scale(2);
-
-    background: body-background;
-    box-shadow: 0 1px 3px rgba(0,0,0,.25);
-  }
 }
 
 .range-bar {

@@ -20,11 +20,10 @@
              class="input input-small"
              ng-model="catalog.filters.priceMax"/>
     </div>
-    <ui-range
-        min="#{stats.priceMin}"
-        max="#{stats.priceMax}"
-        start="catalog.filters.priceMin"
-        end="catalog.filters.priceMax">
+    <ui-range min="#{stats.priceMin}"
+              max="#{stats.priceMax}"
+              start="catalog.filters.priceMin"
+              end="catalog.filters.priceMax">
     </ui-range>
   </div>
   <each:values in="stats.props">
