@@ -1,3 +1,44 @@
-<div class="products-filters">
-  <pre class="type-smaller">#{JSON.stringify(stats, null, 2)}</pre>
+<div class="products-filters"
+     ng-controller="CatalogController as catalog">
+  <div class="product-filter product-filter-price">
+    <h3>Цена</h3>
+    <div class="inline-grid">
+      <label for="priceMin" class="type-small">от</label>
+      <input id="priceMin"
+             type="text"
+             size="7"
+             class="input input-small"
+             ng-model="catalog.filters.priceMin"/>
+      <label for="priceMax" class="type-small">до</label>
+      <input id="priceMax"
+             type="text"
+             size="7"
+             class="input input-small"
+             ng-model="catalog.filters.priceMax"/>
+      <ui-range
+          min="#{stats.priceMin}"
+          max="#{stats.priceMax}"
+          start="catalog.filters.priceMin"
+          end="catalog.filters.priceMax">
+      </ui-range>
+    </div>
+  </div>
+  <each:values in="stats.props">
+    <div class="product-filter product-filter-prop">
+      <var:name>values_key</var:name>
+      <h3>#{name}</h3>
+      <each:val in="values">
+        <div class="product-filter-prop-value">
+          <label class="type-small">
+            <input type="checkbox"
+                   value="#{val}"
+                   ng-checked="catalog.isPropSelected('#{name}', '#{val}')"
+                   ng-click="catalog.toggleProp('#{name}', '#{val}')"/>
+            <span>#{val}</span>
+          </label>
+        </div>
+      </each:val>
+    </div>
+  </each:values>
+  <pre class="type-smaller">{{ catalog.filters }}</pre>
 </div>
