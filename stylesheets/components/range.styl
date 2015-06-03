@@ -12,14 +12,24 @@
 }
 
 .range-bar {
+  position: relative;
   height: 4px;
   background: ui-default;
 
   cursor: pointer;
 }
 
+.range-highlight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  background: lighten(ui-primary, 40%);
+}
+
 .range-ticks {
   position:relative;
+  z-index: 5;
   height: 20px;
 }
 
@@ -54,6 +64,7 @@
 
 .range-handles {
   position: relative;
+  z-index: 5;
   height: 16px;
 }
 
@@ -69,27 +80,16 @@
 
   border: 6px solid transparent;
   border-bottom-color: ui-primary;
-
-  &:hover {
-    border-bottom-color: ui-warn;
-  }
 }
 
 .range-handle-left {
   left: 0;
   margin-left: -12px;
   border-right-color: ui-primary;
-
-  &:hover {
-    border-right-color: ui-warn;
-  }
 }
 
 .range-handle-right {
   left: 100%;
   border-left-color: ui-primary;
-
-  &:hover {
-    border-left-color: ui-warn;
-  }
 }
+

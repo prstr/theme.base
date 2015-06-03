@@ -1389,12 +1389,20 @@ img[ui-magnify]{
   border-radius:4px;
 }
 .range-bar{
+  position:relative;
   height:4px;
   background:#eee;
   cursor:pointer;
 }
+.range-highlight{
+  position:absolute;
+  top:0;
+  bottom:0;
+  background:#79aedd;
+}
 .range-ticks{
   position:relative;
+  z-index:5;
   height:20px;
 }
 .range-tick{
@@ -1433,6 +1441,7 @@ img[ui-magnify]{
 }
 .range-handles{
   position:relative;
+  z-index:5;
   height:16px;
 }
 .range-handle{
@@ -1445,23 +1454,14 @@ img[ui-magnify]{
   border:6px solid transparent;
   border-bottom-color:#2e77b8;
 }
-.range-handle:hover{
-  border-bottom-color:#f5d989;
-}
 .range-handle-left{
   left:0;
   margin-left:-12px;
   border-right-color:#2e77b8;
 }
-.range-handle-left:hover{
-  border-right-color:#f5d989;
-}
 .range-handle-right{
   left:100%;
   border-left-color:#2e77b8;
-}
-.range-handle-right:hover{
-  border-left-color:#f5d989;
 }
 .toolbar{
   display:-webkit-box;

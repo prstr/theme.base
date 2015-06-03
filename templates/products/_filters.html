@@ -9,6 +9,7 @@
              size="7"
              min="#{stats.priceMin}"
              max="#{stats.priceMax}"
+             step="10"
              class="input input-small"
              ng-model="catalog.filters.priceMin"/>
       <label for="priceMax" class="type-small">до</label>
@@ -17,13 +18,16 @@
              size="7"
              min="#{stats.priceMin}"
              max="#{stats.priceMax}"
+             step="10"
              class="input input-small"
              ng-model="catalog.filters.priceMax"/>
     </div>
     <ui-range min="#{stats.priceMin}"
               max="#{stats.priceMax}"
               start="catalog.filters.priceMin"
-              end="catalog.filters.priceMax">
+              end="catalog.filters.priceMax"
+              highlight-from="catalog.highlights.priceMin"
+              highlight-to="catalog.highlights.priceMax">
     </ui-range>
   </div>
   <each:values in="stats.props">
