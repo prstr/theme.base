@@ -1,7 +1,7 @@
 <div class="product-view-purchase"
      ng-cloak>
   <div class="block grid grid-gutters grid-align-baseline"
-       ng-repeat="opt in product.options">
+       ng-repeat="opt in product.options track by $index">
     <div class="cell cell-m-1">
       {{ opt.name }}:
     </div>
@@ -12,7 +12,7 @@
                 ng-class="{
                   active: p.isOptionSelected(opt, value)
                 }"
-                ng-repeat="value in opt.values"
+                ng-repeat="value in opt.values track by $index"
                 ng-click="p.toggleOption(opt, value)"
                 ng-disabled="p.isOptionDisabled(opt, value)">
           {{ value }}

@@ -22,12 +22,12 @@
     <!-- Позиции заказа -->
     <ul class="cart-items">
       <li class="cart-item"
-          ng-repeat="item in cart.order.items">
+          ng-repeat="item in cart.order.items track by $index">
         <div class="cart-item-summary">
           <a class="cart-item-link"
              href="{{ item.url }}">{{ item.title }}</a>
           <div class="cart-item-options">
-            <span ng-repeat="(name, value) in item.options"
+            <span ng-repeat="(name, value) in item.options track by $index"
                   class="cart-item-option">
               {{ name }}: {{ value }}
             </span>

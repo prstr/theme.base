@@ -180,6 +180,9 @@ input[type='radio']{
   margin:0;
   padding:0;
 }
+label{
+  cursor:pointer;
+}
 .block{
   margin:1em 0;
 }
@@ -5311,17 +5314,14 @@ img[ui-magnify]{
 }
 .range{
   position:relative;
-  margin:0 -16px;
-  padding:1em 16px;
-  -webkit-user-select:none;
-     -moz-user-select:none;
-      -ms-user-select:none;
-          user-select:none;
+  margin:1em -16px;
+  padding:0 16px;
   border-radius:4px;
 }
 .range-bar{
   height:4px;
   background:#eee;
+  cursor:pointer;
 }
 .range-ticks{
   position:relative;
@@ -5850,6 +5850,9 @@ img[ui-magnify]{
 .products-pager-link.active{
   color:#fff;
   background:#2e77b8;
+}
+.products-filter-value input[type="checkbox"]{
+  margin-right:0.5em;
 }
 .store-header{
   background:#2e77b8;

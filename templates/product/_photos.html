@@ -5,7 +5,7 @@
     <div class="carousel-items carousel-items-3d">
       <div class="carousel-item carousel-item-3d"
            ng-class="carousel.getClass($index)"
-           ng-repeat="photo in p.filteredPhotos">
+           ng-repeat="photo in p.filteredPhotos track by $index">
         <img ng-src="{{ photo.large }}"
              ui-zoom="photo.large"/>
       </div>
@@ -15,7 +15,7 @@
       <a href=""
          class="carousel-nav-link"
          ng-click="carousel.go($index)"
-         ng-repeat="photo in p.filteredPhotos">
+         ng-repeat="photo in p.filteredPhotos track by $index">
         <img ng-src="{{ photo.thumb }}"
              class="image-thumb"/>
       </a>
