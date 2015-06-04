@@ -5850,6 +5850,19 @@ img[ui-magnify]{
   color:#fff;
   background:#2e77b8;
 }
+.products-filters{
+  padding:0 1em;
+  border-radius:4px;
+  background:#f7f7f7;
+}
+.products-filters::before,
+.products-filters::after{
+  content:'';
+  display:table;
+}
+.products-filters::after{
+  clear:both;
+}
 .products-filter-value.disabled{
   opacity:0.5;
 }
