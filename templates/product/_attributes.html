@@ -5,9 +5,10 @@
         <div class="product-attribute-name">
           #{attr.name}
         </div>
-        <div class="product-attribute-value">
+        <a class="product-attribute-value"
+           href="/products?#{qs.create({ props: attr.name + '=' + attr.value })}">
           #{attr.value}
-        </div>
+        </a>
       </div>
     </each:attr>
   </div>
