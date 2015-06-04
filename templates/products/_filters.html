@@ -1,4 +1,6 @@
-<div class="products-filters">
+<form novalidate
+      class="products-filters"
+      ng-submit="catalog.go()">
   <div class="product-filter product-filter-price">
     <h3>Цена</h3>
     <div class="inline-grid">
@@ -25,8 +27,8 @@
               max="#{stats.priceMax}"
               start="catalog.filters.priceMin"
               end="catalog.filters.priceMax"
-              highlight-from="catalog.highlights.priceMin"
-              highlight-to="catalog.highlights.priceMax"
+              highlight-from="catalog.hint.priceMin"
+              highlight-to="catalog.hint.priceMax"
               change="catalog.fetchHighlights()">
     </ui-range>
   </div>
@@ -50,4 +52,22 @@
       </each:val>
     </div>
   </each:values>
-</div>
+  <div class="block centered"
+       ng-if="!catalog.hint.initial"
+       ng-cloak>
+    <button class="btn btn-primary"
+            ng-if="catalog.hint.count > 0"
+            type="submit">
+      <span>{{
+        catalog.hint.count | plural
+          : 'Показать %s товар'
+          : 'Показать %s товара'
+          : 'Показать %s товаров'
+      }}</span>
+    </button>
+    <p class="text-subtle"
+       ng-if="catalog.hint.count == 0">
+      Нет совпадений.
+    </p>
+  </div>
+</form>
