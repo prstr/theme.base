@@ -1,12 +1,10 @@
 <include file="/store/_layout.html">
 
   <def:main>
-    <div class="store-products">
+    <div class="store-products"
+         catalog="/products">
       <div class="container">
-        <div class="grid grid-gutters">
-          <div class="cell cell-l-1">
-            <include file="/products/_filters.html"/>
-          </div>
+        <div class="grid grid-gutters block">
           <div class="cell cell-l-4">
             <div class="toolbar">
               <div class="toolbar-group toolbar-group-left">
@@ -17,6 +15,9 @@
               </div>
             </div>
             <include file="_list.html"/>
+          </div>
+          <div class="cell cell-l-1">
+            <include file="/products/_filters.html"/>
           </div>
         </div>
       </div>

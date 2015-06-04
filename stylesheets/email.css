@@ -1398,7 +1398,7 @@ img[ui-magnify]{
   position:absolute;
   top:0;
   bottom:0;
-  background:#79aedd;
+  background:#2e77b8;
 }
 .range-ticks{
   position:relative;
@@ -1410,7 +1410,6 @@ img[ui-magnify]{
   top:0;
   width:64px;
   margin-left:-32px;
-  color:#858585;
   text-align:center;
   font-size:0.75em;
 }

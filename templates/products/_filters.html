@@ -1,41 +1,50 @@
-<div class="products-filters"
-     ng-controller="CatalogController as catalog">
-  <div class="product-filter product-filter-price">
-    <h3>Цена</h3>
-    <div class="inline-grid">
-      <label for="priceMin" class="type-small">от</label>
-      <input id="priceMin"
-             type="number"
-             size="7"
-             min="#{stats.priceMin}"
-             max="#{stats.priceMax}"
-             step="10"
-             class="input input-small"
-             ng-model="catalog.filters.priceMin"/>
-      <label for="priceMax" class="type-small">до</label>
-      <input id="priceMax"
-             type="number"
-             size="7"
-             min="#{stats.priceMin}"
-             max="#{stats.priceMax}"
-             step="10"
-             class="input input-small"
-             ng-model="catalog.filters.priceMax"/>
+<form novalidate
+      class="products-filters"
+      ng-submit="catalog.go()">
+  <div class="products-filter products-filter-price">
+    <h4>Цена</h4>
+    <div class="grid grid-gutters">
+      <label class="cell cell-m-1">
+        <input id="priceMin"
+               class="input input-small input-block"
+               type="number"
+               size="7"
+               min="#{stats.priceMin}"
+               max="#{stats.priceMax}"
+               step="10"
+               placeholder="от"
+               ng-model="catalog.filters.priceMin"/>
+      </label>
+      <label class="cell cell-m-1">
+        <input id="priceMax"
+               class="input input-small input-block"
+               type="number"
+               size="7"
+               min="#{stats.priceMin}"
+               max="#{stats.priceMax}"
+               step="10"
+               placeholder="до"
+               ng-model="catalog.filters.priceMax"/>
+      </label>
     </div>
     <ui-range min="#{stats.priceMin}"
               max="#{stats.priceMax}"
               start="catalog.filters.priceMin"
               end="catalog.filters.priceMax"
-              highlight-from="catalog.highlights.priceMin"
-              highlight-to="catalog.highlights.priceMax">
+              highlight-from="catalog.hint.priceMin"
+              highlight-to="catalog.hint.priceMax"
+              change="catalog.fetchHint()">
     </ui-range>
   </div>
   <each:values in="stats.props">
-    <div class="products-filter products-filter-prop">
+    <div class="products-filter products-filter-prop block">
       <var:name>values_key</var:name>
-      <h3>#{name}</h3>
+      <h4>#{name}</h4>
       <each:val in="values">
-        <div class="products-filter-value">
+        <div class="products-filter-value"
+             ng-class="{
+               disabled: catalog.isPropDisabled('#{name}', '#{val}')
+             }">
           <label class="type-small">
             <input type="checkbox"
                    value="#{val}"
@@ -47,4 +56,22 @@
       </each:val>
     </div>
   </each:values>
-</div>
+  <div class="block centered"
+       ng-if="!catalog.hint.initial"
+       ng-cloak>
+    <button class="btn btn-primary"
+            ng-if="catalog.hint.count > 0"
+            type="submit">
+      <span>{{
+        catalog.hint.count | plural
+          : 'Показать %s товар'
+          : 'Показать %s товара'
+          : 'Показать %s товаров'
+      }}</span>
+    </button>
+    <p class="text-subtle"
+       ng-if="catalog.hint.count == 0">
+      Нет совпадений.
+    </p>
+  </div>
+</form>
