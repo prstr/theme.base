@@ -102,6 +102,14 @@
 
 // Фильтры
 
-.products-filter-value input[type="checkbox"] {
-  margin-right: .5em;
+.products-filter-value {
+
+  &.disabled {
+    opacity: .5;
+  }
+
+  input[type="checkbox"] {
+    margin-right: .5em;
+  }
+
 }

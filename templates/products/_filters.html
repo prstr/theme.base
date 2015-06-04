@@ -1,5 +1,4 @@
-<div class="products-filters"
-     ng-controller="CatalogController as catalog">
+<div class="products-filters">
   <div class="product-filter product-filter-price">
     <h3>Цена</h3>
     <div class="inline-grid">
@@ -27,7 +26,8 @@
               start="catalog.filters.priceMin"
               end="catalog.filters.priceMax"
               highlight-from="catalog.highlights.priceMin"
-              highlight-to="catalog.highlights.priceMax">
+              highlight-to="catalog.highlights.priceMax"
+              change="catalog.fetchHighlights()">
     </ui-range>
   </div>
   <each:values in="stats.props">
@@ -35,7 +35,10 @@
       <var:name>values_key</var:name>
       <h3>#{name}</h3>
       <each:val in="values">
-        <div class="products-filter-value">
+        <div class="products-filter-value"
+             ng-class="{
+               disabled: catalog.isPropDisabled('#{name}', '#{val}')
+             }">
           <label class="type-small">
             <input type="checkbox"
                    value="#{val}"
