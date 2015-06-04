@@ -129,5 +129,22 @@
       "type": "color",
       "default": "hsl(0deg, 75%, 49%)"
     }
-  ]
+  ],
+  "nav": {
+    "topnav": {
+      "title": "Главное меню",
+      "links": [
+        {
+          "kind": "url",
+          "href": "/",
+          "title": "Главная"
+        },
+        {
+          "kind": "url",
+          "href": "/products",
+          "title": "Каталог"
+        }
+      ]
+    }
+  }
 }
