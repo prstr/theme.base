@@ -1,6 +1,6 @@
 {
   "title": "Базовая тема ПроСтор",
-  "description": "Используйте эту тему для создания уникального дизайна интернет-магазина.",
+  "description": "Базовая тема содержит минимальное оформление и предназначена для создания уникального дизайна интернет-магазина на ее основе.",
   "stylesheets": [
     "stylesheets/theme.styl",
     "stylesheets/email.styl"
@@ -76,12 +76,6 @@
       "default": 16
     },
     {
-      "id": "logo",
-      "label": "Логотип",
-      "type": "image",
-      "default": null
-    },
-    {
       "id": "body-background",
       "label": "Фон страницы",
       "type": "color",
@@ -101,7 +95,7 @@
     },
     {
       "id": "ui-default",
-      "label": "Компоненты",
+      "label": "Цвет компонентов",
       "type": "color",
       "default": "#eee"
     },
@@ -113,19 +107,19 @@
     },
     {
       "id": "ui-success",
-      "label": "Успешное действие",
+      "label": "Цвет «Успешное действие»",
       "type": "color",
       "default": "hsl(144deg, 50%, 45%)"
     },
     {
       "id": "ui-warn",
-      "label": "Предупреждение",
+      "label": "Цвет «Предупреждение»",
       "type": "color",
       "default": "hsl(44deg, 85%, 75%)"
     },
     {
       "id": "ui-critical",
-      "label": "Ошибка",
+      "label": "Цвет «Ошибка»",
       "type": "color",
       "default": "hsl(0deg, 75%, 49%)"
     }
