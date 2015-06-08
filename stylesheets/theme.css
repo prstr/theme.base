@@ -5333,11 +5333,11 @@ img[ui-magnify]{
 .range-ticks{
   position:relative;
   z-index:5;
-  height:20px;
+  height:8px;
 }
 .range-tick{
   position:absolute;
-  top:0;
+  top:-12px;
   width:64px;
   margin-left:-32px;
   text-align:center;
@@ -5371,7 +5371,7 @@ img[ui-magnify]{
 .range-handles{
   position:relative;
   z-index:5;
-  height:16px;
+  height:4px;
 }
 .range-handle{
   position:absolute;
@@ -5868,6 +5868,27 @@ img[ui-magnify]{
 }
 .products-filter-value input[type="checkbox"]{
   margin-right:0.5em;
+}
+.products-filter-tags{
+  text-align:center;
+}
+.products-filter-tag{
+  dislay:inline-block;
+  margin:2px;
+  padding:0 0.5em;
+  cursor:pointer;
+  border:1px solid #d6d6d6;
+  background:#eee;
+  color:#3b3b3b;
+  font-size:0.75em;
+}
+.products-filter-tag.active{
+  border-color:#27659c;
+  background-color:#2e77b8;
+  color:#fff;
+}
+.products-filter-tag.disabled{
+  opacity:0.5;
 }
 .store-header{
   background:#2e77b8;

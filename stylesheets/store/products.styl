@@ -122,3 +122,31 @@
   }
 
 }
+
+.products-filter-tags {
+  text-align: center;
+}
+
+.products-filter-tag {
+  dislay: inline-block;
+  margin: 2px;
+  padding: 0 gap-small;
+
+  cursor: pointer;
+
+  border: 1px solid ui-default-border;
+  background: ui-default;
+  color: ui-default-text;
+
+  font-size: type-smaller;
+
+  &.active {
+    border-color: ui-primary-border;
+    background-color: ui-primary;
+    color: ui-primary-text;
+  }
+
+  &.disabled {
+    opacity: .5;
+  }
+}

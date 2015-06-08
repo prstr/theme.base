@@ -1,6 +1,8 @@
 <form novalidate
       class="products-filters"
       ng-submit="catalog.go()">
+
+  <!-- Поиск по цене -->
   <div class="products-filter products-filter-price">
     <h4>Цена</h4>
     <div class="grid grid-gutters">
@@ -36,6 +38,8 @@
               change="catalog.fetchHint()">
     </ui-range>
   </div>
+
+  <!-- Поиск по свойствам -->
   <each:values in="stats.props">
     <div class="products-filter products-filter-prop block">
       <var:name>values_key</var:name>
@@ -56,6 +60,25 @@
       </each:val>
     </div>
   </each:values>
+
+  <!-- Поиск по тегам -->
+  <if expr="stats.tags.length">
+    <div class="products-filter products-filter-tags block">
+      <each:tag in="stats.tags">
+        <button type="button"
+                class="products-filter-tag"
+                ng-click="catalog.toggleTag('#{tag}')"
+                ng-class="{
+                  active: catalog.isTagSelected('#{tag}'),
+                  disabled: catalog.isTagDisabled('#{tag}')
+                }">
+          <span>#{tag}</span>
+        </button>
+      </each:tag>
+    </div>
+  </if>
+
+  <!-- Кнопка «Показать товары» -->
   <div class="block centered"
        ng-if="!catalog.hint.initial"
        ng-cloak>

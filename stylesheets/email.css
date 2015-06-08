@@ -1403,11 +1403,11 @@ img[ui-magnify]{
 .range-ticks{
   position:relative;
   z-index:5;
-  height:20px;
+  height:8px;
 }
 .range-tick{
   position:absolute;
-  top:0;
+  top:-12px;
   width:64px;
   margin-left:-32px;
   text-align:center;
@@ -1441,7 +1441,7 @@ img[ui-magnify]{
 .range-handles{
   position:relative;
   z-index:5;
-  height:16px;
+  height:4px;
 }
 .range-handle{
   position:absolute;
