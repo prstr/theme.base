@@ -5790,14 +5790,9 @@ pager{
   background-size:cover;
   background-position:50% 50%;
   background-repeat:no-repeat;
-  -webkit-transition:-webkit-transform 0.3s;
-          transition:transform 0.3s;
 }
 .gallery-item:hover{
-  z-index:2;
-  -webkit-transform:scale(1.1);
-      -ms-transform:scale(1.1);
-          transform:scale(1.1);
+  box-shadow:0 0 96px rgba(255,255,255,0.4) inset;
 }
 @media (min-width: 640px){
   .gallery-item{
