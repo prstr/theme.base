@@ -1,0 +1,39 @@
+// -------
+// Галерея
+// -------
+
+.gallery-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.gallery-item {
+  display: block;
+  flex: 1 1 50%;
+  height: 160px;
+  border: 0;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: screen-medium-min) {
+
+  .gallery-item {
+    flex-basis: 33%;
+  }
+
+}
+
+@media (min-width: screen-large-min) {
+
+  .gallery-item {
+    flex-basis: 25%;
+  }
+
+}
+
+

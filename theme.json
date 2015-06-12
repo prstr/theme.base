@@ -137,6 +137,11 @@
           "kind": "url",
           "href": "/products",
           "title": "Каталог"
+        },
+        {
+          "kind": "url",
+          "href": "/gallery",
+          "title": "Галерея"
         }
       ]
     }

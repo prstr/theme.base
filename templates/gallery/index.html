@@ -1,0 +1,25 @@
+<include file="_layout.html">
+
+  <def:title>Галерея — #{store.title}</def:title>
+
+  <def:main>
+    <div class="gallery-view">
+      <div class="container">
+        <include file="_breadcrumbs.html"/>
+      </div>
+      <div class="container">
+        <div class="gallery-items">
+          <each:item in="gallery.items">
+            <a href=""
+               class="gallery-item"
+               ui-zoom="'#{item.photo.large}'"
+               style="background-image:url(#{item.photo.thumb})"
+               title="#{item.title}">
+            </a>
+          </each:item>
+        </div>
+      </div>
+    </div>
+  </def:main>
+
+</include>
