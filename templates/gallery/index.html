@@ -18,6 +18,26 @@
             </a>
           </each:item>
         </div>
+        <if expr="gallery.pages > 1">
+          <div class="pager block centered">
+            <if expr="gallery.page > 0">
+              <a href="/gallery?#{qs.replace({ page: gallery.page - 1 })}"
+                 class="pager-link">
+                <i class="icon-arrow-left"></i>
+              </a>
+            </if>
+            <each:p in="_.range(0, gallery.pages)">
+              <a href="/gallery?#{qs.replace({ page: p })}"
+                 class="pager-link #{gallery.page == p ? 'active' : ''}">#{p + 1}</a>
+            </each:p>
+            <if expr="gallery.page < gallery.pages - 1">
+              <a href="/gallery?#{qs.replace({ page: gallery.page + 1 })}"
+                 class="pager-link">
+                <i class="icon-arrow-right"></i>
+              </a>
+            </if>
+          </div>
+        </if>
       </div>
     </div>
   </def:main>

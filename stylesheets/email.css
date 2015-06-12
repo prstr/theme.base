@@ -1288,6 +1288,21 @@ img[ui-magnify]{
     width:25%;
   }
 }
+pager{
+  text-align:center;
+}
+.pager-link{
+  display:inline-block;
+  padding:0.1em 0.5em;
+  border-radius:4px;
+}
+.pager-link:hover{
+  background:#eee;
+}
+.pager-link.active{
+  color:#fff;
+  background:#2e77b8;
+}
 .pnl-group .pnl:first-child{
   border-top-left-radius:4px;
   border-top-right-radius:4px;
