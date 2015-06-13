@@ -5603,6 +5603,46 @@ pager{
   cursor:-webkit-zoom-in;
   cursor:zoom-in;
 }
+.blog-tag{
+  display:inline-block;
+  margin:0 0.5em;
+  font-size:0.875em;
+}
+.blog-outline-link{
+  display:block;
+}
+.blog-outline-link.active{
+  color:#db1f1f;
+}
+.blog-outline-h1{
+  font-size:1.25em;
+}
+.blog-outline-h3{
+  padding-left:1em;
+}
+.blog-outline-h4{
+  padding-left:2em;
+  font-size:0.875em;
+}
+@media (min-width: 640px){
+  .blog-post-content{
+    float:left;
+    width:70%;
+  }
+  .blog-post-outline{
+    float:right;
+    width:27%;
+    margin-left:3%;
+    opacity:0.1;
+    -webkit-transition:opacity 5s;
+            transition:opacity 5s;
+  }
+  .blog-post-outline:hover{
+    opacity:1;
+    -webkit-transition:opacity 0.2s;
+            transition:opacity 0.2s;
+  }
+}
 .cart{
   position:fixed;
   z-index:1000;

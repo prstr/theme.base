@@ -142,6 +142,11 @@
           "kind": "url",
           "href": "/gallery",
           "title": "Галерея"
+        },
+        {
+          "kind": "url",
+          "href": "/blog",
+          "title": "Блог"
         }
       ]
     }

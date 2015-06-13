@@ -1,0 +1,56 @@
+// ----
+// Блог
+// ----
+
+.blog-tag {
+  display: inline-block;
+  margin: 0 .5em;
+  font-size: type-small;
+}
+
+.blog-outline-link {
+  display: block;
+
+  &.active {
+    color: ui-critical;
+  }
+}
+
+.blog-outline-h1 {
+  font-size: type-large;
+}
+
+.blog-outline-h2 {
+}
+
+.blog-outline-h3 {
+  padding-left: 1em;
+}
+
+.blog-outline-h4 {
+  padding-left: 2em;
+  font-size: type-small;
+}
+
+@media (min-width: screen-medium-min) {
+
+  .blog-post-content {
+    float: left;
+    width: 70%;
+  }
+
+  .blog-post-outline {
+    float: right;
+    width: 27%;
+    margin-left: 3%;
+
+    opacity: .1;
+    transition: opacity 5s;
+
+    &:hover {
+      opacity: 1;
+      transition: opacity .2s;
+    }
+  }
+
+}

@@ -1,0 +1,17 @@
+<nav class="breadcrumbs">
+  <a href="/"
+     class="breadcrumbs-item"
+     title="#{store.title}">
+    <i class="icon-home4"></i>
+  </a>
+  <a href="/blog"
+     class="breadcrumbs-item">
+    Блог
+  </a>
+  <if expr="post">
+    <a href="#{post.url}"
+       class="breadcrumbs-item">
+      #{post.title}
+    </a>
+  </if>
+</nav>

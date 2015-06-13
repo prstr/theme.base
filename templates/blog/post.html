@@ -1,0 +1,50 @@
+<include file="_layout.html">
+
+  <def:title>#{post.title} — #{store.title}</def:title>
+
+  <def:main>
+    <div class="blog-post">
+      <div class="container">
+        <include file="_breadcrumbs.html"/>
+      </div>
+      <div class="blog-post-heading">
+        <div class="container">
+          <h1>#{post.title}</h1>
+          <div class="blog-post-tagline">
+            <each:tag in="post.tags">
+              <a href="/blog?#{qs.create({ tags: tag })}"
+                 class="blog-post-tag">
+                #{tag}
+              </a>
+            </each:tag>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="blog-post-outline block"
+             ui-sticky
+             ui-scroll-spy>
+          <each:e in="post.outline">
+            <if>
+              <when expr="e.id">
+                <a href="##{e.id}"
+                   class="blog-outline-link blog-outline-#{e.tagName}">
+                  #{e.text}
+                </a>
+              </when>
+              <otherwise>
+                <div class="blog-outline-link blog-outline-#{e.tagName}">
+                  #{e.text}
+                </div>
+              </otherwise>
+            </if>
+          </each:e>
+        </div>
+        <div class="blog-post-content">
+          !{post.html}
+        </div>
+      </div>
+    </div>
+  </def:main>
+
+</include>

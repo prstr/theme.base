@@ -1,0 +1,66 @@
+<include file="_layout.html">
+
+  <def:title>Блог — #{store.title}</def:title>
+
+  <def:main>
+    <div class="blog-list">
+      <div class="container">
+        <include file="_breadcrumbs.html"/>
+      </div>
+      <div class="container">
+        <div class="blog-summary">
+          <each:item in="blog.items">
+            <div class="blog-summary-item grid grid-gutters block">
+              <div class="cell cell-m-1 centered">
+                <if>
+                  <when expr="item.photo.thumb">
+                    <img src="#{item.photo.thumb}"/>
+                  </when>
+                  <otherwise>
+                    <div class="image-placeholder image-placeholder-large">
+                    </div>
+                  </otherwise>
+                </if>
+              </div>
+              <div class="cell cell-m-3">
+                <h2>
+                  <a href="#{item.url}">
+                    #{item.title}
+                  </a>
+                </h2>
+                <div class="blog-summary-excerpt">#{item.excerpt}</div>
+                <div class="block">
+                  <a href="#{item.url}"
+                     class="btn btn-success">
+                    <span>Читать полностью</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </each:item>
+        </div>
+        <if expr="blog.pages > 1">
+          <div class="pager block centered">
+            <if expr="blog.page > 0">
+              <a href="/blog?#{qs.replace({ page: blog.page - 1 })}"
+                 class="pager-link">
+                <i class="icon-arrow-left"></i>
+              </a>
+            </if>
+            <each:p in="_.range(0, blog.pages)">
+              <a href="/blog?#{qs.replace({ page: p })}"
+                 class="pager-link #{blog.page == p ? 'active' : ''}">#{p + 1}</a>
+            </each:p>
+            <if expr="blog.page < blog.pages - 1">
+              <a href="/blog?#{qs.replace({ page: blog.page + 1 })}"
+                 class="pager-link">
+                <i class="icon-arrow-right"></i>
+              </a>
+            </if>
+          </div>
+        </if>
+      </div>
+    </div>
+  </def:main>
+
+</include>
