@@ -286,9 +286,19 @@ label{
 .image-thumb{
   max-height:96px;
 }
+.has-sticky{
+  position:relative;
+}
 .sticky{
-  position:-webkit-sticky;
-  position:sticky;
+  position:relative;
+}
+.sticky-fixed{
+  position:fixed;
+  top:0;
+}
+.sticky-bottom{
+  position:absolute;
+  bottom:0;
 }
 @font-face{
 	font-family:'Linearicons';
@@ -5603,13 +5613,9 @@ pager{
   cursor:-webkit-zoom-in;
   cursor:zoom-in;
 }
-.blog-tag{
-  display:inline-block;
-  margin:0 0.5em;
-  font-size:0.875em;
-}
 .blog-outline-link{
   display:block;
+  font-size:0.875em;
 }
 .blog-outline-link.active{
   color:#db1f1f;
@@ -5624,6 +5630,22 @@ pager{
   padding-left:2em;
   font-size:0.875em;
 }
+.blog-post-heading{
+  padding:120px 0;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:50% 50%;
+  color:#fff;
+  text-shadow:0 0 1px #000, 0 1px 3px #000, 0 0 64px #000;
+  box-shadow:0 64px 32px -64px rgba(0,0,0,0.5) inset, 0 -64px 32px -64px rgba(0,0,0,0.5) inset;
+}
+.blog-post-tag{
+  color:#ffe;
+}
+.blog-post-tag:not(:last-child)::after{
+  content:' · ';
+  color:#aaa;
+}
 @media (min-width: 640px){
   .blog-post-content{
     float:left;
@@ -5632,7 +5654,6 @@ pager{
   .blog-post-outline{
     float:right;
     width:27%;
-    margin-left:3%;
     opacity:0.1;
     -webkit-transition:opacity 5s;
             transition:opacity 5s;

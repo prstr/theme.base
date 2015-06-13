@@ -286,9 +286,19 @@ label{
 .image-thumb{
   max-height:96px;
 }
+.has-sticky{
+  position:relative;
+}
 .sticky{
-  position:-webkit-sticky;
-  position:sticky;
+  position:relative;
+}
+.sticky-fixed{
+  position:fixed;
+  top:0;
+}
+.sticky-bottom{
+  position:absolute;
+  bottom:0;
 }
 .alert{
   padding:0 1em;

@@ -97,6 +97,22 @@ for c in ui-colors {
   max-height: 96px;
 }
 
+// position:sticky polyfill
+
+.has-sticky {
+  position: relative;
+}
+
 .sticky {
-  position: sticky;
+  position: relative;
+}
+
+.sticky-fixed {
+  position: fixed;
+  top: 0;
+}
+
+.sticky-bottom {
+  position: absolute;
+  bottom: 0;
 }

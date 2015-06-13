@@ -7,10 +7,12 @@
       <div class="container">
         <include file="_breadcrumbs.html"/>
       </div>
-      <div class="blog-post-heading">
+
+      <div class="blog-post-heading"
+           style="background-image: url(#{post.photo.large || '/static/img/blog_bg.jpg'})">
         <div class="container">
           <h1>#{post.title}</h1>
-          <div class="blog-post-tagline">
+          <div class="blog-post-tags">
             <each:tag in="post.tags">
               <a href="/blog?#{qs.create({ tags: tag })}"
                  class="blog-post-tag">
@@ -20,8 +22,9 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="blog-post-outline block"
+
+      <div class="container has-sticky">
+        <div class="blog-post-outline block sticky sticky-right"
              ui-sticky
              ui-scroll-spy>
           <each:e in="post.outline">
