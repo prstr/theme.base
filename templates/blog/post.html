@@ -12,14 +12,6 @@
            style="background-image: url(#{post.photo.large || '/static/img/blog_bg.jpg'})">
         <div class="container">
           <h1>#{post.title}</h1>
-          <div class="blog-post-tags">
-            <each:tag in="post.tags">
-              <a href="/blog?#{qs.create({ tags: tag })}"
-                 class="blog-post-tag">
-                #{tag}
-              </a>
-            </each:tag>
-          </div>
         </div>
       </div>
 

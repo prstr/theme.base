@@ -8,6 +8,7 @@
         <include file="_breadcrumbs.html"/>
       </div>
       <div class="container">
+
         <div class="blog-summary">
           <each:item in="blog.items">
             <div class="blog-summary-item grid grid-gutters block">
@@ -39,6 +40,7 @@
             </div>
           </each:item>
         </div>
+
         <if expr="blog.pages > 1">
           <div class="pager block centered">
             <if expr="blog.page > 0">
