@@ -286,20 +286,6 @@ label{
 .image-thumb{
   max-height:96px;
 }
-.has-sticky{
-  position:relative;
-}
-.sticky{
-  position:relative;
-}
-.sticky-fixed{
-  position:fixed;
-  top:0;
-}
-.sticky-bottom{
-  position:absolute;
-  bottom:0;
-}
 @font-face{
 	font-family:'Linearicons';
 	src:url('/static/fonts/Linearicons.eot?i068ss');
@@ -5416,6 +5402,20 @@ pager{
 .range-handle-right{
   left:100%;
   border-left-color:#2e77b8;
+}
+.has-sticky{
+  position:relative;
+}
+.sticky{
+  position:relative;
+}
+.sticky-fixed{
+  position:fixed;
+  top:0;
+}
+.sticky-bottom{
+  position:absolute;
+  bottom:0;
 }
 .toolbar{
   display:-webkit-box;
