@@ -6,16 +6,39 @@
   position: relative;
 }
 
-.sticky {
-  position: relative;
+@media (min-width: screen-medium-min) {
+
+  .sticky-m {
+    position: relative;
+  }
+
+  .sticky-m.sticky-fixed {
+    position: fixed;
+    top: 0;
+  }
+
+  .sticky-m.sticky-bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
 }
 
-.sticky-fixed {
-  position: fixed;
-  top: 0;
+@media (min-width: screen-large-min) {
+
+  .sticky-l {
+    position: relative;
+  }
+
+  .sticky-l.sticky-fixed {
+    position: fixed;
+    top: 0;
+  }
+
+  .sticky-l.sticky-bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
 }
 
-.sticky-bottom {
-  position: absolute;
-  bottom: 0;
-}
