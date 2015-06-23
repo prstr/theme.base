@@ -32,8 +32,18 @@
               {{ name }}: {{ value }}
             </span>
           </div>
-          <div class="cart-item-price product-price">
+          <div class="cart-item-price"
+                ng-if="!item.discount">
             {{ item.price | price }}
+          </div>
+          <div class="cart-item-price-with-discount"
+               ng-if="item.discount > 0">
+            <span class="cart-item-old-price">
+              {{ item.price | price }}
+            </span>
+            <span class="cart-item-new-price">
+              {{ item.price - item.discount | price }}
+            </span>
           </div>
         </div>
         <!-- Управление количеством (добавить/убрать) -->

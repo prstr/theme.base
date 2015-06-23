@@ -1,0 +1,35 @@
+.order-table {
+  width: 100%;
+
+  th, td {
+    padding: .25em .5em;
+    text-align: left;
+    vertical-align: baseline;
+    border-bottom: 1px solid ui-default;
+
+    &:first-child {
+      text-align: right;
+    }
+  }
+
+  th {
+    font: inherit;
+    color: subtle-color;
+  }
+
+}
+
+.order-item-options {
+  color: subtle-color;
+  font-size: type-small;
+}
+
+.order-item-old-price {
+  color: subtle-color;
+  font-size: type-small;
+  text-decoration: line-through;
+}
+
+.order-item-new-price {
+  color: ui-critical;
+}

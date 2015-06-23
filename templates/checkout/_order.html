@@ -1,0 +1,84 @@
+<table class="order-table"
+       ng-cloak>
+  <thead>
+    <tr>
+      <th width="1%"
+          class="order-column-no hide-s">
+        #
+      </th>
+      <th class="order-column-title">
+        Наименование
+      </th>
+      <th class="order-column-qty">
+        Кол-во
+      </th>
+      <th class="order-column-price hide-s">
+        Цена
+      </th>
+      <th class="order-column-subtotal">
+        Сумма
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in cart.order.items">
+      <td class="order-column-no hide-s">
+        {{ $index + 1 }}
+      </td>
+      <td class="order-column-title">
+        <div class="order-item-title">{{ item.title }}</div>
+        <div class="order-item-options">
+          <span ng-repeat="(name, value) in item.options track by $index"
+                class="order-item-option">
+            {{ name }}: {{ value }}
+          </span>
+        </div>
+      </td>
+      <td class="order-column-qty">
+        <div class="inline-grid">
+          <a href=""
+             class="order-item-qty-ctl"
+             ng-click="cart.decr(item)">
+            <i class="icon-circle-minus"></i>
+          </a>
+          <span class="order-item-qty-label">{{ item.quantity }}</span>
+          <a href=""
+             class="order-item-qty-ctl"
+             ng-click="cart.incr(item)">
+            <i class="icon-plus-circle"></i>
+          </a>
+        </div>
+      </td>
+      <td class="order-column-price hide-s">
+        <div class="order-item-price"
+             ng-if="!item.discount">
+          {{ item.price | price }}
+        </div>
+        <div class="order-item-price-with-discount"
+             ng-if="item.discount > 0">
+          <div class="order-item-old-price">
+            {{ item.price | price }}
+          </div>
+          <div class="order-item-new-price">
+            {{ item.price - item.discount | price }}
+          </div>
+        </div>
+      </td>
+      <td class="order-column-subtotal">
+        <div class="order-item-price"
+             ng-if="!item.discount">
+          {{ item.subTotal | price }}
+        </div>
+        <div class="order-item-price-with-discount"
+             ng-if="item.discount > 0">
+          <div class="order-item-old-price">
+            {{ item.price * item.quantity | price }}
+          </div>
+          <div class="order-item-new-price">
+            {{ item.subTotal - (item.discount * item.quantity) | price }}
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
