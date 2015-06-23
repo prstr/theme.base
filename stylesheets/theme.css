@@ -6007,7 +6007,6 @@ pager{
   padding:1em;
   min-width:120px;
   margin-top:-32px;
-  border:2px solid #2e77b8;
   border-radius:4px;
   background:#fff;
   box-shadow:0 1px 12px rgba(0,0,0,0.15);
@@ -6021,21 +6020,10 @@ pager{
   visibility:hidden;
   opacity:0;
 }
-.products-filters-bubble::after{
-  content:'';
-  position:absolute;
-  right:-16px;
-  top:50%;
-  margin-top:-8px;
-  width:0;
-  height:0;
-  border:8px solid transparent;
-  border-left-color:#2e77b8;
-}
 .products-filters-bubble-close{
   position:absolute;
-  top:-16px;
-  left:-16px;
+  top:-12px;
+  left:-12px;
   width:24px;
   height:24px;
   line-height:24px;
