@@ -1205,7 +1205,7 @@ textarea.input{
   pointer-events:none;
   background-color:#fff;
   background-repeat:no-repeat;
-  box-shadow:0 3px 8px rgba(0,0,0,0.25), 0 4px 0px rgba(255,255,255,0.25) inset;
+  box-shadow:0 3px 8px rgba(0,0,0,0.25), 0 4px 0 rgba(255,255,255,0.25) inset;
   opacity:0;
   visibility:hidden;
   -webkit-transition:0.3s opacity;
