@@ -1,0 +1,20 @@
+<div class="order-delivery">
+  <div ng-if="cart.availableDeliveryMethods.length"
+       ng-repeat="method in cart.availableDeliveryMethods"
+       class="grid grid-gutters grid-align-baseline">
+    <div class="cell cell-min">
+      <input id="deliveryMethod-{{$index}}"
+             type="radio"
+             ng-model="cart.order.deliveryMethod"
+             ng-value="method"/>
+    </div>
+    <div class="cell cell-1">
+      <label for="deliveryMethod-{{$index}}">{{ method.title }}</label>
+      
+    </div>
+  </div>
+
+  <div ng-if="!cart.availableDeliveryMethods.length">
+    <p>Менеджер свяжется с Вами для уточнения условий доставки.</p>
+  </div>
+</div>
