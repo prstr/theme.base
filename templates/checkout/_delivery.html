@@ -6,11 +6,17 @@
       <input id="deliveryMethod-{{$index}}"
              type="radio"
              ng-model="cart.order.deliveryMethod"
-             ng-value="method"/>
+             ng-value="method.title"
+             ng-change="cart.update()"/>
     </div>
     <div class="cell cell-1">
       <label for="deliveryMethod-{{$index}}">{{ method.title }}</label>
-      
+      <div ng-if="cart.order.deliveryMethod == method.title">
+
+        <!-- TODO Здесь должны быть поля -->
+        <p>PREVED</p>
+
+      </div>
     </div>
   </div>
 
