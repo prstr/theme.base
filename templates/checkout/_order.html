@@ -3,29 +3,30 @@
   <thead>
     <tr>
       <th width="1%"
-          class="order-column-no hide-s">
+          class="order-column order-column-no hide-s">
         #
       </th>
-      <th class="order-column-title">
+      <th class="order-column order-column-title">
         Наименование
       </th>
-      <th class="order-column-qty">
+      <th class="order-column order-column-qty">
         Кол-во
       </th>
-      <th class="order-column-price hide-s">
+      <th class="order-column order-column-price hide-s">
         Цена
       </th>
-      <th class="order-column-subtotal">
+      <th class="order-column order-column-subtotal">
         Сумма
       </th>
     </tr>
   </thead>
   <tbody>
+    <!-- Позиции заказа -->
     <tr ng-repeat="item in cart.order.items">
-      <td class="order-column-no hide-s">
+      <td class="order-column order-column-no hide-s">
         {{ $index + 1 }}
       </td>
-      <td class="order-column-title">
+      <td class="order-column order-column-title">
         <div class="order-item-title">{{ item.title }}</div>
         <div class="order-item-options">
           <span ng-repeat="(name, value) in item.options track by $index"
@@ -34,7 +35,8 @@
           </span>
         </div>
       </td>
-      <td class="order-column-qty">
+      <!-- Количество -->
+      <td class="order-column order-column-qty">
         <div class="inline-grid">
           <a href=""
              class="order-item-qty-ctl"
@@ -49,36 +51,96 @@
           </a>
         </div>
       </td>
-      <td class="order-column-price hide-s">
+      <!-- Цена -->
+      <td class="order-column order-column-price hide-s">
         <div class="order-item-price"
              ng-if="!item.discount">
-          {{ item.price | price }}
+          <div class="order-price">
+            {{ item.price | price }}
+          </div>
         </div>
         <div class="order-item-price-with-discount"
              ng-if="item.discount > 0">
-          <div class="order-item-old-price">
+          <div class="order-price order-price-old">
             {{ item.price | price }}
           </div>
-          <div class="order-item-new-price">
+          <div class="order-price order-price-new">
             {{ item.price - item.discount | price }}
           </div>
         </div>
       </td>
-      <td class="order-column-subtotal">
+      <!-- Сумма -->
+      <td class="order-column order-column-subtotal">
         <div class="order-item-price"
-             ng-if="!item.discount">
-          {{ item.subTotal | price }}
+             ng-if="item.totalDiscount == 0">
+          <div class="order-price">
+            {{ item.subTotal | price }}
+          </div>
         </div>
         <div class="order-item-price-with-discount"
-             ng-if="item.discount > 0">
-          <div class="order-item-old-price">
-            {{ item.price * item.quantity | price }}
+             ng-if="item.totalDiscount > 0">
+          <div class="order-price order-price-old">
+            {{ item.totalPrice | price }}
           </div>
-          <div class="order-item-new-price">
-            {{ item.subTotal - (item.discount * item.quantity) | price }}
+          <div class="order-price order-price-new">
+            {{ item.subTotal | price }}
           </div>
         </div>
       </td>
     </tr>
+    <!-- Дополнительная скидка -->
+    <tr ng-if="cart.order.discount > 0">
+      <td class="order-column"></td>
+      <td colspan="3"
+          class="order-column order-column-foot">
+        Дополнительная скидка
+      </td>
+      <td class="order-column order-column-discount">
+        <div class="order-price order-price-discount">
+          {{ - cart.order.discount | price }}
+        </div>
+      </td>
+    </tr>
   </tbody>
+  <tfoot>
+    <!-- Общая сумма без скидки -->
+    <tr ng-if="cart.order.totalDiscount > 0">
+      <td class="order-column"></td>
+      <td colspan="3"
+          class="order-column order-column-foot">
+        Сумма без учета скидки
+      </td>
+      <td class="order-column order-column-subtotal">
+        <div class="order-price">
+          {{ cart.order.itemsPrice | price }}
+        </div>
+      </td>
+    </tr>
+    <!-- Общая скидка -->
+    <tr ng-if="cart.order.totalDiscount > 0">
+      <td class="order-column"></td>
+      <td colspan="3"
+          class="order-column order-column-foot">
+        Общая скидка
+      </td>
+      <td class="order-column order-column-discount">
+        <div class="order-price order-price-discount">
+          {{ - cart.order.totalDiscount | price }}
+        </div>
+      </td>
+    </tr>
+    <!-- Подитог -->
+    <tr>
+      <td class="order-column"></td>
+      <td colspan="3"
+          class="order-column order-column-foot">
+        Подитог
+      </td>
+      <td class="order-column order-column-discount">
+        <div class="order-price">
+          {{ cart.order.subTotal | price }}
+        </div>
+      </td>
+    </tr>
+  </tfoot>
 </table>

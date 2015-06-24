@@ -32,18 +32,22 @@
               {{ name }}: {{ value }}
             </span>
           </div>
+          <!-- Цена без скидки -->
           <div class="cart-item-price"
-                ng-if="!item.discount">
-            {{ item.price | price }}
+               ng-if="!item.discount">
+            <div class="cart-price">
+              {{ item.price | price }}
+            </div>
           </div>
+          <!-- Цена со скидкой: старая и новая -->
           <div class="cart-item-price-with-discount"
                ng-if="item.discount > 0">
-            <span class="cart-item-old-price">
+            <div class="cart-price cart-price-old">
               {{ item.price | price }}
-            </span>
-            <span class="cart-item-new-price">
+            </div>
+            <div class="cart-price cart-price-new">
               {{ item.price - item.discount | price }}
-            </span>
+            </div>
           </div>
         </div>
         <!-- Управление количеством (добавить/убрать) -->
@@ -66,11 +70,32 @@
     <div class="cart-checkout"
          ng-if="cart.order.subTotal > 0">
       <h3>Итого</h3>
-      <div class="type-large">{{ cart.order.subTotal | price }}</div>
+
+      <!-- Подитог без скидок -->
+      <div class="cart-subtotal"
+           ng-if="cart.order.totalDiscount == 0">
+        <div class="cart-price">
+          {{ cart.order.subTotal | price }}
+        </div>
+      </div>
+
+      <!-- Подитог со скидками -->
+      <div class="cart-subtotal cart-subtotal-with-discount"
+           ng-if="cart.order.totalDiscount > 0">
+        <div class="cart-price cart-price-old">
+          {{ cart.order.itemsPrice | price }}
+        </div>
+        <div class="cart-price cart-price-new">
+          {{ cart.order.subTotal | price }}
+        </div>
+      </div>
+
+      <!-- Есть ли стоимость доставки? -->
       <div ng-show="cart.order.deliveryFee != 0"
            class="text-subtle">+ доставка</div>
       <div ng-show="cart.order.deliveryFee == 0"
            class="text-critical">бесплатная доставка</div>
+
       <div class="centered block">
         <a href="/checkout"
            class="btn btn-primary btn-large">
