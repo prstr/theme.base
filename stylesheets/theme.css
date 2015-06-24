@@ -5798,7 +5798,7 @@ pager{
   color:#858585;
   text-decoration:line-through;
 }
-.cart-price-new{
+.cart-price-discount{
   color:#db1f1f;
 }
 .cart-subtotal{
@@ -5884,25 +5884,6 @@ pager{
             flex-basis:25%;
   }
 }
-.order-table{
-  width:100%;
-}
-.order-table th{
-  font:inherit;
-  color:#858585;
-}
-.order-table tfoot{
-  border-top:4px solid #eee;
-}
-.order-column{
-  padding:0.25em 0.5em;
-  text-align:left;
-  vertical-align:baseline;
-  border-bottom:1px solid #eee;
-}
-.order-column:first-child{
-  text-align:right;
-}
 .order-item-options{
   color:#858585;
   font-size:0.875em;
@@ -5912,9 +5893,92 @@ pager{
   font-size:0.875em;
   text-decoration:line-through;
 }
-.order-price-new,
 .order-price-discount{
   color:#db1f1f;
+}
+@media (min-width: 640px){
+  .order-table{
+    width:100%;
+  }
+  .order-table th{
+    font:inherit;
+    color:#858585;
+  }
+  .order-table tbody,
+  .order-table tfoot{
+    border-top:4px solid #eee;
+  }
+  .order-column{
+    padding:0.25em 0.5em;
+    text-align:left;
+    vertical-align:baseline;
+    border-bottom:1px solid #eee;
+  }
+  .order-column:first-child{
+    text-align:right;
+  }
+}
+@media (max-width: 639px){
+  .order-table{
+    display:block;
+    width:100%;
+  }
+  .order-table thead{
+    display:none;
+  }
+  .order-table tbody,
+  .order-table tfoot{
+    display:block;
+  }
+  .order-table tfoot{
+    border-top:4px solid #eee;
+  }
+  .order-table tr{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-flow:row wrap;
+        -ms-flex-flow:row wrap;
+            flex-flow:row wrap;
+    width:100%;
+    border-bottom:1px solid #eee;
+    padding:0.5em 0;
+  }
+  .order-table td{
+    padding:0.5em 0;
+  }
+  .order-column{
+    display:block;
+    padding:0;
+  }
+  .order-column-no{
+    display:none;
+  }
+  .order-column-title{
+    -webkit-box-flex:70%;
+    -webkit-flex:70%;
+        -ms-flex:70%;
+            flex:70%;
+  }
+  .order-column-qty,
+  .order-column-discount{
+    -webkit-box-flex:30%;
+    -webkit-flex:30%;
+        -ms-flex:30%;
+            flex:30%;
+    text-align:right;
+  }
+  .order-column-price,
+  .order-column-subtotal{
+    -webkit-box-flex:50%;
+    -webkit-flex:50%;
+        -ms-flex:50%;
+            flex:50%;
+  }
+  .order-column-subtotal{
+    text-align:right;
+  }
 }
 .product-attribute{
   display:-webkit-inline-box;

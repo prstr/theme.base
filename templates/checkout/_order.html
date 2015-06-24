@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th width="1%"
-          class="order-column order-column-no hide-s">
+          class="order-column order-column-no">
         #
       </th>
       <th class="order-column order-column-title">
@@ -11,7 +11,7 @@
       <th class="order-column order-column-qty">
         Кол-во
       </th>
-      <th class="order-column order-column-price hide-s">
+      <th class="order-column order-column-price">
         Цена
       </th>
       <th class="order-column order-column-subtotal">
@@ -22,7 +22,7 @@
   <tbody>
     <!-- Позиции заказа -->
     <tr ng-repeat="item in cart.order.items">
-      <td class="order-column order-column-no hide-s">
+      <td class="order-column order-column-no">
         {{ $index + 1 }}
       </td>
       <td class="order-column order-column-title">
@@ -30,7 +30,7 @@
         <div class="order-item-options">
           <span ng-repeat="(name, value) in item.options track by $index"
                 class="order-item-option">
-            {{ name }}: {{ value }}
+            {{ value }}
           </span>
         </div>
       </td>
@@ -51,7 +51,7 @@
         </div>
       </td>
       <!-- Цена -->
-      <td class="order-column order-column-price hide-s">
+      <td class="order-column order-column-price">
         <div class="order-item-price"
              ng-if="!item.discount">
           <div class="order-price">
@@ -94,7 +94,7 @@
           class="order-column order-column-foot">
         Дополнительная скидка
       </td>
-      <td class="order-column order-column-discount">
+      <td class="order-column order-column-foot order-column-discount">
         <div class="order-price order-price-discount">
           {{ - cart.order.discount | price }}
         </div>
@@ -109,7 +109,7 @@
           class="order-column order-column-foot">
         Сумма без учета скидки
       </td>
-      <td class="order-column order-column-subtotal">
+      <td class="order-column order-column-foot order-column-subtotal">
         <div class="order-price">
           {{ cart.order.itemsPrice | price }}
         </div>
@@ -122,7 +122,7 @@
           class="order-column order-column-foot">
         Общая скидка
       </td>
-      <td class="order-column order-column-discount">
+      <td class="order-column order-column-foot order-column-discount">
         <div class="order-price order-price-discount">
           {{ - cart.order.totalDiscount | price }}
         </div>
@@ -135,7 +135,7 @@
           class="order-column order-column-foot">
         Подитог
       </td>
-      <td class="order-column order-column-discount">
+      <td class="order-column order-column-foot order-column-subtotal">
         <div class="order-price">
           {{ cart.order.subTotal | price }}
         </div>

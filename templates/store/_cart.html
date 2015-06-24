@@ -35,19 +35,19 @@
           <!-- Цена без скидки -->
           <div class="cart-item-price"
                ng-if="!item.discount">
-            <div class="cart-price">
+            <span class="cart-price">
               {{ item.price | price }}
-            </div>
+            </span>
           </div>
           <!-- Цена со скидкой: старая и новая -->
           <div class="cart-item-price-with-discount"
                ng-if="item.discount > 0">
-            <div class="cart-price cart-price-old">
+            <span class="cart-price cart-price-old">
               {{ item.price | price }}
-            </div>
-            <div class="cart-price cart-price-new">
+            </span>
+            <span class="cart-price cart-price-new">
               {{ item.price - item.discount | price }}
-            </div>
+            </span>
           </div>
         </div>
         <!-- Управление количеством (добавить/убрать) -->
