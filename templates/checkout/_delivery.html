@@ -1,7 +1,9 @@
 <div class="order-delivery">
+
+  <!-- Выбор способа доставки -->
   <div ng-if="cart.availableDeliveryMethods.length"
        ng-repeat="method in cart.availableDeliveryMethods"
-       class="grid grid-gutters grid-align-baseline">
+       class="grid grid-gutters grid-align-baseline block">
     <div class="cell cell-min">
       <input id="deliveryMethod-{{$index}}"
              type="radio"
@@ -11,15 +13,47 @@
     </div>
     <div class="cell cell-1">
       <label for="deliveryMethod-{{$index}}">{{ method.title }}</label>
-      <div ng-if="cart.order.deliveryMethod == method.title">
+      <div class="order-delivery-fields"
+           ng-if="cart.order.deliveryMethod == method.title">
 
-        <!-- TODO Здесь должны быть поля -->
-        <p>PREVED</p>
-
+        <!-- Поля -->
+        <div class="order-delivery-field block"
+             ng-repeat="field in method.fields">
+          <label>
+            <div class="order-delivery-field-name">
+              {{ field.name }}
+              <span class="text-critical"
+                    ng-if="!field.optional">*</span>
+            </div>
+            <input type="text"
+                   ng-if="field.kind == 'text'"
+                   ng-model="cart.order.fields[field.name]"
+                   ng-change="cart.update()"
+                   class="input input-block"
+                   ng-required="!field.optional"/>
+            <input type="number"
+                   ng-if="field.kind == 'number'"
+                   ng-model="cart.order.fields[field.name]"
+                   ng-change="cart.update()"
+                   class="input input-block"
+                   ng-min="field.min"
+                   ng-max="field.max"
+                   ng-required="!field.optional"/>
+            <select class="input input-block"
+                    ng-if="field.kind == 'select'"
+                    ng-model="cart.order.fields[field.name]"
+                    ng-change="cart.update()"
+                    ng-required="!field.optional">
+              <option ng-repeat="val in field.values"
+                      ng-value="val">{{ val }}</option>
+            </select>
+          </label>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Нет подходящих способов доставки -->
   <div ng-if="!cart.availableDeliveryMethods.length">
     <p>Менеджер свяжется с Вами для уточнения условий доставки.</p>
   </div>

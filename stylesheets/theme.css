@@ -5982,6 +5982,9 @@ pager{
     text-align:right;
   }
 }
+.order-checkout{
+  border-top:4px solid #eee;
+}
 .product-attribute{
   display:-webkit-inline-box;
   display:-webkit-inline-flex;

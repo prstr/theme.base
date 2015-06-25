@@ -5,15 +5,29 @@
       <div class="container"
            ng-cloak>
 
-        <div ng-if="cart.order.items.length">
-          <h1>Ваш заказ</h1>
-          <include file="_order.html"/>
+        <form name="checkoutForm"
+              ng-cloak
+              novalidate
+              ng-controller="CheckoutController as checkout"
+              ng-submit="checkoutForm.$valid && checkout.submit()">
 
-          <div class="block">
-            <h2>Доставка</h2>
-            <include file="_delivery.html"/>
+          <div ng-if="cart.order.items.length">
+            <h1>Ваш заказ</h1>
+            <include file="_order.html"/>
+
+            <div class="block">
+              <h2>Доставка</h2>
+              <include file="_delivery.html"/>
+            </div>
+
+            <div class="block">
+              <include file="_checkout.html"/>
+            </div>
+
+
           </div>
-        </div>
+
+        </form>
 
         <!-- Если в корзине ничего нет -->
         <div class="block centered hero"
