@@ -1,12 +1,12 @@
 <!-- Корзина покупок  -->
 <div class="cart"
      ng-cloak
-     ng-class="{ 'open': cart.isOpen }"
-     ng-if="cart.order.items.length">
+     ng-class="{ 'open': cart.isOpen }">
   <!-- Кнопка открытия/закрытия корзины -->
   <a class="cart-toggle"
      href=""
-     ng-click="cart.toggle()">
+     ng-click="cart.toggle()"
+     ng-if="cart.order.items.length">
     <i class="cart-toggle-icon icon-cart"></i>
     <span>{{ cart.order.totalQuantity }}</span>
   </a>
@@ -19,6 +19,13 @@
   <!-- Flexbox-контейнер, распределяющий элементы по вертикали -->
   <div class="cart-container">
     <h2>Корзина</h2>
+
+    <!-- Корзина пуста -->
+    <div class="cart-empty"
+         ng-if="!cart.order.items.length">
+      <p class="text-subtle">В Вашей корзине пусто.</p>
+    </div>
+
     <!-- Позиции заказа -->
     <ul class="cart-items">
       <li class="cart-item"
@@ -66,6 +73,7 @@
         </div>
       </li>
     </ul>
+
     <!-- Нижний блок: подитог, оформление -->
     <div class="cart-checkout"
          ng-if="cart.order.subTotal > 0">

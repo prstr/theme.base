@@ -1526,7 +1526,7 @@ pager{
   -webkit-flex:100%;
       -ms-flex:100%;
           flex:100%;
-  margin:0.5em 0;
+  margin:0.25em 0;
 }
 .toolbar-group h1,
 .toolbar-group h2,
@@ -1540,16 +1540,16 @@ pager{
   .toolbar-group-left{
     text-align:left;
     -webkit-box-flex:1;
-    -webkit-flex:1;
-        -ms-flex:1;
-            flex:1;
+    -webkit-flex:1 1 auto;
+        -ms-flex:1 1 auto;
+            flex:1 1 auto;
   }
   .toolbar-group-right{
     text-align:right;
     -webkit-box-flex:1;
-    -webkit-flex:1;
-        -ms-flex:1;
-            flex:1;
+    -webkit-flex:1 1 auto;
+        -ms-flex:1 1 auto;
+            flex:1 1 auto;
   }
 }
 .tumbler{

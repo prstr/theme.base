@@ -5456,7 +5456,7 @@ pager{
   -webkit-flex:100%;
       -ms-flex:100%;
           flex:100%;
-  margin:0.5em 0;
+  margin:0.25em 0;
 }
 .toolbar-group h1,
 .toolbar-group h2,
@@ -5470,16 +5470,16 @@ pager{
   .toolbar-group-left{
     text-align:left;
     -webkit-box-flex:1;
-    -webkit-flex:1;
-        -ms-flex:1;
-            flex:1;
+    -webkit-flex:1 1 auto;
+        -ms-flex:1 1 auto;
+            flex:1 1 auto;
   }
   .toolbar-group-right{
     text-align:right;
     -webkit-box-flex:1;
-    -webkit-flex:1;
-        -ms-flex:1;
-            flex:1;
+    -webkit-flex:1 1 auto;
+        -ms-flex:1 1 auto;
+            flex:1 1 auto;
   }
 }
 .tumbler{
@@ -5636,7 +5636,9 @@ pager{
   font-size:1.25em;
 }
 .blog-outline-h3{
-  padding-left:1em;
+  margin-left:0.5em;
+  padding-left:0.5em;
+  border-left:1px dotted #eee;
 }
 .blog-outline-h4{
   padding-left:2em;
@@ -6160,8 +6162,14 @@ pager{
 }
 .store-topnav-link{
   display:inline-block;
-  padding:0.25em 0;
 }
 .store-topnav-link + .store-topnav-link{
   margin-left:1em;
+}
+.store-topnav-badge{
+  display:inline-block;
+  padding:0 0.5em;
+  border-radius:32px;
+  background:#2e77b8;
+  color:#fff;
 }

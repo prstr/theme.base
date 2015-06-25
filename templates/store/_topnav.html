@@ -1,10 +1,30 @@
 <nav class="store-topnav">
   <div class="container">
-    <each:link in="store.nav.topnav.links">
-      <a href="#{link.href}"
-         class="store-topnav-link">
-        #{link.title}
-      </a>
-    </each:link>
+    <div class="toolbar">
+      <div class="toolbar-group toolbar-group-left">
+        <each:link in="store.nav.topnav.links">
+          <a href="#{link.href}"
+             class="store-topnav-link">
+            #{link.title}
+          </a>
+        </each:link>
+      </div>
+      <div class="toolbar-group toolbar-group-right">
+        <a href=""
+           class="store-topnav-link"
+           ng-click="cart.toggle()"
+           ng-cloak>
+          <i class="icon-cart"></i>
+          <span class="store-topnav-badge"
+                ng-if="cart.order.totalQuantity">
+            {{ cart.order.totalQuantity }}
+          </span>
+        </a>
+        <a href="/my"
+           class="store-topnav-link">
+          Личный кабинет
+        </a>
+      </div>
+    </div>
   </div>
 </nav>
