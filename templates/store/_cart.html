@@ -8,7 +8,7 @@
      href=""
      ng-click="cart.toggle()">
     <i class="cart-toggle-icon icon-cart"></i>
-    <span>{{ cart.order.totalQuantity }}</span>
+    <span ng-bind="cart.order.totalQuantity"></span>
   </a>
   <!-- Ссылка на закрытие корзины -->
   <a href=""
@@ -25,16 +25,16 @@
           ng-repeat="item in cart.order.items track by $index">
         <div class="cart-item-summary">
           <a class="cart-item-link"
-             href="{{ item.url }}">{{ item.title }}</a>
+             href="{{ item.url }}"
+             ng-bind="item.title"></a>
           <div class="cart-item-options">
             <span ng-repeat="(name, value) in item.options track by $index"
                   class="cart-item-option">
-              {{ name }}: {{ value }}
+              <span ng-bind="name"></span>: <span ng-bind="value"></span>
             </span>
           </div>
-          <div class="cart-item-price product-price">
-            {{ item.price | price }}
-          </div>
+          <div class="cart-item-price product-price"
+               ng-bind="item.price | price"></div>
         </div>
         <!-- Управление количеством (добавить/убрать) -->
         <div class="cart-item-qty">
@@ -43,7 +43,8 @@
              ng-click="cart.incr(item)">
             <i class="icon-chevron-up"></i>
           </a>
-          <div class="cart-item-qty-label">{{ item.quantity }}</div>
+          <div class="cart-item-qty-label"
+               ng-bind="item.quantity"></div>
           <a href=""
              class="cart-item-qty-ctl"
              ng-click="cart.decr(item)">
@@ -56,7 +57,8 @@
     <div class="cart-checkout"
          ng-if="cart.order.subTotal > 0">
       <h3>Итого</h3>
-      <div class="type-large">{{ cart.order.subTotal | price }}</div>
+      <div class="type-large"
+           ng-bind="cart.order.subTotal | price"></div>
       <div ng-show="cart.order.deliveryFee != 0"
            class="text-subtle">+ доставка</div>
       <div ng-show="cart.order.deliveryFee == 0"
