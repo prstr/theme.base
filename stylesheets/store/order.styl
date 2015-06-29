@@ -1,0 +1,115 @@
+// Выбранные опции
+
+.order-item-options {
+  color: subtle-color;
+  font-size: type-small;
+}
+
+// Цены
+
+.order-price-old {
+  color: subtle-color;
+  font-size: type-small;
+  text-decoration: line-through;
+}
+
+.order-price-discount {
+  color: ui-critical;
+}
+
+// Таблица на разных экранах
+
+@media (min-width: screen-medium-min) {
+
+  .order-table {
+    width: 100%;
+
+    th {
+      font: inherit;
+      color: subtle-color;
+    }
+
+    tbody, tfoot {
+      border-top: 4px solid ui-default;
+    }
+
+  }
+
+  .order-column {
+    padding: .25em .5em;
+    text-align: left;
+    vertical-align: baseline;
+    border-bottom: 1px solid ui-default;
+
+    &:first-child {
+      text-align: right;
+    }
+  }
+
+}
+
+@media (max-width: screen-small-max) {
+
+  .order-table {
+    display: block;
+    width: 100%;
+
+    thead {
+      display: none;
+    }
+
+    tbody, tfoot {
+      display: block;
+    }
+
+    tfoot {
+      border-top: 4px solid ui-default;
+    }
+
+    tr {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+      border-bottom: 1px solid ui-default;
+      padding: .5em 0;
+    }
+
+    td {
+      padding: .5em 0;
+    }
+
+  }
+
+  .order-column {
+    display: block;
+    padding: 0;
+  }
+
+  .order-column-no {
+    display: none;
+  }
+
+  .order-column-title {
+    flex: 70%;
+  }
+
+  .order-column-qty, .order-column-discount {
+    flex: 30%;
+    text-align: right;
+  }
+
+  .order-column-price, .order-column-subtotal {
+    flex: 50%
+  }
+
+  .order-column-subtotal {
+    text-align: right;
+  }
+
+}
+
+// Оформление заказа
+
+.order-checkout {
+  border-top: 4px solid ui-default;
+}

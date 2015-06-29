@@ -15,6 +15,8 @@ select,
 textarea{
   font:inherit;
   white-space:inherit;
+  padding:0;
+  margin:0;
 }
 table{
   border-collapse:collapse;
@@ -175,11 +177,6 @@ hr{
 hr.bold{
   border-width:4px;
 }
-input[type='checkbox'],
-input[type='radio']{
-  margin:0;
-  padding:0;
-}
 label{
   cursor:pointer;
 }
@@ -285,20 +282,6 @@ label{
 }
 .image-thumb{
   max-height:96px;
-}
-.has-sticky{
-  position:relative;
-}
-.sticky{
-  position:relative;
-}
-.sticky-fixed{
-  position:fixed;
-  top:0;
-}
-.sticky-bottom{
-  position:absolute;
-  bottom:0;
 }
 @font-face{
 	font-family:'Linearicons';
@@ -5149,7 +5132,7 @@ textarea.input{
   pointer-events:none;
   background-color:#fff;
   background-repeat:no-repeat;
-  box-shadow:0 3px 8px rgba(0,0,0,0.25), 0 4px 0px rgba(255,255,255,0.25) inset;
+  box-shadow:0 3px 8px rgba(0,0,0,0.25), 0 4px 0 rgba(255,255,255,0.25) inset;
   opacity:0;
   visibility:hidden;
   -webkit-transition:0.3s opacity;
@@ -5417,6 +5400,35 @@ pager{
   left:100%;
   border-left-color:#2e77b8;
 }
+.has-sticky{
+  position:relative;
+}
+@media (min-width: 640px){
+  .sticky-m{
+    position:relative;
+  }
+  .sticky-m.sticky-fixed{
+    position:fixed;
+    top:0;
+  }
+  .sticky-m.sticky-bottom{
+    position:absolute;
+    bottom:0;
+  }
+}
+@media (min-width: 1024px){
+  .sticky-l{
+    position:relative;
+  }
+  .sticky-l.sticky-fixed{
+    position:fixed;
+    top:0;
+  }
+  .sticky-l.sticky-bottom{
+    position:absolute;
+    bottom:0;
+  }
+}
 .toolbar{
   display:-webkit-box;
   display:-webkit-flex;
@@ -5444,7 +5456,7 @@ pager{
   -webkit-flex:100%;
       -ms-flex:100%;
           flex:100%;
-  margin:0.5em 0;
+  margin:0.25em 0;
 }
 .toolbar-group h1,
 .toolbar-group h2,
@@ -5458,16 +5470,16 @@ pager{
   .toolbar-group-left{
     text-align:left;
     -webkit-box-flex:1;
-    -webkit-flex:1;
-        -ms-flex:1;
-            flex:1;
+    -webkit-flex:1 1 auto;
+        -ms-flex:1 1 auto;
+            flex:1 1 auto;
   }
   .toolbar-group-right{
     text-align:right;
     -webkit-box-flex:1;
-    -webkit-flex:1;
-        -ms-flex:1;
-            flex:1;
+    -webkit-flex:1 1 auto;
+        -ms-flex:1 1 auto;
+            flex:1 1 auto;
   }
 }
 .tumbler{
@@ -5624,7 +5636,9 @@ pager{
   font-size:1.25em;
 }
 .blog-outline-h3{
-  padding-left:1em;
+  margin-left:0.5em;
+  padding-left:0.5em;
+  border-left:1px dotted #eee;
 }
 .blog-outline-h4{
   padding-left:2em;
@@ -5782,6 +5796,16 @@ pager{
       -ms-flex:1;
           flex:1;
 }
+.cart-price-old{
+  color:#858585;
+  text-decoration:line-through;
+}
+.cart-price-discount{
+  color:#db1f1f;
+}
+.cart-subtotal{
+  font-size:1.25em;
+}
 .cart-item-qty{
   text-align:center;
   min-width:24px;
@@ -5861,6 +5885,105 @@ pager{
         -ms-flex-preferred-size:25%;
             flex-basis:25%;
   }
+}
+.order-item-options{
+  color:#858585;
+  font-size:0.875em;
+}
+.order-price-old{
+  color:#858585;
+  font-size:0.875em;
+  text-decoration:line-through;
+}
+.order-price-discount{
+  color:#db1f1f;
+}
+@media (min-width: 640px){
+  .order-table{
+    width:100%;
+  }
+  .order-table th{
+    font:inherit;
+    color:#858585;
+  }
+  .order-table tbody,
+  .order-table tfoot{
+    border-top:4px solid #eee;
+  }
+  .order-column{
+    padding:0.25em 0.5em;
+    text-align:left;
+    vertical-align:baseline;
+    border-bottom:1px solid #eee;
+  }
+  .order-column:first-child{
+    text-align:right;
+  }
+}
+@media (max-width: 639px){
+  .order-table{
+    display:block;
+    width:100%;
+  }
+  .order-table thead{
+    display:none;
+  }
+  .order-table tbody,
+  .order-table tfoot{
+    display:block;
+  }
+  .order-table tfoot{
+    border-top:4px solid #eee;
+  }
+  .order-table tr{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-flow:row wrap;
+        -ms-flex-flow:row wrap;
+            flex-flow:row wrap;
+    width:100%;
+    border-bottom:1px solid #eee;
+    padding:0.5em 0;
+  }
+  .order-table td{
+    padding:0.5em 0;
+  }
+  .order-column{
+    display:block;
+    padding:0;
+  }
+  .order-column-no{
+    display:none;
+  }
+  .order-column-title{
+    -webkit-box-flex:70%;
+    -webkit-flex:70%;
+        -ms-flex:70%;
+            flex:70%;
+  }
+  .order-column-qty,
+  .order-column-discount{
+    -webkit-box-flex:30%;
+    -webkit-flex:30%;
+        -ms-flex:30%;
+            flex:30%;
+    text-align:right;
+  }
+  .order-column-price,
+  .order-column-subtotal{
+    -webkit-box-flex:50%;
+    -webkit-flex:50%;
+        -ms-flex:50%;
+            flex:50%;
+  }
+  .order-column-subtotal{
+    text-align:right;
+  }
+}
+.order-checkout{
+  border-top:4px solid #eee;
 }
 .product-attribute{
   display:-webkit-inline-box;
@@ -5945,6 +6068,7 @@ pager{
   background:#2e77b8;
 }
 .products-filters{
+  position:relative;
   padding:0 1em;
   border-radius:4px;
   background:#f7f7f7;
@@ -5984,6 +6108,48 @@ pager{
 .products-filter-tag.disabled{
   opacity:0.5;
 }
+.products-filters-bubble{
+  position:absolute;
+  z-index:100;
+  right:100%;
+  padding:1em;
+  min-width:120px;
+  margin-top:-32px;
+  border-radius:4px;
+  background:#fff;
+  box-shadow:0 1px 12px rgba(0,0,0,0.15);
+  text-align:center;
+  visibility:visible;
+  opacity:1;
+  -webkit-transition:opacity 0.5s;
+          transition:opacity 0.5s;
+}
+.products-filters-bubble.hidden{
+  visibility:hidden;
+  opacity:0;
+}
+.products-filters-bubble-close{
+  position:absolute;
+  top:-12px;
+  left:-12px;
+  width:24px;
+  height:24px;
+  line-height:24px;
+  border-radius:24px;
+  border:2px solid #fff;
+  background:rgba(0,0,0,0.85);
+  color:#fff;
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+  visibility:hidden;
+}
+.products-filters-bubble:hover .products-filters-bubble-close{
+  visibility:visible;
+}
+@media (max-width: 639px){
+  .products-filters-bubble{
+    display:none;
+  }
+}
 .store-header{
   background:#2e77b8;
   color:#fff;
@@ -5999,8 +6165,14 @@ pager{
 }
 .store-topnav-link{
   display:inline-block;
-  padding:0.25em 0;
 }
 .store-topnav-link + .store-topnav-link{
   margin-left:1em;
+}
+.store-topnav-badge{
+  display:inline-block;
+  padding:0 0.5em;
+  border-radius:32px;
+  background:#2e77b8;
+  color:#fff;
 }

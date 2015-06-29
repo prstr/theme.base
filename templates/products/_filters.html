@@ -1,5 +1,7 @@
 <form novalidate
+      bubble-container
       class="products-filters"
+      ng-click="bubble.show($event)"
       ng-submit="catalog.go()">
 
   <!-- Поиск по цене -->
@@ -96,4 +98,32 @@
       Нет совпадений.
     </p>
   </div>
+
+  <div class="products-filters-bubble"
+       ng-class="{ hidden: bubble.hidden }"
+       ng-if="!catalog.hint.initial"
+       ng-style="{ top: bubble.offsetY + 'px' }"
+       ng-cloak>
+    <a href=""
+       class="products-filters-bubble-close"
+       ng-click="bubble.hide($event)"
+       title="Закрыть">
+      <i class="icon-cross"></i>
+    </a>
+    <button class="btn btn-primary"
+            ng-if="catalog.hint.count > 0"
+            type="submit">
+      <span>{{
+            catalog.hint.count | plural
+            : 'Показать %s товар'
+            : 'Показать %s товара'
+            : 'Показать %s товаров'
+            }}</span>
+    </button>
+    <p class="text-subtle"
+       ng-if="catalog.hint.count == 0">
+      Нет совпадений.
+    </p>
+  </div>
+
 </form>

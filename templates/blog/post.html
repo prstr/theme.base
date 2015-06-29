@@ -16,14 +16,20 @@
       </div>
 
       <div class="container has-sticky">
-        <div class="blog-post-outline block sticky sticky-right"
+        <div class="blog-post-outline block sticky sticky-m sticky-right"
              ui-sticky
              ui-scroll-spy>
+          <a href="#top"
+             class="blog-outline-link blog-outline-h1"
+             ui-smooth-scroll>
+            #{post.title}
+          </a>
           <each:e in="post.outline">
             <if>
               <when expr="e.id">
                 <a href="##{e.id}"
-                   class="blog-outline-link blog-outline-#{e.tagName}">
+                   class="blog-outline-link blog-outline-#{e.tagName}"
+                   ui-smooth-scroll="300">
                   #{e.text}
                 </a>
               </when>

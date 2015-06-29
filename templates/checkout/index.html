@@ -1,0 +1,44 @@
+<include file="/store/_layout.html">
+
+  <def:main>
+    <div class="store-checkout">
+      <div class="container"
+           ng-cloak>
+
+        <form name="checkoutForm"
+              ng-cloak
+              novalidate
+              ng-controller="CheckoutController as checkout"
+              ng-submit="checkoutForm.$valid && checkout.submit()">
+
+          <div ng-if="cart.order.items.length">
+            <h1>Ваш заказ</h1>
+            <include file="_order.html"/>
+
+            <div class="block">
+              <h2>Доставка</h2>
+              <include file="_delivery.html"/>
+            </div>
+
+            <div class="block">
+              <include file="_checkout.html"/>
+            </div>
+
+
+          </div>
+
+        </form>
+
+        <!-- Если в корзине ничего нет -->
+        <div class="block centered hero"
+             ng-if="!cart.order.items.length">
+          <i class="icon-cart-empty type-larger text-critical"></i>
+          <h2>В Вашей корзине пусто.</h2>
+          <p>Добавьте <a href="/products">товары</a> в корзину, чтобы сделать заказ.</p>
+        </div>
+
+      </div>
+    </div>
+  </def:main>
+
+</include>

@@ -1,0 +1,135 @@
+<table class="order-table">
+  <thead>
+    <tr>
+      <th width="1%"
+          class="order-column order-column-no">
+        #
+      </th>
+      <th class="order-column order-column-title">
+        Наименование
+      </th>
+      <th class="order-column order-column-qty">
+        Кол-во
+      </th>
+      <th class="order-column order-column-price">
+        Цена
+      </th>
+      <th class="order-column order-column-subtotal">
+        Сумма
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Позиции заказа -->
+    <tr ng-repeat="item in cart.order.items">
+      <td class="order-column order-column-no"
+          ng-bind="$index + 1"></td>
+      <td class="order-column order-column-title">
+        <div class="order-item-title"
+             ng-bind="item.title"></div>
+        <div class="order-item-options">
+          <span ng-repeat="(name, value) in item.options track by $index"
+                class="order-item-option"
+                ng-bind="value"></span>
+        </div>
+      </td>
+      <!-- Количество -->
+      <td class="order-column order-column-qty">
+        <div class="inline-grid">
+          <a href=""
+             class="order-item-qty-ctl"
+             ng-click="cart.decr(item)">
+            <i class="icon-circle-minus"></i>
+          </a>
+          <span class="order-item-qty-label"
+                ng-bind="item.quantity"></span>
+          <a href=""
+             class="order-item-qty-ctl"
+             ng-click="cart.incr(item)">
+            <i class="icon-plus-circle"></i>
+          </a>
+        </div>
+      </td>
+      <!-- Цена -->
+      <td class="order-column order-column-price">
+        <div class="order-item-price"
+             ng-if="!item.discount">
+          <div class="order-price"
+               ng-bind="item.price | price"></div>
+        </div>
+        <div class="order-item-price-with-discount"
+             ng-if="item.discount > 0">
+          <div class="order-price order-price-old"
+               ng-bind="item.price | price"></div>
+          <div class="order-price order-price-new"
+               ng-bind="item.price - item.discount | price"></div>
+        </div>
+      </td>
+      <!-- Сумма -->
+      <td class="order-column order-column-subtotal">
+        <div class="order-item-price"
+             ng-if="item.totalDiscount == 0">
+          <div class="order-price"
+               ng-bind="item.subTotal | price"></div>
+        </div>
+        <div class="order-item-price-with-discount"
+             ng-if="item.totalDiscount > 0">
+          <div class="order-price order-price-old"
+               ng-bind="item.totalPrice | price"></div>
+          <div class="order-price order-price-new"
+               ng-bind="item.subTotal | price"></div>
+        </div>
+      </td>
+    </tr>
+    <!-- Дополнительная скидка -->
+    <tr ng-if="cart.order.discount > 0">
+      <td class="order-column"></td>
+      <td colspan="3"
+          class="order-column order-column-foot">
+        Дополнительная скидка
+      </td>
+      <td class="order-column order-column-foot order-column-discount">
+        <div class="order-price order-price-discount"
+             ng-bind="- cart.order.discount | price"></div>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <!-- Общая сумма без скидки -->
+    <tr ng-if="cart.order.totalDiscount > 0">
+      <td class="order-column"></td>
+      <td colspan="3"
+          class="order-column order-column-foot">
+        Сумма без учета скидки
+      </td>
+      <td class="order-column order-column-foot order-column-subtotal">
+        <div class="order-price"
+             ng-bind="cart.order.itemsPrice | price"></div>
+      </td>
+    </tr>
+    <!-- Общая скидка -->
+    <tr ng-if="cart.order.totalDiscount > 0">
+      <td class="order-column"></td>
+      <td colspan="3"
+          class="order-column order-column-foot">
+        Общая скидка
+      </td>
+      <td class="order-column order-column-foot order-column-discount">
+        <div class="order-price order-price-discount"
+             ng-bind="- cart.order.totalDiscount | price "></div>
+      </td>
+    </tr>
+    <!-- Подитог -->
+    <tr>
+      <td class="order-column"></td>
+      <td colspan="3"
+          class="order-column order-column-foot">
+        Подитог
+      </td>
+      <td class="order-column order-column-foot order-column-subtotal">
+        <div class="order-price"
+             ng-bind="cart.order.subTotal | price"></div>
+      </td>
+    </tr>
+  </tfoot>
+</table>
