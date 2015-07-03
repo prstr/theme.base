@@ -12,13 +12,12 @@
       <div class="toolbar-group toolbar-group-right">
         <a href=""
            class="store-topnav-link"
-           ng-click="cart.toggle()"
-           ng-cloak>
+           ng-click="cart.toggle()">
           <i class="icon-cart"></i>
           <span class="store-topnav-badge"
-                ng-if="cart.order.totalQuantity">
-            {{ cart.order.totalQuantity }}
-          </span>
+                ng-cloak
+                ng-if="cart.order.totalQuantity"
+                ng-bind="cart.order.totalQuantity"></span>
         </a>
         <a href="/my"
            class="store-topnav-link">
