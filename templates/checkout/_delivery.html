@@ -12,7 +12,8 @@
              ng-change="cart.update()"/>
     </div>
     <div class="cell cell-1">
-      <label for="deliveryMethod-{{$index}}">{{ method.title }}</label>
+      <label for="deliveryMethod-{{$index}}"
+             ng-bind="method.title"></label>
       <div class="order-delivery-fields"
            ng-if="cart.order.deliveryMethod == method.title">
 
@@ -20,8 +21,8 @@
         <div class="order-delivery-field block"
              ng-repeat="field in method.fields">
           <label>
-            <div class="order-delivery-field-name">
-              {{ field.name }}
+            <div class="order-delivery-field-name"
+                 ng-bind="field.name">
               <span class="text-critical"
                     ng-if="!field.optional">*</span>
             </div>
@@ -45,7 +46,8 @@
                     ng-change="cart.update()"
                     ng-required="!field.optional">
               <option ng-repeat="val in field.values"
-                      ng-value="val">{{ val }}</option>
+                      ng-value="val"
+                      ng-bind=""></option>
             </select>
           </label>
         </div>

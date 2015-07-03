@@ -22,16 +22,15 @@
   <tbody>
     <!-- Позиции заказа -->
     <tr ng-repeat="item in cart.order.items">
-      <td class="order-column order-column-no">
-        {{ $index + 1 }}
-      </td>
+      <td class="order-column order-column-no"
+          ng-bind="$index + 1"></td>
       <td class="order-column order-column-title">
-        <div class="order-item-title">{{ item.title }}</div>
+        <div class="order-item-title"
+             ng-bind="item.title"></div>
         <div class="order-item-options">
           <span ng-repeat="(name, value) in item.options track by $index"
-                class="order-item-option">
-            {{ value }}
-          </span>
+                class="order-item-option"
+                ng-bind="value"></span>
         </div>
       </td>
       <!-- Количество -->
@@ -42,7 +41,8 @@
              ng-click="cart.decr(item)">
             <i class="icon-circle-minus"></i>
           </a>
-          <span class="order-item-qty-label">{{ item.quantity }}</span>
+          <span class="order-item-qty-label"
+                ng-bind="item.quantity"></span>
           <a href=""
              class="order-item-qty-ctl"
              ng-click="cart.incr(item)">
@@ -54,36 +54,30 @@
       <td class="order-column order-column-price">
         <div class="order-item-price"
              ng-if="!item.discount">
-          <div class="order-price">
-            {{ item.price | price }}
-          </div>
+          <div class="order-price"
+               ng-bind="item.price | price"></div>
         </div>
         <div class="order-item-price-with-discount"
              ng-if="item.discount > 0">
-          <div class="order-price order-price-old">
-            {{ item.price | price }}
-          </div>
-          <div class="order-price order-price-new">
-            {{ item.price - item.discount | price }}
-          </div>
+          <div class="order-price order-price-old"
+               ng-bind="item.price | price"></div>
+          <div class="order-price order-price-new"
+               ng-bind="item.price - item.discount | price"></div>
         </div>
       </td>
       <!-- Сумма -->
       <td class="order-column order-column-subtotal">
         <div class="order-item-price"
              ng-if="item.totalDiscount == 0">
-          <div class="order-price">
-            {{ item.subTotal | price }}
-          </div>
+          <div class="order-price"
+               ng-bind="item.subTotal | price"></div>
         </div>
         <div class="order-item-price-with-discount"
              ng-if="item.totalDiscount > 0">
-          <div class="order-price order-price-old">
-            {{ item.totalPrice | price }}
-          </div>
-          <div class="order-price order-price-new">
-            {{ item.subTotal | price }}
-          </div>
+          <div class="order-price order-price-old"
+               ng-bind="item.totalPrice | price"></div>
+          <div class="order-price order-price-new"
+               ng-bind="item.subTotal | price"></div>
         </div>
       </td>
     </tr>
@@ -95,9 +89,8 @@
         Дополнительная скидка
       </td>
       <td class="order-column order-column-foot order-column-discount">
-        <div class="order-price order-price-discount">
-          {{ - cart.order.discount | price }}
-        </div>
+        <div class="order-price order-price-discount"
+             ng-bind="- cart.order.discount | price"></div>
       </td>
     </tr>
   </tbody>
@@ -110,9 +103,8 @@
         Сумма без учета скидки
       </td>
       <td class="order-column order-column-foot order-column-subtotal">
-        <div class="order-price">
-          {{ cart.order.itemsPrice | price }}
-        </div>
+        <div class="order-price"
+             ng-bind="cart.order.itemsPrice | price"></div>
       </td>
     </tr>
     <!-- Общая скидка -->
@@ -123,9 +115,8 @@
         Общая скидка
       </td>
       <td class="order-column order-column-foot order-column-discount">
-        <div class="order-price order-price-discount">
-          {{ - cart.order.totalDiscount | price }}
-        </div>
+        <div class="order-price order-price-discount"
+             ng-bind="- cart.order.totalDiscount | price "></div>
       </td>
     </tr>
     <!-- Подитог -->
@@ -136,9 +127,8 @@
         Подитог
       </td>
       <td class="order-column order-column-foot order-column-subtotal">
-        <div class="order-price">
-          {{ cart.order.subTotal | price }}
-        </div>
+        <div class="order-price"
+             ng-bind="cart.order.subTotal | price"></div>
       </td>
     </tr>
   </tfoot>

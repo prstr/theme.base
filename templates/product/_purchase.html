@@ -2,8 +2,8 @@
      ng-cloak>
   <div class="block grid grid-gutters grid-align-baseline"
        ng-repeat="opt in product.options track by $index">
-    <div class="cell cell-m-1">
-      {{ opt.name }}:
+    <div class="cell cell-m-1"
+         ng-bind="opt.name">
     </div>
     <div class="cell cell-m-4">
       <div class="btn-group">
@@ -14,8 +14,8 @@
                 }"
                 ng-repeat="value in opt.values track by $index"
                 ng-click="p.toggleOption(opt, value)"
-                ng-disabled="p.isOptionDisabled(opt, value)">
-          {{ value }}
+                ng-disabled="p.isOptionDisabled(opt, value)"
+                ng-bind="value">
         </button>
       </div>
     </div>
@@ -26,9 +26,8 @@
     </div>
     <div class="cell cell-m-4">
       <div ng-show="p.variant"
-           class="type-large">
-        {{ p.variant.price | price }}
-      </div>
+           class="type-large"
+           ng-bind="p.variant.price | price"></div>
       <div class="text-subtle"
            ng-hide="p.variant">
         пожалуйста, уточните параметры
@@ -47,7 +46,9 @@
             <button type="button"
                     class="btn btn-primary active"
                     ng-click="p.addToCart()">
-              <span>В корзине {{ p.getQuantityInCart() }}</span>
+              <span>В корзине
+                <span ng-bind="p.getQuantityInCart()"></span>
+              </span>
             </button>
             <button type="button"
                     class="btn btn-primary"

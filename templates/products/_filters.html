@@ -87,12 +87,11 @@
     <button class="btn btn-primary"
             ng-if="catalog.hint.count > 0"
             type="submit">
-      <span>{{
+      <span ng-bind="
         catalog.hint.count | plural
           : 'Показать %s товар'
           : 'Показать %s товара'
-          : 'Показать %s товаров'
-      }}</span>
+          : 'Показать %s товаров'"></span>
     </button>
     <p class="text-subtle"
        ng-if="catalog.hint.count == 0">
