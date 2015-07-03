@@ -1,0 +1,18 @@
+<div class="grid">
+  <each:product in="similar">
+    <a class="products-list-item cell cell-m-1of3 cell-l-1of4"
+       href="#{product.url}">
+      <div class="products-list-photo products-list-photo-small"
+           style="background-image:url(#{product.photos[0].thumb})">
+        <div class="products-list-incart"
+             ng-if="cart.containsProduct('#{product._id}')"
+             ng-cloak
+             title="Этот товар находится в Вашей корзине">
+          <i class="icon-cart-add"></i>
+          <span>в корзине</span>
+        </div>
+      </div>
+      <h3 class="products-list-title">#{product.title}</h3>
+    </a>
+  </each:product>
+</div>

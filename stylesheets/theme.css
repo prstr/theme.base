@@ -6028,6 +6028,9 @@ pager{
   background-repeat:no-repeat;
   background-size:contain;
 }
+.products-list-photo-small{
+  height:120px;
+}
 .products-list-price{
   color:#333;
 }
