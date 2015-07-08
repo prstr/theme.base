@@ -25,8 +25,9 @@
       <td>
         <div ng-bind="item.title"></div>
         <div class="text-subtle inline-grid-block">
-          <span ng-repeat="(name, value) in item.options track by $index"
-                ng-bind="value"></span>
+          <span ng-repeat="(name, value) in item.options track by $index">
+            <span ng-bind="name"></span>: <span ng-bind="value"></span>
+          </span>
         </div>
       </td>
       <!-- Количество -->
