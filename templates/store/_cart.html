@@ -44,8 +44,7 @@
           <div class="cart-item-price"
                ng-if="!item.discount">
             <span class="cart-price"
-                  ng-bind="item.price | price">
-            </span>
+                  ng-bind="item.price | price"></span>
           </div>
           <!-- Цена со скидкой: старая и новая -->
           <div class="cart-item-price-with-discount"
@@ -53,8 +52,7 @@
             <span class="cart-price cart-price-old"
                   ng-bind="item.price | price"></span>
             <span class="cart-price cart-price-new"
-                  ng-bind="item.price - item.discount | price">
-            </span>
+                  ng-bind="item.price - item.discount | price"></span>
           </div>
         </div>
         <!-- Управление количеством (добавить/убрать) -->

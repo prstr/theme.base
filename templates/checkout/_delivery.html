@@ -21,8 +21,8 @@
         <div class="order-delivery-field block"
              ng-repeat="field in method.fields">
           <label>
-            <div class="order-delivery-field-name"
-                 ng-bind="field.name">
+            <div class="order-delivery-field-name">
+              <span ng-bind="field.name"></span>
               <span class="text-critical"
                     ng-if="!field.optional">*</span>
             </div>
@@ -47,7 +47,7 @@
                     ng-required="!field.optional">
               <option ng-repeat="val in field.values"
                       ng-value="val"
-                      ng-bind=""></option>
+                      ng-bind="val"></option>
             </select>
           </label>
         </div>
