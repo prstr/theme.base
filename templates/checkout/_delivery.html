@@ -1,46 +1,43 @@
-<div class="order-delivery">
-
-  <!-- Выбор способа доставки -->
-  <div ng-if="cart.availableDeliveryMethods.length"
-       ng-repeat="method in cart.availableDeliveryMethods"
-       class="grid grid-gutters grid-align-baseline block">
-    <div class="cell cell-min">
-      <input id="deliveryMethod-{{$index}}"
-             type="radio"
-             ng-model="cart.order.deliveryMethod"
-             ng-value="method.title"
-             ng-change="cart.update()"/>
-    </div>
-    <div class="cell cell-1">
-      <label for="deliveryMethod-{{$index}}"
-             ng-bind="method.title"></label>
-      <div class="order-delivery-fields"
-           ng-if="cart.order.deliveryMethod == method.title">
-
-        <!-- Поля -->
-        <div class="order-delivery-field block"
-             ng-repeat="field in method.fields">
-          <label>
-            <div class="order-delivery-field-name">
-              <span ng-bind="field.name"></span>
-              <span class="text-critical"
-                    ng-if="!field.optional">*</span>
-            </div>
+<!-- Выбор способа доставки -->
+<div ng-if="cart.availableDeliveryMethods.length"
+     ng-repeat="method in cart.availableDeliveryMethods"
+     class="grid grid-gutters grid-align-baseline block">
+  <div class="cell cell-min">
+    <input id="deliveryMethod-{{$index}}"
+           type="radio"
+           ng-model="cart.order.deliveryMethod"
+           ng-value="method.title"
+           ng-change="cart.update()"/>
+  </div>
+  <div class="cell cell-1">
+    <label for="deliveryMethod-{{$index}}"
+           ng-bind="method.title"></label>
+    <div ng-if="cart.order.deliveryMethod == method.title">
+      <!-- Поля -->
+      <div class="block"
+           ng-repeat="field in method.fields">
+        <div class="grid grid-gutters grid-align-center">
+          <label class="cell cell-m-1">
+            <span ng-bind="field.name"></span>
+            <span class="text-critical"
+                  ng-if="!field.optional">*</span>
+          </label>
+          <div class="cell cell-m-2">
             <input type="text"
                    ng-if="field.kind == 'text'"
                    ng-model="cart.order.fields[field.name]"
                    ng-change="cart.update()"
-                   class="input input-block"
+                   class="input"
                    ng-required="!field.optional"/>
             <input type="number"
                    ng-if="field.kind == 'number'"
                    ng-model="cart.order.fields[field.name]"
                    ng-change="cart.update()"
-                   class="input input-block"
+                   class="input"
                    ng-min="field.min"
                    ng-max="field.max"
                    ng-required="!field.optional"/>
-            <select class="input input-block"
+            <select class="input"
                     ng-if="field.kind == 'select'"
                     ng-model="cart.order.fields[field.name]"
                     ng-change="cart.update()"
@@ -49,14 +46,14 @@
                       ng-value="val"
                       ng-bind="val"></option>
             </select>
-          </label>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Нет подходящих способов доставки -->
-  <div ng-if="!cart.availableDeliveryMethods.length">
-    <p>Менеджер свяжется с Вами для уточнения условий доставки.</p>
-  </div>
+<!-- Нет подходящих способов доставки -->
+<div ng-if="!cart.availableDeliveryMethods.length">
+  <p>Менеджер свяжется с Вами для уточнения условий доставки.</p>
 </div>

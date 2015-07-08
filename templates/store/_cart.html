@@ -2,6 +2,7 @@
 <div class="cart"
      ng-cloak
      ng-class="{ 'open': cart.isOpen }">
+
   <!-- Кнопка открытия/закрытия корзины -->
   <a class="cart-toggle"
      href=""
@@ -10,12 +11,14 @@
     <i class="cart-toggle-icon icon-cart"></i>
     <span ng-bind="cart.order.totalQuantity"></span>
   </a>
+
   <!-- Ссылка на закрытие корзины -->
   <a href=""
      class="cart-close"
      ng-click="cart.close()">
     <span>Закрыть</span>
   </a>
+
   <!-- Flexbox-контейнер, распределяющий элементы по вертикали -->
   <div class="cart-container">
     <h2>Корзина</h2>
@@ -28,41 +31,41 @@
 
     <!-- Позиции заказа -->
     <ul class="cart-items">
-      <li class="cart-item"
+      <li class="cart-item grid grid-align-center"
           ng-repeat="item in cart.order.items track by $index">
-        <div class="cart-item-summary">
-          <a class="cart-item-link"
-             href="{{ item.url }}"
+        <div class="cell cell-1">
+          <a href="{{ item.url }}"
              ng-bind="item.title"></a>
-          <div class="cart-item-options">
-            <span ng-repeat="(name, value) in item.options track by $index"
-                  class="cart-item-option">
+
+          <div class="text-subtle inline-grid-block">
+            <span ng-repeat="(name, value) in item.options track by $index">
               <span ng-bind="name"></span>: <span ng-bind="value"></span>
             </span>
           </div>
+
           <!-- Цена без скидки -->
-          <div class="cart-item-price"
-               ng-if="!item.discount">
-            <span class="cart-price"
-                  ng-bind="item.price | price"></span>
+          <div ng-if="!item.discount"
+               class="price"
+               ng-bind="item.price | price">
           </div>
+
           <!-- Цена со скидкой: старая и новая -->
-          <div class="cart-item-price-with-discount"
-               ng-if="item.discount > 0">
-            <span class="cart-price cart-price-old"
+          <div ng-if="item.discount > 0">
+            <span class="price price-old"
                   ng-bind="item.price | price"></span>
-            <span class="cart-price cart-price-new"
+            <span class="price price-new"
                   ng-bind="item.price - item.discount | price"></span>
           </div>
         </div>
+
         <!-- Управление количеством (добавить/убрать) -->
-        <div class="cart-item-qty">
+        <div class="cell cell-min centered">
           <a href=""
              class="cart-item-qty-ctl"
              ng-click="cart.incr(item)">
             <i class="icon-chevron-up"></i>
           </a>
-          <div class="cart-item-qty-label"
+          <div class="type-large"
                ng-bind="item.quantity"></div>
           <a href=""
              class="cart-item-qty-ctl"
@@ -79,18 +82,17 @@
       <h3>Итого</h3>
 
       <!-- Подитог без скидок -->
-      <div class="cart-subtotal"
-           ng-if="cart.order.totalDiscount == 0">
-        <div class="cart-price"
-             ng-bind="cart.order.subTotal | price"></div>
+      <div ng-if="cart.order.totalDiscount == 0"
+           class="type-large price"
+           ng-bind="cart.order.subTotal | price">
       </div>
 
       <!-- Подитог со скидками -->
-      <div class="cart-subtotal cart-subtotal-with-discount"
+      <div class="type-large"
            ng-if="cart.order.totalDiscount > 0">
-        <div class="cart-price cart-price-old"
+        <div class="price price-old"
              ng-bind="cart.order.itemsPrice | price"></div>
-        <div class="cart-price cart-price-new"
+        <div class="price price-new"
              ng-bind="cart.order.subTotal | price"></div>
       </div>
 
@@ -109,6 +111,7 @@
     </div>
   </div>
 </div>
+
 <!-- Темное перекрытие при открывании корзины -->
 <div class="cart-overlay"
      ng-click="cart.close()"

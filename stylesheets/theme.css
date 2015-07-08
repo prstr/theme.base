@@ -4614,6 +4614,40 @@ label{
     width:1024px;
   }
 }
+.datatable{
+  width:100%;
+  border-spacing:0;
+  border-collapse:collapse;
+}
+.datatable td,
+.datatable th{
+  padding:0.25em 0.5em;
+  font:inherit;
+  text-align:left;
+  vertical-align:baseline;
+}
+.datatable td.right,
+.datatable th.right{
+  text-align:right;
+}
+.datatable td.centered,
+.datatable th.centered{
+  text-align:center;
+}
+.datatable td.middle,
+.datatable th.middle{
+  vertical-align:middle;
+}
+.datatable th{
+  color:#858585;
+}
+.datatable thead,
+.datatable tbody{
+  border-bottom:4px solid #eee;
+}
+.datatable tr:not(:last-child){
+  border-bottom:1px solid #eee;
+}
 .fileupload-dropzone{
   display:block;
   padding:1em;
@@ -4994,6 +5028,13 @@ label{
   margin:-0.25em;
 }
 .inline-grid > *{
+  margin:0.25em;
+}
+.inline-grid-block{
+  display:block;
+  margin:-0.25em;
+}
+.inline-grid-block > *{
   margin:0.25em;
 }
 .input-group{
@@ -5779,37 +5820,6 @@ pager{
   margin:0;
   overflow-y:auto;
 }
-.cart-item{
-  position:relative;
-  display:-webkit-box;
-  display:-webkit-flex;
-  display:-ms-flexbox;
-  display:flex;
-  -webkit-box-align:center;
-  -webkit-align-items:center;
-      -ms-flex-align:center;
-          align-items:center;
-}
-.cart-item-summary{
-  -webkit-box-flex:1;
-  -webkit-flex:1;
-      -ms-flex:1;
-          flex:1;
-}
-.cart-price-old{
-  color:#858585;
-  text-decoration:line-through;
-}
-.cart-price-discount{
-  color:#db1f1f;
-}
-.cart-subtotal{
-  font-size:1.25em;
-}
-.cart-item-qty{
-  text-align:center;
-  min-width:24px;
-}
 .cart-item-qty-ctl{
   -webkit-transition:all 0.5s;
           transition:all 0.5s;
@@ -5819,17 +5829,6 @@ pager{
 .cart-item:hover .cart-item-qty-ctl{
   visibility:visible;
   opacity:1;
-}
-.cart-item-qty-label{
-  font-size:1.25em;
-}
-.cart-item-option{
-  color:#858585;
-  font-size:0.875em;
-  white-space:nowrap;
-}
-.cart-item-option + .cart-item-option{
-  margin-left:6px;
 }
 .cart-shifter{
   position:relative;
@@ -5886,104 +5885,12 @@ pager{
             flex-basis:25%;
   }
 }
-.order-item-options{
-  color:#858585;
-  font-size:0.875em;
-}
-.order-price-old{
-  color:#858585;
-  font-size:0.875em;
-  text-decoration:line-through;
-}
-.order-price-discount{
+.price-discount{
   color:#db1f1f;
 }
-@media (min-width: 640px){
-  .order-table{
-    width:100%;
-  }
-  .order-table th{
-    font:inherit;
-    color:#858585;
-  }
-  .order-table tbody,
-  .order-table tfoot{
-    border-top:4px solid #eee;
-  }
-  .order-column{
-    padding:0.25em 0.5em;
-    text-align:left;
-    vertical-align:baseline;
-    border-bottom:1px solid #eee;
-  }
-  .order-column:first-child{
-    text-align:right;
-  }
-}
-@media (max-width: 639px){
-  .order-table{
-    display:block;
-    width:100%;
-  }
-  .order-table thead{
-    display:none;
-  }
-  .order-table tbody,
-  .order-table tfoot{
-    display:block;
-  }
-  .order-table tfoot{
-    border-top:4px solid #eee;
-  }
-  .order-table tr{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-flex-flow:row wrap;
-        -ms-flex-flow:row wrap;
-            flex-flow:row wrap;
-    width:100%;
-    border-bottom:1px solid #eee;
-    padding:0.5em 0;
-  }
-  .order-table td{
-    padding:0.5em 0;
-  }
-  .order-column{
-    display:block;
-    padding:0;
-  }
-  .order-column-no{
-    display:none;
-  }
-  .order-column-title{
-    -webkit-box-flex:70%;
-    -webkit-flex:70%;
-        -ms-flex:70%;
-            flex:70%;
-  }
-  .order-column-qty,
-  .order-column-discount{
-    -webkit-box-flex:30%;
-    -webkit-flex:30%;
-        -ms-flex:30%;
-            flex:30%;
-    text-align:right;
-  }
-  .order-column-price,
-  .order-column-subtotal{
-    -webkit-box-flex:50%;
-    -webkit-flex:50%;
-        -ms-flex:50%;
-            flex:50%;
-  }
-  .order-column-subtotal{
-    text-align:right;
-  }
-}
-.order-checkout{
-  border-top:4px solid #eee;
+.price-old{
+  color:#858585;
+  text-decoration:line-through;
 }
 .product-attribute{
   display:-webkit-inline-box;
@@ -6006,11 +5913,6 @@ pager{
   border-top-right-radius:32px;
   border-bottom-right-radius:32px;
   margin-left:-1px;
-}
-.product-option{
-  border:1px solid #d6d6d6;
-  background:#eee;
-  border-radius:4px;
 }
 .products-list-item{
   position:relative;

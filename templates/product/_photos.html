@@ -1,4 +1,5 @@
-<div class="product-view-photos block"
+<!-- Карусель с фотографиями -->
+<div class="block"
      ng-if="p.filteredPhotos.length">
   <div class="carousel carousel-3d"
        ui-carousel="p.filteredPhotos">
@@ -22,8 +23,8 @@
     </div>
   </div>
 </div>
-<div class="product-view-photos-empty"
-     ng-if="!p.filteredPhotos.length"
+<!-- Нет фотографий -->
+<div ng-if="!p.filteredPhotos.length"
      ng-cloak>
   <div class="image-placeholder image-placeholder-large">
     <p>Нет фотографии</p>

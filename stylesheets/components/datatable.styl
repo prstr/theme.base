@@ -1,0 +1,40 @@
+// -----------------
+// Таблица с данными
+// -----------------
+//
+// Ограничения:
+//
+// * не имеет мобильной версии
+// * сложно переопределять стили из-за вложенности правил
+
+.datatable {
+
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  td, th {
+    padding: .25em .5em;
+
+    font: inherit;
+    text-align: left;
+    vertical-align: baseline;
+
+    &.right { text-align: right }
+    &.centered { text-align: center }
+    &.middle { vertical-align: middle }
+  }
+
+  th {
+    color: subtle-color;
+  }
+
+  thead, tbody {
+    border-bottom: 4px solid ui-default;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid ui-default;
+  }
+
+}

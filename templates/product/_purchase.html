@@ -1,5 +1,7 @@
-<div class="product-view-purchase"
-     ng-cloak>
+<!-- Выбор опций (параметров) товара и добавление в корзину -->
+<div ng-cloak>
+
+  <!-- Опции -->
   <div class="block grid grid-gutters grid-align-baseline"
        ng-repeat="opt in product.options track by $index">
     <div class="cell cell-m-1"
@@ -20,9 +22,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Цена отображается, когда выбраны все опции -->
   <div class="grid grid-gutters grid-align-baseline block">
     <div class="cell cell-m-1">
-      Цена:
+      Цена
     </div>
     <div class="cell cell-m-4">
       <div ng-show="p.variant"

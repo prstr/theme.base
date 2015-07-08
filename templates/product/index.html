@@ -3,8 +3,7 @@
   <def:title>#{product.title} — #{store.title}</def:title>
 
   <def:main>
-    <div class="product-view"
-         ng-controller="ProductController as p">
+    <div ng-controller="ProductController as p">
       <div class="container">
         <include file="_breadcrumbs.html"/>
       </div>
@@ -19,9 +18,7 @@
               <div class="small">#{product.subtitle}</div>
             </h1>
             <include file="_purchase.html"/>
-            <div class="product-view-description">
-              !{product.descriptionHtml}
-            </div>
+            !{product.descriptionHtml}
             <include file="_attributes.html"/>
           </div>
         </div>

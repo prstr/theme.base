@@ -684,6 +684,40 @@ label{
     width:1024px;
   }
 }
+.datatable{
+  width:100%;
+  border-spacing:0;
+  border-collapse:collapse;
+}
+.datatable td,
+.datatable th{
+  padding:0.25em 0.5em;
+  font:inherit;
+  text-align:left;
+  vertical-align:baseline;
+}
+.datatable td.right,
+.datatable th.right{
+  text-align:right;
+}
+.datatable td.centered,
+.datatable th.centered{
+  text-align:center;
+}
+.datatable td.middle,
+.datatable th.middle{
+  vertical-align:middle;
+}
+.datatable th{
+  color:#858585;
+}
+.datatable thead,
+.datatable tbody{
+  border-bottom:4px solid #eee;
+}
+.datatable tr:not(:last-child){
+  border-bottom:1px solid #eee;
+}
 .fileupload-dropzone{
   display:block;
   padding:1em;
@@ -1064,6 +1098,13 @@ label{
   margin:-0.25em;
 }
 .inline-grid > *{
+  margin:0.25em;
+}
+.inline-grid-block{
+  display:block;
+  margin:-0.25em;
+}
+.inline-grid-block > *{
   margin:0.25em;
 }
 .input-group{
