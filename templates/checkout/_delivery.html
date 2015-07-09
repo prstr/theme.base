@@ -1,58 +1,56 @@
 <h2>Доставка</h2>
 
 <!-- Выбор способа доставки -->
-<div ng-if="cart.availableDeliveryMethods.length"
-     ng-repeat="method in cart.availableDeliveryMethods"
-     class="grid grid-gutters grid-align-baseline block">
-  <div class="cell cell-min">
-    <input id="deliveryMethod-{{$index}}"
-           type="radio"
-           ng-model="cart.order.deliveryMethod"
-           ng-value="method.title"
-           ng-change="cart.update()"/>
-  </div>
-  <div class="cell cell-1">
-    <label for="deliveryMethod-{{$index}}"
-           ng-bind="method.title"></label>
-    <div ng-if="cart.order.deliveryMethod == method.title">
-      <!-- Поля -->
-      <div class="block"
-           ng-repeat="field in method.fields">
-        <div class="grid grid-gutters grid-align-center">
-          <label class="cell cell-m-1">
-            <span ng-bind="field.name"></span>
-            <span class="text-critical"
-                  ng-if="!field.optional">*</span>
-          </label>
-          <div class="cell cell-m-2">
-            <input type="text"
-                   ng-if="field.kind == 'text'"
-                   ng-model="cart.order.fields[field.name]"
-                   ng-change="cart.update()"
-                   class="input"
-                   ng-required="!field.optional"/>
-            <input type="number"
-                   ng-if="field.kind == 'number'"
-                   ng-model="cart.order.fields[field.name]"
-                   ng-change="cart.update()"
-                   class="input"
-                   ng-min="field.min"
-                   ng-max="field.max"
-                   ng-required="!field.optional"/>
-            <select class="input"
-                    ng-if="field.kind == 'select'"
-                    ng-model="cart.order.fields[field.name]"
-                    ng-change="cart.update()"
-                    ng-required="!field.optional">
-              <option ng-repeat="val in field.values"
-                      ng-value="val"
-                      ng-bind="val"></option>
-            </select>
-          </div>
-        </div>
-      </div>
+<div ng-if="cart.availableDeliveryMethods.length">
+  <label class="grid grid-gutters grid-align-baseline block">
+    <div class="cell cell-m-1">
+      Способ доставки
+      <span class="text-critical">*</span>
     </div>
-  </div>
+    <div class="cell cell-m-2">
+      <select class="input"
+              ng-model="cart.order.deliveryMethod"
+              ng-options="method.title as method.title
+                for method in cart.availableDeliveryMethods"
+              ng-change="cart.update()"
+              required>
+      </select>
+    </div>
+  </label>
+  <!-- Поля -->
+  <label class="block grid grid-gutters grid-align-center"
+         ng-repeat="field in cart.currentDeliveryMethod.fields">
+    <div class="cell cell-m-1">
+      <span ng-bind="field.name"></span>
+      <span class="text-critical"
+            ng-if="!field.optional">*</span>
+    </div>
+    <div class="cell cell-m-2">
+      <input type="text"
+             ng-if="field.kind == 'text'"
+             ng-model="cart.order.fields[field.name]"
+             ng-change="cart.update()"
+             class="input"
+             ng-required="!field.optional"/>
+      <input type="number"
+             ng-if="field.kind == 'number'"
+             ng-model="cart.order.fields[field.name]"
+             ng-change="cart.update()"
+             class="input"
+             ng-min="field.min"
+             ng-max="field.max"
+             min="{{ field.min }}"
+             max="{{ field.max }}"
+             ng-required="!field.optional"/>
+      <select class="input"
+              ng-if="field.kind == 'select'"
+              ng-model="cart.order.fields[field.name]"
+              ng-change="cart.update()"
+              ng-required="!field.optional"
+              ng-options="val for val in field.values">
+      </select>
+    </div>
+  </label>
 </div>
 
 <!-- Нет подходящих способов доставки -->

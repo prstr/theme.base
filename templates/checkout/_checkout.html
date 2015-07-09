@@ -1,1 +1,92 @@
 <h2>Оформление заказа</h2>
+
+<label class="block grid grid-gutters grid-align-middle">
+  <div class="cell cell-m-1">
+    Фамилия
+    <span class="text-critical">*</span>
+  </div>
+  <div class="cell cell-m-2">
+    <input type="text"
+           class="input"
+           ng-model="cart.order.lastName"
+           ng-change="cart.update()"
+           required/>
+  </div>
+</label>
+<label class="block grid grid-gutters grid-align-middle">
+  <div class="cell cell-m-1">
+    Имя
+    <span class="text-critical">*</span>
+  </div>
+  <div class="cell cell-m-2">
+    <input type="text"
+           class="input"
+           ng-model="cart.order.firstName"
+           ng-change="cart.update()"
+           required/>
+  </div>
+</label>
+<label class="block grid grid-gutters grid-align-middle">
+  <div class="cell cell-m-1">
+    Отчество
+  </div>
+  <div class="cell cell-m-2">
+    <input type="text"
+           class="input"
+           ng-model="cart.order.secondName"
+           ng-change="cart.update()"/>
+  </div>
+</label>
+
+<label class="block grid grid-gutters grid-align-middle">
+  <div class="cell cell-m-1">
+    Email
+    <span class="text-critical">*</span>
+  </div>
+  <div class="cell cell-m-2">
+    <input type="text"
+           required
+           class="input"
+           ng-model="checkout.email"
+           ng-change="checkout.update()"
+           ng-model-options="{ debounce: 500 }" />
+  </div>
+</label>
+<label class="block grid grid-gutters grid-align-middle">
+  <div class="cell cell-m-1">
+    Пароль
+    <span class="text-critical">*</span>
+  </div>
+  <div class="cell cell-m-2">
+    <input type="password"
+           required
+           class="input"
+           ng-model="checkout.password"/>
+  </div>
+</label>
+
+<div ng-if="checkout.isNewUser">
+  <label class="block grid grid-gutters grid-align-middle">
+    <div class="cell cell-m-1">
+      Повторите пароль
+      <span class="text-critical">*</span>
+    </div>
+    <div class="cell cell-m-2">
+      <input type="password"
+             required
+             class="input"
+             ng-model="checkout.passwordConfirm"
+             compare-to="checkout.password"/>
+    </div>
+  </label>
+</div>
+
+<hr/>
+
+<div class="block centered">
+  <button type="submit"
+          class="btn btn-primary btn-large"
+          ng-disabled="!checkoutForm.$valid">
+    <span>Оформить заказ</span>
+  </button>
+</div>
