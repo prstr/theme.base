@@ -15,6 +15,11 @@
               ng-change="cart.update()"
               required>
       </select>
+      <each:method in="store.deliveryMethods">
+        <div ng-if="cart.order.deliveryMethod == '#{method.title}'">
+          !{method.descriptionHtml}
+        </div>
+      </each:method>
     </div>
   </label>
   <!-- Поля -->
