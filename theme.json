@@ -3,7 +3,8 @@
   "description": "Базовая тема содержит минимальное оформление и предназначена для создания уникального дизайна интернет-магазина на ее основе.",
   "stylesheets": [
     "stylesheets/theme.styl",
-    "stylesheets/email.styl"
+    "stylesheets/email.styl",
+    "stylesheets/my.styl"
   ],
   "options": [
     {
