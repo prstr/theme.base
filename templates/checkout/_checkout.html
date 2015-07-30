@@ -62,6 +62,10 @@
            required
            class="input"
            ng-model="checkout.password"/>
+    <div ng-if="!checkout.isNewUser">
+      <a href="/my/restore"
+         class="type-small">Забыли пароль?</a>
+    </div>
   </div>
 </label>
 
