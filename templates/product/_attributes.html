@@ -7,7 +7,7 @@
       </div>
       <!-- Ссылка на поиск по значению атрибута -->
       <a class="product-attribute-value"
-         href="/products/#{attr.name}/#{attr.value}">
+         href="/products?props=#{encodeURIComponent(attr.name + '=' + attr.value)}">
         #{attr.value}
       </a>
     </div>
