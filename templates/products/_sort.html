@@ -1,13 +1,16 @@
 <if expr="products.count">
   <div class="products-sort">
     <div class="products-sort-label">Cортировать по</div>
-    <!-- TODO add sorting -->
-    <a href="#{products.url}"
-       class="products-sort-link">
+    <a href=""
+       class="products-sort-link"
+       ng-click="catalog.sort('+price')"
+       ng-class="{ active: catalog.filters.sort == '+price'}">
       <span>цене</span>
     </a>
-    <a href="#{products.url}"
-       class="products-sort-link">
+    <a href=""
+       class="products-sort-link"
+       ng-click="catalog.sort('+title')"
+       ng-class="{ active: catalog.filters.sort == '+title'}">
       <span>названию</span>
     </a>
   </div>
