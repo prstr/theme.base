@@ -39,28 +39,10 @@
               </div>
             </div>
           </each:item>
-        </div>
 
-        <if expr="blog.pages > 1">
-          <div class="pager block centered">
-            <if expr="blog.page > 0">
-              <a href="/blog?#{qs.replace({ page: blog.page - 1 })}"
-                 class="pager-link">
-                <i class="icon-arrow-left"></i>
-              </a>
-            </if>
-            <each:p in="_.range(0, blog.pages)">
-              <a href="/blog?#{qs.replace({ page: p })}"
-                 class="pager-link #{blog.page == p ? 'active' : ''}">#{p + 1}</a>
-            </each:p>
-            <if expr="blog.page < blog.pages - 1">
-              <a href="/blog?#{qs.replace({ page: blog.page + 1 })}"
-                 class="pager-link">
-                <i class="icon-arrow-right"></i>
-              </a>
-            </if>
-          </div>
-        </if>
+          <!-- TODO paginate / load more / infinite scroll -->
+
+        </div>
       </div>
     </div>
   </def:main>

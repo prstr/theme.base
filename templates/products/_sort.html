@@ -1,12 +1,13 @@
 <if expr="products.count">
   <div class="products-sort">
     <div class="products-sort-label">Cортировать по</div>
-    <a href="#{products.url}?#{qs.replace({ sort: '+price' })}"
-       class="products-sort-link #{qs.is('sort', '+price', null) ? 'active' : ''}">
+    <!-- TODO add sorting -->
+    <a href="#{products.url}"
+       class="products-sort-link">
       <span>цене</span>
     </a>
-    <a href="#{products.url}?#{qs.replace({ sort: '+title' })}"
-       class="products-sort-link #{qs.is('sort', '+title') ? 'active' : ''}">
+    <a href="#{products.url}"
+       class="products-sort-link">
       <span>названию</span>
     </a>
   </div>

@@ -1,0 +1,151 @@
+<table class="datatable">
+  <thead>
+    <tr>
+      <th width="1%"
+          class="hide-s">
+        #
+      </th>
+      <th>Наименование</th>
+      <th>Кол-во</th>
+      <th class="hide-s">Цена</th>
+      <th>Сумма</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Позиции заказа -->
+    <each:item in="order.items">
+      <tr>
+        <td class="hide-s">#{item_index + 1}</td>
+        <td>
+          <div>#{item.title}</div>
+          <div class="text-subtle inline-grid-block">
+            <each:value in="item.options">
+              <span>#{value_key}</span>: <span>#{value}</span>
+            </each:value>
+          </div>
+        </td>
+        <!-- Количество -->
+        <td>#{item.quantity}</td>
+        <!-- Цена -->
+        <td class="hide-s">
+          <if>
+            <when expr="item.discount">
+              <div class="price price-old">
+                #{price(item.price).val}
+              </div>
+              <div class="price price-new">
+                #{price(item.price - item.discount).val}
+              </div>
+            </when>
+            <otherwise>
+              <div class="price">
+                #{price(item.price).val}
+              </div>
+            </otherwise>
+          </if>
+        </td>
+        <td>
+          <if>
+            <when expr="item.totalDiscount > 0">
+              <div class="price price-old">
+                #{price(item.totalPrice).val}
+              </div>
+              <div class="price price-new">
+                #{price(item.subTotal).val}
+              </div>
+            </when>
+            <otherwise>
+              <div class="price">
+                #{price(item.subTotal).val}
+              </div>
+            </otherwise>
+          </if>
+        </td>
+      </tr>
+    </each:item>
+    <!-- Дополнительная скидка -->
+    <if expr="order.discount > 0">
+      <tr>
+        <td class="hide-s"></td>
+        <td>Дополнительная скидка</td>
+        <td></td>
+        <td class="hide-s"></td>
+        <td>
+          <div class="price price-discount">
+            #{price(-order.discount).val}
+          </div>
+        </td>
+      </tr>
+    </if>
+  </tbody>
+  <tfoot>
+    <!-- Общая сумма без скидки -->
+    <if expr="order.totalDiscount > 0">
+      <tr>
+        <td class="hide-s"></td>
+        <td>Сумма без учета скидки</td>
+        <td></td>
+        <td class="hide-s"></td>
+        <td>
+          <div class="price">
+            #{price(order.itemsPrice).val}
+          </div>
+        </td>
+      </tr>
+    </if>
+    <!-- Общая скидка -->
+    <if expr="order.totalDiscount > 0">
+      <tr>
+        <td class="hide-s"></td>
+        <td>Общая скидка</td>
+        <td></td>
+        <td class="hide-s"></td>
+        <td>
+          <div class="price price-discount">
+            #{price(-order.totalDiscount).val}
+          </div>
+        </td>
+      </tr>
+    </if>
+    <!-- Подитог -->
+    <tr>
+      <td class="hide-s"></td>
+      <td>Подитог</td>
+      <td></td>
+      <td class="hide-s"></td>
+      <td>
+        <div class="price">
+          #{price(order.subTotal).val}
+        </div>
+      </td>
+    </tr>
+    <!-- Стоимость доставки -->
+    <if expr="order.deliveryFee != null">
+      <tr>
+        <td class="hide-s"></td>
+        <td>Упаковка и доставка</td>
+        <td></td>
+        <td class="hide-s"></td>
+        <td>
+          <div class="price">
+            #{price(order.deliveryFee).val}
+          </div>
+        </td>
+      </tr>
+    </if>
+    <!-- Общий итог -->
+    <if expr="order.grandTotal != null">
+      <tr class="type-large">
+        <td class="hide-s"></td>
+        <td>Общий итог</td>
+        <td></td>
+        <td class="hide-s"></td>
+        <td>
+          <div class="price">
+            #{price(order.grandTotal).val}
+          </div>
+        </td>
+      </tr>
+    </if>
+  </tfoot>
+</table>

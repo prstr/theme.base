@@ -21,26 +21,6 @@
         </div>
       </a>
     </each:product>
+    <!-- TODO paginate / load more / infinite scroll -->
   </div>
 </div>
-<if expr="products.pages > 1">
-  <!-- Страницы, если товаров слишком много -->
-  <div class="pager">
-    <if expr="products.page > 0">
-      <a href="#{products.url}?#{qs.replace({ page: products.page - 1 })}"
-         class="pager-link">
-        <i class="icon-arrow-left"></i>
-      </a>
-    </if>
-    <each:p in="_.range(0, products.pages)">
-      <a href="#{products.url}?#{qs.replace({ page: p })}"
-         class="pager-link #{products.page == p ? 'active' : ''}">#{p + 1}</a>
-    </each:p>
-    <if expr="products.page < products.pages - 1">
-      <a href="#{products.url}?#{qs.replace({ page: products.page + 1 })}"
-         class="pager-link">
-        <i class="icon-arrow-right"></i>
-      </a>
-    </if>
-  </div>
-</if>

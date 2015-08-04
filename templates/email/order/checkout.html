@@ -1,0 +1,37 @@
+<include file="../_layout.html">
+
+  <def:main>
+    <h2>Вы оформили заказ №#{order.number}</h2>
+    <p>Спасибо за Ваш заказ!</p>
+    <if>
+      <when expr="order.premoderate">
+        <p>
+          Наш менеджер свяжется с Вами в ближайшее время,
+          чтобы уточнить детали заказа.
+        </p>
+      </when>
+      <otherwise>
+        <p>Для оплаты заказа перейдите по следующей ссылке:</p>
+        <div class="block centered">
+          <a href="#{store.origin}/my/order/#{order._id}"
+             class="btn btn-primary">
+            <span>Оплатить заказ</span>
+          </a>
+        </div>
+      </otherwise>
+    </if>
+
+    <div class="block">
+      <include file="_items.html"/>
+    </div>
+
+    <p>
+      Вы можете отслеживать статус Ваших заказов в
+      <a href="#{store.origin}/my">личном кабинете</a>
+      по адресу:
+    </p>
+    <pre><code>#{store.origin}/my</code></pre>
+
+  </def:main>
+
+</include>
