@@ -17,7 +17,17 @@
                title="#{item.title}">
             </a>
           </each:item>
-          <!-- TODO paginate / load more / infinite scroll -->
+        </div>
+        <div class="pager block centered"
+             ng-if="#{gallery.pages > 1}"
+             ui-pager="#{gallery.pages}">
+          <a turbolink
+             ng-repeat="link in pager.links"
+             class="pager-link"
+             ng-class="{ active: link.active }"
+             ng-bind="link.page + 1"
+             ng-href="{{ link.url }}">
+          </a>
         </div>
       </div>
     </div>

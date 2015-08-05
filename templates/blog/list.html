@@ -8,7 +8,6 @@
         <include file="_breadcrumbs.html"/>
       </div>
       <div class="container">
-
         <div class="blog-summary">
           <each:item in="blog.items">
             <div class="blog-summary-item grid grid-gutters block">
@@ -39,9 +38,17 @@
               </div>
             </div>
           </each:item>
-
-          <!-- TODO paginate / load more / infinite scroll -->
-
+        </div>
+        <div class="pager block centered"
+             ng-if="#{blog.pages > 1}"
+             ui-pager="#{blog.pages}">
+          <a turbolink
+             ng-repeat="link in pager.links"
+             class="pager-link"
+             ng-class="{ active: link.active }"
+             ng-bind="link.page + 1"
+             ng-href="{{ link.url }}">
+          </a>
         </div>
       </div>
     </div>
