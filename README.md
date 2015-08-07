@@ -22,6 +22,3 @@
     ```
     prostore mock
     ```
-    
-6. Откройте [CSS-шпаргалку](http://localhost:3000/_stylesheets) и экспериментируйте.
-    

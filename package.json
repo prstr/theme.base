@@ -1,0 +1,12 @@
+{
+  "name": "prostore.theme.base",
+  "version": "0.0.0",
+  "description": "ProStore Base Theme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-stylus": "*",
+    "gulp-autoprefixer": "*"
+  },
+  "license": "ISC"
+}

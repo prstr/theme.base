@@ -20,8 +20,9 @@
 // Размеры
 // -------
 
-font-size-px ?= 16
-font-size ?= unit(font-size-px, px)
+font-family ?= Segoe UI, Arsenal, sans-serif
+font-weight ?= 400
+font-size ?= unit(16, px)
 line-height ?= 1.5
 gap ?= 1em
 
@@ -54,11 +55,23 @@ screen-large-min ?= 1024px
 
 border-radius ?= 4px
 
-// ---------------------
-// Расчет цветовой схемы
-// ---------------------
+// --------------
+// Цветовая схема
+// --------------
 
-ui-colors = 'base' 'default' 'primary' 'success' 'warn' 'critical'
+ui-colors ?= 'base' 'default' 'subtle' 'primary' 'success' 'warn' 'critical' 'inverse'
+
+ui-base ?= #fff
+ui-default ?= #eee
+ui-subtle ?= #777
+ui-primary ?= hsl(208deg, 60%, 45%)
+ui-success ?= hsl(144deg, 50%, 45%)
+ui-warn ?= hsl(44deg, 85%, 75%)
+ui-critical ?= hsl(0deg, 75%, 49%)
+ui-inverse ?= #222
+
+body-background ?= ui-base
+body-color ?= ui-inverse
 
 for c in ui-colors
   _c = lookup('ui-' + c)
@@ -75,16 +88,8 @@ link-hover-color ?= lighten(link-color, 25%)
 
 strong-color ?= body-color
 em-color ?= body-color
-subtle-color ?= lighten(body-color, 40%)
 
 hr-color ?= ui-default
-
-// ----------
-// Компоненты
-// ----------
-
-datatable-th-color ?= subtle-color
-datatable-border-color ?= ui-default
 
 ctl-vertical-padding ?= .25em
 
@@ -93,10 +98,3 @@ for s in sizes {
   _cs = round(_fs * (line-height + 2 * ctl-vertical-padding) + 2);
   define('ctl-' + s + '-height', _cs);
 }
-
-tumbler-radius ?= 1000px
-badge-radius ?= 1000px
-magnifier-size ?= 320px
-
-cart-width ?= 320px
-cart-color ?= ui-primary
