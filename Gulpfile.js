@@ -13,5 +13,5 @@ gulp.task('build-css', function () {
       'include css': true
     }))
     .pipe(autoprefixer())
-    .pipe(gulp.dest('static/assets'));
+    .pipe(gulp.dest('assets'));
 });
