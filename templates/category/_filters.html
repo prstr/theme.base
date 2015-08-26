@@ -43,7 +43,7 @@
 
   <!-- Поиск по свойствам -->
   <each:prop in="propFilters">
-    <var:values>stat.props[prop.name] || []</var:values>
+    <var:values>stats.props[prop.name] || []</var:values>
     <div class="products-filter products-filter-prop block">
       <h4>#{prop.name}</h4>
       <each:val in="values">
