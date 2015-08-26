@@ -4,22 +4,15 @@
     <div class="store-products"
          catalog="/products">
       <div class="container">
-        <div class="grid grid-gutters block">
-          <div class="cell cell-l-4">
-            <div class="toolbar">
-              <div class="toolbar-group toolbar-group-left">
-                <h1>Каталог товаров</h1>
-              </div>
-              <div class="toolbar-group toolbar-group-right">
-                <include file="/products/_sort.html"/>
-              </div>
-            </div>
-            <include file="_list.html"/>
+        <div class="toolbar">
+          <div class="toolbar-group toolbar-group-left">
+            <h1>Каталог товаров</h1>
           </div>
-          <div class="cell cell-l-1">
-            <include file="/products/_filters.html"/>
+          <div class="toolbar-group toolbar-group-right">
+            <include file="/products/_sort.html"/>
           </div>
         </div>
+        <include file="_list.html"/>
       </div>
     </div>
   </def:main>

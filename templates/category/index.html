@@ -22,7 +22,8 @@
             <include file="/products/_list.html"/>
           </div>
           <div class="cell cell-l-1">
-            <include file="/products/_filters.html"/>
+            <var:propFilters>category.propFilters</var:propFilters>
+            <include file="_filters.html"/>
           </div>
         </div>
       </div>
