@@ -42,26 +42,26 @@
   </div>
 
   <!-- Поиск по свойствам -->
-  <each:values in="stats.props">
+  <each:propName in="store.propFilters">
+    <var:values>stats.props[propName] || []</var:values>
     <div class="products-filter products-filter-prop block">
-      <var:name>values_key</var:name>
-      <h4>#{name}</h4>
+      <h4>#{propName}</h4>
       <each:val in="values">
         <div class="products-filter-value"
              ng-class="{
-               disabled: catalog.isPropDisabled('#{name}', '#{val}')
+               disabled: catalog.isPropDisabled('#{propName}', '#{val}')
              }">
           <label class="type-small">
             <input type="checkbox"
                    value="#{val}"
-                   ng-checked="catalog.isPropSelected('#{name}', '#{val}')"
-                   ng-click="catalog.toggleProp('#{name}', '#{val}')"/>
+                   ng-checked="catalog.isPropSelected('#{propName}', '#{val}')"
+                   ng-click="catalog.toggleProp('#{propName}', '#{val}')"/>
             <span>#{val}</span>
           </label>
         </div>
       </each:val>
     </div>
-  </each:values>
+  </each:propName>
 
   <!-- Поиск по тегам -->
   <if expr="stats.tags.length">
